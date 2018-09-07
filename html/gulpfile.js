@@ -32,57 +32,6 @@ let gulp             = require('gulp'),
 	inputPath        = __dirname,
 	outputPath       = inputPath;
 
-//SVG sprite configuration
-let projectPath = '/',
-	destinationPath = './',
-	svgTemplate = "sprite-template.scss",
-	spriteName = "_sprite.scss",
-	spritePath = {
-		newSprite: {
-			SRC: 'images/svg/*', //*** svgs used to create sprite
-			SVG: 'images/sprite.svg', //*** sprite generated from svgs, it will be placed in - "html\assets\img" called sprite.svg
-			FINAL: './css/layout/' //*** scss folder for genetared sprite.scss
-		},
-		svgTemplate: {
-			SRC: 'conf/'
-		}
-	};
-
-let changeEvent = function(evt) {
-	gutil.log('File', gutil.colors.cyan(evt.path.replace(new RegExp('/.*(?=/' + projectPath + ')/'), '')), 'was', gutil.colors.magenta(evt.type));
-};
-
-gulp.task('svgSprite', function () {
-	return gulp.src(spritePath.newSprite.SRC)
-		.pipe(svgSprite({
-			shape: {
-				spacing: {
-					padding: 10
-				}
-			},
-			mode: {
-				css: {
-					dest: "./",
-					layout: "vertical",
-					sprite: spritePath.newSprite.SVG,
-					bust: false,
-					render: {
-						scss: {
-							dest: spritePath.newSprite.FINAL + spriteName,
-							template: spritePath.svgTemplate.SRC + svgTemplate
-						}
-					}
-				}
-			},
-			variables: {
-				mapname: "icons"
-			}
-		}))
-		.pipe(gulp.dest(destinationPath));
-});
-
-gulp.task('sprite', ['svgSprite']);
-
 //icon fonts
 gulp.task('iconfont', function(){
 	return gulp.src(['images/svg/*.svg'])
@@ -272,15 +221,10 @@ gulp.task('default', ['html-dev', 'styles', 'sasslint', 'js-build'], function ()
 	//watch added or changed svg files to optimize them
 	gulp.watch('svg/*.svg', ['svgomg']);
 
-	//watch svg icons and create a sprite
-	gulp.watch(spritePath.newSprite.SRC, ['sprite']).on('change', function(evt) {
-		changeEvent(evt);
-	});
-
 	//html
 	gulp.watch(['_templates/**/*.html', '!_templates/*.html'], ['html-dev']);
 });
 
 //build
-gulp.task('build', ['html-dev', 'sprite', 'iconfont', 'styles', 'js-build']);
-gulp.task('build-prod', ['html-prod', 'sprite', 'iconfont', 'styles', 'js-build']);
+gulp.task('build', ['html-dev', 'iconfont', 'styles', 'js-build']);
+gulp.task('build-prod', ['html-prod', 'iconfont', 'styles', 'js-build']);

@@ -27,11 +27,14 @@
 	@if $filename == ico-chevron-down {
 		$char: '\E001';
 	}
-	@if $filename == ico-download {
+	@if $filename == ico-facebook {
 		$char: '\E002';
 	}
-	@if $filename == ico-share {
+	@if $filename == ico-instagram {
 		$char: '\E003';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E004';
 	}
 
 	@return $char;
@@ -51,10 +54,13 @@
 .font-ico-chevron-down {
 	@include font(ico-chevron-down);
 }
-.font-ico-download {
-	@include font(ico-download);
+.font-ico-facebook {
+	@include font(ico-facebook);
 }
-.font-ico-share {
-	@include font(ico-share);
+.font-ico-instagram {
+	@include font(ico-instagram);
+}
+.font-ico-youtube {
+	@include font(ico-youtube);
 }
 
