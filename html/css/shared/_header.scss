@@ -1,8 +1,22 @@
 //----------  header
 //------------------------------------------------------------------------------
+
+.header {
+	width: 100%;
+	position: relative;
+	background-color: rgba(#1f1f1f, 0.9);
+	z-index: 100;
+	a {
+		color: $white;
+		font-family: $font-headings;
+	}
+}
+
 .header-upper {
 	text-align: right;
+	padding: 10px;
 	width: 100%;
+	background-color: $black;
 }
 
 .header-links {
@@ -24,18 +38,20 @@
 	}
 }
 
-.header {
-	width: 100%;
-	padding: 10px;
-	background-color: $black;
-	a {
-		color: $white;
-		font-family: $font-headings;
-	}
-}
-
 .logo {
 	width: 177px;
-	display: block;
+	display: inline-block;
 	padding: 23px 0;
+}
+
+.main-nav {
+	float: right;
+	padding: 47px 0 20px;
+	ul {
+		margin: 0 -33px;
+	}
+	li {
+		float: left;
+		padding: 0 33px;
+	}
 }
