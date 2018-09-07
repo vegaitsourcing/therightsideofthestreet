@@ -23,21 +23,20 @@ input[type='submit'] {
 }
 
 .btn {
-	background-color: $white;
-	font-size: 14px;
-	font-weight: 600;
-	color: $red;
-	height: 50px;
-	line-height: 48px;
-	letter-spacing: 1px;
+	font-family: $font-headings;
+	background-color: $red;
+	font-size: 28px;
+	font-weight: 700;
+	color: $white;
+	height: 60px;
+	line-height: 60px;
 	text-transform: uppercase;
-	border: 2px solid $red;
-	border-radius: 1px;
-	padding: 0 20px;
+	border-radius: 30px;
+	padding: 0 42px;
 	transition: 0.3s ease-out;
 	display: inline-block;
 	@include hover {
-		background-color: $red;
-		color: $white;
+		background-color: $white;
+		color: $red;
 	}
 }
