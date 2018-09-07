@@ -4,4 +4,121 @@
 .footer {
 	padding: 20px;
 	background-color: $black;
+	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.footer-top {
+	width: 100%;
+	height: auto;
+	padding-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.popular-blog {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.popular-blog-heading {
+	width: 300px;
+	padding-left: 40px;
+	text-align: justify;
+}
+
+.popular-blog-heading .h4 {
+	color: $white;
+	line-height: 1;
+	text-transform: none;
+}
+
+.popular-blog-heading p {
+	color: $white;
+	line-height: 1.2;
+}
+
+.newsletter {
+	width: 50%;
+	height: auto;
+}
+
+.newsletter input {
+	width: 500px;
+	height: 30px;
+	margin-top: 10px;
+	border-radius: 25px;
+	border: 0;
+}
+
+.newsletter .h3 {
+	color: $white;
+}
+
+.newsletter button {
+	width: 100px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 25px;
+	color: $white;
+	background: $red;
+	border: 0;
+}
+
+.footer-bottom {
+	width: 100%;
+	height: auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer-nav {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-nav-left ul li a {
+	color: $white;
+}
+
+.footer-nav-right {
+	margin-left: 65px;
+}
+
+.footer-nav-right ul li a {
+	color: $white;
+}
+
+.footer-info {
+	width: 50%;
+	height: auto;
+}
+
+.footer-info .h3 {
+	color: $white;
+}
+
+.footer-info p {
+	color: $white;
+	line-height: 1;
+}
+
+.footer-info-contact-social-icons {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-info-contact-social-icons p {
+	padding-right: 10px;
 }
