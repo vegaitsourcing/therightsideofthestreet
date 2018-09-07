@@ -3,6 +3,12 @@ v## Ignore Visual Studio temporary files, build results, and
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# .config files
+ConnectionStrings.config
+
+# Umbraco Credentials
+ReadMe.txt
+
 # User-specific files
 *.suo
 *.user
