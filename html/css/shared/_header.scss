@@ -3,6 +3,55 @@
 
 .header {
 	width: 100%;
-	padding: 20px;
+	position: relative;
+	background-color: rgba(#1f1f1f, 0.9);
+	z-index: 100;
+	a {
+		color: $white;
+		font-family: $font-headings;
+	}
+}
+
+.header-upper {
+	text-align: right;
+	padding: 10px;
+	width: 100%;
 	background-color: $black;
+}
+
+.header-links {
+	font-size: 14px;
+	line-height: 36px;
+	font-weight: 600;
+}
+
+.language-links {
+	text-transform: uppercase;
+	margin-left: 15px;
+}
+
+.donations-link {
+	margin-left: 45px;
+	.icon {
+		font-size: 16px;
+		margin-left: 25px;
+	}
+}
+
+.logo {
+	width: 177px;
+	display: inline-block;
+	padding: 23px 0;
+}
+
+.main-nav {
+	float: right;
+	padding: 47px 0 20px;
+	ul {
+		margin: 0 -33px;
+	}
+	li {
+		float: left;
+		padding: 0 33px;
+	}
 }

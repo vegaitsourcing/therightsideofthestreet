@@ -4,4 +4,49 @@
 .footer {
 	padding: 20px;
 	background-color: $black;
+	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.footer-top {
+	width: 100%;
+	height: auto;
+	padding-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.popular-blog {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.popular-blog-heading {
+	width: 300px;
+	padding-left: 40px;
+	text-align: justify;
+}
+
+.popular-blog-heading p {
+	color: $white;
+}
+
+.newsletter {
+	width: 50%;
+	height: auto;
+}
+
+.newsletter input {
+	width: 500px;
+	height: 40px;
+	border-radius: 25px;
+	border: none;
+}
+
+.footer-bottom {
+	padding-bottom: 50px;
 }
