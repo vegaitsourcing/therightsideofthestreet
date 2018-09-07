@@ -24,3 +24,10 @@
 
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
+
+# Front End
+node_modules
+css/dist
+js/dist
+fonts/dist
+/*.html

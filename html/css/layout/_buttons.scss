@@ -1,0 +1,43 @@
+//----------  button
+//------------------------------------------------------------------------------
+a,
+button {
+	appearance: none;
+	outline: none;
+	@include hover {
+		&:focus {
+			outline: 1px dashed rgba($red, .2);
+		}
+	}
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+	font-family: $font-default;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+}
+
+.btn {
+	background-color: $white;
+	font-size: 14px;
+	font-weight: 600;
+	color: $red;
+	height: 50px;
+	line-height: 48px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border: 2px solid $red;
+	border-radius: 1px;
+	padding: 0 20px;
+	transition: 0.3s ease-out;
+	display: inline-block;
+	@include hover {
+		background-color: $red;
+		color: $white;
+	}
+}

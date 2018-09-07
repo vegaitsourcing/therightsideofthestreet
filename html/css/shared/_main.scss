@@ -1,0 +1,17 @@
+//----------  main styles
+//------------------------------------------------------------------------------
+
+.index-templates {
+	.wrap {
+		max-width: 800px;
+		padding: 20vh 0;
+	}
+	li {
+		margin-bottom: 10px;
+		a {
+			font-size: 22px;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+}
