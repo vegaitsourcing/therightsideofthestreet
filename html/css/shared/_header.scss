@@ -1,8 +1,41 @@
 //----------  header
 //------------------------------------------------------------------------------
+.header-upper {
+	text-align: right;
+	width: 100%;
+}
+
+.header-links {
+	font-size: 14px;
+	line-height: 36px;
+	font-weight: 600;
+}
+
+.language-links {
+	text-transform: uppercase;
+	margin-left: 15px;
+}
+
+.donations-link {
+	margin-left: 45px;
+	.icon {
+		font-size: 16px;
+		margin-left: 25px;
+	}
+}
 
 .header {
 	width: 100%;
-	padding: 20px;
+	padding: 10px;
 	background-color: $black;
+	a {
+		color: $white;
+		font-family: $font-headings;
+	}
+}
+
+.logo {
+	width: 177px;
+	display: block;
+	padding: 23px 0;
 }
