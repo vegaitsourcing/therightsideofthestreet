@@ -3,12 +3,10 @@
 
 .donation-buttons {
 	width: 100%;
-	margin: 0 auto;
-}
-
-.button-membership {
-	width: 100%;
-	background: $red;
 	height: auto;
-	margin: 100px;
+	display: flex;
+	justify-content: center;
+	button {
+		margin: 70px 40px 0;
+	}
 }
