@@ -3058,6 +3058,7 @@
 		'use strict';
 
 		var functions = require('./functions');
+		//let maps = require('./maps');
 
 		var app = {
 			init: function init() {
@@ -3065,7 +3066,11 @@
 				functions.swAtleteSlider();
 				functions.swCrewCitySlider();
 				functions.eventsSlider();
+				functions.citiesMapSlider();
 				functions.goToTop();
+				// if($('.sw-map-container').length) {
+				// 	maps.initMap();
+				// }
 
 				// checking for touch devices, to prevent double tap and hover issues
 				if (('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
@@ -3148,6 +3153,21 @@
 						dots: true,
 						autoplay: true,
 						autoplaySpeed: 5000
+					});
+				}
+			},
+
+			citiesMapSlider: function citiesMapSlider() {
+				var $slider = $('.sw-map-cities');
+				if ($slider !== undefined && $slider.length) {
+					$slider.slick({
+						slidesToShow: 6,
+						slidesToScroll: 1,
+						infinite: false,
+						arrows: true,
+						dots: false,
+						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
 					});
 				}
 			},
