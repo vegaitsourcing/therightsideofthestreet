@@ -93,11 +93,11 @@
 				<div class="wrap">
 					<div class="show-yourself-content-first">
 						<div class="personal-img">
-							<img src="././images/content/addimage.png">
+							<img src="././images/content/addimage.png" input="file">
 						</div>
 						<div class="show-yourself-form">
 							<h1 class="h3">Predstavi sebe</h1>
-							<input type="text" name="name" maxlength="24" placeholder="Ime">
+							<input type="text" name="name" maxlength="24" placeholder="Ime" class="fgd">
 							<input type="text" name="surname" maxlength="24" placeholder="Prezime">
 							<textarea name="describe-yourself" placeholder="Opiši sebe" maxlength="100"></textarea>
 							<h2 class="h4">Vizija sporta</h2>
@@ -106,8 +106,12 @@
 								<div class="important-achievements">
 									<h1 class="h4">Važnija dostignuća</h1>
 									<div class="add-achievement">
-										<button class="btn-add-ach" type="button" name="add-achievement-one" value="add-achievement-one"><span>+</span>Dodaj dostignuće</button>
-										<button class="btn-add-ach" type="button" name="add-achievement-two" value="add-achievement-two"><span>+</span>Dodaj dostignuće</button>
+										<button class="btn-add-ach" type="button" name="add-achievement-one" value="add-achievement-one"><span class="icon font-ico-plus"></span>
+											<p>Dodaj dostignuće</p>
+										</button>
+										<button class="btn-add-ach-two" type="button" name="add-achievement-two" value="add-achievement-two"><span class="icon font-ico-plus"></span>
+											<p>Dodaj dostignuće</p>
+										</button>
 									</div>
 								</div>
 								<div class="social-media">
@@ -129,6 +133,17 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="show-yourself-content-second">
+						<img src="././images/content/addmoreimages.png">
+						<img src="././images/content/addmoreimages.png">
+						<img src="././images/content/addmoreimages.png">
+						<img src="././images/content/addmoreimages.png">
+						<img src="././images/content/addmoreimages.png">
+						<img src="././images/content/addmoreimages.png">
+					</div>
+					<div class="s-y-c-s-btn">
+						<button type="button" name="save-changes" value="save-changes" class="btn btn-small btn-previous">SAČUVAJ IZMENE</button>
 					</div>
 				</div>
 			</div>
