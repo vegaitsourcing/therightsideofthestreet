@@ -7,7 +7,8 @@ let app = {
 		// call your functions here
 		functions.swAtleteSlider();
 		functions.swCrewCitySlider();
-		//functions.navigation();
+		functions.eventsSlider();
+		functions.goToTop();
 
 		// checking for touch devices, to prevent double tap and hover issues
 		if(('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
