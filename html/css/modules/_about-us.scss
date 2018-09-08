@@ -126,12 +126,20 @@
 	}
 }
 
+.our-vision-heading {
+	max-width: 500px;
+	height: auto;
+	padding: 20px 0;
+}
+
 .our-vision-heading h1 {
-			padding: 20px 50px;
-			background: $red;
-			color: $white;
-			text-align: center;
-		}
+	margin-top: -50px;
+	padding: 20px;
+	background: $red;
+	color: $white;
+	text-align: center;
+}
+
 .module-about-us {
 	padding: 65px 0;
 	h2 {
