@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Founder Item</summary>
-	[PublishedContentModel("founderItem")]
-	public partial class FounderItem : PublishedContentModel
+	/// <summary>Donations And Membership</summary>
+	[PublishedContentModel("donationsAndMembership")]
+	public partial class DonationsAndMembership : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "founderItem";
+		public new const string ModelTypeAlias = "donationsAndMembership";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public FounderItem(IPublishedContent content)
+		public DonationsAndMembership(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,18 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FounderItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<DonationsAndMembership, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Image
+		/// Buttons
 		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
+		[ImplementPropertyType("buttons")]
+		public IEnumerable<RJP.MultiUrlPicker.Models.Link> Buttons
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
-
-		///<summary>
-		/// Image Position: Check if left
-		///</summary>
-		[ImplementPropertyType("imagePosition")]
-		public bool ImagePosition
-		{
-			get { return this.GetPropertyValue<bool>("imagePosition"); }
+			get { return this.GetPropertyValue<IEnumerable<RJP.MultiUrlPicker.Models.Link>>("buttons"); }
 		}
 
 		///<summary>
@@ -79,6 +70,15 @@ namespace PravaStranaUlice.Models
 		public string Title
 		{
 			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
+		/// Video
+		///</summary>
+		[ImplementPropertyType("video")]
+		public string Video
+		{
+			get { return this.GetPropertyValue<string>("video"); }
 		}
 	}
 }
