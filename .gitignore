@@ -76,9 +76,7 @@ node_modules/
 # Backup files
 *.bak
 
-#Site Assets
-dist
-
+#Visual Studio env
 .vs
 
 # Front End
