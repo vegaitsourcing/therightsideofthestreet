@@ -1,0 +1,158 @@
+//----------  footer
+//------------------------------------------------------------------------------
+
+.footer {
+	padding: 20px;
+	background-color: $black;
+	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+	.newsletter-form {
+		background-color: transparent;
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+.footer-top {
+	width: 100%;
+	height: auto;
+	padding-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.popular-blog {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.popular-blog-heading {
+	width: 310px;
+	padding-left: 40px;
+	text-align: justify;
+}
+
+.popular-blog-heading .h4 {
+	color: $white;
+	line-height: 1;
+	text-transform: none;
+}
+
+.popular-blog-heading p {
+	color: $white;
+	line-height: 1.4;
+}
+
+.newsletter {
+	width: 50%;
+	height: auto;
+}
+
+.newsletter input {
+	width: 470px;
+	height: 30px;
+	border-radius: 25px;
+	border: 0;
+}
+
+.newsletter .h3 {
+	color: $white;
+	text-transform: none;
+}
+
+.newsletter button {
+	width: 140px;
+	height: 30px;
+	border-radius: 25px;
+	color: $white;
+	font-weight: 700;
+	background: $red;
+	border: 0;
+	transition: 0.3s;
+}
+
+.newsletter button:hover {
+	color: $red;
+	background: $white;
+}
+
+.footer-bottom {
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer-nav {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-nav-left {
+	width: 50%;
+}
+
+.footer-nav-left ul li a {
+	color: $white;
+}
+
+.footer-nav-right {
+	width: 50%;
+}
+
+.footer-nav-right ul li a {
+	color: $white;
+}
+
+.footer-info {
+	width: 50%;
+	height: auto;
+	margin-top: -10px;
+}
+
+.footer-info-contact .h3 {
+	text-transform: none;
+}
+
+.footer-info .h3 {
+	color: $white;
+}
+
+.footer-info p {
+	color: $white;
+	line-height: 1;
+}
+
+.footer-info-contact-social-icons {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-info-contact-social-icons a {
+	padding-right: 30px;
+	color: $white;
+}
+
+.go-to-top {
+	width: 40px;
+	height: 40px;
+	background: $white;
+	border-radius: 40px;
+	float: right;
+	margin-top: -50px;
+	font-size: 18px;
+}

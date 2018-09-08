@@ -1,0 +1,54 @@
+//----------  events
+//------------------------------------------------------------------------------
+
+.events {
+	padding: 65px 0;
+	h2 {
+		margin-bottom: 1.6em;
+	}
+}
+
+.events-list {
+	font-size: 0;
+	margin: 0 -14px 82px;
+}
+
+.event-item {
+	width: 33.333%;
+	padding: 0 14px;
+	vertical-align: top;
+	display: inline-block;
+	.thumbnail {
+		width: 100%;
+		padding-bottom: 80%;
+		border: 2px solid #ebebeb;
+		display: block;
+	}
+	.event-info {
+		width: calc(100% - 56px);
+		margin: -68px auto 0;
+		background-color: $red;
+		padding: 26px 45px;
+		height: 130px;
+		position: relative;
+		p {
+			font-size: 15px;
+			line-height: 24px;
+			color: $white;
+			margin-bottom: 0;
+		}
+		h3 {
+			width: 100%;
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			color: $white;
+			text-align: center;
+			text-transform: none;
+		}
+	}
+	.event-info-desc {
+		height: 72px;
+		overflow: hidden;
+	}
+}
