@@ -561,3 +561,20 @@
 		padding-bottom: 100%;
 	}
 }
+
+.workout-crew-popup {
+	padding: 46px 0 75px;
+	background-color: #f5f5f5;
+	.sw-crews-crew-item {
+		box-shadow: none;
+		background: transparent;
+		border-radius: 0;
+		margin-bottom: 48px;
+	}
+	.crew-image {
+		margin-bottom: 67px;
+	}
+	p {
+		text-align-last: center;
+	}
+}
