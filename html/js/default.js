@@ -5,6 +5,8 @@ let functions = require('./functions');
 let app = {
 	init: function () {
 		// call your functions here
+		functions.swAtleteSlider();
+		functions.swCrewCitySlider();
 		//functions.navigation();
 
 		// checking for touch devices, to prevent double tap and hover issues

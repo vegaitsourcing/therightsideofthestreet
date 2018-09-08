@@ -9,6 +9,9 @@ h1, h2, h3, h4, h5, h6,
 	line-height: 1.35em;
 	text-transform: uppercase;
 	margin-bottom: 0.5em;
+	a {
+		color: inherit;
+	}
 }
 
 h1,
@@ -48,6 +51,11 @@ h6,
 }
 
 p {
+	font-size: 18px;
+	font-weight: 400;
+	color: $grey;
+	line-height: 30px;
+	text-align: justify;
 	margin-bottom: 15px;
 }
 

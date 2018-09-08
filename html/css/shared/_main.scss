@@ -15,3 +15,226 @@
 		}
 	}
 }
+
+.blog-landing {
+	padding: 65px 0;
+	h2 {
+		text-align: center;
+		color: $white;
+	}
+}
+
+.blog-listing {
+	padding: 45px 30px 4px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -42px;
+}
+
+.blog-item {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 33.333%;
+	max-width: 33.333%;
+	padding: 0 42px;
+	margin-bottom: 30px;
+}
+
+.blog-thumbnail {
+	height: 292px;
+}
+
+.blog-info {
+	padding: 30px;
+	background-color: $white;
+	flex: 1 1 auto;
+	h3,
+	p {
+		color: $black;
+	}
+	h3 {
+		text-transform: none;
+		margin-bottom: 8px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 24px;
+		letter-spacing: 0.7px;
+		margin-bottom: 10px;
+	}
+}
+
+.blog-opened {
+	padding: 65px 0 0;
+}
+
+.blog-title-section {
+	width: 100%;
+	margin-bottom: 45px;
+	display: flex;
+	h2 {
+		text-align: center;
+		flex: 1 1 auto;
+    	padding-right: 245px;
+	}
+	.btn-previous {
+		font-size: 22px;
+		text-transform: none;
+		position: relative;
+		.icon {
+			position: absolute;
+			top: 13px;
+			left: 15px;
+			font-size: 15px;
+		}
+	}
+}
+
+.blog-content {
+	padding: 60px 0 20px;
+	h2 {
+		text-transform: none;
+		margin-bottom: 35px;
+	}
+	p {
+		font-size: 15px;
+		line-height: 30px;
+		margin-bottom: 40px;
+	}
+}
+
+.blog-comments-section {
+	background-color: #242424;
+	padding: 48px 0 20px;
+	h3 {
+		text-transform: none;
+		color: $white;
+		margin-bottom: 50px;
+	}
+	textarea {
+		margin-bottom: 35px;
+	}
+	.btn-small {
+		float: right;
+		padding: 0 15px;
+	}
+}
+
+.blog-navigation {
+	@extend %clearfix;
+	margin: -66px 0 55px;
+	.btn {
+		font-size: 22px;
+		text-transform: none;
+		position: relative;
+	}
+	.icon {
+		position: absolute;
+		top: 13px;
+		font-size: 15px;
+	}
+	.btn-previous {
+		float: left;
+		.icon {
+			left: 15px;
+		}
+	}
+	.btn-next {
+		float: right;
+		.icon {
+			top: 11px;
+			right: 15px;
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.user-comments-section {
+	padding: 55px 0;
+}
+
+.user-comments {
+	width: 100%;
+	padding: 10px 0 10px 87px;
+	position: relative;
+	margin-bottom: 3px;
+	.username,
+	p {
+		color: $white;
+	}
+	p {
+		font-size: 15px;
+		line-height: 30px;
+	}
+}
+
+.user-image {
+	position: absolute;
+	left: 0;
+	top: 25px;
+	width: 67px;
+}
+
+.profile-img {
+	border-radius: 100%;
+}
+
+.username {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+	margin-bottom: 7px;
+	display: inline-block;
+}
+
+.athlete-landing {
+	.search-form {
+		float: left;
+	}
+	.btn-introduction {
+		float: right;
+		position: relative;
+		padding: 0 17px 0 38px;
+		letter-spacing: 0;
+		line-height: 40px;
+		border: 2px solid $black;
+		transition: 0.3s ease-out;
+		@include hover {
+			background-color: $white;
+			color: $black;
+			&::before,
+			&::after {
+				background: $black;
+			}
+		}
+		&::before,
+		&::after {
+			background: $white;
+			content: '';
+			position: absolute;
+			transition: 0.3s ease-out;
+		}
+		&::before {
+			height: 3px;
+			top: 18px;
+			left: 20px;
+			width: 11px;
+		}
+		&::after {
+			height: 11px;
+			top: 14px;
+			left: 24px;
+			width: 3px;
+		}
+	}
+}
+
+.athlete-banner {
+	background-color: $red;
+	padding: 65px 0;
+	h2 {
+		color: $white;
+		text-align: center;
+		margin-bottom: 65px;
+	}
+}

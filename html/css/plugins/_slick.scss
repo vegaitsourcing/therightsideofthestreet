@@ -67,7 +67,33 @@
 	}
 }
 .slick-arrow {
+	position: absolute;
+	top: 50%;
+	font-size: 28px;
+	color: $white;
+	padding: 5px 10px;
+	margin-top: -19px;
+	z-index: 50;
+	.icon {
+		display: block;
+		&::before {
+			display: block;
+		}
+	}
 	&.slick-hidden {
 		display: none;
 	}
+}
+
+.slick-prev {
+	left: -38px;
+}
+
+.slick-next {
+	right: -38px;
+}
+
+.slick-disabled {
+	opacity: 0.2;
+	cursor: default;
 }

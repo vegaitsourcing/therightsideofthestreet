@@ -3062,6 +3062,8 @@
 		var app = {
 			init: function init() {
 				// call your functions here
+				functions.swAtleteSlider();
+				functions.swCrewCitySlider();
 				//functions.navigation();
 
 				// checking for touch devices, to prevent double tap and hover issues
@@ -3101,6 +3103,37 @@
 				var $slider = $('.slider');
 				if ($slider !== undefined && $slider.length) {
 					$slider.slick();
+				}
+			},
+
+			swAtleteSlider: function swAtleteSlider() {
+				var $slider = $('.sw-atlete-slider');
+				if ($slider !== undefined && $slider.length) {
+					$slider.slick({
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						infinite: false,
+						arrows: true,
+						dots: false,
+						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+					});
+				}
+			},
+
+			swCrewCitySlider: function swCrewCitySlider() {
+				var $slider = $('.sw-crews-list');
+				if ($slider !== undefined && $slider.length) {
+					$slider.slick({
+						slidesToShow: 6,
+						slidesToScroll: 1,
+						infinite: false,
+						arrows: true,
+						dots: false,
+						centerPadding: '10px',
+						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+					});
 				}
 			},
 

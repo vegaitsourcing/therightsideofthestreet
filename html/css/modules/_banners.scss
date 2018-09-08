@@ -37,7 +37,11 @@
 			color: $white;
 			margin: 42px 0;
 			text-align: center;
+			transition: 0.3s ease-out;
 			display: block;
+			@include hover {
+				color: $red;
+			}
 		}
 	}
 }

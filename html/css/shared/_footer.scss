@@ -7,11 +7,19 @@
 	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
 	background-size: cover;
 	background-position: center;
+	.newsletter-form {
+		background-color: transparent;
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 .footer-top {
 	width: 100%;
 	height: auto;
-	padding-top: 50px;
+	padding-top: 100px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -26,7 +34,7 @@
 }
 
 .popular-blog-heading {
-	width: 300px;
+	width: 310px;
 	padding-left: 40px;
 	text-align: justify;
 }
@@ -39,7 +47,7 @@
 
 .popular-blog-heading p {
 	color: $white;
-	line-height: 1.2;
+	line-height: 1.4;
 }
 
 .newsletter {
@@ -48,31 +56,37 @@
 }
 
 .newsletter input {
-	width: 500px;
+	width: 470px;
 	height: 30px;
-	margin-top: 10px;
 	border-radius: 25px;
 	border: 0;
 }
 
 .newsletter .h3 {
 	color: $white;
+	text-transform: none;
 }
 
 .newsletter button {
-	width: 100px;
+	width: 140px;
 	height: 30px;
-	margin-left: 20px;
 	border-radius: 25px;
 	color: $white;
+	font-weight: 700;
 	background: $red;
 	border: 0;
+	transition: 0.3s;
+}
+
+.newsletter button:hover {
+	color: $red;
+	background: $white;
 }
 
 .footer-bottom {
 	width: 100%;
 	height: auto;
-	padding: 50px 0;
+	padding: 100px 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -86,12 +100,16 @@
 	justify-content: flex-start;
 }
 
+.footer-nav-left {
+	width: 50%;
+}
+
 .footer-nav-left ul li a {
 	color: $white;
 }
 
 .footer-nav-right {
-	margin-left: 65px;
+	width: 50%;
 }
 
 .footer-nav-right ul li a {
@@ -101,6 +119,11 @@
 .footer-info {
 	width: 50%;
 	height: auto;
+	margin-top: -10px;
+}
+
+.footer-info-contact .h3 {
+	text-transform: none;
 }
 
 .footer-info .h3 {
@@ -119,6 +142,17 @@
 	justify-content: flex-start;
 }
 
-.footer-info-contact-social-icons p {
-	padding-right: 10px;
+.footer-info-contact-social-icons a {
+	padding-right: 30px;
+	color: $white;
+}
+
+.go-to-top {
+	width: 40px;
+	height: 40px;
+	background: $white;
+	border-radius: 40px;
+	float: right;
+	margin-top: -50px;
+	font-size: 18px;
 }
