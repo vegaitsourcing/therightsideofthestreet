@@ -146,3 +146,20 @@
 	float: right;
 	margin-top: -36px;
 }
+
+.our-vision-box {
+	width: 100%;
+	margin: 100px 0;
+	background: $white;
+	.our-vision-heading {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}
+
+.our-vision-heading h1 {
+			padding: 20px 50px;
+			background: $red;
+			color: $white;
+			text-align: center;
+		}
