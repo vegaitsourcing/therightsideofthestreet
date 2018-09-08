@@ -70,38 +70,14 @@
 
 .blog-title-section {
 	width: 100%;
-	display: flex;
 	margin-bottom: 45px;
-	.btn {
-		font-size: 22px;
-		text-transform: none;
-		position: relative;
-	}
-	.icon {
-		position: absolute;
-		top: 13px;
-		font-size: 15px;
-	}
-	.btn-previous {
-		.icon {
-			left: 15px;
-		}
-	}
-	.btn-next {
-		.icon {
-			top: 11px;
-			right: 15px;
-			transform: rotate(180deg);
-		}
-	}
 	h2 {
 		text-align: center;
-		flex: 1 1 55%;
 	}
 }
 
 .blog-content {
-	padding: 60px 0 50px;
+	padding: 60px 0 20px;
 	h2 {
 		text-transform: none;
 		margin-bottom: 35px;
@@ -127,6 +103,35 @@
 	.btn-small {
 		float: right;
 		padding: 0 15px;
+	}
+}
+
+.blog-navigation {
+	@extend %clearfix;
+	margin-bottom: 55px;
+	.btn {
+		font-size: 22px;
+		text-transform: none;
+		position: relative;
+	}
+	.icon {
+		position: absolute;
+		top: 13px;
+		font-size: 15px;
+	}
+	.btn-previous {
+		float: left;
+		.icon {
+			left: 15px;
+		}
+	}
+	.btn-next {
+		float: right;
+		.icon {
+			top: 11px;
+			right: 15px;
+			transform: rotate(180deg);
+		}
 	}
 }
 
