@@ -8,28 +8,27 @@
 	}
 
 
-	<div class="donation-background cover-bg" style="background-image: url('/images/background-about-us.png');">
+	<div class="donation-background cover-bg" style="background-image: url('/../images/background-about-us.png');">
 
 		<div class="wrap">
-
 			<div class="about-us-heading">
 				@if (!string.IsNullOrEmpty(Model.Title))
 				{
-					<h1 class="h2">@Model.Title</h1>
+					<h1 class="h2">@Model.Title title</h1>
 				}
 			</div>
 			<div class="about-us-content">
 				<div class="content-youtube">
 					@if (Model.Video != null)
 					{
-						<img src="@Model.Video">
+						<iframe width="910" height="512" src="@Model.EmbedVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					}
 
 				</div>
 				<div class="content-text">
 					@if (!string.IsNullOrEmpty(Model.Text.ToString()))
 					{
-						Html.Raw(Model.Text);
+						@Html.Raw(Model.Text);
 					}
 				</div>
 			</div>
