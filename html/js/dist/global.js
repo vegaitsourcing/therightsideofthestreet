@@ -3065,6 +3065,7 @@
 				functions.swAtleteSlider();
 				functions.swCrewCitySlider();
 				functions.eventsSlider();
+				functions.goToTop();
 
 				// checking for touch devices, to prevent double tap and hover issues
 				if (('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
@@ -3149,6 +3150,12 @@
 						autoplaySpeed: 5000
 					});
 				}
+			},
+
+			goToTop: function goToTop() {
+				$('.go-to-top').on('click', function () {
+					$('html, body').animate({ scrollTop: 0 }, 1000);
+				});
 			}
 
 		};

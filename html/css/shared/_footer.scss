@@ -34,15 +34,16 @@
 }
 
 .popular-blog-heading {
-	width: 310px;
+	width: 327px;
 	padding-left: 40px;
 	text-align: justify;
 }
 
-.popular-blog-heading .h4 {
+.popular-blog-heading  h4 {
 	color: $white;
 	line-height: 1;
 	text-transform: none;
+	margin-bottom: 16px;
 }
 
 .popular-blog-heading p {
@@ -53,13 +54,12 @@
 .newsletter {
 	width: 50%;
 	height: auto;
+	padding: 0 12px;
+	margin-top: -10px;
 }
 
 .newsletter input {
-	width: 470px;
-	height: 30px;
-	border-radius: 25px;
-	border: 0;
+	width: 435px;
 }
 
 .newsletter .h3 {
@@ -68,14 +68,7 @@
 }
 
 .newsletter button {
-	width: 140px;
-	height: 30px;
-	border-radius: 25px;
-	color: $white;
-	font-weight: 700;
-	background: $red;
-	border: 0;
-	transition: 0.3s;
+	padding: 0 16px;
 }
 
 .newsletter button:hover {
@@ -86,7 +79,7 @@
 .footer-bottom {
 	width: 100%;
 	height: auto;
-	padding: 100px 0;
+	padding: 65px 4px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -106,6 +99,15 @@
 
 .footer-nav-left ul li a {
 	color: $white;
+	font-size: 20px;
+	line-height: 36px;
+	transition: 0.3s ease;
+	font-weight: 600;
+	font-family: $font-default;
+	letter-spacing: 0.9px;
+	@include hover {
+		color: $red;
+	}
 }
 
 .footer-nav-right {
@@ -114,25 +116,44 @@
 
 .footer-nav-right ul li a {
 	color: $white;
+	font-size: 20px;
+	line-height: 36px;
+	transition: 0.3s ease;
+	font-weight: 600;
+	font-family: $font-default;
+	letter-spacing: 0.9px;
+	@include hover {
+		color: $red;
+	}
 }
 
 .footer-info {
 	width: 50%;
 	height: auto;
-	margin-top: -10px;
+	padding: 0 12px;
+}
+
+.footer-info-contact {
+	margin-bottom: 43px;
 }
 
 .footer-info-contact .h3 {
 	text-transform: none;
+	margin-bottom: 0;
 }
 
 .footer-info .h3 {
 	color: $white;
 }
 
-.footer-info p {
+.footer-info a {
 	color: $white;
-	line-height: 1;
+	font-size: 22px;
+	display: inline-block;
+	transition: 0.3s ease;
+	@include hover {
+		color: $red;
+	}
 }
 
 .footer-info-contact-social-icons {
@@ -155,4 +176,9 @@
 	float: right;
 	margin-top: -50px;
 	font-size: 18px;
+	transition: 0.3s ease-out;
+	@include hover {
+		background: $red;
+		color: $white;
+	}
 }
