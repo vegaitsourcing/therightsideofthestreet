@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PravaStranaUlice.Common.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Models;
@@ -48,5 +49,11 @@ namespace PravaStranaUlice.Models.Extensions
 		/// <returns><paramref name="source"/> and its descendants of given type <see cref="{T}"/>, that satisfy provided <paramref name="predicate"/>.</returns>
 		public static IEnumerable<T> DescendantsOrSelf<T>(this IPublishedContent source, Func<T, bool> predicate) where T : class, IPublishedContent
 			=> source?.DescendantsOrSelf<T>().Where(d => predicate(d)) ?? Enumerable.Empty<T>();
-	}
+
+        public static string GetModulePartialViewPath(this IPublishedContent content)
+        {
+            if (content.TemplateId > 0) return string.Empty;
+            return $"Partials/Modules/{content.DocumentTypeAlias.UppercaseFirst()}";
+        }
+    }
 }

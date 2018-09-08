@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>AboutUs</summary>
-	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : PublishedContentModel, IPage
+	/// <summary>Blog Landing</summary>
+	[PublishedContentModel("blogLanding")]
+	public partial class BlogLanding : PublishedContentModel, IPage
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "aboutUs";
+		public new const string ModelTypeAlias = "blogLanding";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public AboutUs(IPublishedContent content)
+		public BlogLanding(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,90 +40,27 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUs, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlogLanding, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Banner Image
+		/// Display Newsletter: Displays the newsletter if set to True
 		///</summary>
-		[ImplementPropertyType("bannerImage")]
-		public IPublishedContent BannerImage
+		[ImplementPropertyType("displayNewsletter")]
+		public bool DisplayNewsletter
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("bannerImage"); }
+			get { return this.GetPropertyValue<bool>("displayNewsletter"); }
 		}
 
 		///<summary>
-		/// Banner Link
+		/// Items Per Page: Number of blogs shown on the page
 		///</summary>
-		[ImplementPropertyType("bannerLink")]
-		public RJP.MultiUrlPicker.Models.Link BannerLink
+		[ImplementPropertyType("itemsPerPage")]
+		public int ItemsPerPage
 		{
-			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("bannerLink"); }
-		}
-
-		///<summary>
-		/// Founder Items
-		///</summary>
-		[ImplementPropertyType("founderItems")]
-		public IEnumerable<IPublishedContent> FounderItems
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("founderItems"); }
-		}
-
-		///<summary>
-		/// Founders Title
-		///</summary>
-		[ImplementPropertyType("foundersTitle")]
-		public string FoundersTitle
-		{
-			get { return this.GetPropertyValue<string>("foundersTitle"); }
-		}
-
-		///<summary>
-		/// Intro Text
-		///</summary>
-		[ImplementPropertyType("introText")]
-		public IHtmlString IntroText
-		{
-			get { return this.GetPropertyValue<IHtmlString>("introText"); }
-		}
-
-		///<summary>
-		/// Intro Title
-		///</summary>
-		[ImplementPropertyType("introTitle")]
-		public string IntroTitle
-		{
-			get { return this.GetPropertyValue<string>("introTitle"); }
-		}
-
-		///<summary>
-		/// Intro Video
-		///</summary>
-		[ImplementPropertyType("introVideo")]
-		public string IntroVideo
-		{
-			get { return this.GetPropertyValue<string>("introVideo"); }
-		}
-
-		///<summary>
-		/// Vision Text
-		///</summary>
-		[ImplementPropertyType("visionText")]
-		public IHtmlString VisionText
-		{
-			get { return this.GetPropertyValue<IHtmlString>("visionText"); }
-		}
-
-		///<summary>
-		/// Vision Title
-		///</summary>
-		[ImplementPropertyType("visionTitle")]
-		public string VisionTitle
-		{
-			get { return this.GetPropertyValue<string>("visionTitle"); }
+			get { return this.GetPropertyValue<int>("itemsPerPage"); }
 		}
 
 		///<summary>
