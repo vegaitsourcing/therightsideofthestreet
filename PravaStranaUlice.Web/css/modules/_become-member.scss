@@ -1,0 +1,50 @@
+//----------  become member
+//------------------------------------------------------------------------------
+
+.bememe {
+	width: 100%;
+	.content {
+		width: 80%;
+		height: auto;
+		margin: 0 auto;
+		h2 {
+			color: $black;
+			text-align: center;
+			padding: 50px 0;
+		}
+		p {
+			text-align: justify;
+		}
+		form {
+			width: auto;
+			height: auto;
+			padding: 50px 0;
+			text-align: center;
+			button {
+				margin-top: 50px;
+			}
+			input {
+		        width: 400px;
+				height: 40px;
+				margin: 15px auto;
+				display: block;
+				padding: 0 15px;
+				font-size: 16px;
+				border-radius: 25px;
+				border: 1px solid #d7d7d7;
+			    box-shadow: 1px 1px 5px #d7d7d7;
+			}
+		}
+		.pdf-download {
+			width: 100%;
+			height: auto;
+			text-align: center;
+			padding-bottom: 50px;
+			p {
+				text-align: center;
+				font-size: 14px;
+				font-weight: 600;
+			}
+		}
+	}
+}
