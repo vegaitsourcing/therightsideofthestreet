@@ -1,5 +1,25 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Donation>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.Donation>
+
+<main class="main">
+	@if(!string.IsNullOrEmpty(Model.PageTitle))
+	{
+	<h1 class="sr-only">@Model.PageTitle</h1>
+	}
+
+	<div class="donation-background cover-bg" style="background-image: url('/../images/body-brawny-crossfit-931323.png');">
+		<div class="wrap">
+			@if(!string.IsNullOrEmpty(Model.Text.ToString()))
+			{
+				<div class="donation-heading">
+					@Html.Raw(Model.Text)
+				</div>
+			}
+				<div class="offline-paying">
+					<h2 class="h3">Do sada sakupljeno: @(!string.IsNullOrEmpty(Model.CurrentSum) ? Model.CurrentSum : "0.00")</h2>
+					<h3 class="h4">Ciljna suma za izgradnju parkova: @(!string.IsNullOrEmpty(Model.CurrentSum) ? Model.Total : "0.00")</h3>
+				</div>
+
+			</div>
+
+		</div>
+	</main>

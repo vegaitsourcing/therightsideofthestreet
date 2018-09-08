@@ -429,6 +429,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Head.cshtml" />
     <Content Include="Views\DonationsAndMembership.cshtml" />
+    <Content Include="Views\Donation.cshtml" />
     <Content Include="Views\BlogDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -449,6 +450,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
@@ -464,6 +466,7 @@
   <ItemGroup>
     <Folder Include="Controllers\Surface\" />
     <Folder Include="Views\DonationsAndMembership\" />
+    <Folder Include="Views\Donation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PravaStranaUlice.Common\PravaStranaUlice.Common.csproj">
