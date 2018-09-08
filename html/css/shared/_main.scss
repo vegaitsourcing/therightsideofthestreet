@@ -183,6 +183,58 @@
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.4px;
-    margin-bottom: 7px;
-    display: inline-block;
+	margin-bottom: 7px;
+	display: inline-block;
+}
+
+.athlete-landing {
+	.search-form {
+		float: left;
+	}
+	.btn-introduction {
+		float: right;
+		position: relative;
+		padding: 0 17px 0 38px;
+		letter-spacing: 0;
+		line-height: 40px;
+		border: 2px solid $black;
+		transition: 0.3s ease-out;
+		@include hover {
+			background-color: $white;
+			color: $black;
+			&::before,
+			&::after {
+				background: $black;
+			}
+		}
+		&::before,
+		&::after {
+			background: $white;
+			content: '';
+			position: absolute;
+			transition: 0.3s ease-out;
+		}
+		&::before {
+			height: 3px;
+			top: 18px;
+			left: 20px;
+			width: 11px;
+		}
+		&::after {
+			height: 11px;
+			top: 14px;
+			left: 24px;
+			width: 3px;
+		}
+	}
+}
+
+.athlete-banner {
+	background-color: $red;
+	padding: 65px 0;
+	h2 {
+		color: $white;
+		text-align: center;
+		margin-bottom: 65px;
+	}
 }
