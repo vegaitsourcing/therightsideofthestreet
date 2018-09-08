@@ -7,6 +7,14 @@
 	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
 	background-size: cover;
 	background-position: center;
+	.newsletter-form {
+		background-color: transparent;
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 .footer-top {
 	width: 100%;
@@ -45,15 +53,6 @@
 .newsletter {
 	width: 50%;
 	height: auto;
-}
-
-.newsletter-form {
-	width: 100%;
-	padding: 10px 0;
-	display: flex;
-	flex-wrap: wrap;
-	background: rgba(0, 0, 0, 0);
-	justify-content: space-between;
 }
 
 .newsletter input {
