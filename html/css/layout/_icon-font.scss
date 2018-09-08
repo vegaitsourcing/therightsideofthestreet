@@ -24,20 +24,23 @@
 @function font-char($filename) {
 	$char: "";
 
-	@if $filename == ico-chevron-down {
+	@if $filename == ico-arrow-up {
 		$char: '\E001';
 	}
-	@if $filename == ico-facebook {
+	@if $filename == ico-chevron-down {
 		$char: '\E002';
 	}
-	@if $filename == ico-instagram {
+	@if $filename == ico-facebook {
 		$char: '\E003';
 	}
-	@if $filename == ico-user {
+	@if $filename == ico-instagram {
 		$char: '\E004';
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-user {
 		$char: '\E005';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E006';
 	}
 
 	@return $char;
@@ -54,6 +57,9 @@
 	}
 }
 
+.font-ico-arrow-up {
+	@include font(ico-arrow-up);
+}
 .font-ico-chevron-down {
 	@include font(ico-chevron-down);
 }

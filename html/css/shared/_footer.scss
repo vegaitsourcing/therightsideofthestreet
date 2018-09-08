@@ -39,7 +39,7 @@
 
 .popular-blog-heading p {
 	color: $white;
-	line-height: 1.1;
+	line-height: 1.5;
 }
 
 .newsletter {
@@ -47,10 +47,17 @@
 	height: auto;
 }
 
+.newsletter-form {
+	width: 100%;
+	padding: 10px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
 .newsletter input {
-	width: 300px;
+	width: 470px;
 	height: 30px;
-	margin-top: 10px;
 	border-radius: 25px;
 	border: 0;
 }
@@ -61,13 +68,19 @@
 }
 
 .newsletter button {
-	width: 100px;
+	width: 140px;
 	height: 30px;
-	margin-left: 20px;
 	border-radius: 25px;
 	color: $white;
+	font-weight: 700;
 	background: $red;
 	border: 0;
+	transition: 0.3s;
+}
+
+.newsletter button:hover {
+	color: $red;
+	background: $white;
 }
 
 .footer-bottom {
@@ -106,6 +119,7 @@
 .footer-info {
 	width: 50%;
 	height: auto;
+	margin-top: -10px;
 }
 
 .footer-info-contact .h3 {
@@ -131,4 +145,14 @@
 .footer-info-contact-social-icons a {
 	padding-right: 30px;
 	color: $white;
+}
+
+.go-to-top {
+	width: 40px;
+	height: 40px;
+	background: $white;
+	border-radius: 40px;
+	float: right;
+	margin-top: -50px;
+	font-size: 18px;
 }
