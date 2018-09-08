@@ -45,14 +45,17 @@
 	@if $filename == ico-instagram {
 		$char: '\E007';
 	}
-	@if $filename == ico-search {
+	@if $filename == ico-plus {
 		$char: '\E008';
 	}
-	@if $filename == ico-user {
+	@if $filename == ico-search {
 		$char: '\E009';
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-user {
 		$char: '\E00A';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E00B';
 	}
 
 	@return $char;
@@ -89,6 +92,9 @@
 }
 .font-ico-instagram {
 	@include font(ico-instagram);
+}
+.font-ico-plus {
+	@include font(ico-plus);
 }
 .font-ico-search {
 	@include font(ico-search);

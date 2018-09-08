@@ -13,5 +13,103 @@
 .show-yourself-content-first {
 	width: 100%;
 	height: auto;
-	padding: 100px 0 100px 60px;
+	padding: 100px 0 0 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.personal-img {
+	width: auto;
+	height: auto;
+}
+
+.show-yourself-form {
+	width: 65%;
+	height: auto;
+	h1 {
+		color: $white;
+		margin-bottom: 30px;
+		text-transform: none;
+	}
+	input {
+		width: 55%;
+		height: 40px;
+		margin: 10px 0;
+	}
+	textarea {
+		margin: 10px 0;
+	}
+	h2 {
+		margin-top: 60px;
+		margin-bottom: 20px;
+		color: $white;
+		font-weight: 400;
+		text-transform: none;
+	}
+}
+
+.bottom-form-social {
+	width: 100%;
+	height: auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.important-achievements {
+	width: 50%;
+	height: auto;
+	h1 {
+		color: $white;
+		font-weight: 400;
+		text-transform: none;
+	}
+	button {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	span {
+		padding: 4px 6px;
+		border-radius: 50px;
+		font-size: 10px;
+		background: $red;
+	}
+	p {
+		margin-top: -5px;
+		padding-left: 10px;
+		color: $white;
+	}
+}
+
+.social-media {
+	width: 50%;
+	height: auto;
+	margin-top: -5px;
+	text-align: right;
+	input {
+		width: 85%;
+	}
+	span {
+		padding-right: 20px;
+		font-size: 22px;
+		color: $white;
+	}
+}
+
+.show-yourself-content-second {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.s-y-c-s-btn {
+	width: 100%;
+	height: auto;
+	margin: 100px 0;
+	text-align: center;
 }

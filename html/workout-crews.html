@@ -27,8 +27,7 @@
 
 
 
-	<!-- homepage class needed for changes in the header transitions -->
-	<div class="container homepage" data-page-container>
+	<div class="container">
 
 		<header class="header" role="banner">
 			<div class="header-upper">
@@ -82,69 +81,112 @@
 		</header>
 
 		<main class="main">
-
-			<div class="show-yourself-landing">
+			<div class="sw-crews cover-bg" style="background-image: url('images/content/sw-crews-bg.jpg')">
 				<div class="wrap">
-					<h2 class="h3">STREET WORKOUT ATLETE</h2>
+					<div class="sw-crews-intro">
+						<h2 class="centered">Street workout ekipe</h2>
+						<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+						</p>
+						<form class="sw-crews-form" action="" method="post">
+							<label class="sr-only" for="sw-crews-search">Pretraga gradova</label>
+							<input type="text" id="sw-crews-search" name="sw-crews-search" placeholder="Pretraga gradova">
+							<button class="btn btn-submit" type="submit">
+								<span class="sr-only">Pronadji grad</span>
+								<span class="icon font-ico-search"></span>
+							</button>
+						</form>
+					</div>
+					<div class="sw-crews-list sw-crews-city-list">
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Beograd</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Novi Sad</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Zrenjanin</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Subotica</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Niš</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Kragujevac</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Požarevac</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Ruma</h4>
+							</a>
+						</div>
+						<div class="sw-crews-city-item">
+							<a href="javascript:;">
+								<h4>Sremska Mitrovica</h4>
+							</a>
+						</div>
+					</div>
+					<div class="sw-crews-list sw-crews-crew-list">
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+						<div class="sw-crews-crew-item">
+							<a href="javascript:;"><img src="images/content/prava-strana-ulice.jpg" alt=""></a>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div class="show-yourself-bg cover-bg" style="background-image: url('images/show-yourselfbg.png');">
+			<div class="workout-crew-popup">
 				<div class="wrap">
-					<div class="show-yourself-content-first">
-						<div class="personal-img">
-							<img src="././images/content/addimage.png" input="file">
-						</div>
-						<div class="show-yourself-form">
-							<h1 class="h3">Predstavi sebe</h1>
-							<input type="text" name="name" maxlength="24" placeholder="Ime" class="fgd">
-							<input type="text" name="surname" maxlength="24" placeholder="Prezime">
-							<textarea name="describe-yourself" placeholder="Opiši sebe" maxlength="100"></textarea>
-							<h2 class="h4">Vizija sporta</h2>
-							<textarea name="vision-of-sport" maxlength="100"></textarea>
-							<div class="bottom-form-social">
-								<div class="important-achievements">
-									<h1 class="h4">Važnija dostignuća</h1>
-									<div class="add-achievement">
-										<button class="btn-add-ach" type="button" name="add-achievement-one" value="add-achievement-one"><span class="icon font-ico-plus"></span>
-											<p>Dodaj dostignuće</p>
-										</button>
-										<button class="btn-add-ach-two" type="button" name="add-achievement-two" value="add-achievement-two"><span class="icon font-ico-plus"></span>
-											<p>Dodaj dostignuće</p>
-										</button>
-									</div>
-								</div>
-								<div class="social-media">
-									<div class="s-m-facebook">
-										<span class="icon font-ico-facebook"></span>
-										<span class="sr-only">Facebook</span>
-										<input type="text" name="s-m-facebook" maxlength="40">
-									</div>
-									<div class="s-m-instagram">
-										<span class="icon font-ico-instagram"></span>
-										<span class="sr-only">Instagram</span>
-										<input type="text" name="s-m-instagram" maxlength="40">
-									</div>
-									<div class="s-m-facebook">
-										<span class="icon font-ico-youtube"></span>
-										<span class="sr-only">Youtube</span>
-										<input type="text" name="s-m-youtube" maxlength="40">
-									</div>
-								</div>
-							</div>
-						</div>
+					<button class="btn-close-crew-popup">
+						<span class="icon font-ico-close"></span>
+						<span class="sr-only">Close crew popup</span>
+					</button>
+					<div class="sw-crews-crew-item">
+						<a href="javascript:;"><img src="images/content/crew-logo-01.png" alt=""></a>
 					</div>
-					<div class="show-yourself-content-second">
-						<img src="././images/content/addmoreimages.png">
-						<img src="././images/content/addmoreimages.png">
-						<img src="././images/content/addmoreimages.png">
-						<img src="././images/content/addmoreimages.png">
-						<img src="././images/content/addmoreimages.png">
-						<img src="././images/content/addmoreimages.png">
-					</div>
-					<div class="s-y-c-s-btn">
-						<button type="button" name="save-changes" value="save-changes" class="btn btn-small btn-previous">SAČUVAJ IZMENE</button>
-					</div>
+					<img class="crew-image" src="images/content/crew-01.jpg" alt="">
+					<p>
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+					</p>
 				</div>
 			</div>
 		</main>
