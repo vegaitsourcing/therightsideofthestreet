@@ -12,3 +12,49 @@ textarea {
 		color: $black;
 	}
 }
+
+.newsletter-form {
+	background: $red;
+	.wrap {
+		padding: 68px 82px;
+		display: flex;
+	}
+	label {
+		font-size: 30px;
+		color: $white;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		margin-right: 30px;
+	}
+	input {
+		height: 45px;
+		border-radius: 80px;
+		width: 100%;
+		border: 0;
+	}
+}
+
+.newsletter-submit {
+	border-radius: 80px;
+	height: 45px;
+	font-size: 22px;
+	font-weight: 700;
+	color: $white;
+	background-color: $black;
+	padding: 0 23px;
+	letter-spacing: 0.8px;
+	transition: 0.2s ease;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 45px;
+	&:hover {
+		background-color: $grey;
+	}
+}
+
+.newsletter-input-wrap {
+	flex: 1 1 50%;
+	padding-right: 176px;
+	position: relative;
+}
