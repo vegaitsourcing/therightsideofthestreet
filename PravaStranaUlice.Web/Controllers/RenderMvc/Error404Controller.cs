@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using Umbraco.Web.Mvc;
-using PravaStranaUlice.Models.DocumentTypes;
+using PravaStranaUlice.Models;
 
 namespace PravaStranaUlice.Web.Controllers.RenderMvc
 {
