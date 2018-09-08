@@ -1,6 +1,7 @@
 'use strict';
 
 let functions = require('./functions');
+//let maps = require('./maps');
 
 let app = {
 	init: function () {
@@ -8,7 +9,11 @@ let app = {
 		functions.swAtleteSlider();
 		functions.swCrewCitySlider();
 		functions.eventsSlider();
+		functions.citiesMapSlider();
 		functions.goToTop();
+		// if($('.sw-map-container').length) {
+		// 	maps.initMap();
+		// }
 
 		// checking for touch devices, to prevent double tap and hover issues
 		if(('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
