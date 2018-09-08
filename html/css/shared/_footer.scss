@@ -11,7 +11,7 @@
 .footer-top {
 	width: 100%;
 	height: auto;
-	padding-top: 50px;
+	padding-top: 100px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -31,8 +31,15 @@
 	text-align: justify;
 }
 
+.popular-blog-heading .h4 {
+	color: $white;
+	line-height: 1;
+	text-transform: none;
+}
+
 .popular-blog-heading p {
 	color: $white;
+	line-height: 1.1;
 }
 
 .newsletter {
@@ -41,12 +48,87 @@
 }
 
 .newsletter input {
-	width: 500px;
-	height: 40px;
+	width: 300px;
+	height: 30px;
+	margin-top: 10px;
 	border-radius: 25px;
 	border: 0;
 }
 
+.newsletter .h3 {
+	color: $white;
+	text-transform: none;
+}
+
+.newsletter button {
+	width: 100px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 25px;
+	color: $white;
+	background: $red;
+	border: 0;
+}
+
 .footer-bottom {
-	padding-bottom: 50px;
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer-nav {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-nav-left {
+	width: 50%;
+}
+
+.footer-nav-left ul li a {
+	color: $white;
+}
+
+.footer-nav-right {
+	width: 50%;
+}
+
+.footer-nav-right ul li a {
+	color: $white;
+}
+
+.footer-info {
+	width: 50%;
+	height: auto;
+}
+
+.footer-info-contact .h3 {
+	text-transform: none;
+}
+
+.footer-info .h3 {
+	color: $white;
+}
+
+.footer-info p {
+	color: $white;
+	line-height: 1;
+}
+
+.footer-info-contact-social-icons {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-info-contact-social-icons a {
+	padding-right: 30px;
+	color: $white;
 }
