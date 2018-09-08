@@ -82,9 +82,9 @@ dist
 .vs
 
 # Front End
-css/dist
-js/dist
-fonts/dist
+*/css/dist
+*/js/dist
+*/fonts/dist
 /*.html
 
 # Model files

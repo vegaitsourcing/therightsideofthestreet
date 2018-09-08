@@ -1,0 +1,124 @@
+//----------  slick slider
+//------------------------------------------------------------------------------
+.slick-slider {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	display: block;
+	position: relative;
+	touch-action: pan-y;
+	user-select: none;
+	.slick-track,
+	.slick-list {
+		transform: translate3d(0, 0, 0);
+	}
+}
+.slick-list {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	&:focus {
+		outline: none;
+	}
+	&.dragging {
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+.slick-track {
+	@extend %clearfix;
+	display: block;
+	left: 0;
+	position: relative;
+	top: 0;
+	.slick-loading & {
+		visibility: hidden;
+	}
+}
+.slick-slide {
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 1px;
+	outline: 0;
+	[dir='rtl'] & {
+		float: right;
+	}
+	img {
+		display: block;
+	}
+	&.slick-loading img {
+		display: none;
+	}
+	&.dragging img {
+		pointer-events: none;
+	}
+	.slick-initialized & {
+		display: block;
+	}
+	.slick-loading & {
+		visibility: hidden;
+	}
+	.slick-vertical & {
+		display: block;
+		height: auto;
+		border: 1px solid transparent;
+	}
+}
+.slick-arrow {
+	position: absolute;
+	top: 50%;
+	font-size: 28px;
+	color: $white;
+	padding: 5px 10px;
+	margin-top: -19px;
+	z-index: 50;
+	.icon {
+		display: block;
+		&::before {
+			display: block;
+		}
+	}
+	&.slick-hidden {
+		display: none;
+	}
+}
+
+.slick-prev {
+	left: -38px;
+}
+
+.slick-next {
+	right: -38px;
+}
+
+.slick-disabled {
+	opacity: 0.2;
+	cursor: default;
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -78px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 0;
+	li {
+		margin: 0 24px;
+		display: inline-block;
+	}
+	button {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background-color: #626262;
+		display: block;
+	}
+	.slick-active {
+		button {
+			background-color: $red;
+		}
+	}
+}

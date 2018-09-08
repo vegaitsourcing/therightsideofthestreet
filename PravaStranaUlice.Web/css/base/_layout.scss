@@ -1,0 +1,64 @@
+//----------  layout
+//------------------------------------------------------------------------------
+
+body {
+	font-family: $font-default;
+	font-size: 16px;
+	font-weight: 400;
+	color: $black;
+	line-height: 1.63;
+}
+
+.wrap {
+	@extend %clearfix;
+	margin: 0 auto;
+	max-width: 1320px;
+	padding: 0 20px;
+	width: 100%;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.full-width-img {
+	width: 100%;
+	img {
+		width: 100%;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.pagination {
+	text-align: center;
+	margin: 0 auto 30px;
+	font-size: 0;
+	li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon {
+		font-size: 15px;
+		display: block;
+		&::before {
+			display: block;
+		}
+	}
+	a {
+		color: $black;
+		transition: 0.2s ease;
+		font-size: 20px;
+		padding: 0 8px;
+		font-weight: 700;
+		display: block;
+		&:hover {
+			color: $red;
+		}
+	}
+}
