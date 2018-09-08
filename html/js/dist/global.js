@@ -3064,7 +3064,7 @@
 				// call your functions here
 				functions.swAtleteSlider();
 				functions.swCrewCitySlider();
-				//functions.navigation();
+				functions.eventsSlider();
 
 				// checking for touch devices, to prevent double tap and hover issues
 				if (('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
@@ -3130,26 +3130,25 @@
 						infinite: false,
 						arrows: true,
 						dots: false,
-						centerPadding: '10px',
 						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
 						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
 					});
 				}
 			},
 
-			navigation: function navigation() {
-				var $header = $('[data-header]');
-				var $nav = $('[data-navigation]');
-				var $navToggle = $('[data-nav-toggle]');
-				var navOpenedClass = 'nav--opened';
-				var navigationOpenedClass = 'navigation--opened';
-				var navToggleOpenedClass = 'nav__toggle--opened';
-
-				$navToggle.on('click', function () {
-					$(this).toggleClass(navToggleOpenedClass);
-					$header.toggleClass(navigationOpenedClass);
-					$nav.toggleClass(navOpenedClass);
-				});
+			eventsSlider: function eventsSlider() {
+				var $slider = $('.events-slider');
+				if ($slider !== undefined && $slider.length) {
+					$slider.slick({
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						arrows: false,
+						dots: true,
+						autoplay: true,
+						autoplaySpeed: 5000
+					});
+				}
 			}
 
 		};
