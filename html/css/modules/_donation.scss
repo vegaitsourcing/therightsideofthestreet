@@ -1,0 +1,42 @@
+
+
+.donation-heading {
+	widows: 100%;
+	height: auto;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.donation-heading .h2 {
+	margin-top: -10px;
+}
+
+.donation-heading p {
+	padding: 50px 0;
+	text-align: justify;
+}
+
+.offline-paying {
+	width: 100%;
+	text-align: center;
+}
+
+.offline-paying .h3 {
+	margin-top: -10px;
+}
+
+.offline-paying img {
+	padding: 50px 0;
+}
+
+.offline-paying h2 {
+	padding-top: 50px;
+	text-transform: none;
+}
+
+.offline-paying h3 {
+	padding-top: 20px;
+	padding-bottom: 100px;
+	color: $red;
+	text-transform: none;
+}
