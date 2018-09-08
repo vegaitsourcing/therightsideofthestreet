@@ -96,6 +96,12 @@ module.exports = {
 				$('html, body').animate({ scrollTop: $swAtl.offset().top }, 400);
 			});
 		});
+	},
+
+	crewPopup: function() {
+		$('.btn-close-crew-popup').on('click', function() {
+			$(this).closest('.workout-crew-popup').slideUp(300);
+		});
 	}
 
 };

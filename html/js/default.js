@@ -12,6 +12,7 @@ let app = {
 		functions.citiesMapSlider();
 		functions.goToTop();
 		functions.athletePopup();
+		functions.crewPopup();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }
