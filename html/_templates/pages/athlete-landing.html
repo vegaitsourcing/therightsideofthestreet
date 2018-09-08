@@ -5,28 +5,39 @@
 	{> "partials/shared/header" /}
 
 	<main class="main">
-		<h1 class="sr-only">Postani clan</h1>
-
-		{> "partials/modules/module-banner" /}
-
-		<div class="wrap">
-
-			<div class="donation-heading">
-				<h1 class="h2">DONIRAJ</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<div class="athlete-landing">
+			<div class="athlete-banner">
+				<div class="wrap">
+					<h2>Street workout atlete</h2>
+					<form class="search-form" action="" method="post">
+						<input type="text" id="search" name="search">
+						<button class="submit-btn" type="submit"><span class="icon font-ico-search"><span class="sr-only">Pretraga</span></span></button>
+					</form>
+					<a class="btn btn-small btn-black btn-introduction" href="javascript:;">Predstavi sebe</a>
+				</div>
 			</div>
-			<div class="offline-paying">
-				<h1 class="h3">OFFLINE UPLAĆIVANJE</h1>
-				<img src="././images/content/uplatnica.png">
-				<h2 class="h3">Do sada sakupljeno: 11.240 din</h2>
-				<h3 class="h4">Ciljna suma za izgradnju parkova: 15.000 din</h2>
+			<div class="sw-atlete-list cover-bg" style="background-image: url('images/content/athlete-background-img.jpg')">
+				<div class="sw-atlete-item">
+					<div class="thumbnail cover-bg" style="background-image: url('images/content/milos-petrovic.jpg')"></div>
+					<div class="sw-atlete-info">
+						<h4><a href="javascript:;">Miloš Petrović</a></h4>
+						<div class="sw-social">
+							<a href="javascript:;" target="_blank" title="Follow Miloš on Facebook">
+								<span class="icon font-ico-facebook"></span>
+								<span class="sr-only">Facebook</span>
+							</a>
+							<a href="javascript:;" target="_blank" title="Follow Miloš on Instagram">
+								<span class="icon font-ico-instagram"></span>
+								<span class="sr-only">Instagram</span>
+							</a>
+							<a href="javascript:;" target="_blank" title="Follow Miloš on YouTube">
+								<span class="icon font-ico-youtube"></span>
+								<span class="sr-only">YouTube</span>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
-
 		</div>
 	</main>
 

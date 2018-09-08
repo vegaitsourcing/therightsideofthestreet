@@ -6,7 +6,9 @@ textarea {
 	background: $white;
 	box-shadow: none;
 	color: $black;
+	font-size: 20px;
 	height: 45px;
+	letter-spacing: 0.3px;
 	padding: 0 20px;
 	border: 0;
 	border-radius: 25px;
@@ -60,4 +62,36 @@ textarea {
 	flex: 1 1 50%;
 	padding-right: 176px;
 	position: relative;
+}
+
+.search-form {
+	position: relative;
+	input {
+		width: 412px;
+		margin-right: 20px;
+		vertical-align: top;
+	}
+	.submit-btn {
+		width: 45px;
+		height: 45px;
+		position: relative;
+		background-color: $black;
+		border-radius: 100%;
+		border: 2px solid $black;
+		transition: 0.3s ease-out;
+		@include hover {
+			background-color: $white;
+			.icon {
+				color: $black;
+			}
+		}
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 16px;
+			color: $white;
+		}
+	}
 }
