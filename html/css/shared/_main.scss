@@ -41,7 +41,9 @@
 }
 
 .blog-thumbnail {
+	width: 100%;
 	height: 292px;
+	display: block;
 }
 
 .blog-info {
@@ -64,7 +66,7 @@
 	}
 }
 
-.blog-opened {
+.blog-details {
 	padding: 65px 0 0;
 }
 
