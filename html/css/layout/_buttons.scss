@@ -44,8 +44,20 @@ input[type='submit'] {
 
 .btn-small {
 	font-size: 22px;
-    text-transform: none;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 30px;
+	text-transform: none;
+	height: 45px;
+	line-height: 40px;
+	padding: 0 33px;
+	position: relative;
 }
+
+// .btn-previous {
+// 	&::before {
+// 		@include font-styles;
+// 		content: 'ico-chevron-left';
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		font-size: 12px;
+// 	}
+// }
