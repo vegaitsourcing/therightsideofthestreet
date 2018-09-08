@@ -2228,9 +2228,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>generalSettingsHideFromXmlSitemap</a:Code>
 <a:CreationDate>1536428892</a:CreationDate>
 <a:Creator>m.kosanovic</a:Creator>
-<a:ModificationDate>1536428989</a:ModificationDate>
+<a:ModificationDate>1536432327</a:ModificationDate>
 <a:Modifier>m.kosanovic</a:Modifier>
-<a:DataType>int</a:DataType>
+<a:DataType>True/False</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o66">
@@ -2472,11 +2472,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 <o:Attribute Id="o86">
 <a:ObjectID>7DCEDFC2-8F1D-4891-A005-D4313F965CDA</a:ObjectID>
-<a:Name>General Settings - Canonical Links</a:Name>
-<a:Code>generalSettingsCanonicalLinks</a:Code>
+<a:Name>General Settings - Canonical Link</a:Name>
+<a:Code>generalSettingsCanonicalLink</a:Code>
 <a:CreationDate>1536428658</a:CreationDate>
 <a:Creator>m.kosanovic</a:Creator>
-<a:ModificationDate>1536428859</a:ModificationDate>
+<a:ModificationDate>1536432339</a:ModificationDate>
 <a:Modifier>m.kosanovic</a:Modifier>
 <a:DataType>Textstring</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
