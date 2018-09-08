@@ -61,6 +61,31 @@
 	}
 }
 
+.blog-opened {
+	padding: 65px 0;
+}
+
 .blog-title-section {
+	width: 100%;
 	display: flex;
+	margin-bottom: 45px;
+	.btn {
+		font-size: 22px;
+		text-transform: none;
+	}
+	h2 {
+		text-align: center;
+		flex: 1 1 55%;
+	}
+}
+
+.blog-content {
+	padding: 60px 0;
+	h2 {
+		text-transform: none;
+	}
+	p {
+		line-height: 30px;
+		letter-spacing: -0.45px;
+	}
 }
