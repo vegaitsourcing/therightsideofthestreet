@@ -24,6 +24,22 @@ module.exports = {
 		}
 	},
 
+	swCrewCitySlider: function() {
+		let $slider = $('.sw-crews-list');
+		if ($slider !== undefined && $slider.length) {
+			$slider.slick({
+				slidesToShow: 6,
+				slidesToScroll: 1,
+				infinite: false,
+				arrows: true,
+				dots: false,
+				centerPadding: '10px',
+				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+			});
+		}
+	},
+
 	navigation: function() {
 		const $header = $('[data-header]');
 		const $nav = $('[data-navigation]');

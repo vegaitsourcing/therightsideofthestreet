@@ -34,3 +34,31 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+.pagination {
+	text-align: center;
+	margin: 0 auto 30px;
+	font-size: 0;
+	li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon {
+		font-size: 15px;
+		display: block;
+		&::before {
+			display: block;
+		}
+	}
+	a {
+		color: $black;
+		transition: 0.2s ease;
+		font-size: 20px;
+		padding: 0 8px;
+		font-weight: 700;
+		display: block;
+		&:hover {
+			color: $red;
+		}
+	}
+}
