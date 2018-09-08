@@ -379,3 +379,98 @@
 		width: 100%;
 	}
 }
+
+.workout-tutorial {
+	padding: 65px 0;
+	h2 {
+		margin-bottom: 57px;
+	}
+}
+
+.workout-picker {
+	display: flex;
+	padding: 36px 0;
+	margin-bottom: 40px;
+}
+
+.workout-item {
+	flex: 1 1 33.333%;
+	max-width: 33.333%;
+	text-align: center;
+}
+
+.workout-steps {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -18px;
+}
+
+.workout-step-item {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 33.333%;
+	max-width: 33.333%;
+	padding: 0 45px;
+	margin-bottom: 30px;
+}
+
+.step-image {
+	padding-bottom: 85%;
+}
+
+.step-info {
+	padding: 22px 28px;
+	background-color: $red;
+	text-align: center;
+	flex: 1 1 auto;
+	span {
+		color: $white;
+		font-size: 14px;
+		line-height: 30px;
+		font-family: $font-default;
+		letter-spacing: 1px;
+	}
+}
+
+.video-unavailable {
+	padding: 154px 21% 112px;
+	text-align: center;
+	span {
+		display: block;
+	}
+	.text-holder {
+		span {
+			font-size: 30px;
+			line-height: 47px;
+			color: $white;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			margin-bottom: 43px;
+		}
+		.btn {
+			text-transform: none;
+		}
+	}
+	.conditions {
+		padding: 62px 0 0;
+		.conditions-heading {
+			font-size: 30px;
+			line-height: 47px;
+			color: $white;
+			font-weight: 700;
+			letter-spacing: 0.5px;
+			margin-bottom: 0;
+		}
+	}
+	.conditions-list {
+		padding: 25px 0;
+		span {
+			font-size: 20px;
+			line-height: 34px;
+			color: $white;
+			font-weight: 500;
+			margin-bottom: 10px;
+			letter-spacing: 0.9px;
+		}
+	}
+}
