@@ -22,12 +22,7 @@
 	margin: 0 auto 62px;
 	padding-right: 68px;
 	input {
-		font-size: 20px;
-		letter-spacing: 0.3px;
 		box-shadow: 0 0 8px rgba(#231f20, 0.2);
-		&::placeholder {
-			color: #9b9b9b;
-		}
 	}
 	.btn-submit {
 		position: absolute;
@@ -84,6 +79,7 @@
 		justify-content: center;
 	}
 	h4 {
+		text-align: center;
 		text-transform: none;
 		color: $white;
 		margin-bottom: 0;

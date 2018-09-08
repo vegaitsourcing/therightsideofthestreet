@@ -80,3 +80,9 @@ node_modules/
 dist
 
 .vs
+
+# Front End
+css/dist
+js/dist
+fonts/dist
+/*.html
