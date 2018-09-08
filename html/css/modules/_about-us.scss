@@ -1,119 +1,63 @@
+//----------  osnivaci
+//------------------------------------------------------------------------------
+
+.founders {
+	.wrap {
+		position: relative;
+	}
+}
+
 .founders-heading {
 	padding: 50px;
 	background: $red;
+	h1 {
+		margin-top: 15px;
+		color: $white;
+		text-align: center;
+	}
 }
 
-.founders-heading h1 {
-	margin-top: 15px;
-	color: $white;
-	text-align: center;
-}
-
-.founder-one {
+.founder {
 	width: 100%;
-	height: auto;
-	background: rgba(0, 0, 0, 0.5);
+	background-color: rgba($black, 0.4);
+	margin-bottom: 100px;
+	.founder-img {
+		width: 37.75%;
+		position: absolute;
+		bottom: 0;
+	}
+	.founder-text {
+		width: 60%;
+		h2 {
+			color: $white;
+			text-transform: none;
+			letter-spacing: -1px;
+			margin-bottom: 36px;
+		}
+		p {
+			color: $white;
+		}
+	}
 }
 
-.founder-one-text {
-	width: 60%;
-	padding: 90px 0 90px 50px;
-	float: right;
+.founder-left {
+	.founder-img {
+		left: 20px;
+	}
+	.founder-text {
+		padding: 70px 0 72px 28px;
+		float: right;
+	}
 }
 
-.founder-one-text h1 {
-	color: $white;
-	text-transform: none;
-}
-
-.founder-one-text p {
-	color: $white;
-}
-
-.founder-one-img {
-	float: left;
-	margin-top: -36px;
-}
-
-.founder-two {
-	width: 100%;
-	height: auto;
-	margin-top: 100px;
-	background: rgba(0, 0, 0, 0.5);
-}
-
-.founder-two-text {
-	width: 60%;
-	padding: 90px 50px 90px 0;
-	float: left;
-}
-
-.founder-two-text h1 {
-	color: $white;
-	text-transform: none;
-}
-
-.founder-two-text p {
-	color: $white;
-}
-
-.founder-two-img {
-	float: right;
-	margin-top: -36px;
-}
-
-.founder-three {
-	width: 100%;
-	height: auto;
-	margin-top: 100px;
-	background: rgba(0, 0, 0, 0.5);
-}
-
-.founder-three-text {
-	width: 60%;
-	padding: 90px 0 90px 50px;
-	float: right;
-}
-
-.founder-three-text h1 {
-	color: $white;
-	text-transform: none;
-}
-
-.founder-three-text p {
-	color: $white;
-}
-
-.founder-three-img {
-	float: left;
-	margin-top: -36px;
-}
-
-.founder-four {
-	width: 100%;
-	height: auto;
-	margin-top: 100px;
-	background: rgba(0, 0, 0, 0.5);
-}
-
-.founder-four-text {
-	width: 60%;
-	padding: 90px 50px 90px 0;
-	float: left;
-}
-
-.founder-four-text h1 {
-	color: $white;
-	text-transform: none;
-}
-
-.founder-four-text p {
-	color: $white;
-}
-
-.founder-four-img {
-	float: right;
-	margin-top: -36px;
+.founder-right {
+	.founder-img {
+		right: 20px;
+	}
+	.founder-text {
+		padding: 70px 28px 72px 0;
+		float: left;
+	}
 }
 
 .our-vision-box {
