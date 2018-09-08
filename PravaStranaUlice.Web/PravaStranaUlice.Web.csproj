@@ -430,6 +430,7 @@
     <Content Include="Views\Shared\_Head.cshtml" />
     <Content Include="Views\DonationsAndMembership.cshtml" />
     <Content Include="Views\Donation.cshtml" />
+    <Content Include="Views\BlogDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

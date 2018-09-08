@@ -22,7 +22,7 @@ namespace PravaStranaUlice.Models
 {
 	/// <summary>Donations And Membership</summary>
 	[PublishedContentModel("donationsAndMembership")]
-	public partial class DonationsAndMembership : PublishedContentModel, IPage
+	public partial class DonationsAndMembership: IPage
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "donationsAndMembership";

@@ -1,8 +1,12 @@
 //----------  Donations and membership
 //------------------------------------------------------------------------------
-.btnadd {
-    width: 100%;
+
+.donation-buttons {
+	width: 100%;
 	height: auto;
-	padding: 65px 4px;
 	display: flex;
+	justify-content: center;
+	button {
+		margin: 70px 40px 0;
+	}
 }
