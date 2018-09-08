@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	swAtleteSlider: function() {
-		let $slider = $('.sw-atlete-list');
+		let $slider = $('.sw-atlete-slider');
 		if ($slider !== undefined && $slider.length) {
 			$slider.slick({
 				slidesToShow: 3,

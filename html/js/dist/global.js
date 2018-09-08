@@ -3107,7 +3107,7 @@
 			},
 
 			swAtleteSlider: function swAtleteSlider() {
-				var $slider = $('.sw-atlete-list');
+				var $slider = $('.sw-atlete-slider');
 				if ($slider !== undefined && $slider.length) {
 					$slider.slick({
 						slidesToShow: 3,
