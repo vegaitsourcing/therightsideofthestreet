@@ -82,7 +82,7 @@ dist
 .vs
 
 # Front End
-*/css/dist
-*/js/dist
-*/fonts/dist
+html/css/dist
+html/js/dist
+html/fonts/dist
 /*.html
