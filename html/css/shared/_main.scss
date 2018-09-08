@@ -71,8 +71,22 @@
 .blog-title-section {
 	width: 100%;
 	margin-bottom: 45px;
+	display: flex;
 	h2 {
 		text-align: center;
+		flex: 1 1 auto;
+    	padding-right: 245px;
+	}
+	.btn-previous {
+		font-size: 22px;
+		text-transform: none;
+		position: relative;
+		.icon {
+			position: absolute;
+			top: 13px;
+			left: 15px;
+			font-size: 15px;
+		}
 	}
 }
 
