@@ -233,42 +233,48 @@
     <Compile Include="AdditionalModels\Pagination\PaginationModel.cs" />
     <Compile Include="AdditionalModels\Pagination\ReadOnlyPagedCollection.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="DocumentTypes\IDomainRoot.cs" />
-    <Compile Include="DocumentTypes\IHomePage.cs" />
-    <Compile Include="DocumentTypes\INavigationNode.cs" />
-    <Compile Include="DocumentTypes\IPage.cs" />
-    <Compile Include="DocumentTypes\IRootNode.cs" />
-    <Compile Include="Extensions\FileExtensions.cs" />
-    <Compile Include="Extensions\FolderExtensions.cs" />
     <Compile Include="Extensions\HttpCacheExtensions.cs" />
     <Compile Include="Extensions\HttpRequestExtensions.cs" />
-    <Compile Include="Extensions\IDomainRootExtensions.cs" />
-    <Compile Include="Extensions\ImageExtensions.cs" />
-    <Compile Include="Extensions\INavigationNodeExtensions.cs" />
-    <Compile Include="Extensions\IPageExtensions.cs" />
     <Compile Include="Extensions\IPublishedContentExtensions.cs" />
     <Compile Include="Extensions\IPublishedContentPropertyExtensions.cs" />
-    <Compile Include="Extensions\IRootNodeExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperDomainExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
-    <Compile Include="Generated\File.cs" />
+    <Compile Include="Generated\AboutUs.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\BecomeAmember.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\File.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Folder.cs" />
     <Compile Include="Generated\Folder.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Image.cs" />
+    <Compile Include="Generated\FounderItem.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Home.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Image.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\ModelsBuilder.cs" />
-    <Compile Include="Generated\NavigationNode.cs" />
-    <Compile Include="Generated\NavigationNode.generated.cs">
+    <Compile Include="Generated\Language.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Page.cs" />
+    <Compile Include="Generated\Member.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ModelsBuilder.cs">
+      <Generator>UmbracoModelsBuilder</Generator>
+      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
+    </Compile>
+    <Compile Include="Generated\ModelsBuilder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Generated\Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -301,6 +307,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Umbraco.Web;
-using PravaStranaUlice.Models.DocumentTypes;
 
 namespace PravaStranaUlice.Models.Extensions
 {
@@ -9,33 +8,6 @@ namespace PravaStranaUlice.Models.Extensions
 	/// </summary>
 	public static class UmbracoHelperExtensions
 	{
-		/// <summary>
-		/// Returns Site root node.
-		/// </summary>
-		/// <typeparam name="T">Type of Site root node to return.</typeparam>
-		/// <param name="helper">Umbraco helper.</param>
-		/// <returns>Site root node.</returns>
-		public static T GetRoot<T>(this UmbracoHelper helper) where T : class, IRootNode
-			=> helper?.TypedContentAtRoot().OfType<T>().FirstOrDefault();
-
-		/// <summary>
-		/// Returns Site domain node.
-		/// </summary>
-		/// <typeparam name="T">Type of Site domain node to return.</typeparam>
-		/// <param name="helper">Umbraco helper.</param>
-		/// <returns>Site domain node.</returns>
-		public static T GetDomain<T>(this UmbracoHelper helper) where T : class, IDomainRoot
-			=> helper?.TypedContentAtDomainRoot<T>();
-
-		/// <summary>
-		/// Returns Home Page.
-		/// </summary>
-		/// <typeparam name="T">Type of Home Page node to return.</typeparam>
-		/// <param name="helper">Umbraco helper.</param>
-		/// <returns>Home Page.</returns>
-		public static T GetHome<T>(this UmbracoHelper helper) where T : class, IHomePage
-			=> helper?.TypedContentSingleAtXPath($"{Constants.HomePageXPathRoot}{Constants.HomePageXPathAlias}").OfType<T>();
-
 		/// <summary>
 		/// Returns Settings node.
 		/// </summary>
