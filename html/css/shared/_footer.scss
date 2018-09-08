@@ -48,7 +48,7 @@
 }
 
 .newsletter input {
-	width: 
+	width: 300px;
 	height: 30px;
 	margin-top: 10px;
 	border-radius: 25px;
@@ -87,12 +87,16 @@
 	justify-content: flex-start;
 }
 
+.footer-nav-left {
+	width: 50%;
+}
+
 .footer-nav-left ul li a {
 	color: $white;
 }
 
 .footer-nav-right {
-	margin-left: 65px;
+	width: 50%;
 }
 
 .footer-nav-right ul li a {
