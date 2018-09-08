@@ -32,6 +32,8 @@
 }
 
 .blog-item {
+	display: flex;
+	flex-direction: column;
 	flex: 1 1 33.333%;
 	max-width: 33.333%;
 	padding: 0 42px;
@@ -45,6 +47,7 @@
 .blog-info {
 	padding: 30px;
 	background-color: $white;
+	flex: 1 1 auto;
 	h3,
 	p {
 		color: $black;
