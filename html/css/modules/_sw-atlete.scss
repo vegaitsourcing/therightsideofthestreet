@@ -50,10 +50,14 @@
 
 .sw-atlete-form {
 	width: 100%;
+	position: relative;
 	max-width: 480px;
-	margin: 0 auto;
+	margin: 0 auto 35px;
+	padding-right: 68px;
 	.btn-submit {
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
 		width: 45px;
 		height: 45px;
 		font-size: 18px;
