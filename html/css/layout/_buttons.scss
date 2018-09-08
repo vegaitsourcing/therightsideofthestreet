@@ -70,3 +70,23 @@ input[type='submit'] {
 		color: $white;
 	}
 }
+
+.select-btn {
+	font-size: 28px;
+	height: 60px;
+	line-height: 60px;
+	text-transform: none;
+	background-color: $white;
+	color: $black;
+	box-shadow: 0 0 8px rgba(#231f20, 0.25);
+	border: 0;
+	@include hover {
+		background-color: $red;
+		color: $white;
+	}
+}
+
+.select-btn-active {
+	background-color: $red;
+	color: $white;
+}

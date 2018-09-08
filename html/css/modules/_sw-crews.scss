@@ -74,7 +74,9 @@
 	a {
 		height: 100%;
 		padding: 20px;
+		// sass-lint:disable no-important
 		display: flex !important;
+		// sass-lint:enable no-important
 		align-items: center;
 		justify-content: center;
 	}
@@ -99,7 +101,9 @@
 	text-align: center;
 	padding: 10px;
 	height: 130px;
+	// sass-lint:disable no-important
 	display: flex !important;
+	// sass-lint:enable no-important
 	align-items: center;
 	justify-content: center;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
