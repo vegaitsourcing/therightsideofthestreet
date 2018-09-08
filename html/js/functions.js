@@ -54,6 +54,21 @@ module.exports = {
 		}
 	},
 
+	citiesMapSlider: function() {
+		let $slider = $('.sw-map-cities');
+		if ($slider !== undefined && $slider.length) {
+			$slider.slick({
+				slidesToShow: 6,
+				slidesToScroll: 1,
+				infinite: false,
+				arrows: true,
+				dots: false,
+				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+			});
+		}
+	},
+
 	goToTop: function() {
 		$('.go-to-top').on('click', function() {
 			$('html, body').animate({ scrollTop: 0}, 1000);
