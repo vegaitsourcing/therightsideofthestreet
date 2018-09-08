@@ -24,29 +24,32 @@
 @function font-char($filename) {
 	$char: "";
 
-	@if $filename == ico-chevron-down {
+	@if $filename == ico-arrow-up {
 		$char: '\E001';
 	}
-	@if $filename == ico-chevron-left {
+	@if $filename == ico-chevron-down {
 		$char: '\E002';
 	}
-	@if $filename == ico-chevron-right {
+	@if $filename == ico-chevron-left {
 		$char: '\E003';
 	}
-	@if $filename == ico-facebook {
+	@if $filename == ico-chevron-right {
 		$char: '\E004';
 	}
-	@if $filename == ico-instagram {
+	@if $filename == ico-facebook {
 		$char: '\E005';
 	}
-	@if $filename == ico-search {
+	@if $filename == ico-instagram {
 		$char: '\E006';
 	}
-	@if $filename == ico-user {
+	@if $filename == ico-search {
 		$char: '\E007';
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-user {
 		$char: '\E008';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E009';
 	}
 
 	@return $char;
@@ -63,6 +66,9 @@
 	}
 }
 
+.font-ico-arrow-up {
+	@include font(ico-arrow-up);
+}
 .font-ico-chevron-down {
 	@include font(ico-chevron-down);
 }
