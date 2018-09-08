@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Founder Item</summary>
-	[PublishedContentModel("founderItem")]
-	public partial class FounderItem : PublishedContentModel
+	/// <summary>Donation</summary>
+	[PublishedContentModel("donation")]
+	public partial class Donation : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "founderItem";
+		public new const string ModelTypeAlias = "donation";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public FounderItem(IPublishedContent content)
+		public Donation(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,36 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FounderItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Donation, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Image
+		/// Current Sum
 		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
+		[ImplementPropertyType("currentSum")]
+		public string CurrentSum
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
+			get { return this.GetPropertyValue<string>("currentSum"); }
 		}
 
 		///<summary>
-		/// Image Position: Check if left
+		/// Donator Item
 		///</summary>
-		[ImplementPropertyType("imagePosition")]
-		public bool ImagePosition
+		[ImplementPropertyType("donatorItem")]
+		public IEnumerable<IPublishedContent> DonatorItem
 		{
-			get { return this.GetPropertyValue<bool>("imagePosition"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("donatorItem"); }
+		}
+
+		///<summary>
+		/// Items Per Page
+		///</summary>
+		[ImplementPropertyType("itemsPerPage")]
+		public int ItemsPerPage
+		{
+			get { return this.GetPropertyValue<int>("itemsPerPage"); }
 		}
 
 		///<summary>
@@ -79,6 +88,15 @@ namespace PravaStranaUlice.Models
 		public string Title
 		{
 			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
+		/// Total
+		///</summary>
+		[ImplementPropertyType("total")]
+		public string Total
+		{
+			get { return this.GetPropertyValue<string>("total"); }
 		}
 	}
 }

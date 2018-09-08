@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Founder Item</summary>
-	[PublishedContentModel("founderItem")]
-	public partial class FounderItem : PublishedContentModel
+	/// <summary>Donator Item</summary>
+	[PublishedContentModel("donatorItem")]
+	public partial class DonatorItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "founderItem";
+		public new const string ModelTypeAlias = "donatorItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public FounderItem(IPublishedContent content)
+		public DonatorItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,45 +40,27 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FounderItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<DonatorItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Image
+		/// City
 		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
+		[ImplementPropertyType("city")]
+		public string City
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
+			get { return this.GetPropertyValue<string>("city"); }
 		}
 
 		///<summary>
-		/// Image Position: Check if left
+		/// Full Name
 		///</summary>
-		[ImplementPropertyType("imagePosition")]
-		public bool ImagePosition
+		[ImplementPropertyType("fullName")]
+		public string FullName
 		{
-			get { return this.GetPropertyValue<bool>("imagePosition"); }
-		}
-
-		///<summary>
-		/// Text
-		///</summary>
-		[ImplementPropertyType("text")]
-		public IHtmlString Text
-		{
-			get { return this.GetPropertyValue<IHtmlString>("text"); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
-		{
-			get { return this.GetPropertyValue<string>("title"); }
+			get { return this.GetPropertyValue<string>("fullName"); }
 		}
 	}
 }

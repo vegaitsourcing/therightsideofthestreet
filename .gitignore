@@ -86,3 +86,6 @@ html/css/dist
 html/js/dist
 html/fonts/dist
 /*.html
+
+# Model files
+*.oob
