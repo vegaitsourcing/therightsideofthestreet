@@ -29,8 +29,9 @@ input[type='submit'] {
 	font-weight: 700;
 	color: $white;
 	height: 60px;
-	line-height: 60px;
+	line-height: 56px;
 	text-transform: uppercase;
+	border: 2px solid $red;
 	border-radius: 30px;
 	padding: 0 42px;
 	transition: 0.3s ease-out;
