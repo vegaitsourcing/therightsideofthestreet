@@ -4,7 +4,7 @@
 .index-templates {
 	.wrap {
 		max-width: 800px;
-		padding: 20vh 0;
+		padding: 10vh 0;
 	}
 	li {
 		margin-bottom: 10px;
@@ -12,6 +12,7 @@
 			font-size: 22px;
 			font-weight: 600;
 			text-transform: uppercase;
+			color: $white;
 		}
 	}
 }
@@ -195,13 +196,26 @@
 	}
 	.sw-atlete-list {
 		padding: 78px 0;
+		margin-bottom: 0;
 	}
 	.sw-atlete-item {
 		margin-bottom: 77px;
+		transition: margin 0.5s ease-out;
+		&:nth-child(3n + 2) {
+			.sw-athlete-popup {
+				left: -100%;
+			}
+		}
+		&:nth-child(3n + 3) {
+			.sw-athlete-popup {
+				left: -200%;
+			}
+		}
 	}
 }
 
 .btn-introduction {
+	background-color: $black;
 	float: right;
 	position: relative;
 	padding: 0 17px 0 38px;
@@ -214,12 +228,12 @@
 		color: $black;
 		&::before,
 		&::after {
-			background: $black;
+			background-color: $black;
 		}
 	}
 	&::before,
 	&::after {
-		background: $white;
+		background-color: $white;
 		content: '';
 		position: absolute;
 		transition: 0.3s ease-out;
@@ -253,23 +267,31 @@
 	left: 0;
 	top: calc(100% + 77px);
 	width: 300%;
-	background-color: $black;
+	background-color: rgba($black, 0.5);
 	padding: 60px 0 60px 60px;
 	z-index: 30;
+	display: none;
 	&::before,
 	&::after {
 		position: absolute;
 		height: 100%;
-		width: 2000px;
-		background: $black;
+		width: 0;
+		background-color: rgba($black, 0.5);
 		top: 0;
 		content: '';
+		transition: 1s ease-out;
 	}
 	&::before {
 		right: 100%;
 	}
 	&::after {
 		left: 100%;
+	}
+	&.opened {
+		&::before,
+		&::after {
+			width: 2000px;
+		}
 	}
 }
 
@@ -298,6 +320,7 @@
 }
 
 .athlete-details-content {
+	position: relative;
 	margin-left: 320px;
 	padding-left: 33px;
 	h2,
@@ -323,6 +346,13 @@
 		li {
 			color: $white;
 		}
+	}
+	.btn-close-popup {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		font-size: 18px;
+		color: $white;
 	}
 }
 
@@ -437,6 +467,8 @@
 .video-unavailable {
 	padding: 154px 21% 112px;
 	text-align: center;
+	margin-left: 26px;
+	margin-right: 26px;
 	span {
 		display: block;
 	}
