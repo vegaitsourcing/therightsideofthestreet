@@ -85,7 +85,7 @@ namespace PravaStranaUlice.Models
 		/// Facebook Image
 		///</summary>
 		[ImplementPropertyType("facebookImage")]
-		public string FacebookImage
+		public IPublishedContent FacebookImage
 		{
 			get { return PravaStranaUlice.Models.Page.GetFacebookImage(this); }
 		}
@@ -136,15 +136,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Side Navigation
-		///</summary>
-		[ImplementPropertyType("sideNavigation")]
-		public bool SideNavigation
-		{
-			get { return PravaStranaUlice.Models.Page.GetSideNavigation(this); }
-		}
-
-		///<summary>
 		/// Hide From External Search: This property will hide pages from external search when they are set to true.
 		///</summary>
 		[ImplementPropertyType("umbracoExternalSearchHide")]
@@ -172,33 +163,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Hide From Sidebar Navigation
-		///</summary>
-		[ImplementPropertyType("umbracoSidebarNavigationHide")]
-		public bool UmbracoSidebarNavigationHide
-		{
-			get { return PravaStranaUlice.Models.Page.GetUmbracoSidebarNavigationHide(this); }
-		}
-
-		///<summary>
-		/// Hide From Sitemap: This property will hide pages from the sitemap when they are set to true.
-		///</summary>
-		[ImplementPropertyType("umbracoSitemapHide")]
-		public bool UmbracoSitemapHide
-		{
-			get { return PravaStranaUlice.Models.Page.GetUmbracoSitemapHide(this); }
-		}
-
-		///<summary>
-		/// Hide From Site Search
-		///</summary>
-		[ImplementPropertyType("umbracoSiteSearchHide")]
-		public bool UmbracoSiteSearchHide
-		{
-			get { return PravaStranaUlice.Models.Page.GetUmbracoSiteSearchHide(this); }
-		}
-
-		///<summary>
 		/// Umbraco Url Alias
 		///</summary>
 		[ImplementPropertyType("umbracoUrlAlias")]
@@ -214,6 +178,15 @@ namespace PravaStranaUlice.Models
 		public string UmbracoUrlName
 		{
 			get { return PravaStranaUlice.Models.Page.GetUmbracoUrlName(this); }
+		}
+
+		///<summary>
+		/// Hide From XML Sitemap
+		///</summary>
+		[ImplementPropertyType("umbracoXmlSitemapHide")]
+		public bool UmbracoXmlSitemapHide
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoXmlSitemapHide(this); }
 		}
 	}
 }

@@ -28,7 +28,7 @@ namespace PravaStranaUlice.Models
 		string ExternalRedirect { get; }
 
 		/// <summary>Facebook Image</summary>
-		string FacebookImage { get; }
+		IPublishedContent FacebookImage { get; }
 
 		/// <summary>Page Title</summary>
 		string PageTitle { get; }
@@ -45,9 +45,6 @@ namespace PravaStranaUlice.Models
 		/// <summary>Seo Title</summary>
 		string SeoTitle { get; }
 
-		/// <summary>Side Navigation</summary>
-		bool SideNavigation { get; }
-
 		/// <summary>Hide From External Search</summary>
 		bool UmbracoExternalSearchHide { get; }
 
@@ -57,20 +54,14 @@ namespace PravaStranaUlice.Models
 		/// <summary>Umbraco Redirect</summary>
 		IPublishedContent UmbracoRedirect { get; }
 
-		/// <summary>Hide From Sidebar Navigation</summary>
-		bool UmbracoSidebarNavigationHide { get; }
-
-		/// <summary>Hide From Sitemap</summary>
-		bool UmbracoSitemapHide { get; }
-
-		/// <summary>Hide From Site Search</summary>
-		bool UmbracoSiteSearchHide { get; }
-
 		/// <summary>Umbraco Url Alias</summary>
 		string UmbracoUrlAlias { get; }
 
 		/// <summary>Umbraco Url Name</summary>
 		string UmbracoUrlName { get; }
+
+		/// <summary>Hide From XML Sitemap</summary>
+		bool UmbracoXmlSitemapHide { get; }
 	}
 
 	/// <summary>Page</summary>
@@ -114,13 +105,13 @@ namespace PravaStranaUlice.Models
 		/// Facebook Image
 		///</summary>
 		[ImplementPropertyType("facebookImage")]
-		public string FacebookImage
+		public IPublishedContent FacebookImage
 		{
 			get { return GetFacebookImage(this); }
 		}
 
 		/// <summary>Static getter for Facebook Image</summary>
-		public static string GetFacebookImage(IPage that) { return that.GetPropertyValue<string>("facebookImage"); }
+		public static IPublishedContent GetFacebookImage(IPage that) { return that.GetPropertyValue<IPublishedContent>("facebookImage"); }
 
 		///<summary>
 		/// Page Title
@@ -183,18 +174,6 @@ namespace PravaStranaUlice.Models
 		public static string GetSeoTitle(IPage that) { return that.GetPropertyValue<string>("seoTitle"); }
 
 		///<summary>
-		/// Side Navigation
-		///</summary>
-		[ImplementPropertyType("sideNavigation")]
-		public bool SideNavigation
-		{
-			get { return GetSideNavigation(this); }
-		}
-
-		/// <summary>Static getter for Side Navigation</summary>
-		public static bool GetSideNavigation(IPage that) { return that.GetPropertyValue<bool>("sideNavigation"); }
-
-		///<summary>
 		/// Hide From External Search: This property will hide pages from external search when they are set to true.
 		///</summary>
 		[ImplementPropertyType("umbracoExternalSearchHide")]
@@ -231,42 +210,6 @@ namespace PravaStranaUlice.Models
 		public static IPublishedContent GetUmbracoRedirect(IPage that) { return that.GetPropertyValue<IPublishedContent>("umbracoRedirect"); }
 
 		///<summary>
-		/// Hide From Sidebar Navigation
-		///</summary>
-		[ImplementPropertyType("umbracoSidebarNavigationHide")]
-		public bool UmbracoSidebarNavigationHide
-		{
-			get { return GetUmbracoSidebarNavigationHide(this); }
-		}
-
-		/// <summary>Static getter for Hide From Sidebar Navigation</summary>
-		public static bool GetUmbracoSidebarNavigationHide(IPage that) { return that.GetPropertyValue<bool>("umbracoSidebarNavigationHide"); }
-
-		///<summary>
-		/// Hide From Sitemap: This property will hide pages from the sitemap when they are set to true.
-		///</summary>
-		[ImplementPropertyType("umbracoSitemapHide")]
-		public bool UmbracoSitemapHide
-		{
-			get { return GetUmbracoSitemapHide(this); }
-		}
-
-		/// <summary>Static getter for Hide From Sitemap</summary>
-		public static bool GetUmbracoSitemapHide(IPage that) { return that.GetPropertyValue<bool>("umbracoSitemapHide"); }
-
-		///<summary>
-		/// Hide From Site Search
-		///</summary>
-		[ImplementPropertyType("umbracoSiteSearchHide")]
-		public bool UmbracoSiteSearchHide
-		{
-			get { return GetUmbracoSiteSearchHide(this); }
-		}
-
-		/// <summary>Static getter for Hide From Site Search</summary>
-		public static bool GetUmbracoSiteSearchHide(IPage that) { return that.GetPropertyValue<bool>("umbracoSiteSearchHide"); }
-
-		///<summary>
 		/// Umbraco Url Alias
 		///</summary>
 		[ImplementPropertyType("umbracoUrlAlias")]
@@ -289,5 +232,17 @@ namespace PravaStranaUlice.Models
 
 		/// <summary>Static getter for Umbraco Url Name</summary>
 		public static string GetUmbracoUrlName(IPage that) { return that.GetPropertyValue<string>("umbracoUrlName"); }
+
+		///<summary>
+		/// Hide From XML Sitemap
+		///</summary>
+		[ImplementPropertyType("umbracoXmlSitemapHide")]
+		public bool UmbracoXmlSitemapHide
+		{
+			get { return GetUmbracoXmlSitemapHide(this); }
+		}
+
+		/// <summary>Static getter for Hide From XML Sitemap</summary>
+		public static bool GetUmbracoXmlSitemapHide(IPage that) { return that.GetPropertyValue<bool>("umbracoXmlSitemapHide"); }
 	}
 }

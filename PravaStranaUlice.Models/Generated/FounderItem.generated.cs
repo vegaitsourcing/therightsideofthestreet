@@ -55,7 +55,7 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Image Position
+		/// Image Position: Check if left
 		///</summary>
 		[ImplementPropertyType("imagePosition")]
 		public bool ImagePosition

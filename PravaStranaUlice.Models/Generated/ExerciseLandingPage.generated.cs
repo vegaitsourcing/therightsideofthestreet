@@ -22,7 +22,7 @@ namespace PravaStranaUlice.Models
 {
 	/// <summary>Exercise Landing Page</summary>
 	[PublishedContentModel("exerciseLandingPage")]
-	public partial class ExerciseLandingPage : PublishedContentModel
+	public partial class ExerciseLandingPage : PublishedContentModel, IPage
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "exerciseLandingPage";
@@ -97,6 +97,123 @@ namespace PravaStranaUlice.Models
 		public IEnumerable<IPublishedContent> SetAndRepsPro
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("setAndRepsPro"); }
+		}
+
+		///<summary>
+		/// External Redirect
+		///</summary>
+		[ImplementPropertyType("externalRedirect")]
+		public string ExternalRedirect
+		{
+			get { return PravaStranaUlice.Models.Page.GetExternalRedirect(this); }
+		}
+
+		///<summary>
+		/// Facebook Image
+		///</summary>
+		[ImplementPropertyType("facebookImage")]
+		public IPublishedContent FacebookImage
+		{
+			get { return PravaStranaUlice.Models.Page.GetFacebookImage(this); }
+		}
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return PravaStranaUlice.Models.Page.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Seo Author
+		///</summary>
+		[ImplementPropertyType("seoAuthor")]
+		public string SeoAuthor
+		{
+			get { return PravaStranaUlice.Models.Page.GetSeoAuthor(this); }
+		}
+
+		///<summary>
+		/// Seo Description
+		///</summary>
+		[ImplementPropertyType("seoDescription")]
+		public string SeoDescription
+		{
+			get { return PravaStranaUlice.Models.Page.GetSeoDescription(this); }
+		}
+
+		///<summary>
+		/// Seo Keywords
+		///</summary>
+		[ImplementPropertyType("seoKeywords")]
+		public string SeoKeywords
+		{
+			get { return PravaStranaUlice.Models.Page.GetSeoKeywords(this); }
+		}
+
+		///<summary>
+		/// Seo Title
+		///</summary>
+		[ImplementPropertyType("seoTitle")]
+		public string SeoTitle
+		{
+			get { return PravaStranaUlice.Models.Page.GetSeoTitle(this); }
+		}
+
+		///<summary>
+		/// Hide From External Search: This property will hide pages from external search when they are set to true.
+		///</summary>
+		[ImplementPropertyType("umbracoExternalSearchHide")]
+		public bool UmbracoExternalSearchHide
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoExternalSearchHide(this); }
+		}
+
+		///<summary>
+		/// Hide From Site Navigation: This property will hide pages from the navigation when they are set to true.
+		///</summary>
+		[ImplementPropertyType("umbracoNavigationHide")]
+		public bool UmbracoNavigationHide
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoNavigationHide(this); }
+		}
+
+		///<summary>
+		/// Umbraco Redirect: Choose a node that you want the page to redirect to
+		///</summary>
+		[ImplementPropertyType("umbracoRedirect")]
+		public IPublishedContent UmbracoRedirect
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoRedirect(this); }
+		}
+
+		///<summary>
+		/// Umbraco Url Alias
+		///</summary>
+		[ImplementPropertyType("umbracoUrlAlias")]
+		public string UmbracoUrlAlias
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoUrlAlias(this); }
+		}
+
+		///<summary>
+		/// Umbraco Url Name
+		///</summary>
+		[ImplementPropertyType("umbracoUrlName")]
+		public string UmbracoUrlName
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoUrlName(this); }
+		}
+
+		///<summary>
+		/// Hide From XML Sitemap
+		///</summary>
+		[ImplementPropertyType("umbracoXmlSitemapHide")]
+		public bool UmbracoXmlSitemapHide
+		{
+			get { return PravaStranaUlice.Models.Page.GetUmbracoXmlSitemapHide(this); }
 		}
 	}
 }

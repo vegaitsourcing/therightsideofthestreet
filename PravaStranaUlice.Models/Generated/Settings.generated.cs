@@ -55,39 +55,57 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Contact Link
+		/// Contact Us Email: Contact Us Email to be shown on the Footer
 		///</summary>
-		[ImplementPropertyType("contactLink")]
-		public string ContactLink
+		[ImplementPropertyType("contactUsEmail")]
+		public string ContactUsEmail
 		{
-			get { return this.GetPropertyValue<string>("contactLink"); }
+			get { return this.GetPropertyValue<string>("contactUsEmail"); }
 		}
 
 		///<summary>
-		/// Cookie Text
+		/// Facebook Link
 		///</summary>
-		[ImplementPropertyType("cookieText")]
-		public IHtmlString CookieText
+		[ImplementPropertyType("facebookLink")]
+		public RJP.MultiUrlPicker.Models.Link FacebookLink
 		{
-			get { return this.GetPropertyValue<IHtmlString>("cookieText"); }
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("facebookLink"); }
 		}
 
 		///<summary>
-		/// Description
+		/// Featured Link
 		///</summary>
-		[ImplementPropertyType("description")]
-		public string Description
+		[ImplementPropertyType("featuredLink")]
+		public RJP.MultiUrlPicker.Models.Link FeaturedLink
 		{
-			get { return this.GetPropertyValue<string>("description"); }
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("featuredLink"); }
 		}
 
 		///<summary>
-		/// Footer Logo
+		/// Footer Description
 		///</summary>
-		[ImplementPropertyType("footerLogo")]
-		public IPublishedContent FooterLogo
+		[ImplementPropertyType("footerDescription")]
+		public string FooterDescription
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("footerLogo"); }
+			get { return this.GetPropertyValue<string>("footerDescription"); }
+		}
+
+		///<summary>
+		/// Footer Image
+		///</summary>
+		[ImplementPropertyType("footerImage")]
+		public IPublishedContent FooterImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("footerImage"); }
+		}
+
+		///<summary>
+		/// Footer Title
+		///</summary>
+		[ImplementPropertyType("footerTitle")]
+		public string FooterTitle
+		{
+			get { return this.GetPropertyValue<string>("footerTitle"); }
 		}
 
 		///<summary>
@@ -127,6 +145,60 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
+		/// Hide Newsletter: Newsletter is hidden if True
+		///</summary>
+		[ImplementPropertyType("hideNewsletter")]
+		public bool HideNewsletter
+		{
+			get { return this.GetPropertyValue<bool>("hideNewsletter"); }
+		}
+
+		///<summary>
+		/// Instagram Link
+		///</summary>
+		[ImplementPropertyType("instagramLink")]
+		public RJP.MultiUrlPicker.Models.Link InstagramLink
+		{
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("instagramLink"); }
+		}
+
+		///<summary>
+		/// Left Column Links
+		///</summary>
+		[ImplementPropertyType("leftColumnLinks")]
+		public IEnumerable<RJP.MultiUrlPicker.Models.Link> LeftColumnLinks
+		{
+			get { return this.GetPropertyValue<IEnumerable<RJP.MultiUrlPicker.Models.Link>>("leftColumnLinks"); }
+		}
+
+		///<summary>
+		/// Mailchimp Api Key
+		///</summary>
+		[ImplementPropertyType("mailchimpApiKey")]
+		public string MailchimpApiKey
+		{
+			get { return this.GetPropertyValue<string>("mailchimpApiKey"); }
+		}
+
+		///<summary>
+		/// Mailchimp List Key
+		///</summary>
+		[ImplementPropertyType("mailchimpListKey")]
+		public string MailchimpListKey
+		{
+			get { return this.GetPropertyValue<string>("mailchimpListKey"); }
+		}
+
+		///<summary>
+		/// Right Column Links
+		///</summary>
+		[ImplementPropertyType("rightColumnLinks")]
+		public IEnumerable<RJP.MultiUrlPicker.Models.Link> RightColumnLinks
+		{
+			get { return this.GetPropertyValue<IEnumerable<RJP.MultiUrlPicker.Models.Link>>("rightColumnLinks"); }
+		}
+
+		///<summary>
 		/// Robots
 		///</summary>
 		[ImplementPropertyType("robots")]
@@ -136,21 +208,21 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Share Price
-		///</summary>
-		[ImplementPropertyType("sharePrice")]
-		public string SharePrice
-		{
-			get { return this.GetPropertyValue<string>("sharePrice"); }
-		}
-
-		///<summary>
 		/// Site Name
 		///</summary>
 		[ImplementPropertyType("siteName")]
 		public string SiteName
 		{
 			get { return this.GetPropertyValue<string>("siteName"); }
+		}
+
+		///<summary>
+		/// Youtube Link
+		///</summary>
+		[ImplementPropertyType("youtubeLink")]
+		public RJP.MultiUrlPicker.Models.Link YoutubeLink
+		{
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("youtubeLink"); }
 		}
 	}
 }
