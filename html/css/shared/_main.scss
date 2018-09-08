@@ -191,50 +191,191 @@
 	.search-form {
 		float: left;
 	}
-	.btn-introduction {
-		float: right;
-		position: relative;
-		padding: 0 17px 0 38px;
-		letter-spacing: 0;
-		line-height: 40px;
-		border: 2px solid $black;
-		transition: 0.3s ease-out;
-		@include hover {
-			background-color: $white;
-			color: $black;
-			&::before,
-			&::after {
-				background: $black;
-			}
-		}
+	.sw-atlete-list {
+		padding: 78px 0;
+	}
+	.sw-atlete-item {
+		margin-bottom: 77px;
+	}
+}
+
+.btn-introduction {
+	float: right;
+	position: relative;
+	padding: 0 17px 0 38px;
+	letter-spacing: 0;
+	line-height: 40px;
+	border: 2px solid $black;
+	transition: 0.3s ease-out;
+	@include hover {
+		background-color: $white;
+		color: $black;
 		&::before,
 		&::after {
-			background: $white;
-			content: '';
-			position: absolute;
-			transition: 0.3s ease-out;
+			background: $black;
 		}
-		&::before {
-			height: 3px;
-			top: 18px;
-			left: 20px;
-			width: 11px;
-		}
-		&::after {
-			height: 11px;
-			top: 14px;
-			left: 24px;
-			width: 3px;
-		}
+	}
+	&::before,
+	&::after {
+		background: $white;
+		content: '';
+		position: absolute;
+		transition: 0.3s ease-out;
+	}
+	&::before {
+		height: 3px;
+		top: 18px;
+		left: 20px;
+		width: 11px;
+	}
+	&::after {
+		height: 11px;
+		top: 14px;
+		left: 24px;
+		width: 3px;
 	}
 }
 
 .athlete-banner {
 	background-color: $red;
-	padding: 65px 0;
+	padding: 65px 0 55px;
 	h2 {
 		color: $white;
 		text-align: center;
 		margin-bottom: 65px;
+	}
+}
+
+.sw-athlete-popup {
+	position: absolute;
+	left: 0;
+	top: calc(100% + 77px);
+	width: 300%;
+	background-color: $black;
+	padding: 60px 0 60px 60px;
+	z-index: 30;
+	&::before,
+	&::after {
+		position: absolute;
+		height: 100%;
+		width: 2000px;
+		background: $black;
+		top: 0;
+		content: '';
+	}
+	&::before {
+		right: 100%;
+	}
+	&::after {
+		left: 100%;
+	}
+}
+
+.sw-athlete-details {
+	margin-bottom: 70px;
+}
+
+.athlete-img-holder {
+	float: left;
+	width: 265px;
+	margin-top: 20px;
+	img {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+}
+
+.athlete-contact {
+	font-size: 20px;
+    color: $white;
+    display: block;
+    padding: 25px;
+    background: #242424;
+	word-break: break-word;
+	letter-spacing: -1px;
+}
+
+.athlete-details-content {
+	margin-left: 320px;
+	padding-left: 33px;
+	h2,
+	h3 {
+		text-transform: none;
+	}
+	h2 {
+		margin-bottom: 27px;
+	}
+	h3 {
+		font-weight: 400;
+		font-family: $font-default;
+		letter-spacing: 1px;
+		margin-bottom: 30px;
+	}
+	p {
+		color: $white;
+		letter-spacing: -0.3px;
+		margin-bottom: 55px;
+	}
+	.bullet-list {
+		padding-right: 200px;
+		li {
+			color: $white;
+		}
+	}
+}
+
+.athlete-achievements {
+	position: relative;
+}
+
+.social-icons {
+	font-size: 0;
+	position: absolute;
+	right: 0;
+	bottom: 7px;
+	li {
+		font-size: 15px;
+		display: inline-block;
+		margin-left: 17px;
+	}
+	a {
+		width: 45px;
+		height: 45px;
+		border-radius: 100%;
+		background: $red;
+		position: relative;
+		display: block;
+		transition: 0.3s ease-out;
+		@include hover {
+			background: $white;
+			.icon {
+				color: $red;
+			}
+		}
+	}
+	.icon {
+		font-size: 15px;
+		color: $white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.athlete-gallery {
+	@extend %clearfix;
+	margin-left: -60px;
+}
+
+.athlete-gallery-list {
+	margin: 0 -10px;
+	li {
+		float: left;
+		width: 16.667%;
+		padding: 0 10px;
+	}
+	img {
+		width: 100%;
 	}
 }
