@@ -1,28 +1,12 @@
 //----------  Donations and membership
 //------------------------------------------------------------------------------
-.donamem-heading {
+
+.donation-buttons {
 	width: 100%;
 	height: auto;
-		h1 {
-			text-align: center;
-			padding: 100px 0;
-		}
-	}
-.donamem-content {
-	width: 100%;
-	height: auto;
-	padding-bottom: 100px;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: justify;
-		youtube {
-			width: 50%;
-			height: auto;
-			}
-		text {
-			width: 50%;
-			height: auto;
-			margin-top: -5px;
-			padding-left: 50px;
-			}
+	justify-content: center;
+	button {
+		margin: 70px 40px 0;
+	}
 }

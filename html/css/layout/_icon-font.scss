@@ -36,20 +36,26 @@
 	@if $filename == ico-chevron-right {
 		$char: '\E004';
 	}
-	@if $filename == ico-facebook {
+	@if $filename == ico-close {
 		$char: '\E005';
 	}
-	@if $filename == ico-instagram {
+	@if $filename == ico-facebook {
 		$char: '\E006';
 	}
-	@if $filename == ico-search {
+	@if $filename == ico-instagram {
 		$char: '\E007';
 	}
-	@if $filename == ico-user {
+	@if $filename == ico-plus {
 		$char: '\E008';
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-search {
 		$char: '\E009';
+	}
+	@if $filename == ico-user {
+		$char: '\E00A';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E00B';
 	}
 
 	@return $char;
@@ -78,11 +84,17 @@
 .font-ico-chevron-right {
 	@include font(ico-chevron-right);
 }
+.font-ico-close {
+	@include font(ico-close);
+}
 .font-ico-facebook {
 	@include font(ico-facebook);
 }
 .font-ico-instagram {
 	@include font(ico-instagram);
+}
+.font-ico-plus {
+	@include font(ico-plus);
 }
 .font-ico-search {
 	@include font(ico-search);

@@ -55,6 +55,15 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
 		/// Video
 		///</summary>
 		[ImplementPropertyType("video")]

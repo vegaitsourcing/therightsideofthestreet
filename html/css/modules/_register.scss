@@ -1,0 +1,21 @@
+.reg {
+	.wrap {
+		padding: 100px 0;
+		form {
+			width: 50%;
+			height: auto;
+			text-align: center;
+			margin: 0 auto;
+			input {
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+			button {
+				margin: 0 auto;
+				background: $red;
+				margin-top: 20px;
+			}
+		}
+	}
+}
+

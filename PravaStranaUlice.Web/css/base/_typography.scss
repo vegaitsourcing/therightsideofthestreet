@@ -1,0 +1,66 @@
+//----------  typography
+//------------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-headings;
+	font-weight: 700;
+	color: $nero;
+	line-height: 1.35em;
+	text-transform: uppercase;
+	margin-bottom: 0.5em;
+	a {
+		color: inherit;
+	}
+}
+
+h1,
+.h1 {
+	font-size: 70px;
+	color: $white;
+}
+
+h2,
+.h2 {
+	font-size: 40px;
+}
+
+h3,
+.h3 {
+	font-size: 30px;
+}
+
+h4,
+.h4 {
+	font-size: 20px;
+}
+
+h5,
+.h5 {
+	font-size: 14px;
+	font-weight: 600;
+	color: $white;
+	letter-spacing: 1.3px;
+	text-transform: none;
+	margin-bottom: 0.75em;
+}
+
+h6,
+.h6 {
+	font-size: 12px;
+}
+
+p {
+	font-size: 18px;
+	font-weight: 400;
+	color: $grey;
+	line-height: 30px;
+	text-align: justify;
+	margin-bottom: 15px;
+}
+
+// Icon font
+.icon {
+	line-height: 1;
+	display: inline-block;
+}
