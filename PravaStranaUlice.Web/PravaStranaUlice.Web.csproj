@@ -435,6 +435,7 @@
     <Content Include="Views\Partials\Listing\_Pagination.cshtml" />
     <Content Include="Views\Partials\Listing\_ListExerciseSteps.cshtml" />
     <Content Include="Views\Partials\NestedContents\_ExerciseStep.cshtml" />
+    <Content Include="Views\Partials\NestedContents\_FounderItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

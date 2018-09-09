@@ -11,7 +11,7 @@ namespace PravaStranaUlice.Models
 {
 	public partial class AboutUs : PublishedContentModel, IPage
 	{
-		public Settings Settings => new UmbracoHelper().GetSettings();
+		public Settings Settings => new UmbracoHelper(UmbracoContext.Current).GetSettings();
 
 		public string EmbedVideo
 		{
