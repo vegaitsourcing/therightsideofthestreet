@@ -16,5 +16,12 @@ namespace PravaStranaUlice.Web.Controllers.Surface
 		{
 			return RenderActionResultBasedOnName(model);
 		}
+
+		[ChildActionOnly]
+		public ActionResult DonatorItem(DonatorItem model)
+		{
+			return RenderActionResultBasedOnName(model);
+		}
+
 	}
 }
