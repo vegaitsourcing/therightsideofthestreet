@@ -373,6 +373,7 @@
     <Content Include="js\functions.js" />
     <Content Include="js\libs\jquery-3.3.1.min.js" />
     <Content Include="js\libs\slick.js" />
+    <Content Include="js\page\exercisetype.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -434,6 +435,9 @@
     <Content Include="Views\ExerciseType.cshtml" />
     <Content Include="Views\BlogLanding.cshtml" />
     <Content Include="Views\Partials\NewsletterHeader.cshtml" />
+    <Content Include="Views\Partials\Listing\_Pagination.cshtml" />
+    <Content Include="Views\Partials\Listing\_ListExerciseSteps.cshtml" />
+    <Content Include="Views\Partials\NestedContents\_ExerciseStep.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -457,6 +461,9 @@
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseTypeController.cs" />
+    <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\NestedContentsController.cs" />
+    <Compile Include="Controllers\Surface\ListingController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperFormatExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
@@ -468,7 +475,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Surface\" />
+    <Folder Include="Views\Default\" />
     <Folder Include="Views\DonationsAndMembership\" />
     <Folder Include="Views\Donation\" />
   </ItemGroup>

@@ -238,6 +238,7 @@
     <Compile Include="Extensions\HttpRequestExtensions.cs" />
     <Compile Include="Extensions\IPublishedContentExtensions.cs" />
     <Compile Include="Extensions\IPublishedContentPropertyExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperDomainExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
     <Compile Include="Generated\AboutUs.generated.cs">
