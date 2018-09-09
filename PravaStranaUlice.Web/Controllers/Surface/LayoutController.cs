@@ -24,6 +24,10 @@ namespace PravaStranaUlice.Web.Controllers.Surface
             HeaderViewModel viewModel = new HeaderViewModel(UmbracoHelper.GetSettings(), UmbracoHelper.GetHome());
             return PartialView("_Header", viewModel);
         }
-        
+
+        [ChildActionOnly]
+        public ActionResult Footer() => PartialView("_Footer", UmbracoHelper.GetSettings());
+
+
     }
 }

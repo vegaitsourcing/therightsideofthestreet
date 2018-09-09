@@ -4,5 +4,5 @@
 <div class="container">
     @{Html.RenderAction<LayoutController>(c => c.Header());}
     @RenderBody()
-    @{Html.RenderPartial("_Footer");}
+    @{Html.RenderAction<LayoutController>(c => c.Footer());}
 </div>
