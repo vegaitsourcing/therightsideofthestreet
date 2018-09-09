@@ -298,6 +298,7 @@
     <Compile Include="Generated\FounderItem.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Home.cs" />
     <Compile Include="Generated\Home.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
