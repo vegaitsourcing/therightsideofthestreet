@@ -16,7 +16,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PravaStranaUlice.Web</RootNamespace>
     <AssemblyName>PravaStranaUlice.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -200,9 +200,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -231,7 +228,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -373,6 +369,7 @@
     <Content Include="js\functions.js" />
     <Content Include="js\libs\jquery-3.3.1.min.js" />
     <Content Include="js\libs\slick.js" />
+    <Content Include="js\page\exercisetype.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -434,6 +431,9 @@
     <Content Include="Views\ExerciseType.cshtml" />
     <Content Include="Views\BlogLanding.cshtml" />
     <Content Include="Views\Partials\NewsletterHeader.cshtml" />
+    <Content Include="Views\Partials\Listing\_Pagination.cshtml" />
+    <Content Include="Views\Partials\Listing\_ListExerciseSteps.cshtml" />
+    <Content Include="Views\Partials\NestedContents\_ExerciseStep.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -453,10 +453,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RenderMvc\BecomeAMemberController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseTypeController.cs" />
+    <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\NestedContentsController.cs" />
+    <Compile Include="Controllers\Surface\ListingController.cs" />
+    <Compile Include="Controllers\RenderMvc\StreetWorkoutCrewsController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperFormatExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
@@ -468,7 +473,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Surface\" />
+    <Folder Include="Views\Default\" />
     <Folder Include="Views\DonationsAndMembership\" />
     <Folder Include="Views\Donation\" />
   </ItemGroup>
