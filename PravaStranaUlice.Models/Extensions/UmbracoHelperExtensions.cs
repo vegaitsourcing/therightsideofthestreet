@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Web;
 
 namespace PravaStranaUlice.Models.Extensions
@@ -23,5 +24,9 @@ namespace PravaStranaUlice.Models.Extensions
 		/// <returns>Repository node.</returns>
 		public static Repository GetRepository(this UmbracoHelper helper)
 			=> helper?.TypedContentSingleAtXPath($"//{Models.Repository.ModelTypeAlias}").OfType<Repository>();
-	}
+
+        public static Home GetHome(this UmbracoHelper helper) => helper.TypedContentSingleAtXPath($"//{Models.Home.ModelTypeAlias}").OfType<Home>();
+
+        public static List<Language> GetLanguages(this UmbracoHelper helper) => helper.TypedContentAtRoot().OfType<Language>().ToList();
+    }
 }

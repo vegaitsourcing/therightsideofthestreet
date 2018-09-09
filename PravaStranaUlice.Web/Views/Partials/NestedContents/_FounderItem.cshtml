@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.FounderItem>
+
+@{ var cls = Model.ImagePosition ? "founder-left" : "founder-right"; }
+
+<div class='founder @cls'>
+	<div class="wrap">
+		<div class="founder-img">
+			<img src="@Model.Image.Url" alt="">
+		</div>
+		<div class="founder-text">
+			<h2>@Model.Title</h2>
+			<p>
+				@Model.Text
+			</p>
+		</div>
+	</div>
+</div>

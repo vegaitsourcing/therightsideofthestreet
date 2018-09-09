@@ -241,6 +241,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperDomainExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
+    <Compile Include="Generated\AboutUs.cs" />
     <Compile Include="Generated\AboutUs.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

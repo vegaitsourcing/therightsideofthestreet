@@ -1,4 +1,6 @@
-﻿<footer class="footer" role="contentinfo">
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.Settings>
+
+<footer class="footer" role="contentinfo">
     <div class="wrap">
         <div class="footer-top">
             <div class="popular-blog">
@@ -6,54 +8,57 @@
                     <img src="/images/content/athlete-bodybuilding-exercise-931322.png">
                 </div>
                 <div class="popular-blog-heading">
-                    <h1 class="h4">Amet</h1>
+                    <h1 class="h4">@Model.FooterTitle</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna.
+                        @Model.FooterDescription
                     </p>
                 </div>
             </div>
-            <div class="newsletter">
-                <h1 class="h3">Prijavite se na naš newsletter!</h1>
-                <div class="newsletter-form">
-                    <input type="text" name="newsletter">
-                    <button type="submit" name="submit" value="Prijavi-se">Prijavi se!</button>
+            @if (!Model.HideNewsletter)
+            {
+                <div class="newsletter">
+                    <h1 class="h3">Prijavite se na naš newsletter!</h1>
+                    <div class="newsletter-form">
+                        <input type="text" name="newsletter">
+                        <button type="submit" name="submit" value="Prijavi-se">Prijavi se!</button>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
         <div class="footer-bottom">
             <div class="footer-nav">
                 <div class="footer-nav-left">
                     <ul>
-                        <li><a href="#">O nama</a></li>
-                        <li><a href="#">SW Atlete</a></li>
-                        <li><a href="#">Kako početi sa vežbanjem</a></li>
-                        <li><a href="#">SW Ekipe</a></li>
+                        @foreach (var link in Model.LeftColumnLinks)
+                        {
+                            <li><a href="@link.Url">@link.Name</a></li>
+                        }
                     </ul>
                 </div>
                 <div class="footer-nav-right">
                     <ul>
-                        <li><a href="#">Parkovi za vežbanje</a></li>
-                        <li><a href="#">Dešavanja</a></li>
-                        <li><a href="#">SW Blog</a></li>
+                        @foreach (var link in Model.RightColumnLinks)
+                        {
+                            <li><a href="@link.Url">@link.Name</a></li>
+                        }
                     </ul>
                 </div>
             </div>
             <div class="footer-info">
                 <div class="footer-info-contact">
                     <h1 class="h3">Kontaktirajte nas!</h1>
-                    <p>pravastranaulice@gmail.com</p>
+                    <p>@Model.ContactUsEmail</p>
                 </div>
                 <div class="footer-info-contact-social-icons">
-                    <a href="javascript:;" target="_blank" title="Follow us on Facebook">
+                    <a href="@Model.FacebookLink.Url" target="_blank" title="Follow us on Facebook">
                         <span class="icon font-ico-facebook"></span>
                         <span class="sr-only">Facebook</span>
                     </a>
-                    <a href="javascript:;" target="_blank" title="Follow us on Instagram">
+                    <a href="@Model.InstagramLink.Url" target="_blank" title="Follow us on Instagram">
                         <span class="icon font-ico-instagram"></span>
                         <span class="sr-only">Instagram</span>
                     </a>
-                    <a href="javascript:;" target="_blank" title="Follow us on YouTube">
+                    <a href="@Model.YoutubeLink.Url" target="_blank" title="Follow us on YouTube">
                         <span class="icon font-ico-youtube"></span>
                         <span class="sr-only">YouTube</span>
                     </a>

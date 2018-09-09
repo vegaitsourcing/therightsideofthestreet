@@ -1,49 +1,25 @@
-﻿<header class="header" role="banner">
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Web.ViewModels.HeaderViewModel>
+<header class="header" role="banner">
     <div class="header-upper">
         <div class="wrap">
-            <a class="header-links language-links" href="javascript:;" title="srpski jezik">Sr</a>
-            <a class="header-links language-links" href="javascript:;" title="engleski jezik">En</a>
-            <a class="header-links donations-link" href="javascript:;" title="donacije i članstvo">Donacije i članstvo<span class="icon font-ico-user"></span></a>
+            @{
+                Html.RenderAction<PravaStranaUlice.Web.Controllers.Surface.ListingController>(c => c.ListLanguages());
+            }
+            <a class="header-links donations-link" href="@Model.Settings.FeaturedLink.Url" title="@Model.Settings.FeaturedLink.Name">@Model.Settings.FeaturedLink.Name<span class="icon font-ico-user"></span></a>
         </div>
     </div>
     <div class="wrap">
-        <a class="logo" href="index.html" title="Prava Strana Ulice">
-            <img src="/images/logo.png" alt="Prava Strana Ulice">
-        </a>
+        @if (!string.IsNullOrEmpty(Model.Settings.SiteName) && (Model.Settings.HeaderLogo != null))
+        {
+            <a class="logo" href="@Model.HomeUrl" title="@Model.Settings.SiteName">
+                <img src="@Model.Settings.HeaderLogo.Url" alt="">
+            </a>
+        }
         <nav class="main-nav">
             <ul role="menubar">
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">O nama</a>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">SW atlete</a>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">SW ekipe</a>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">Kako početi sa vežbanjem</a>
-                    <ul class="secondary-nav">
-                        <li>
-                            <a class="header-links" href="javascript:;">Početni nivo</a>
-                        </li>
-                        <li>
-                            <a class="header-links" href="javascript:;">Napredni nivo</a>
-                        </li>
-                        <li>
-                            <a class="header-links" href="javascript:;">Profesionalni nivo</a>
-                        </li>
-                    </ul>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">Parkovi za vežbanje</a>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">Dešavanja</a>
-                </li>
-                <li role="menuitem">
-                    <a class="header-links" href="javascript:;">SW blog</a>
-                </li>
+                @{
+                    Html.RenderAction<PravaStranaUlice.Web.Controllers.Surface.ListingController>(c => c.ListHeaderLinks());
+                }
             </ul>
         </nav>
     </div>

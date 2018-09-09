@@ -1,6 +1,8 @@
-﻿@{Html.RenderPartial("_Head");}
+﻿@using PravaStranaUlice.Web.Controllers.Surface
+
+@{Html.RenderPartial("_Head");}
 <div class="container">
-    @{Html.RenderPartial("_Header");}
+    @{Html.RenderAction<LayoutController>(c => c.Header());}
     @RenderBody()
-    @{Html.RenderPartial("_Footer");}
+    @{Html.RenderAction<LayoutController>(c => c.Footer());}
 </div>
