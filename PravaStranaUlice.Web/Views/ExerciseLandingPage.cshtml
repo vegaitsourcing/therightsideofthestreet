@@ -1,5 +1,58 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ExerciseLandingPage>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.ExerciseLandingPage>
+
+<main class="main">
+	<div class="workout-tutorial cover-bg" style="background-image: url(/../images/content/how-to-work-bg.jpg)" alt="">
+		<div class="wrap">
+			@if (!string.IsNullOrEmpty(Model.PageTitle))
+			{
+				<h2 class="centered">Kako početi sa vežbanjem</h2>
+			}
+
+			<div class="level-picker">
+				<div class="level-item">
+					<a class="btn select-btn select-btn-active" href="javascript:;">Početni nivo</a>
+				</div>
+				<div class="level-item">
+					<a class="btn select-btn" href="javascript:;">Napredni nivo</a>
+				</div>
+				<div class="level-item">
+					<a class="btn select-btn" href="javascript:;">Profesionalni nivo</a>
+				</div>
+			</div>
+			<div class="workout-selection">
+				<a class="btn select-btn" href="javascript:;">Freestyle</a>
+				<a class="btn select-btn" href="javascript:;">Set and reps</a>
+			</div>
+
+
+			<div class="workout-steps workout-options">
+				@foreach (var child in Model.Children.Cast<ExerciseType>())
+				{
+					<div class="workout-step-item">
+						<div class="step-info">
+							<h4><a class="workout-heading" href="javascript:;">@child.PageTitle</a></h4>
+						</div>
+						<div class="step-image cover-bg"   @if (child.Image != null){ <text> style="background-image: url('@child.Image.Url');" </text> }></div>
+					</div>
+				}
+			</div>
+			<ul class="pagination">
+				<li>
+					<a href="javascript:;"><span class="icon font-ico-chevron-left"></span></a>
+				</li>
+				<li>
+					<a href="javascript:;">1</a>
+				</li>
+				<li>
+					<a href="javascript:;">2</a>
+				</li>
+				<li>
+					<a href="javascript:;">3</a>
+				</li>
+				<li>
+					<a href="javascript:;"><span class="icon font-ico-chevron-right"></span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</main>
