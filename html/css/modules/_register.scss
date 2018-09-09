@@ -1,12 +1,14 @@
 .reg {
 	.wrap {
-		padding: 100px 0;
+		padding-top: 100px;
+		padding-bottom: 100px;
 		form {
 			width: 50%;
 			height: auto;
 			text-align: center;
 			margin: 0 auto;
 			input {
+				width: 100%;
 				margin: 0 auto;
 				margin-bottom: 10px;
 			}
@@ -14,6 +16,13 @@
 				margin: 0 auto;
 				background: $red;
 				margin-top: 20px;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		.wrap {
+			form {
+				width: 100%;
 			}
 		}
 	}

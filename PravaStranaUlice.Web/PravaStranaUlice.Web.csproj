@@ -429,6 +429,7 @@
     <Content Include="Views\Donation.cshtml" />
     <Content Include="Views\BlogDetail.cshtml" />
     <Content Include="Views\ExerciseType.cshtml" />
+    <Content Include="Views\AboutUs.cshtml" />
     <Content Include="Views\BlogLanding.cshtml" />
     <Content Include="Views\Partials\NewsletterHeader.cshtml" />
     <Content Include="Views\Partials\Listing\_Pagination.cshtml" />
@@ -455,6 +456,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RenderMvc\AboutUsController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeAMemberController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
