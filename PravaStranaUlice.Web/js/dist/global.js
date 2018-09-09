@@ -3068,8 +3068,6 @@
 				functions.eventsSlider();
 				functions.citiesMapSlider();
 				functions.goToTop();
-				functions.athletePopup();
-				functions.crewPopup();
 				// if($('.sw-map-container').length) {
 				// 	maps.initMap();
 				// }
@@ -3177,35 +3175,6 @@
 			goToTop: function goToTop() {
 				$('.go-to-top').on('click', function () {
 					$('html, body').animate({ scrollTop: 0 }, 1000);
-				});
-			},
-
-			athletePopup: function athletePopup() {
-				var swItem = $('.sw-atlete-item');
-				swItem.find('.thumbnail, .sw-atlete-info h4 a').on('click', function () {
-					var $swAtl = $(this).closest('.sw-atlete-item');
-					var $popup = $swAtl.find('.sw-athlete-popup');
-					if ($popup.length) {
-						$popup.slideDown(400, function () {
-							$('html, body').animate({ scrollTop: $popup.offset().top }, 400);
-							$swAtl.css('margin-bottom', $popup.outerHeight() + 150);
-							$popup.addClass('opened');
-						});
-					}
-				});
-				$('.btn-close-popup').on('click', function () {
-					var $popup = $(this).closest('.sw-athlete-popup');
-					var $swAtl = $(this).closest('.sw-atlete-item');
-					$popup.slideUp(300, function () {
-						$swAtl.removeAttr('style').removeClass('opened');
-						$('html, body').animate({ scrollTop: $swAtl.offset().top }, 400);
-					});
-				});
-			},
-
-			crewPopup: function crewPopup() {
-				$('.btn-close-crew-popup').on('click', function () {
-					$(this).closest('.workout-crew-popup').slideUp(300);
 				});
 			}
 
