@@ -12,10 +12,10 @@
 				<h3 class="centered">@Model.PageTitle</h3>
 			}
 				<div class="workout-picker">
-					@for ( int i = 1; i< Model.ExerciseSubtypes.Cast<ExerciseSubtype>().Count(); i++)
+					@foreach ( var item in Model.ExerciseSubtypes.Cast<ExerciseSubtype>())
 					{
 						<div class="workout-item">
-							<a class="btn select-btn select-btn-active"  href="javascript:;"></a>
+							<a class="btn select-btn select-btn-active"  href="javascript:;">@item.Title</a>
 						</div>
 					}
 

@@ -439,6 +439,7 @@
     <Content Include="Views\Partials\NestedContents\_DonatorItem.cshtml" />
     <Content Include="Views\Partials\Listing\_ListHeaderLinks.cshtml" />
     <Content Include="Views\Partials\Listing\_ListLanguages.cshtml" />
+    <Content Include="Views\ExerciseLandingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -463,6 +464,7 @@
     <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
+    <Compile Include="Controllers\RenderMvc\ExerciseLandingPageController.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseTypeController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LayoutController.cs" />
@@ -482,6 +484,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\ExerciseLandingPage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PravaStranaUlice.Common\PravaStranaUlice.Common.csproj">
