@@ -77,9 +77,7 @@ namespace PravaStranaUlice.Common.Extensions
         /// <param name="source">The source sequence.</param>
         /// <returns>Sequence of <paramref name="source"/> items with their indexes.</returns>
         public static IEnumerable<Tuple<T,int>> Indexed<T>(this IEnumerable<T> source)
-        {
-            return source.Select((item, i) => new Tuple<T, int>(item,i));
-        }
+            => source.Select((item, i) => new Tuple<T, int>(item,i));
 
         /// <summary>
         /// Concatenates provided <paramref name="element"/> to the <paramref name="source"/> sequence.

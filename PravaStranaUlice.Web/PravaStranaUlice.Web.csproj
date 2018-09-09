@@ -434,6 +434,7 @@
     <Content Include="Views\Partials\Listing\_Pagination.cshtml" />
     <Content Include="Views\Partials\Listing\_ListExerciseSteps.cshtml" />
     <Content Include="Views\Partials\NestedContents\_ExerciseStep.cshtml" />
+    <Content Include="Views\Partials\NestedContents\_BlogItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -454,6 +455,7 @@
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeAMemberController.cs" />
+    <Compile Include="Controllers\RenderMvc\BlogLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
@@ -473,6 +475,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\BlogLanding\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\DonationsAndMembership\" />
     <Folder Include="Views\Donation\" />
