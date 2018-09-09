@@ -81,77 +81,29 @@
 		</header>
 
 		<main class="main">
-			<h1 class="sr-only">Doniraj</h1>
 
-			<div class="donation-background cover-bg" style="background-image: url('images/body-brawny-crossfit-931323.png');">
-
+			<form class="newsletter-form" action="" method="post">
 				<div class="wrap">
-
-					<div class="donation-heading offline-paying">
-						<h1 class="h2">DONIRAJ</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>.
-						<h1 class="h3">OFFLINE UPLAĆIVANJE</h1>
-						<img src="images/content/uplatnica.png">
-					</div>
-					<div class="offline-paying">
-						<h2 class="h3">Do sada sakupljeno: 11.240 din</h2>
-						<h3 class="h4">Ciljna suma za izgradnju parkova: 15.000 din</h3>
+					<label for="newsletter">Prijavite se na naš newsletter!</label>
+					<div class="newsletter-input-wrap">
+						<input type="text" id="newsletter" name="newsletter">
+						<button class="newsletter-submit" type="submit">Prijavi se!</button>
 					</div>
 				</div>
-				<div class="our-donators">
-					<div class="wrap">
-						<h1 class="h2">NAŠI DONATORI</h1>
-						<div class="donators-content">
-							<div class="donators-name">
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							</div>
-							<div class="donators-name">
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							</div>
-							<div class="donators-name">
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							</div>
-							<div class="donators-name">
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-								<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							</div>
-							<ul class="pagination">
-								<li class="active">
-									<a href="javascript:;">1</a>
-								</li>
-								<li>
-									<a href="javascript:;">2</a>
-								</li>
-								<li>
-									<a href="javascript:;">3</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+			</form>
+			<div class="reg cover-bg" style="background-image: url('images/loginbg.png')">
+				<div class="wrap">
+					<form>
+						<input type="text" name="name" placeholder="Ime" maxlength="24" title="Ime">
+						<input type="text" name="surname" placeholder="Prezime" maxlength="24" title="Prezime">
+						<input type="text" name="adress" placeholder="Adresa stanovanja" maxlength="40" title="Adresa">
+						<input type="text" name="date-of-birth" placeholder="Datum i godina rođenja" maxlength="40" title="date-of-birth">
+						<input type="e-mail" name="e-mail" placeholder="E-mail" maxlength="40" title="E-mail">
+						<input type="text" name="username" placeholder="Korisničko ime" minlength="4" maxlength="16" title="Korisničko ime">
+						<input type="password" name="password" placeholder="Lozinka" minlength="8" maxlength="24" title="password">
+						<button type="submit" value="potvrdi" class="btn btn-small">Potvrdi</button>
+						<button type="reset" value="reset" class="btn btn-small">Reset</button>
+					</form>
 				</div>
 			</div>
 		</main>

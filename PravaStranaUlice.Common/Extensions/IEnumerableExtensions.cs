@@ -70,23 +70,25 @@ namespace PravaStranaUlice.Common.Extensions
 			return source;
 		}
 
-		/// <summary>
-		/// Returns items from <paramref name="source"/> sequence with their corresponding indexes.
-		/// </summary>
-		/// <typeparam name="T">Sequence elements type.</typeparam>
-		/// <param name="source">The source sequence.</param>
-		/// <returns>Sequence of <paramref name="source"/> items with their indexes.</returns>
-		public static IEnumerable<(T item, int i)> Indexed<T>(this IEnumerable<T> source)
-			=> source.Select((item, i) => (item, i));
+        /// <summary>
+        /// Returns items from <paramref name="source"/> sequence with their corresponding indexes.
+        /// </summary>
+        /// <typeparam name="T">Sequence elements type.</typeparam>
+        /// <param name="source">The source sequence.</param>
+        /// <returns>Sequence of <paramref name="source"/> items with their indexes.</returns>
+        public static IEnumerable<Tuple<T,int>> Indexed<T>(this IEnumerable<T> source)
+        {
+            return source.Select((item, i) => new Tuple<T, int>(item,i));
+        }
 
-		/// <summary>
-		/// Concatenates provided <paramref name="element"/> to the <paramref name="source"/> sequence.
-		/// </summary>
-		/// <typeparam name="T">Sequence elements type.</typeparam>
-		/// <param name="source">The source sequence.</param>
-		/// <param name="element">Element to concatenate to the <paramref name="source"/>.</param>
-		/// <returns>New sequence containing <paramref name="source"/> sequence with provided <paramref name="element"/> concatenated at the end.</returns>
-		public static IEnumerable<T> Concat<T>(this IEnumerable<T> source, T element)
+        /// <summary>
+        /// Concatenates provided <paramref name="element"/> to the <paramref name="source"/> sequence.
+        /// </summary>
+        /// <typeparam name="T">Sequence elements type.</typeparam>
+        /// <param name="source">The source sequence.</param>
+        /// <param name="element">Element to concatenate to the <paramref name="source"/>.</param>
+        /// <returns>New sequence containing <paramref name="source"/> sequence with provided <paramref name="element"/> concatenated at the end.</returns>
+        public static IEnumerable<T> Concat<T>(this IEnumerable<T> source, T element)
 			=> source.Concat(Enumerable.Repeat<T>(element, 1));
 
 		/// <summary>
