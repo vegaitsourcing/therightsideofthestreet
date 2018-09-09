@@ -1,0 +1,8 @@
+﻿@inherits UmbracoViewPage<List<PravaStranaUlice.Models.IPage>>
+
+@foreach (var page in Model)
+{
+    <li role="menuitem">
+        <a class="header-links" href="@page.Url">@page.PageTitle</a>
+    </li>
+}

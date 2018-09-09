@@ -46,6 +46,15 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
+		/// Alt Text
+		///</summary>
+		[ImplementPropertyType("umbracoAltText")]
+		public string UmbracoAltText
+		{
+			get { return this.GetPropertyValue<string>("umbracoAltText"); }
+		}
+
+		///<summary>
 		/// Size
 		///</summary>
 		[ImplementPropertyType("umbracoBytes")]

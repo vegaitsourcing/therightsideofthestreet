@@ -11,7 +11,7 @@
             <h2>@Model.PageTitle</h2>
             <div class="blog-listing">
                
-                @foreach(var blogItem in Model.GetPosts())
+                @foreach(var blogItem in Model.GetPosts(Model.ItemsPerPage))
                 {
                     Html.RenderPartial("_BlogItem", blogItem);
                 }

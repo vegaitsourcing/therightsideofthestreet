@@ -8,9 +8,9 @@ namespace PravaStranaUlice.Models
 {
     public partial class BlogLanding
     {
-        public IEnumerable<BlogDetail> GetPosts()
+        public IEnumerable<BlogDetail> GetPosts(int itemsPerPage, int currentPage = 0)
         {
-            return Children.OfType<BlogDetail>();
+            return Children.OfType<BlogDetail>().Skip(currentPage*itemsPerPage).Take(itemsPerPage);
         }
     }
 }
