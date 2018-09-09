@@ -257,6 +257,7 @@
     <Compile Include="Generated\BlogDetail.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\BlogLanding.cs" />
     <Compile Include="Generated\BlogLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

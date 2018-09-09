@@ -1,0 +1,9 @@
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.BlogDetail>
+
+<div class="blog-item">
+    <a class="blog-thumbnail cover-bg" href="javascript:;" style="background-image: url('@Model.BannerImage.Url')"></a>
+    <div class="blog-info">
+        <h3><a href="javascript:;">@Model.PageTitle</a></h3>
+        @Html.Raw(Model.Text);
+    </div>
+</div>

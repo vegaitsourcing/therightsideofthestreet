@@ -1,7 +1,8 @@
 .log-in {
 	.wrap {
-		padding: 200px 0;
+		padding-top: 190px;
 		text-align: center;
+		padding-bottom: 200px;
 		span {
 			display: flex;
 			flex-wrap: wrap;
@@ -11,6 +12,9 @@
 				width: 550px;
 			}
 		}
+	}
+	@include breakpoint(phone) {
+
 	}
 }
 
