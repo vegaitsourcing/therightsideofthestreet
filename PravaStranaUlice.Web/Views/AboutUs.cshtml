@@ -1,5 +1,176 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.AboutUs>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.AboutUs>
+
+	<main class="main">
+		<h1 class="sr-only">@Model.PageTitle</h1>
+
+		<div class="banner">
+			<div class="banner-img cover-bg" style="background-image: url('@Model.BannerImage.Url');"></div>
+			<div class="banner-content">
+				<h2 class="h1">Suspendisse sed sollicitudin mauris</h2>
+				<a class="btn" href="@Model.BannerLink.Url">@Model.BannerLink.Name</a>
+				<div class="banner-social-links">
+					<a href="@Model.Settings.FacebookLink.Url" target="_blank" title="@Model.Settings.FacebookLink.Name">
+						<span class="icon font-ico-facebook"></span>
+						<span class="sr-only">Facebook</span>
+					</a>
+					<a href="@Model.Settings.InstagramLink.Url" target="_blank" title="@Model.Settings.InstagramLink.Name">
+						<span class="icon font-ico-instagram"></span>
+						<span class="sr-only">Instagram</span>
+					</a>
+					<a href="@Model.Settings.YoutubeLink.Url" target="_blank" title="@Model.Settings.YoutubeLink.Name">
+						<span class="icon font-ico-youtube"></span>
+						<span class="sr-only">YouTube</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="module-about-us cover-bg" style="background-image: url('images/content/about-us-bg.jpg')">
+			<div class="wrap">
+				<h2 class="centered">@Model.PageTitle</h2>
+				<div class="about-columns">
+					<div class="about-video">
+						<iframe width="560" height="315" src="@Model.IntroVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+					<div class="about-description">
+						@Html.Raw(Model.IntroText)
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="founders-content cover-bg" style="background-image: url('images/founders-backg.png');">
+
+			<div class="founders">
+
+				<div class="founders-heading">
+					<div class="wrap">
+						<h1 class="h2">OSNIVAČI</h1>
+					</div>
+				</div>
+				<div class="founder founder-left">
+					<div class="wrap">
+						<div class="founder-img">
+							<img src="images/content/srdjan.png" alt="">
+						</div>
+						<div class="founder-text">
+							<h2>Srđan Arsenović</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="founder founder-right">
+					<div class="wrap">
+						<div class="founder-img">
+							<img src="images/content/nikola.png" alt="">
+						</div>
+						<div class="founder-text">
+							<h2>Nikola Kojčić</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="founder founder-left">
+					<div class="wrap">
+						<div class="founder-img">
+							<img src="images/content/filip.png" alt="">
+						</div>
+						<div class="founder-text">
+							<h2>Filip Prezime</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="founder founder-right">
+					<div class="wrap">
+						<div class="founder-img">
+							<img src="images/content/marko.png" alt="">
+						</div>
+						<div class="founder-text">
+							<h2>Marko Prezime</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="our-vision-content">
+					<div class="wrap">
+						<div class="our-vision-box">
+							<div class="our-vision-heading">
+								<h1 class="h2">NAŠA VIZIJA</h1>
+							</div>
+							<ul class="bullet-list our-vision-list">
+								<li>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.
+										consequat.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et.
+									</p>
+								</li>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
