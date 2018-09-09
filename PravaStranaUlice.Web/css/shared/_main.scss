@@ -4,7 +4,7 @@
 .index-templates {
 	.wrap {
 		max-width: 800px;
-		padding: 20vh 0;
+		padding: 10vh 0;
 	}
 	li {
 		margin-bottom: 10px;
@@ -12,6 +12,7 @@
 			font-size: 22px;
 			font-weight: 600;
 			text-transform: uppercase;
+			color: $white;
 		}
 	}
 }
@@ -29,6 +30,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -42px;
+	@include breakpoint(phone) {
+		margin: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .blog-item {
@@ -38,6 +44,16 @@
 	max-width: 33.333%;
 	padding: 0 42px;
 	margin-bottom: 30px;
+	@include breakpoint(tablet) {
+		flex-basis: 50%;
+		max-width: 50%;
+		padding: 0 20px;
+	}
+	@include breakpoint(phone) {
+		flex-basis: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
 }
 
 .blog-thumbnail {
@@ -57,6 +73,8 @@
 	h3 {
 		text-transform: none;
 		margin-bottom: 8px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	p {
 		font-size: 14px;
@@ -90,6 +108,16 @@
 			font-size: 15px;
 		}
 	}
+	@include breakpoint(touch) {
+		flex-direction: column;
+		margin-bottom: 20px;
+		.btn-previous {
+			margin-bottom: 30px;
+		}
+		h2 {
+			padding-right: 0;
+		}
+	}
 }
 
 .blog-content {
@@ -102,6 +130,9 @@
 		font-size: 15px;
 		line-height: 30px;
 		margin-bottom: 40px;
+	}
+	@include breakpoint(phone) {
+		padding-top: 20px;
 	}
 }
 
@@ -149,6 +180,15 @@
 			transform: rotate(180deg);
 		}
 	}
+	@include breakpoint(touch) {
+		margin: 0;
+	}
+	@include breakpoint(phone) {
+		.btn {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 .user-comments-section {
@@ -168,6 +208,9 @@
 		font-size: 15px;
 		line-height: 30px;
 	}
+	@include breakpoint(phone) {
+		padding-left: 0;
+	}
 }
 
 .user-image {
@@ -175,6 +218,11 @@
 	left: 0;
 	top: 25px;
 	width: 67px;
+	@include breakpoint(phone) {
+		position: relative;
+		top: 0;
+		margin-bottom: 15px;
+	}
 }
 
 .profile-img {
@@ -195,13 +243,45 @@
 	}
 	.sw-atlete-list {
 		padding: 78px 0;
+		margin-bottom: 0;
 	}
 	.sw-atlete-item {
 		margin-bottom: 77px;
+		transition: margin 0.5s ease-out;
 	}
+	@include breakpoint(desktop) {
+		.sw-atlete-item {
+			&:nth-child(3n + 2) {
+				.sw-athlete-popup {
+					left: -100%;
+				}
+			}
+			&:nth-child(3n + 3) {
+				.sw-athlete-popup {
+					left: -200%;
+				}
+			}
+		}
+	}
+	@include breakpoint(touch) {
+		.search-form {
+			margin-bottom: 15px;
+		}
+	}
+	@include breakpoint(tablet) {
+		.sw-atlete-item {
+			&:nth-child(2n + 2) {
+				.sw-athlete-popup {
+					left: -100%;
+				}
+			}
+		}
+	}
+
 }
 
 .btn-introduction {
+	background-color: $black;
 	float: right;
 	position: relative;
 	padding: 0 17px 0 38px;
@@ -214,12 +294,12 @@
 		color: $black;
 		&::before,
 		&::after {
-			background: $black;
+			background-color: $black;
 		}
 	}
 	&::before,
 	&::after {
-		background: $white;
+		background-color: $white;
 		content: '';
 		position: absolute;
 		transition: 0.3s ease-out;
@@ -246,6 +326,11 @@
 		text-align: center;
 		margin-bottom: 65px;
 	}
+	@include breakpoint(touch) {
+		h2 {
+			margin-bottom: 30px;
+		}
+	}
 }
 
 .sw-athlete-popup {
@@ -253,17 +338,19 @@
 	left: 0;
 	top: calc(100% + 77px);
 	width: 300%;
-	background-color: $black;
+	background-color: rgba($black, 0.5);
 	padding: 60px 0 60px 60px;
 	z-index: 30;
+	display: none;
 	&::before,
 	&::after {
 		position: absolute;
 		height: 100%;
-		width: 2000px;
-		background: $black;
+		width: 0;
+		background-color: rgba($black, 0.5);
 		top: 0;
 		content: '';
+		transition: 1s ease-out;
 	}
 	&::before {
 		right: 100%;
@@ -271,10 +358,27 @@
 	&::after {
 		left: 100%;
 	}
+	&.opened {
+		&::before,
+		&::after {
+			width: 2000px;
+		}
+	}
+
+	@include breakpoint(tablet) {
+		width: 200%;
+	}
+	@include breakpoint(phone) {
+		width: 100%;
+		padding: 20px 0;
+	}
 }
 
 .sw-athlete-details {
 	margin-bottom: 70px;
+	@include breakpoint(phone) {
+		margin-bottom: 30px;
+	}
 }
 
 .athlete-img-holder {
@@ -285,19 +389,26 @@
 		width: 100%;
 		margin-bottom: 30px;
 	}
+	@include breakpoint(tablet) {
+		width: 200px;
+	}
+	@include breakpoint(phone) {
+		display: none;
+	}
 }
 
 .athlete-contact {
 	font-size: 20px;
-    color: $white;
-    display: block;
-    padding: 25px;
-    background: #242424;
+	color: $white;
+	display: block;
+	padding: 25px;
+	background: #242424;
 	word-break: break-word;
 	letter-spacing: -1px;
 }
 
 .athlete-details-content {
+	position: relative;
 	margin-left: 320px;
 	padding-left: 33px;
 	h2,
@@ -322,6 +433,29 @@
 		padding-right: 200px;
 		li {
 			color: $white;
+		}
+	}
+	.btn-close-popup {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		font-size: 18px;
+		color: $white;
+	}
+	@include breakpoint(tablet) {
+		margin-left: 210px;
+	}
+	@include breakpoint(phone) {
+		margin-left: 0;
+		padding-left: 0;
+		.bullet-list {
+			padding-right: 0;
+			margin-bottom: 20px;
+		}
+		.social-icons {
+			position: relative;
+			bottom: auto;
+			text-align: right;
 		}
 	}
 }
@@ -368,6 +502,9 @@
 .athlete-gallery {
 	@extend %clearfix;
 	margin-left: -60px;
+	@include breakpoint(phone) {
+		margin-left: 0;
+	}
 }
 
 .athlete-gallery-list {
@@ -379,6 +516,18 @@
 	}
 	img {
 		width: 100%;
+	}
+	@include breakpoint(tablet) {
+		li {
+			width: 33.33%;
+			margin-bottom: 20px;
+		}
+	}
+	@include breakpoint(phone) {
+		li {
+			width: 50%;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -393,12 +542,26 @@
 	display: flex;
 	padding: 36px 0;
 	margin-bottom: 40px;
+	@include breakpoint(touch) {
+		display: block;
+		max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+		.select-btn {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+	}
 }
 
 .workout-item {
 	flex: 1 1 33.333%;
 	max-width: 33.333%;
 	text-align: center;
+	@include breakpoint(touch) {
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 .workout-steps {
@@ -414,6 +577,16 @@
 	max-width: 33.333%;
 	padding: 0 45px;
 	margin-bottom: 30px;
+	@include breakpoint(tablet) {
+		flex-basis: 50%;
+		max-width: 50%;
+		padding: 0 20px;
+	}
+	@include breakpoint(phone) {
+		flex-basis: 100%;
+		max-width: 100%;
+		padding: 0 20px;
+	}
 }
 
 .step-image {
@@ -437,6 +610,8 @@
 .video-unavailable {
 	padding: 154px 21% 112px;
 	text-align: center;
+	margin-left: 26px;
+	margin-right: 26px;
 	span {
 		display: block;
 	}
@@ -475,16 +650,27 @@
 			letter-spacing: 0.9px;
 		}
 	}
+	@include breakpoint(touch) {
+		margin: 0;
+		padding: 50px 20px 30px;
+	}
 }
 
 .level-picker {
 	display: flex;
 	background: $white;
 	margin: 0 35px 60px;
-    width: calc(100% - 70px);
+	width: calc(100% - 70px);
 	box-shadow: 0 0 8px rgba(#231f20, 0.25);
 	border-radius: 30px;
 	padding: 0;
+	@include breakpoint(touch) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		flex-direction: column;
+		overflow: hidden;
+	}
 }
 
 .level-item {
@@ -495,6 +681,14 @@
 		width: 100%;
 		box-shadow: none;
 	}
+	@include breakpoint(touch) {
+		flex-basis: 100%;
+		width: 100%;
+		.select-btn {
+			border-radius: 0;
+			height: auto;
+		}
+	}
 }
 
 .workout-selection {
@@ -502,6 +696,15 @@
 	margin-bottom: 40px;
 	.select-btn {
 		margin: 0 20px;
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		.select-btn {
+			margin: 0 0 20px;
+			width: 100%;
+		}
 	}
 }
 
@@ -527,5 +730,41 @@
 	}
 	.step-image {
 		padding-bottom: 100%;
+	}
+	@include breakpoint(touch) {
+		.step-info {
+			padding-bottom: 20px;
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.workout-crew-popup {
+	padding: 46px 0 75px;
+	background-color: #f5f5f5;
+	box-shadow: 0 0 30px rgba(#231f20, 0.2);
+	.wrap {
+		position: relative;
+	}
+	.sw-crews-crew-item {
+		box-shadow: none;
+		background: transparent;
+		border-radius: 0;
+		margin-bottom: 48px;
+	}
+	.crew-image {
+		margin-bottom: 67px;
+	}
+	p {
+		text-align-last: center;
+	}
+	.btn-close-crew-popup {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 18px;
+		color: $nero;
 	}
 }

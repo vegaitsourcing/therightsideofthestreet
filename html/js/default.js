@@ -13,6 +13,7 @@ let app = {
 		functions.goToTop();
 		functions.athletePopup();
 		functions.crewPopup();
+		functions.menuToggle();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

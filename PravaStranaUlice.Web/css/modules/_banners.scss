@@ -44,4 +44,36 @@
 			}
 		}
 	}
+	@include breakpoint(touch) {
+		margin-top: 0;
+		.banner-social-links {
+			top: auto;
+			bottom: -100px;
+			transform: translate(0, 100%);
+			a {
+				display: inline-block;
+				margin: 0 0 0 20px;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		.h1 {
+			font-size: 47px;
+		}
+	}
+	@include breakpoint(phone) {
+		height: auto;
+		margin-top: -132px;
+		padding: 192px 0 80px;
+		.h1 {
+			font-size: 23px;
+		}
+		.banner-content {
+			position: relative;
+			top: 0;
+		}
+		.banner-social-links {
+			bottom: -30px;
+		}
+	}
 }

@@ -19,7 +19,21 @@ module.exports = {
 				arrows: true,
 				dots: false,
 				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 1
+						}
+					}
+				]
 			});
 		}
 	},
@@ -34,7 +48,15 @@ module.exports = {
 				arrows: true,
 				dots: false,
 				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+				responsive: [
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 3
+						}
+					}
+				]
 			});
 		}
 	},
@@ -49,7 +71,23 @@ module.exports = {
 				arrows: false,
 				dots: true,
 				autoplay: true,
-				autoplaySpeed: 5000
+				autoplaySpeed: 5000,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+						}
+					}
+				]
 			});
 		}
 	},
@@ -73,6 +111,51 @@ module.exports = {
 		$('.go-to-top').on('click', function() {
 			$('html, body').animate({ scrollTop: 0}, 1000);
 		});
+	},
+
+	athletePopup: function() {
+		const swItem = $('.sw-atlete-item');
+		swItem.find('.thumbnail, .sw-atlete-info h4 a').on('click', function() {
+			const $swAtl = $(this).closest('.sw-atlete-item');
+			const $popup = $swAtl.find('.sw-athlete-popup');
+			if($popup.length) {
+				$popup.slideDown(400, function() {
+					$('html, body').animate({ scrollTop: $popup.offset().top }, 400);
+					$swAtl.css('margin-bottom', $popup.outerHeight() + 150);
+					$popup.addClass('opened');
+				});
+			}
+		});
+		$('.btn-close-popup').on('click', function() {
+			const $popup = $(this).closest('.sw-athlete-popup');
+			const $swAtl = $(this).closest('.sw-atlete-item');
+			$popup.slideUp(300, function() {
+				$swAtl.removeAttr('style').removeClass('opened');
+				$('html, body').animate({ scrollTop: $swAtl.offset().top }, 400);
+			});
+		});
+	},
+
+	crewPopup: function() {
+		$('.btn-close-crew-popup').on('click', function() {
+			$(this).closest('.workout-crew-popup').slideUp(300);
+		});
+	},
+
+	menuToggle: function() {
+		const $menu = $('[data-menu]');
+		const $menuToggle = $('[data-menu-toggle]');
+		const $menuClose = $('[data-menu-close]');
+
+		const openClass = 'main-nav-open';
+
+		$menuToggle.on('click', function() {
+			$menu.addClass(openClass);
+		});
+
+		$menuClose.on('click', function() {
+			$menu.removeClass(openClass);
+		})
 	}
 
 };

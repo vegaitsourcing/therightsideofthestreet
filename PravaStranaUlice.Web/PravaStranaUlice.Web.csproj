@@ -438,6 +438,9 @@
     <Content Include="Views\Partials\NestedContents\_ExerciseStep.cshtml" />
     <Content Include="Views\Partials\Listing\_ListHeaderLinks.cshtml" />
     <Content Include="Views\Partials\Listing\_ListLanguages.cshtml" />
+    <Content Include="Views\AthleteLandingPage.cshtml" />
+    <Content Include="Views\Partials\_Athlete.cshtml" />
+    <Content Include="Views\Athlete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -457,8 +460,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RenderMvc\AthletesLandingPageController.cs" />
     <Compile Include="Controllers\RenderMvc\AboutUsController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeAMemberController.cs" />
+    <Compile Include="Controllers\RenderMvc\BlogLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsAndMembershipController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
@@ -480,6 +485,7 @@
     <Compile Include="ViewModels\HeaderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\AthletesLanding\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>

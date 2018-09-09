@@ -1,5 +1,4 @@
 
-
 .donation-heading {
 	widows: 100%;
 	height: auto;
@@ -44,6 +43,11 @@
 		text-align: center;
 		color: $white;
 	}
+	@include breakpoint(touch) {
+		.wrap {
+			padding-top: 20px;
+		}
+	}
 }
  .donators-content {
 	width: 100%;
@@ -72,6 +76,12 @@
 				font-weight: 500;
 				color: $white;
 			}
+		}
+	}
+	@include breakpoint(touch) {
+		padding-top: 20px;
+		.donators-name {
+			padding-bottom: 0;
 		}
 	}
 }

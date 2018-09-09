@@ -1,5 +1,30 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.AthleteLandingPage>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.AthleteLandingPage>
+
+<div class="container">
+
+    <main class="main">
+        <div class="athlete-landing">
+            <div class="athlete-banner">
+                <div class="wrap">
+                    <h2>@Model.PageTitle</h2>
+                    <form class="search-form" action="" method="post">
+                        <input type="text" id="search" name="search">
+                        <button class="submit-btn" type="submit"><span class="icon font-ico-search"><span class="sr-only">Pretraga</span></span></button>
+                    </form>
+                    <a class="btn btn-small btn-black btn-introduction" href="javascript:;">Predstavi sebe</a>
+                </div>
+            </div>
+            <div class="athlete-list-holder">
+                <div class="sw-atlete-list cover-bg" style="background-image: url('/images/content/athlete-background-img.jpg')">
+                    <div class="wrap">
+                        @foreach (var athleteItem in Model.GetAthletes(Model.ItemsPerPage))
+                        {
+                            Html.RenderPartial("_Athlete", athleteItem);
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>

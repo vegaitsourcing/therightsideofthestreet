@@ -248,6 +248,7 @@
     <Compile Include="Generated\Athlete.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AthleteLandingPage.cs" />
     <Compile Include="Generated\AthleteLandingPage.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

@@ -17,11 +17,35 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	@include breakpoint(touch) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .personal-img {
 	width: auto;
 	height: auto;
+	.icon {
+		font-size: 40px;
+	}
+	label {
+		background-color: $red;
+		color: $white;
+		border: 5px dashed $white;
+		width: 264px;
+		height: 316px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+	}
+	@include breakpoint(touch) {
+		margin: 0 auto 30px;
+	}
 }
 
 .show-yourself-form {
@@ -46,6 +70,12 @@
 		color: $white;
 		font-weight: 400;
 		text-transform: none;
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+		input {
+			width: 100%;
+		}
 	}
 }
 
@@ -82,6 +112,9 @@
 		padding-left: 10px;
 		color: $white;
 	}
+	@include breakpoint(touch) {
+		width: 100%;
+	}
 }
 
 .social-media {
@@ -97,6 +130,16 @@
 		font-size: 22px;
 		color: $white;
 	}
+	@include breakpoint(touch) {
+		width: 100%;
+		text-align: left;
+		.icon {
+			width: 40px;
+		}
+		input {
+			width: calc(100% - 60px);
+		}
+	}
 }
 
 .show-yourself-content-second {
@@ -105,6 +148,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	img {
+		margin-bottom: 20px;
+	}
 }
 
 .s-y-c-s-btn {

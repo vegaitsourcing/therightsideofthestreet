@@ -3068,6 +3068,9 @@
 				functions.eventsSlider();
 				functions.citiesMapSlider();
 				functions.goToTop();
+				functions.athletePopup();
+				functions.crewPopup();
+				functions.menuToggle();
 				// if($('.sw-map-container').length) {
 				// 	maps.initMap();
 				// }
@@ -3122,7 +3125,18 @@
 						arrows: true,
 						dots: false,
 						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+						responsive: [{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 2
+							}
+						}, {
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1
+							}
+						}]
 					});
 				}
 			},
@@ -3137,7 +3151,13 @@
 						arrows: true,
 						dots: false,
 						prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+						nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+						responsive: [{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 3
+							}
+						}]
 					});
 				}
 			},
@@ -3152,7 +3172,20 @@
 						arrows: false,
 						dots: true,
 						autoplay: true,
-						autoplaySpeed: 5000
+						autoplaySpeed: 5000,
+						responsive: [{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							}
+						}, {
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}]
 					});
 				}
 			},
@@ -3175,6 +3208,51 @@
 			goToTop: function goToTop() {
 				$('.go-to-top').on('click', function () {
 					$('html, body').animate({ scrollTop: 0 }, 1000);
+				});
+			},
+
+			athletePopup: function athletePopup() {
+				var swItem = $('.sw-atlete-item');
+				swItem.find('.thumbnail, .sw-atlete-info h4 a').on('click', function () {
+					var $swAtl = $(this).closest('.sw-atlete-item');
+					var $popup = $swAtl.find('.sw-athlete-popup');
+					if ($popup.length) {
+						$popup.slideDown(400, function () {
+							$('html, body').animate({ scrollTop: $popup.offset().top }, 400);
+							$swAtl.css('margin-bottom', $popup.outerHeight() + 150);
+							$popup.addClass('opened');
+						});
+					}
+				});
+				$('.btn-close-popup').on('click', function () {
+					var $popup = $(this).closest('.sw-athlete-popup');
+					var $swAtl = $(this).closest('.sw-atlete-item');
+					$popup.slideUp(300, function () {
+						$swAtl.removeAttr('style').removeClass('opened');
+						$('html, body').animate({ scrollTop: $swAtl.offset().top }, 400);
+					});
+				});
+			},
+
+			crewPopup: function crewPopup() {
+				$('.btn-close-crew-popup').on('click', function () {
+					$(this).closest('.workout-crew-popup').slideUp(300);
+				});
+			},
+
+			menuToggle: function menuToggle() {
+				var $menu = $('[data-menu]');
+				var $menuToggle = $('[data-menu-toggle]');
+				var $menuClose = $('[data-menu-close]');
+
+				var openClass = 'main-nav-open';
+
+				$menuToggle.on('click', function () {
+					$menu.addClass(openClass);
+				});
+
+				$menuClose.on('click', function () {
+					$menu.removeClass(openClass);
 				});
 			}
 

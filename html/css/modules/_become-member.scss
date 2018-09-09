@@ -48,6 +48,12 @@
 		}
 	}
 	@include breakpoint(phone) {
+		.content {
+			width: 100%;
+			h2 {
+				padding: 20px 0 0;
+			}
+		}
 		.wrap {
 			.content {
 				h2 {

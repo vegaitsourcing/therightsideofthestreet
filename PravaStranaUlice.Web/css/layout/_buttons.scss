@@ -40,6 +40,11 @@ input[type='submit'] {
 		background-color: $white;
 		color: $red;
 	}
+	@include breakpoint(phone) {
+		height: auto;
+		font-size: 16px;
+		line-height: 2;
+	}
 }
 
 .btn-small {

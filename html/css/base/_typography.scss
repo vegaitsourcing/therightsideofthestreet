@@ -23,11 +23,17 @@ h1,
 h2,
 .h2 {
 	font-size: 40px;
+	@include breakpoint(phone) {
+		font-size: 30px;
+	}
 }
 
 h3,
 .h3 {
 	font-size: 30px;
+	@include breakpoint(phone) {
+		font-size: 25px;
+	}
 }
 
 h4,
@@ -54,9 +60,12 @@ p {
 	font-size: 18px;
 	font-weight: 400;
 	color: $grey;
-	line-height: 30px;
+	line-height: 1.6666667;
 	text-align: justify;
 	margin-bottom: 15px;
+	@include breakpoint(phone) {
+		font-size: 16px;
+	}
 }
 
 // Icon font

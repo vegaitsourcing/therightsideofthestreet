@@ -19,6 +19,11 @@
 			display: block;
 		}
 	}
+	@include breakpoint(touch) {
+		li {
+			padding-left: 30px;
+		}
+	}
 }
 
 .rte-content {

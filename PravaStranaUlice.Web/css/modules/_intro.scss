@@ -31,4 +31,9 @@
 			text-align-last: left;
 		}
 	}
+	@include breakpoint(touch) {
+		img {
+			margin-bottom: 30px;
+		}
+	}
 }

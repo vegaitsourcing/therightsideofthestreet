@@ -83,14 +83,21 @@
 	&.slick-hidden {
 		display: none;
 	}
+
 }
 
 .slick-prev {
 	left: -38px;
+	@include breakpoint(touch) {
+		left: 0;
+	}
 }
 
 .slick-next {
 	right: -38px;
+	@include breakpoint(touch) {
+		right: 0;
+	}
 }
 
 .slick-disabled {
@@ -119,6 +126,11 @@
 	.slick-active {
 		button {
 			background-color: $red;
+		}
+	}
+	@include breakpoint(touch) {
+		li {
+			margin: 0 10px;
 		}
 	}
 }

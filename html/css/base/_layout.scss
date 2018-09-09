@@ -21,6 +21,9 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	@include breakpoint(touch) {
+		padding-top: 132px;
+	}
 }
 
 .full-width-img {

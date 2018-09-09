@@ -11,6 +11,9 @@ let app = {
 		functions.eventsSlider();
 		functions.citiesMapSlider();
 		functions.goToTop();
+		functions.athletePopup();
+		functions.crewPopup();
+		functions.menuToggle();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

@@ -19,7 +19,21 @@ module.exports = {
 				arrows: true,
 				dots: false,
 				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 1
+						}
+					}
+				]
 			});
 		}
 	},
@@ -34,7 +48,15 @@ module.exports = {
 				arrows: true,
 				dots: false,
 				prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
-				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>'
+				nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+				responsive: [
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 3
+						}
+					}
+				]
 			});
 		}
 	},
@@ -49,7 +71,23 @@ module.exports = {
 				arrows: false,
 				dots: true,
 				autoplay: true,
-				autoplaySpeed: 5000
+				autoplaySpeed: 5000,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+						}
+					}
+				]
 			});
 		}
 	},
@@ -102,6 +140,22 @@ module.exports = {
 		$('.btn-close-crew-popup').on('click', function() {
 			$(this).closest('.workout-crew-popup').slideUp(300);
 		});
+	},
+
+	menuToggle: function() {
+		const $menu = $('[data-menu]');
+		const $menuToggle = $('[data-menu-toggle]');
+		const $menuClose = $('[data-menu-close]');
+
+		const openClass = 'main-nav-open';
+
+		$menuToggle.on('click', function() {
+			$menu.addClass(openClass);
+		});
+
+		$menuClose.on('click', function() {
+			$menu.removeClass(openClass);
+		})
 	}
 
 };
