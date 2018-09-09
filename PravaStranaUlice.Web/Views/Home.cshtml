@@ -1,5 +1,308 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.Home>
+<main class="main">
+    <h1 class="sr-only">Prava Strana Ulice</h1>
+    @if (Model.BannerImage != null)
+    {
+        <div class="banner">
+            @if (!string.IsNullOrEmpty(Model.BannerImage.Url))
+            {
+                <div class="banner-img cover-bg" style="background-image: url('@Model.BannerImage.Url');"></div>}
+            <div class="banner-content">
+                <h2 class="h1">Suspendisse sed sollicitudin mauris</h2>
+                @if (Model.BannerLink != null)
+                {
+                    <a class="btn" href="@Model.BannerLink.Url">@Model.BannerLink.Name</a>}
+                <div class="banner-social-links">
+                    @if (Model.Settings.FacebookLink != null)
+                    {
+                        <a href="@Model.Settings.FacebookLink.Url" target="_blank" title="@Model.Settings.FacebookLink.Name">
+                            <span class="icon font-ico-facebook"></span>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    }
+                    @if (Model.Settings.InstagramLink != null)
+                    {
+                        <a href="@Model.Settings.InstagramLink.Url" target="_blank" title="@Model.Settings.InstagramLink.Name">
+                            <span class="icon font-ico-instagram"></span>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    }
+                    @if (Model.Settings.YoutubeLink != null)
+                    {
+                        <a href="@Model.Settings.YoutubeLink.Url" target="_blank" title="@Model.Settings.YoutubeLink.Name">
+                            <span class="icon font-ico-youtube"></span>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="intro">
+        <div class="wrap">
+            <h2>@Model.FirstIntroTitle</h2>
+            @Model.FirstIntroText
+        </div>
+    </div>
+    <div class="full-width-img">
+        <img src="@Model.FirstIntroBannerImage.Url" alt="">
+    </div>
+    <div class="intro align-left">
+        <div class="wrap">
+            <h2>@Model.SecondIntroTitle</h2>
+            <img src="@Model.SecondIntroImage.Url" alt="" align="right">
+            @Model.SecondIntroText
+            <a class="btn" href="@Model.SecondIntroLink.Url">@Model.SecondIntroLink.Name</a>
+        </div>
+    </div>
+
+    <div class="sw-atlete cover-bg" style="background-image: url('/images/content/sw-atlete-bg.jpg')">
+        <div class="wrap">
+            <h2 class="centered color-white">Street workout atlete</h2>
+            <div class="sw-atlete-list sw-atlete-slider">
+                @foreach (Athlete athlete in Model.AthleteLandingPageCast.Children.OfType<Athlete>().Take(Model.AthleteLandingPageCast.ItemsPerPage))
+                {
+                    <div class="sw-atlete-item">
+                        <a class="thumbnail cover-bg" href="javascript:;" style="background-image: url('@athlete.ProfileImage.Url')"></a>
+                        <div class="sw-atlete-info">
+                            <h4><a href="javascript:;">@athlete.Title</a></h4>
+                            <div class="sw-social">
+                                <a href="@athlete.FacebookUrl" target="_blank" title="Follow @athlete.Title on Facebook">
+                                    <span class="icon font-ico-facebook"></span>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                                <a href="@athlete.InstagramUrl" target="_blank" title="Follow @athlete.Title on Instagram">
+                                    <span class="icon font-ico-instagram"></span>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                                <a href="@athlete.YouTubeUrl" target="_blank" title="Follow @athlete.Title on YouTube">
+                                    <span class="icon font-ico-youtube"></span>
+                                    <span class="sr-only">YouTube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <form class="sw-atlete-form" action="" method="post">
+                <label class="sr-only" for="sw-atlete-search">Pronadji atletu</label>
+                <input type="text" id="sw-atlete-search" name="sw-atlete-search">
+                <button class="btn btn-submit" type="submit">
+                    <span class="sr-only">Pronadji atletu</span>
+                    <span class="icon font-ico-search"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sw-crews cover-bg" style="background-image: url('/images/content/sw-crews-bg.jpg')">
+        <div class="wrap">
+            <div class="sw-crews-intro">
+                <h2 class="centered">Street workout ekipe</h2>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                </p>
+                <form class="sw-crews-form" action="" method="post">
+                    <label class="sr-only" for="sw-crews-search">Pretraga gradova</label>
+                    <input type="text" id="sw-crews-search" name="sw-crews-search" placeholder="Pretraga gradova">
+                    <button class="btn btn-submit" type="submit">
+                        <span class="sr-only">Pronadji grad</span>
+                        <span class="icon font-ico-search"></span>
+                    </button>
+                </form>
+            </div>
+            <div class="sw-crews-list sw-crews-city-list">
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Beograd</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Novi Sad</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Zrenjanin</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Subotica</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Niš</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Kragujevac</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Požarevac</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Ruma</h4>
+                    </a>
+                </div>
+                <div class="sw-crews-city-item">
+                    <a href="javascript:;">
+                        <h4>Sremska Mitrovica</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="sw-crews-list sw-crews-crew-list">
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+                <div class="sw-crews-crew-item">
+                    <a href="javascript:;"><img src="/images/content/prava-strana-ulice.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="show-more-wrap">
+                <a class="btn-black" href="javascript:;">Prikaži više</a>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.HideNewsletter)
+    {
+        <form class="newsletter-form" action="" method="post">
+            <div class="wrap">
+                <label for="newsletter">Prijavite se na naš newsletter!</label>
+                <div class="newsletter-input-wrap">
+                    <input type="text" id="newsletter" name="newsletter">
+                    <button class="newsletter-submit" type="submit">Prijavi se!</button>
+                </div>
+            </div>
+        </form>
+    }
+
+    <div class="events">
+        <div class="wrap">
+            <h2 class="centered">Dešavanja</h2>
+            <div class="events-list events-slider">
+            @foreach (BlogDetail blog in Model.EventsCast.Children.OfType<BlogDetail>().Take(Model.EventsCast.ItemsPerPage))
+            {
+                <div class="event-item">
+                    <a class="thumbnail cover-bg" href="@blog.Url" style="background-image: url('@blog.OverviewImage.Url')"></a>
+                    <div class="event-info">
+                        <h3><a href="@blog.Url">@blog.PageTitle</a></h3>
+                        <div class="event-info-desc">
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered  in...</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            </div>
+        </div>
+    </div>
+
+    <div class="sw-maps">
+        <div class="sw-maps-heading cover-bg" style="background-image: url('/images/content/sw-maps-bg.jpg')">
+            <h2 class="centered color-white">Parkovi za vežbanje</h2>
+        </div>
+        <div class="sw-map">
+            <div class="sw-map-cities">
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Beograd</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Novi Sad</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Zrenjanin</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Pančevo</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Subotica</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Šabac</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Ruma</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Sremska Mitrovica</button>
+                </div>
+                <div class="sw-map-city">
+                    <button class="sw-city-button" type="button">Kragujevac</button>
+                </div>
+            </div>
+            <div class="sw-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d510673.8664961151!2d20.221936027041014!3d44.997554849046885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srs!4v1536423751151" width="1920" height="540" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="sw-blog cover-bg" style="background-image: url('/images/content/sw-blog-bg.jpg')">
+        <div class="wrap">
+            <h2 class="centered color-white">Street workout blog</h2>
+            <div class="blog-listing">
+            @foreach (BlogDetail blog in Model.BlogLandingCast.Children.OfType<BlogDetail>().Take(Model.BlogLandingCast.ItemsPerPage))
+            {
+
+                <div class="blog-item">
+                    <a class="blog-thumbnail cover-bg" href="@blog.Url" style="background-image: url('@blog.OverviewImage.Url')"></a>
+                    <div class="blog-info">
+                        <h3><a href="@blog.Url">@blog.PageTitle</a></h3>
+                        <p>Nulla lectus lorem, convallis eget diam non, dictum cursus sapien. Cras eu venenatis turpis, ac iaculis metus. Fusce</p>
+                    </div>
+                </div>
+
+            }
+            </div>
+        </div>
+    </div>
+
+    <div class="module-about-us cover-bg" style="background-image: url('/images/content/about-us-bg.jpg')">
+        <div class="wrap">
+            <h2 class="centered">@Model.AboutUsCast.PageTitle</h2>
+            <div class="about-columns">
+                <div class="about-video">
+                    <iframe width="560" height="315" src="@Model.AboutUsCast.EmbedVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="about-description">
+                    <h3>@Model.AboutUsCast.IntroTitle</h3>
+                    @Model.AboutUsCast.IntroText
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

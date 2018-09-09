@@ -46,6 +46,141 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
+		/// About Us
+		///</summary>
+		[ImplementPropertyType("aboutUs")]
+		public IEnumerable<IPublishedContent> AboutUs
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutUs"); }
+		}
+
+		///<summary>
+		/// Athlete Landing Page
+		///</summary>
+		[ImplementPropertyType("athleteLandingPage")]
+		public IEnumerable<IPublishedContent> AthleteLandingPage
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("athleteLandingPage"); }
+		}
+
+		///<summary>
+		/// Banner Image
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("bannerImage"); }
+		}
+
+		///<summary>
+		/// Banner Link
+		///</summary>
+		[ImplementPropertyType("bannerLink")]
+		public RJP.MultiUrlPicker.Models.Link BannerLink
+		{
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("bannerLink"); }
+		}
+
+		///<summary>
+		/// Blog Landing
+		///</summary>
+		[ImplementPropertyType("blogLanding")]
+		public IEnumerable<IPublishedContent> BlogLanding
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("blogLanding"); }
+		}
+
+		///<summary>
+		/// Events
+		///</summary>
+		[ImplementPropertyType("events")]
+		public IEnumerable<IPublishedContent> Events
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("events"); }
+		}
+
+		///<summary>
+		/// FirstIntroBannerImage
+		///</summary>
+		[ImplementPropertyType("firstIntroBannerImage")]
+		public IPublishedContent FirstIntroBannerImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("firstIntroBannerImage"); }
+		}
+
+		///<summary>
+		/// FirstIntroText
+		///</summary>
+		[ImplementPropertyType("firstIntroText")]
+		public IHtmlString FirstIntroText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("firstIntroText"); }
+		}
+
+		///<summary>
+		/// FirstIntroTitle
+		///</summary>
+		[ImplementPropertyType("firstIntroTitle")]
+		public string FirstIntroTitle
+		{
+			get { return this.GetPropertyValue<string>("firstIntroTitle"); }
+		}
+
+		///<summary>
+		/// Hide Newsletter
+		///</summary>
+		[ImplementPropertyType("hideNewsletter")]
+		public bool HideNewsletter
+		{
+			get { return this.GetPropertyValue<bool>("hideNewsletter"); }
+		}
+
+		///<summary>
+		/// Second Intro Image
+		///</summary>
+		[ImplementPropertyType("secondIntroImage")]
+		public IPublishedContent SecondIntroImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("secondIntroImage"); }
+		}
+
+		///<summary>
+		/// Second Intro Link
+		///</summary>
+		[ImplementPropertyType("secondIntroLink")]
+		public RJP.MultiUrlPicker.Models.Link SecondIntroLink
+		{
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("secondIntroLink"); }
+		}
+
+		///<summary>
+		/// Second Intro Text
+		///</summary>
+		[ImplementPropertyType("secondIntroText")]
+		public IHtmlString SecondIntroText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("secondIntroText"); }
+		}
+
+		///<summary>
+		/// SecondIntroTitle
+		///</summary>
+		[ImplementPropertyType("secondIntroTitle")]
+		public string SecondIntroTitle
+		{
+			get { return this.GetPropertyValue<string>("secondIntroTitle"); }
+		}
+
+		///<summary>
+		/// Street Workout Crews
+		///</summary>
+		[ImplementPropertyType("streetWorkoutCrews")]
+		public IEnumerable<IPublishedContent> StreetWorkoutCrews
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("streetWorkoutCrews"); }
+		}
+
+		///<summary>
 		/// External Redirect
 		///</summary>
 		[ImplementPropertyType("externalRedirect")]
