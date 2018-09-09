@@ -5,40 +5,38 @@
 	{
 		<h1 class="sr-only">@Model.Title</h1>
 	}
-
-
 	<div class="module-about-us cover-bg" style="background-image: url('/../images/content/about-us-bg.jpg')">
 		<div class="wrap">
 			@if (!string.IsNullOrEmpty(Model.Title))
 			{
 				<h2 class="centered">@Model.Title</h2>
 			}
-				<div class="about-columns">
-					@if (!string.IsNullOrEmpty(Model.Video))
-					{
-						<div class="about-video">
-							<iframe width="560" height="315" src="@Model.EmbedVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-					}
-
-					<div class="about-description">
-						@if (!string.IsNullOrEmpty(Model.Text.ToString()))
-						{
-							@Html.Raw(Model.Text);
-						}
+			<div class="about-columns">
+				@if (!string.IsNullOrEmpty(Model.Video))
+				{
+					<div class="about-video">
+						<iframe width="560" height="315" src="@Model.EmbedVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 					</div>
-					@if (Model.Buttons.Any())
+				}
+
+				<div class="about-description">
+					@if (!string.IsNullOrEmpty(Model.Text.ToString()))
 					{
+						@Html.Raw(Model.Text);
+					}
+				</div>
+				@if (Model.Buttons.Any())
+				{
 					<div class="blog-title-section donation-buttons">
 						@foreach (var btn in Model.Buttons)
 						{
-						<a href="@btn.Url"><button class="btn btn-small" type="button">@btn.Name</button></a>
+							<a href="@btn.Url"><button class="btn btn-small" type="button">@btn.Name</button></a>
 						}
 					</div>
-					}
+				}
 
-				</div>
 			</div>
+		</div>
 	</div>
 </main>
 
