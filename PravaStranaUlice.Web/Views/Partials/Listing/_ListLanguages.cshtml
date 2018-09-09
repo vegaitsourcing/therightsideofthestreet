@@ -1,0 +1,6 @@
+﻿@inherits UmbracoViewPage<List<PravaStranaUlice.Models.Language>>
+
+@foreach (var language in Model)
+{
+    <a class="header-links language-links" href="@language.Url" title="@language.LanguageName">@language.Name</a>
+}
