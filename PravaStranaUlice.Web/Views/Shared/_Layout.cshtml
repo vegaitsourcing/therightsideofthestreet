@@ -1,4 +1,6 @@
 ﻿@{Html.RenderPartial("_Head");}
-@{Html.RenderPartial("_Header");}
-@RenderBody()
-@{Html.RenderPartial("_Footer");}
+<div class="container">
+    @{Html.RenderPartial("_Header");}
+    @RenderBody()
+    @{Html.RenderPartial("_Footer");}
+</div>
