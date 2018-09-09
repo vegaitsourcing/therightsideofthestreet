@@ -1,7 +1,35 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.BecomeAmember>
-@using ContentModels = PravaStranaUlice.Models;
-@{
-	Layout = null;
-}
+﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.BecomeAmember>
 
-Hello Vuce!
+<main class="main">
+    @if (!string.IsNullOrEmpty(Model.PageTitle))
+    {
+        <h1 class="sr-only">@Model.PageTitle</h1>
+    }
+
+    <div class="bememe cover-bg" style="background-image: url('/../images/content/sw-crews-bg.jpg')">
+        <div class="wrap">
+            <div class="content">
+                @if (!string.IsNullOrEmpty(Model.Text.ToString()))
+                {
+                    @Html.Raw(Model.Text);
+                }
+                <form>
+                    <input type="text" name="name" placeholder="Ime" maxlength="24" title="Ime">
+                    <input type="text" name="surname" placeholder="Prezime" maxlength="24" title="Prezime">
+                    <input type="text" name="dob" placeholder="Datum i godina rođenja" maxlength="24" title="Datum rođenja dd/mm/yyyy">
+                    <input type="text" name="nationality" placeholder="Državljanstvo" maxlength="24" title="Državljanstvo">
+                    <input type="text" name="idcardnumber" placeholder="Broj ličnog dokumenta" maxlength="24" title="Broj ličnog dokumenta">
+                    <input type="text" name="adress" placeholder="Adresa stanovanja" maxlength="24" title="Adresa stanovanja">
+                    <input type="text" name="mblnumber" placeholder="Broj telefona" maxlength="24" title="Broj telefona">
+                    <input type="email" name="e-mail" placeholder="E-mail" maxlength="24" title="Email adresa">
+                    <button class="btn" type="submit" name="submit" value="Postani član">Postani član</button>
+                </form>
+                <div class="pdf-download">
+                    <a href="cv.docx"><img src="/../images/pdfdownload.png"></a>
+                    <p>PDF pristupnica</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
