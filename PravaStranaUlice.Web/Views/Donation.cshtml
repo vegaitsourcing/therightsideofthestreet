@@ -1,25 +1,50 @@
 ﻿@inherits UmbracoViewPage<PravaStranaUlice.Models.Donation>
 
 <main class="main">
-	@if(!string.IsNullOrEmpty(Model.PageTitle))
+	@if (!string.IsNullOrEmpty(Model.PageTitle))
 	{
-	<h1 class="sr-only">@Model.PageTitle</h1>
+		<h1 class="sr-only">@Model.PageTitle</h1>
 	}
 
-	<div class="donation-background cover-bg" style="background-image: url('/../images/body-brawny-crossfit-931323.png');">
-		<div class="wrap">
-			@if(!string.IsNullOrEmpty(Model.Text.ToString()))
-			{
-				<div class="donation-heading">
-					@Html.Raw(Model.Text)
-				</div>
-			}
+		<div class="donation-background cover-bg" style="background-image: url('/../images/body-brawny-crossfit-931323.png');">
+			<div class="wrap">
+				@if (!string.IsNullOrEmpty(Model.Text.ToString()))
+				{
+					<div class="donation-heading offline-paying">
+						@Html.Raw(Model.Text)
+					</div>
+				}
 				<div class="offline-paying">
 					<h2 class="h3">Do sada sakupljeno: @(!string.IsNullOrEmpty(Model.CurrentSum) ? Model.CurrentSum : "0.00")</h2>
 					<h3 class="h4">Ciljna suma za izgradnju parkova: @(!string.IsNullOrEmpty(Model.CurrentSum) ? Model.Total : "0.00")</h3>
 				</div>
 
 			</div>
+			<div class="our-donators">
+				<div class="wrap">
+					@if (!string.IsNullOrEmpty(Model.Title))
+					{
+						<h1 class="h2">@Model.Title</h1>
+					}
 
+						<div class="donators-content">
+							@foreach (var item in Model.DonatorItem.Cast<DonatorItem>())
+							{
+								Html.RenderAction<PravaStranaUlice.Web.Controllers.Surface.NestedContentsController>(c => c.DonatorItem(null), item);
+							}
+									<ul class="pagination">
+										<li class="active">
+											<a href="javascript:;">1</a>
+										</li>
+										<li>
+											<a href="javascript:;">2</a>
+										</li>
+										<li>
+											<a href="javascript:;">3</a>
+										</li>
+									</ul>
+						</div>
+				</div>
+			</div>
 		</div>
-	</main>
+</main>

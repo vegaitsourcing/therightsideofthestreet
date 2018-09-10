@@ -12,19 +12,12 @@
 				<h3 class="centered">@Model.PageTitle</h3>
 			}
 				<div class="workout-picker">
-					@for ( int i = 1; i< Model.ExerciseSubtypes.Cast<ExerciseSubtype>().Count(); i++)
+					@foreach ( var item in Model.ExerciseSubtypes.Cast<ExerciseSubtype>())
 					{
 						<div class="workout-item">
-							<a class="btn select-btn select-btn-active"  href="javascript:;"></a>
+							<a class="btn select-btn select-btn-active"  href="javascript:;">@item.Title</a>
 						</div>
 					}
-
-					@*<div class="workout-item">
-						<a class="btn select-btn" href="javascript:;">Podhvat</a>
-					</div>
-					<div class="workout-item">
-						<a class="btn select-btn" href="javascript:;">Nadhvat</a>
-					</div>*@
 				</div>
 
 				<div class="workout-steps" id="exerisetype-container" data-url-controller="@PravaStranaUlice.Web.Controllers.Surface.ListingController.ListExerciseStepsUrl" data-page="@Model.Id">
@@ -37,21 +30,6 @@
 							Html.RenderAction<PravaStranaUlice.Web.Controllers.Surface.NestedContentsController>(c => c.ExerciseStep(step), step);
 						}
 					}
-
-					@*<div class="workout-step-item">
-						<div class="step-image cover-bg" style="background-image: url('images/content/step-02.jpg')"></div>
-						<div class="step-info">
-							<span><strong>Korak 2. </strong>Laktovi se ne sastavljaju u toku podizanja u zbib, noge su sklopljene i ne pomeraju se.</span>
-						</div>
-					</div>
-					<div class="workout-step-item">
-						<div class="step-image cover-bg" style="background-image: url('images/content/step-03.jpg')"></div>
-						<div class="step-info">
-							<span><strong>Korak 3. </strong>Glava je u potpunosti iznad šipke, ruke su u istoj širini kao i u početnoj poziciji.</span>
-						</div>
-					</div>
-				</div>*@
-
 
 			<div class="video-unavailable cover-bg" style="background-image: url(/../images/content/video-unavailable.jpg)">
 				<div class="text-holder">
