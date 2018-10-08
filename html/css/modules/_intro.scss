@@ -1,0 +1,39 @@
+﻿//----------  banners
+//------------------------------------------------------------------------------
+
+.intro {
+	padding: 65px 0 38px;
+	h2 {
+		text-align: center;
+		margin-bottom: 1.35em;
+	}
+	h3 {
+		text-align: center;
+		margin-bottom: 1.35em;
+		text-transform: none;
+	}
+	p {
+		text-align-last: center;
+		margin-bottom: 52px;
+	}
+	.full-width-img {
+		padding-top: 38px;
+	}
+	img[align='right'] {
+		margin-left: 80px;
+	}
+	img[align='left'] {
+		margin-right: 80px;
+	}
+	&.align-left {
+		padding-bottom: 80px;
+		p {
+			text-align-last: left;
+		}
+	}
+	@include breakpoint(touch) {
+		img {
+			margin-bottom: 30px;
+		}
+	}
+}

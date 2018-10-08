@@ -1,0 +1,75 @@
+<div ng-controller="RJP.MultiUrlPickerController as ctrl" class="umb-editor umb-contentpicker">
+    <ng-form name="multiUrlPickerForm">
+        <div ui-sortable="ctrl.sortableOptions" ng-model="ctrl.renderModel">
+            <umb-node-preview ng-repeat="link in ctrl.renderModel"
+                              icon="link.icon"
+                              name="link.name"
+                              published="link.published"
+                              description="link.url + (link.querystring ? link.querystring : '')"
+                              sortable="!ctrl.sortableOptions.disabled"
+                              allow-remove="true"
+                              allow-open="true"
+                              on-remove="ctrl.remove($index)"
+                              on-open="ctrl.openLinkPicker(link, $index)">
+            </umb-node-preview>
+        </div>
+
+        <a ng-show="!model.config.maxNumberOfItems || ctrl.renderModel.length < model.config.maxNumberOfItems"
+           class="umb-node-preview-add"
+           href
+           ng-click="ctrl.openLinkPicker()"
+           prevent-default>
+            <localize key="general_add">Add</localize>
+        </a>
+
+        <div class="umb-contentpicker__min-max-help" ng-if="model.config.maxNumberOfItems > 0 || model.config.minNumberOfItems > 0">
+
+            <!-- Both min and max items -->
+            <span ng-if="model.config.minNumberOfItems && model.config.maxNumberOfItems && model.config.minNumberOfItems !== model.config.maxNumberOfItems">
+                <span ng-if="ctrl.renderModel.length < model.config.maxNumberOfItems">Add between {{model.config.minNumberOfItems}} and {{model.config.maxNumberOfItems}} items</span>
+                <span ng-if="ctrl.renderModel.length > model.config.maxNumberOfItems">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumberOfItems}} <localize key="validation_itemsSelected"> items selected</localize>
+                </span>
+            </span>
+
+            <!-- Equal min and max -->
+            <span ng-if="model.config.minNumberOfItems && model.config.maxNumberOfItems && model.config.minNumberOfItems === model.config.maxNumberOfItems">
+                <span ng-if="ctrl.renderModel.length < model.config.maxNumberOfItems">Add {{model.config.minNumberOfItems - ctrl.renderModel.length}} item(s)</span>
+                <span ng-if="ctrl.renderModel.length > model.config.maxNumberOfItems">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumberOfItems}} <localize key="validation_itemsSelected"> items selected</localize>
+                </span>
+            </span>
+
+            <!-- Only max -->
+            <span ng-if="!model.config.minNumberOfItems && model.config.maxNumberOfItems">
+                <span ng-if="ctrl.renderModel.length < model.config.maxNumberOfItems">Add up to {{model.config.maxNumberOfItems}} items</span>
+                <span ng-if="ctrl.renderModel.length > model.config.maxNumberOfItems">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumberOfItems}} <localize key="validation_itemsSelected">items selected</localize>
+                </span>
+            </span>
+
+            <!-- Only min -->
+            <span ng-if="model.config.minNumberOfItems && !model.config.maxNumberOfItems && ctrl.renderModel.length < model.config.minNumberOfItems">
+                Add at least {{model.config.minNumberOfItems}} item(s)
+            </span>
+
+        </div>
+
+        <!--These are here because we need ng-form fields to validate against-->
+        <input type="hidden" name="minCount" ng-model="ctrl.renderModel" />
+        <input type="hidden" name="maxCount" ng-model="ctrl.renderModel" />
+
+        <div class="help-inline" val-msg-for="minCount" val-toggle-msg="minCount">
+            <localize key="validation_minCount">You need to add at least</localize> {{model.config.minNumberOfItems}} <localize key="validation_items">items</localize>
+        </div>
+        <div class="help-inline" val-msg-for="maxCount" val-toggle-msg="maxCount">
+            <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumberOfItems}} <localize key="validation_itemsSelected">items selected</localize>
+        </div>
+    </ng-form>
+
+    <umb-overlay ng-if="ctrl.linkPickerOverlay.show"
+                 model="ctrl.linkPickerOverlay"
+                 view="ctrl.linkPickerOverlay.view"
+                 position="right">
+    </umb-overlay>
+</div>

@@ -1,0 +1,17 @@
+﻿//----------  variables
+//------------------------------------------------------------------------------
+
+$font-default: 'Raleway', Arial, Helvetica, sans-serif;
+$font-headings: 'Montserrat', Futura, 'Trebuchet MS', Arial, sans-serif;
+
+// Colors
+$white: #fff;
+$black: #000;
+$nero: #343434;
+$grey: #404040;
+$red: #e51018;
+
+$site-colors: (
+	'black': $black,
+	'white': $white
+) !default;

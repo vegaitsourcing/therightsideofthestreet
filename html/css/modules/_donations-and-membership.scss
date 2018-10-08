@@ -1,0 +1,18 @@
+﻿//----------  Donations and membership
+//------------------------------------------------------------------------------
+
+.donation-buttons {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	button {
+		margin: 70px 40px 0;
+	}
+	@include breakpoint(phone) {
+		flex-direction: column;
+		button {
+			margin: 30px 20px 0;
+		}
+	}
+}

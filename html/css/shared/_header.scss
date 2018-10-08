@@ -1,0 +1,220 @@
+﻿//----------  header
+//------------------------------------------------------------------------------
+
+.header {
+	width: 100%;
+	position: relative;
+	background-color: rgba(#1f1f1f, 0.9);
+	z-index: 100;
+	a {
+		color: $white;
+		font-family: $font-headings;
+	}
+	@include breakpoint(touch) {
+		position: fixed;
+		left: 0;
+		top: 0;
+	}
+}
+
+.header-upper {
+	text-align: right;
+	padding: 10px;
+	width: 100%;
+	background-color: $black;
+}
+
+.header-links {
+	font-size: 14px;
+	line-height: 36px;
+	font-weight: 600;
+	transition: 0.3s ease-out;
+	&:hover {
+		color: $red;
+	}
+}
+
+.language-links {
+	text-transform: uppercase;
+	margin-left: 15px;
+	@include breakpoint(phone) {
+		margin-left: 0;
+		margin-right: 10px;
+	}
+}
+
+.donations-link {
+	margin-left: 45px;
+	.icon {
+		font-size: 16px;
+		margin-left: 25px;
+	}
+	@include breakpoint(phone) {
+		margin-left: 20px;
+		.icon {
+			margin-left: 10px;
+			vertical-align: middle;
+		}
+	}
+}
+
+.logo {
+	width: 177px;
+	display: inline-block;
+	padding: 13px 0;
+	@include breakpoint(phone) {
+		width: 120px;
+	}
+}
+
+.main-nav {
+	float: right;
+	ul {
+		margin: 0 -33px;
+	}
+	li {
+		float: left;
+		margin: 0 33px;
+		position: relative;
+		padding: 36px 0 42px;
+		&:hover {
+			.secondary-nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.secondary-nav {
+		margin: 0;
+	}
+	.main-nav-close {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		color: $white;
+		display: none;
+	}
+	&.main-nav-open {
+		transform: translate(0, 0);
+	}
+	@include breakpoint(1260px) {
+		ul {
+			margin: 0 -20px;
+		}
+		li {
+			margin: 0 20px;
+		}
+	}
+	@include breakpoint(1150px) {
+		ul {
+			margin: 0 -10px;
+		}
+		li {
+			margin: 0 10px;
+		}
+	}
+	@include breakpoint(touch) {
+		display: block;
+		position: fixed;
+		right: 0;
+		height: calc(100% - 56px);
+		top: 0;
+		background-color: rgba($black, 0.9);
+		transform: translate(100%, 0);
+		transition: 0.2s ease-in-out;
+		transition-property: transform;
+		padding-right: 66px;
+		padding-left: 62px;
+		margin-top: 56px;
+		overflow: auto;
+		.main-nav-close {
+			display: block;
+		}
+		ul {
+			text-align: right;
+			margin: 0 0 25px;
+		}
+		li {
+			display: block;
+			float: none;
+			padding: 13px 0 7px;
+			margin: 0;
+		}
+		a {
+			font-size: 16px;
+			letter-spacing: 0.5px;
+		}
+		.secondary-nav {
+			display: none;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 0 20px;
+	}
+}
+
+.secondary-nav {
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease;
+	border-top: 5px solid $red;
+	position: absolute;
+	top: 114px;
+	left: 0;
+	width: 100%;
+	li {
+		border-bottom: 1px solid $grey;
+		background-color: rgba(#1f1f1f, 0.9);
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		transition: 0.2s ease;
+		&:last-of-type {
+			border-bottom: 0;
+		}
+		&:hover {
+			background-color: rgba(#1f1f1f, 0.2);
+			.header-links {
+				color: $white;
+			}
+		}
+	}
+	.header-links {
+		display: block;
+		padding: 9px 0;
+	}
+}
+
+
+.main-nav-toggle {
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: $white;
+	float: right;
+	margin-top: 22px;
+	font-size: 33px;
+	@include breakpoint(desktop) {
+		display: none;
+	}
+	@include breakpoint(tablet) {
+		margin-top: 33px;
+	}
+}
+
+.main-nav-social-links {
+	display: none;
+	@include breakpoint(touch) {
+		display: block;
+		li {
+			display: inline-block;
+			margin-left: 36px;
+		}
+		a {
+			font-size: 21px;
+		}
+	}
+}
