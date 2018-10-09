@@ -237,6 +237,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Terratype, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Terratype.1.0.20\lib\net45\Terratype.dll</HintPath>
+    </Reference>
     <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
       <HintPath>..\packages\UmbracoCms.Core.7.12.3\lib\net45\TidyNet.dll</HintPath>
     </Reference>
@@ -293,6 +296,22 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
+    <Content Include="App_Plugins\Terratype\Css\label.standard.css" />
+    <Content Include="App_Plugins\Terratype\Images\false.png" />
+    <Content Include="App_Plugins\Terratype\Images\loader.gif" />
+    <Content Include="App_Plugins\Terratype\Images\Terratype.png" />
+    <Content Include="App_Plugins\Terratype\Images\true.png" />
+    <Content Include="App_Plugins\Terratype\Lang\en-us.xml" />
+    <Content Include="App_Plugins\Terratype\readme.txt" />
+    <Content Include="App_Plugins\Terratype\Scripts\terratype.js" />
+    <Content Include="App_Plugins\Terratype\Scripts\terratype.min.js" />
+    <Content Include="App_Plugins\Terratype\Scripts\terratype.renderer.js" />
+    <Content Include="App_Plugins\Terratype\Scripts\terratype.renderer.min.js" />
+    <Content Include="App_Plugins\Terratype\Views\config.html" />
+    <Content Include="App_Plugins\Terratype\Views\editor.html" />
+    <Content Include="App_Plugins\Terratype\Views\grid.html" />
+    <Content Include="App_Plugins\Terratype\Views\grid.overlay.html" />
+    <Content Include="App_Plugins\Terratype\Views\label.standard.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -351,6 +370,8 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="App_Plugins\Terratype\Views\grid.cshtml" />
+    <Content Include="App_Plugins\Terratype\package.manifest" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Website.cshtml" />
     <None Include="Web.Debug.config">
@@ -362,7 +383,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="robots.txt" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ApplicationEventsHandler.cs" />
