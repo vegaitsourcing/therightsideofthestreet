@@ -34,15 +34,15 @@ namespace PravaStranaUlice.Models.Extensions
 		/// <param name="helper">Umbraco helper.</param>
 		/// <returns>Home Page.</returns>
 		public static T GetHome<T>(this UmbracoHelper helper) where T : class, IHomePage
-			=> helper?.TypedContentSingleAtXPath($"{Constants.HomePageXPathRoot}{Constants.HomePageXPathAlias}").OfType<T>();
+			=> helper?.UmbracoContext.PublishedContentRequest.PublishedContent.Site().OfType<T>();
 
 		/// <summary>
 		/// Returns Settings node.
 		/// </summary>
 		/// <param name="helper">Umbraco helper.</param>
 		/// <returns>Settings node.</returns>
-		public static Settings GetSettings(this UmbracoHelper helper)
-			=> helper?.TypedContentSingleAtXPath($"//{Models.Settings.ModelTypeAlias}").OfType<Settings>();
+		public static Settings GetSettings(this UmbracoHelper helper, int siteId)
+			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias} [@id='{siteId}']//{Settings.ModelTypeAlias}").OfType<Settings>();
 
 		/// <summary>
 		///	Returns Repository node.

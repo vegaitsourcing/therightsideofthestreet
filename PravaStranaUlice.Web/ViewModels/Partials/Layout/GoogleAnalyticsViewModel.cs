@@ -11,7 +11,7 @@ namespace PravaStranaUlice.Web.ViewModels.Partials.Layout
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            GoogleAnalytics = new MvcHtmlString(context.Settings.GoogleAnalytics);
+            //GoogleAnalytics = new MvcHtmlString(context.Settings.GoogleAnalytics);
         }
 
         public IHtmlString GoogleAnalytics { get; }

@@ -36,7 +36,8 @@ namespace PravaStranaUlice.Web.HttpHandlers
 			contextBase.Response.ContentType = "text/plain";
 
 			// Lets try and find the robots file contents from Umbraco.
-			contextBase.Response.Write(new UmbracoHelper(umbracoContext).GetSettings()?.Robots ?? string.Empty);
+			//todo fix this
+			//contextBase.Response.Write(new UmbracoHelper(umbracoContext).GetSettings()?.Robots ?? string.Empty);
 
 			contextBase.Response.End();
 		}

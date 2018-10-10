@@ -1,0 +1,125 @@
+//----------  forms
+//------------------------------------------------------------------------------
+input,
+textarea {
+	font-family: $font-default;
+	background: $white;
+	box-shadow: none;
+	color: $black;
+	font-size: 20px;
+	height: 45px;
+	letter-spacing: 0.3px;
+	padding: 0 20px;
+	border: 0;
+	border-radius: 25px;
+	width: 100%;
+	&::placeholder {
+		color: #9b9b9b;
+	}
+}
+
+textarea {
+	height: 120px;
+	resize: none;
+	padding: 15px 20px;
+}
+
+.newsletter-form {
+	background-color: $red;
+	.wrap {
+		padding: 68px 82px;
+		display: flex;
+	}
+	label {
+		font-size: 30px;
+		color: $white;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		margin-right: 30px;
+	}
+	@include breakpoint(touch) {
+		.wrap {
+			flex-direction: column;
+			text-align: center;
+			padding: 20px 10px;
+		}
+		label {
+			margin-right: 0;
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.newsletter-submit {
+	border-radius: 80px;
+	height: 45px;
+	font-size: 22px;
+	font-weight: 700;
+	color: $white;
+	background-color: $black;
+	padding: 0 23px;
+	letter-spacing: 0.8px;
+	transition: 0.2s ease;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 45px;
+	&:hover {
+		background-color: $grey;
+	}
+	@include breakpoint(touch) {
+		position: static;
+	}
+}
+
+.newsletter-input-wrap {
+	flex: 1 1 50%;
+	padding-right: 176px;
+	position: relative;
+	@include breakpoint(touch) {
+		flex-direction: column;
+		padding-right: 0;
+		input {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.search-form {
+	position: relative;
+	input {
+		width: 412px;
+		margin-right: 20px;
+		vertical-align: top;
+	}
+	.submit-btn {
+		width: 45px;
+		height: 45px;
+		position: relative;
+		background-color: $black;
+		border-radius: 100%;
+		border: 2px solid $black;
+		transition: 0.3s ease-out;
+		@include hover {
+			background-color: $white;
+			.icon {
+				color: $black;
+			}
+		}
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 16px;
+			color: $white;
+		}
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+		input {
+			width: calc(100% - 70px);
+		}
+	}
+}

@@ -399,6 +399,8 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Website.cshtml" />
     <Content Include="App_Code\RazorHelpers.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Partials\Layout\_MetaTags.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -434,6 +436,7 @@
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
+    <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperFormatExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />

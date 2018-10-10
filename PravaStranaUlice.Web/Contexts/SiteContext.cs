@@ -15,7 +15,7 @@ namespace PravaStranaUlice.Web.Contexts
 
             LazyCurrentPage = new Lazy<IPage>(() => UmbracoHelper.UmbracoContext?.PublishedContentRequest?.PublishedContent.OfType<IPage>());
             LazyHome = new Lazy<Website>(() => UmbracoHelper.GetHome<Website>());
-            LazySettings = new Lazy<Settings>(() => UmbracoHelper.GetSettings());
+            LazySettings = new Lazy<Settings>(() => UmbracoHelper.GetSettings(LazyHome.Value.Id));
             LazyRepository = new Lazy<Repository>(() => UmbracoHelper.GetRepository());
         }
 
