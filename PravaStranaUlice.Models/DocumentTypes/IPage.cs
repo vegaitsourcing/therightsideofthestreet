@@ -1,4 +1,5 @@
-﻿using Umbraco.Core.Models;
+﻿using RJP.MultiUrlPicker.Models;
+using Umbraco.Core.Models;
 
 namespace PravaStranaUlice.Models.DocumentTypes
 {
@@ -9,7 +10,9 @@ namespace PravaStranaUlice.Models.DocumentTypes
 	{
         string Title { get; }
 		string SeoTitle { get; }
-
+		string SeoDescription { get; }
+		Link CanonicalLink { get; }
+        
         bool HideFromSiteNavigation { get; }
         bool HideFromSearchEngines { get; }
 		string SitemapChangeFrequency { get; }

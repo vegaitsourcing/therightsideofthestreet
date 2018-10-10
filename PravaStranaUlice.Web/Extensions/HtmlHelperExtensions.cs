@@ -35,6 +35,14 @@ namespace PravaStranaUlice.Web.Extensions
 			source.RenderAction(methodInfo.Name, controllerName, routeValueDictionary);
 		}
 
+		public static void RenderPartial<TViewModel>(this HtmlHelper html, TViewModel model, string partialViewName = null)
+			=> html.RenderPartial(GetPartialViewName(model, partialViewName), model,
+								  new ViewDataDictionary(html.ViewData) { Model = model }); // ViewDataDictionary parameter is necessary to allow passing null for model value.
+
+		public static MvcHtmlString Partial<TViewModel>(this HtmlHelper html, TViewModel model, string partialViewName = null) where TViewModel : class
+			=> html.Partial(GetPartialViewName(model, partialViewName), model,
+							new ViewDataDictionary(html.ViewData) { Model = model });   // ViewDataDictionary parameter is necessary to allow passing null for model value.
+
 		private static MethodInfo GetMethodInfo<T>(Expression<T> expression)
 		{
 			var body = expression.Body as MethodCallExpression;
@@ -59,5 +67,8 @@ namespace PravaStranaUlice.Web.Extensions
 				action(((ParameterInfo)parametersEnumerator.Current).Name, argumentsEnumerator.Current);
 			}
 		}
+
+		private static string GetPartialViewName<TViewModel>(TViewModel model, string partialViewName = null)
+			=> !string.IsNullOrWhiteSpace(partialViewName) ? partialViewName : (model?.GetType() ?? typeof(TViewModel)).Name.RemoveViewModelSuffix();
 	}
 }

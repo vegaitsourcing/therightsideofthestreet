@@ -398,6 +398,7 @@
     <Content Include="App_Plugins\Terratype\package.manifest" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Website.cshtml" />
+    <Content Include="App_Code\RazorHelpers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -419,21 +420,41 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexts\CompositionContext.cs" />
+    <Compile Include="Contexts\ICompositionContext.cs" />
+    <Compile Include="Contexts\INestedContentContext.cs" />
+    <Compile Include="Contexts\IPageContext.cs" />
+    <Compile Include="Contexts\ISiteContext.cs" />
+    <Compile Include="Contexts\NestedContentContext.cs" />
+    <Compile Include="Contexts\PageContext.cs" />
+    <Compile Include="Contexts\SiteContext.cs" />
+    <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
+    <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
+    <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperFormatExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
     <Compile Include="Extensions\HttpRequestExtensions.cs" />
     <Compile Include="Extensions\HttpResponseExtensions.cs" />
+    <Compile Include="Extensions\ISiteContextExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoContextExtensions.cs" />
+    <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
+    <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
+    <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
+    <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\Surface\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PravaStranaUlice.Common\PravaStranaUlice.Common.csproj">
       <Project>{44ea5768-a92d-4380-848e-a4b2c07158d6}</Project>

@@ -18,7 +18,7 @@
 		/// <summary>
 		/// Home Page document type alias for XPath.
 		/// </summary>
-		public const string HomePageXPathAlias = "Home";		// TODO: Update to the name of Home Page model class (if not Home).
+		public const string HomePageXPathAlias = "website";		// TODO: Update to the name of Home Page model class (if not Home).
 
 		/// <summary>
 		/// Depth level of SideBar navigation root node.

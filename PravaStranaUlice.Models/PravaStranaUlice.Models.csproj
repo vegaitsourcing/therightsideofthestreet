@@ -234,10 +234,12 @@
     <Compile Include="AdditionalModels\Pagination\PaginationModel.cs" />
     <Compile Include="AdditionalModels\Pagination\ReadOnlyPagedCollection.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DocumentTypes\Compositions\ICompositions.cs" />
     <Compile Include="DocumentTypes\IDomainRoot.cs" />
     <Compile Include="DocumentTypes\IHomePage.cs" />
     <Compile Include="DocumentTypes\IPage.cs" />
     <Compile Include="DocumentTypes\IRootNode.cs" />
+    <Compile Include="DocumentTypes\Nodes\Items\NestedContent\INestedContent.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
     <Compile Include="Extensions\HttpCacheExtensions.cs" />
@@ -413,6 +415,7 @@
     <Compile Include="Generated\VideoAndTextModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Website.cs" />
     <Compile Include="Generated\Website.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

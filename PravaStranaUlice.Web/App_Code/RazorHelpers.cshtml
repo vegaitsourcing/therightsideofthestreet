@@ -1,0 +1,18 @@
+﻿@using PravaStranaUlice.Common.Extensions
+@using PravaStranaUlice.Web.ViewModels.Shared
+
+@helper RenderLink(LinkViewModel link, string cssClass = null)
+{
+    if (link != null)
+    {
+        <a href="@(link.Url.IsNullOrWhiteSpace() ? "javascript:;" : link.Url)" target="@link.Target" class="@cssClass">@link.Content</a>
+    }
+}
+
+@helper RenderImage(ImageViewModel image, string cssClass = null)
+{
+    if (image != null)
+    {
+        <img src="@image.Url" alt="@image.AlternateText" class="@cssClass">
+    }
+}
