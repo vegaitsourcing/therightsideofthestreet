@@ -1,4 +1,4 @@
-﻿//load dependecies
+//load dependecies
 let gulp             = require('gulp'),
 	autoprefixer     = require('autoprefixer'),
 	babel            = require('gulp-babel'),

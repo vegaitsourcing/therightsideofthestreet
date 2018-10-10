@@ -1,4 +1,4 @@
-﻿//----------  responsive breakpoints
+//----------  responsive breakpoints
 //------------------------------------------------------------------------------
 @mixin breakpoint ($value) {
 	@if $value == 'phone' {
