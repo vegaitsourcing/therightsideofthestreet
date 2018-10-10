@@ -12,7 +12,7 @@
 <a:Code>TheRightSideOfTheStreet</a:Code>
 <a:CreationDate>1538568041</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539158363</a:ModificationDate>
+<a:ModificationDate>1539161572</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -895,7 +895,7 @@ NameToCode=No</a:ModelOptionsText>
 <a:Code>ClassDiagram_1</a:Code>
 <a:CreationDate>1538568041</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539158363</a:ModificationDate>
+<a:ModificationDate>1539161572</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -4771,110 +4771,110 @@ ClassMethod 0 Arial,8,N</a:FontList>
 <c:Attributes>
 <o:Attribute Id="o296">
 <a:ObjectID>D9FF9CAD-C009-4A1F-B168-4E1CB5A25C23</a:ObjectID>
-<a:Name>Content - Full Name</a:Name>
-<a:Code>ContentFullName</a:Code>
+<a:Name>Info - Full Name</a:Name>
+<a:Code>InfoFullName</a:Code>
 <a:CreationDate>1538726332</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538729116</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Teststring</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o297">
 <a:ObjectID>7B7313FB-0B09-47CC-B3EE-4C9B5F9A187F</a:ObjectID>
-<a:Name>Content - Profile Image</a:Name>
-<a:Code>ContentProfileImage</a:Code>
+<a:Name>Info - Profile Image</a:Name>
+<a:Code>InfoProfileImage</a:Code>
 <a:CreationDate>1538726332</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538726332</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Image Picker</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o298">
 <a:ObjectID>92E7935E-3C28-4A0E-8EF7-132BAF2C8523</a:ObjectID>
-<a:Name>Content - Biography</a:Name>
-<a:Code>ContentBiography</a:Code>
+<a:Name>Info - Biography</a:Name>
+<a:Code>InfoBiography</a:Code>
 <a:CreationDate>1538726332</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538729116</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Textarea</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o299">
 <a:ObjectID>7F6474C7-7BEB-430D-A315-59776DA7C634</a:ObjectID>
-<a:Name>Content - Vision</a:Name>
-<a:Code>ContentVision</a:Code>
+<a:Name>Info - Vision</a:Name>
+<a:Code>InfoVision</a:Code>
 <a:CreationDate>1538726332</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538729116</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Textarea</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o300">
 <a:ObjectID>CD5372B9-BB5A-4769-8557-EC3C5C05ABE9</a:ObjectID>
-<a:Name>Content - Achievements</a:Name>
-<a:Code>ContentAchievements</a:Code>
+<a:Name>Info - Achievements</a:Name>
+<a:Code>InfoAchievements</a:Code>
 <a:CreationDate>1538729116</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538729116</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Repeatable Textstring</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o301">
 <a:ObjectID>2E674879-94E5-419E-A6CB-D4D6B0B9A406</a:ObjectID>
-<a:Name>Content - Images</a:Name>
-<a:Code>ContentImages</a:Code>
+<a:Name>Info - Images</a:Name>
+<a:Code>InfoImages</a:Code>
 <a:CreationDate>1538729217</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1538729217</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Multi Image Picker</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o302">
 <a:ObjectID>1AE30A93-E4A7-4FA5-886D-DFD2C5B99FC0</a:ObjectID>
-<a:Name>Content - Status</a:Name>
-<a:Code>ContentStatus</a:Code>
+<a:Name>Info - Status</a:Name>
+<a:Code>InfoStatus</a:Code>
 <a:CreationDate>1539010216</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539076683</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>MNTP - Membership Status Picker</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o303">
 <a:ObjectID>8E3C2F96-B3C2-4E7E-9AE6-3B770AFAD874</a:ObjectID>
-<a:Name>Content - Crew</a:Name>
-<a:Code>ContentCrew</a:Code>
+<a:Name>Info - Crew</a:Name>
+<a:Code>InfoCrew</a:Code>
 <a:CreationDate>1539010216</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539157511</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>MNTP - Crew Picker</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o304">
 <a:ObjectID>FA1759A5-1BCC-4957-86D8-F14931D74F12</a:ObjectID>
-<a:Name>Content - Country</a:Name>
-<a:Code>ContentCountry</a:Code>
+<a:Name>Info - Country</a:Name>
+<a:Code>InfoCountry</a:Code>
 <a:CreationDate>1539010216</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539010216</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Textstring</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o305">
 <a:ObjectID>50FFC697-A203-40EB-B019-3D53C94CF227</a:ObjectID>
-<a:Name>Content - City</a:Name>
-<a:Code>ContentCity</a:Code>
+<a:Name>Info - City</a:Name>
+<a:Code>InfoCity</a:Code>
 <a:CreationDate>1539010216</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1539010216</a:ModificationDate>
+<a:ModificationDate>1539174864</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>Textstring</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
