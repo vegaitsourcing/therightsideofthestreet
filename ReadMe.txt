@@ -1,1 +1,1 @@
-﻿Umbraco credentials: admin@admin.com / k}5Q2Mg/:3!zZ.eq
+﻿Umbraco credentials: admin@admin.com / Jy$gr\z8ZnLwtNBW
