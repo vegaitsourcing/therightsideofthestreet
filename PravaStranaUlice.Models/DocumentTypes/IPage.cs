@@ -1,13 +1,17 @@
-﻿namespace PravaStranaUlice.Models.DocumentTypes
+﻿using Umbraco.Core.Models;
+
+namespace PravaStranaUlice.Models.DocumentTypes
 {
 	/// <summary>
 	/// Marks document type model classes that represent site pages.
 	/// </summary>
-	public interface IPage : INavigationNode
+	public interface IPage : IPublishedContent
 	{
+        string Title { get; }
 		string SeoTitle { get; }
 
-		bool HideFromSearchEngines { get; }
+        bool HideFromSiteNavigation { get; }
+        bool HideFromSearchEngines { get; }
 		string SitemapChangeFrequency { get; }
 		string SitemapPriority { get; }
 	}

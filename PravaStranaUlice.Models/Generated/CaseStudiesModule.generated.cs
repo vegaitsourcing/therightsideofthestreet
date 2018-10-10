@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Repository</summary>
-	[PublishedContentModel("repository")]
-	public partial class Repository : PublishedContentModel
+	/// <summary>Case Studies Module</summary>
+	[PublishedContentModel("caseStudiesModule")]
+	public partial class CaseStudiesModule : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "repository";
+		public new const string ModelTypeAlias = "caseStudiesModule";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Repository(IPublishedContent content)
+		public CaseStudiesModule(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,27 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Repository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CaseStudiesModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Boxes
+		///</summary>
+		[ImplementPropertyType("boxes")]
+		public IEnumerable<IPublishedContent> Boxes
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("boxes"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 }

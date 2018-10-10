@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Image</summary>
-	[PublishedContentModel("Image")]
-	public partial class Image
+	/// <summary>Text And Image Module</summary>
+	[PublishedContentModel("textAndImageModule")]
+	public partial class TextAndImageModule : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "Image";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const string ModelTypeAlias = "textAndImageModule";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Image(IPublishedContent content)
+		public TextAndImageModule(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,54 +40,54 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TextAndImageModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Alternate Text
+		/// Image
 		///</summary>
-		[ImplementPropertyType("alternateText")]
-		public string AlternateText
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image
 		{
-			get { return this.GetPropertyValue<string>("alternateText"); }
+			get { return this.GetPropertyValue<IPublishedContent>("image"); }
 		}
 
 		///<summary>
-		/// Upload image
+		/// Is Image Left
 		///</summary>
-		[ImplementPropertyType("umbracoFile")]
-		public Umbraco.Web.Models.ImageCropDataSet Cropper
+		[ImplementPropertyType("isImageLeft")]
+		public bool IsImageLeft
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
+			get { return this.GetPropertyValue<bool>("isImageLeft"); }
 		}
 
 		///<summary>
-		/// Height
+		/// Link
 		///</summary>
-		[ImplementPropertyType("umbracoHeight")]
-		public string Height
+		[ImplementPropertyType("link")]
+		public RJP.MultiUrlPicker.Models.Link Link
 		{
-			get { return this.GetPropertyValue<string>("umbracoHeight"); }
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("link"); }
 		}
 
 		///<summary>
-		/// Type
+		/// Text
 		///</summary>
-		[ImplementPropertyType("umbracoExtension")]
-		public string Type
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
 		{
-			get { return this.GetPropertyValue<string>("umbracoExtension"); }
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
 		}
 
 		///<summary>
-		/// Width
+		/// Title
 		///</summary>
-		[ImplementPropertyType("umbracoWidth")]
-		public string Width
+		[ImplementPropertyType("title")]
+		public string Title
 		{
-			get { return this.GetPropertyValue<string>("umbracoWidth"); }
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 }

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Repository</summary>
-	[PublishedContentModel("repository")]
-	public partial class Repository : PublishedContentModel
+	/// <summary>Become Member</summary>
+	[PublishedContentModel("becomeMember")]
+	public partial class BecomeMember : Page
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "repository";
+		public new const string ModelTypeAlias = "becomeMember";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Repository(IPublishedContent content)
+		public BecomeMember(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,27 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Repository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BecomeMember, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Intro Text
+		///</summary>
+		[ImplementPropertyType("introText")]
+		public string IntroText
+		{
+			get { return this.GetPropertyValue<string>("introText"); }
+		}
+
+		///<summary>
+		/// Membership Levels
+		///</summary>
+		[ImplementPropertyType("membershipLevels")]
+		public IEnumerable<IPublishedContent> MembershipLevels
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("membershipLevels"); }
 		}
 	}
 }

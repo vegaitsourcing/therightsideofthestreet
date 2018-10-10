@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Repository</summary>
-	[PublishedContentModel("repository")]
-	public partial class Repository : PublishedContentModel
+	/// <summary>Exercise Categories Container</summary>
+	[PublishedContentModel("exerciseCategoriesContainer")]
+	public partial class ExerciseCategoriesContainer : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "repository";
+		public new const string ModelTypeAlias = "exerciseCategoriesContainer";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Repository(IPublishedContent content)
+		public ExerciseCategoriesContainer(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Repository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ExerciseCategoriesContainer, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

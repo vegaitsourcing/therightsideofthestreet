@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Image</summary>
-	[PublishedContentModel("Image")]
-	public partial class Image
+	/// <summary>Video And Text Module</summary>
+	[PublishedContentModel("videoAndTextModule")]
+	public partial class VideoAndTextModule : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "Image";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const string ModelTypeAlias = "videoAndTextModule";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Image(IPublishedContent content)
+		public VideoAndTextModule(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,54 +40,54 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<VideoAndTextModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Alternate Text
+		/// Buttons
 		///</summary>
-		[ImplementPropertyType("alternateText")]
-		public string AlternateText
+		[ImplementPropertyType("buttons")]
+		public IEnumerable<RJP.MultiUrlPicker.Models.Link> Buttons
 		{
-			get { return this.GetPropertyValue<string>("alternateText"); }
+			get { return this.GetPropertyValue<IEnumerable<RJP.MultiUrlPicker.Models.Link>>("buttons"); }
 		}
 
 		///<summary>
-		/// Upload image
+		/// Is Video Right
 		///</summary>
-		[ImplementPropertyType("umbracoFile")]
-		public Umbraco.Web.Models.ImageCropDataSet Cropper
+		[ImplementPropertyType("isVideoRight")]
+		public bool IsVideoRight
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
+			get { return this.GetPropertyValue<bool>("isVideoRight"); }
 		}
 
 		///<summary>
-		/// Height
+		/// Text
 		///</summary>
-		[ImplementPropertyType("umbracoHeight")]
-		public string Height
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
 		{
-			get { return this.GetPropertyValue<string>("umbracoHeight"); }
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
 		}
 
 		///<summary>
-		/// Type
+		/// Title
 		///</summary>
-		[ImplementPropertyType("umbracoExtension")]
-		public string Type
+		[ImplementPropertyType("title")]
+		public string Title
 		{
-			get { return this.GetPropertyValue<string>("umbracoExtension"); }
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 
 		///<summary>
-		/// Width
+		/// Video Url
 		///</summary>
-		[ImplementPropertyType("umbracoWidth")]
-		public string Width
+		[ImplementPropertyType("videoUrl")]
+		public string VideoUrl
 		{
-			get { return this.GetPropertyValue<string>("umbracoWidth"); }
+			get { return this.GetPropertyValue<string>("videoUrl"); }
 		}
 	}
 }

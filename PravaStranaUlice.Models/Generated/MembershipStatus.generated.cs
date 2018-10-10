@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Image</summary>
-	[PublishedContentModel("Image")]
-	public partial class Image
+	/// <summary>Membership Status</summary>
+	[PublishedContentModel("membershipStatus")]
+	public partial class MembershipStatus : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "Image";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const string ModelTypeAlias = "membershipStatus";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Image(IPublishedContent content)
+		public MembershipStatus(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,54 +40,54 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MembershipStatus, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Alternate Text
+		/// Details
 		///</summary>
-		[ImplementPropertyType("alternateText")]
-		public string AlternateText
+		[ImplementPropertyType("details")]
+		public string Details
 		{
-			get { return this.GetPropertyValue<string>("alternateText"); }
+			get { return this.GetPropertyValue<string>("details"); }
 		}
 
 		///<summary>
-		/// Upload image
+		/// Icon: The icon dimensions should be
 		///</summary>
-		[ImplementPropertyType("umbracoFile")]
-		public Umbraco.Web.Models.ImageCropDataSet Cropper
+		[ImplementPropertyType("icon")]
+		public IPublishedContent Icon
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
+			get { return this.GetPropertyValue<IPublishedContent>("icon"); }
 		}
 
 		///<summary>
-		/// Height
+		/// Image: Payroll image
 		///</summary>
-		[ImplementPropertyType("umbracoHeight")]
-		public string Height
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image
 		{
-			get { return this.GetPropertyValue<string>("umbracoHeight"); }
+			get { return this.GetPropertyValue<IPublishedContent>("image"); }
 		}
 
 		///<summary>
-		/// Type
+		/// Link
 		///</summary>
-		[ImplementPropertyType("umbracoExtension")]
-		public string Type
+		[ImplementPropertyType("link")]
+		public string Link
 		{
-			get { return this.GetPropertyValue<string>("umbracoExtension"); }
+			get { return this.GetPropertyValue<string>("link"); }
 		}
 
 		///<summary>
-		/// Width
+		/// Status
 		///</summary>
-		[ImplementPropertyType("umbracoWidth")]
-		public string Width
+		[ImplementPropertyType("Status")]
+		public string Status
 		{
-			get { return this.GetPropertyValue<string>("umbracoWidth"); }
+			get { return this.GetPropertyValue<string>("Status"); }
 		}
 	}
 }

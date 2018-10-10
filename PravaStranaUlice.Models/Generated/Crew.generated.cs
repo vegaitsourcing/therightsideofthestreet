@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Repository</summary>
-	[PublishedContentModel("repository")]
-	public partial class Repository : PublishedContentModel
+	/// <summary>Crew</summary>
+	[PublishedContentModel("crew")]
+	public partial class Crew : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "repository";
+		public new const string ModelTypeAlias = "crew";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Repository(IPublishedContent content)
+		public Crew(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,45 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Repository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Crew, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// CrewName
+		///</summary>
+		[ImplementPropertyType("crewName")]
+		public string CrewName
+		{
+			get { return this.GetPropertyValue<string>("crewName"); }
+		}
+
+		///<summary>
+		/// Image: Crew image should be
+		///</summary>
+		[ImplementPropertyType("Image")]
+		public IPublishedContent Image
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("Image"); }
+		}
+
+		///<summary>
+		/// Logo: Crew logo dimensions should be
+		///</summary>
+		[ImplementPropertyType("logo")]
+		public IPublishedContent Logo
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("logo"); }
+		}
+
+		///<summary>
+		/// Text: The description  about team.
+		///</summary>
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
 		}
 	}
 }

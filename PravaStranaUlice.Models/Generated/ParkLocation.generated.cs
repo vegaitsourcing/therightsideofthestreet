@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Repository</summary>
-	[PublishedContentModel("repository")]
-	public partial class Repository : PublishedContentModel
+	/// <summary>Park Location</summary>
+	[PublishedContentModel("parkLocation")]
+	public partial class ParkLocation : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "repository";
+		public new const string ModelTypeAlias = "parkLocation";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Repository(IPublishedContent content)
+		public ParkLocation(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,36 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Repository, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ParkLocation, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Link: Path to park on Google Map
+		///</summary>
+		[ImplementPropertyType("link")]
+		public string Link
+		{
+			get { return this.GetPropertyValue<string>("link"); }
+		}
+
+		///<summary>
+		/// Location
+		///</summary>
+		[ImplementPropertyType("location")]
+		public Terratype.Models.Model Location
+		{
+			get { return this.GetPropertyValue<Terratype.Models.Model>("location"); }
+		}
+
+		///<summary>
+		/// Park Name
+		///</summary>
+		[ImplementPropertyType("parkName")]
+		public string ParkName
+		{
+			get { return this.GetPropertyValue<string>("parkName"); }
 		}
 	}
 }

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>Image</summary>
-	[PublishedContentModel("Image")]
-	public partial class Image
+	/// <summary>Modular Content</summary>
+	[PublishedContentModel("modularContent")]
+	public partial class ModularContent : Page, IBanner
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "Image";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		public new const string ModelTypeAlias = "modularContent";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Image(IPublishedContent content)
+		public ModularContent(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,54 +40,45 @@ namespace PravaStranaUlice.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ModularContent, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Alternate Text
+		/// Modules
 		///</summary>
-		[ImplementPropertyType("alternateText")]
-		public string AlternateText
+		[ImplementPropertyType("modules")]
+		public IEnumerable<IPublishedContent> Modules
 		{
-			get { return this.GetPropertyValue<string>("alternateText"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("modules"); }
 		}
 
 		///<summary>
-		/// Upload image
+		/// Banner Image: Note: Image dimensions should be
 		///</summary>
-		[ImplementPropertyType("umbracoFile")]
-		public Umbraco.Web.Models.ImageCropDataSet Cropper
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
+			get { return PravaStranaUlice.Models.Banner.GetBannerImage(this); }
 		}
 
 		///<summary>
-		/// Height
+		/// Banner Link
 		///</summary>
-		[ImplementPropertyType("umbracoHeight")]
-		public string Height
+		[ImplementPropertyType("bannerLink")]
+		public RJP.MultiUrlPicker.Models.Link BannerLink
 		{
-			get { return this.GetPropertyValue<string>("umbracoHeight"); }
+			get { return PravaStranaUlice.Models.Banner.GetBannerLink(this); }
 		}
 
 		///<summary>
-		/// Type
+		/// Banner Title
 		///</summary>
-		[ImplementPropertyType("umbracoExtension")]
-		public string Type
+		[ImplementPropertyType("bannerTitle")]
+		public string BannerTitle
 		{
-			get { return this.GetPropertyValue<string>("umbracoExtension"); }
-		}
-
-		///<summary>
-		/// Width
-		///</summary>
-		[ImplementPropertyType("umbracoWidth")]
-		public string Width
-		{
-			get { return this.GetPropertyValue<string>("umbracoWidth"); }
+			get { return PravaStranaUlice.Models.Banner.GetBannerTitle(this); }
 		}
 	}
 }

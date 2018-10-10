@@ -1,28 +1,26 @@
-﻿using Umbraco.Core.Models;
-using Umbraco.ModelsBuilder;
-using PravaStranaUlice.Models.DocumentTypes;
+﻿using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Models.Extensions;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.ModelsBuilder;
+using Umbraco.Web;
 
 namespace PravaStranaUlice.Models
 {
-	/// <summary>
-	/// Page document type model.
-	/// </summary>
-	/// <seealso cref="PravaStranaUlice.Models.DocumentTypes.IPage"/>
-	public partial class Page : NavigationNode, IPage
+    /// <summary>
+    /// Page document type model.
+    /// </summary>
+    /// <seealso cref="PravaStranaUlice.Models.DocumentTypes.IPage"/>
+    public partial class Page : PublishedContentModel, IPage
 	{
 		public Page(IPublishedContent content) : base(content)
 		{ }
 
-		/// <remarks>
-		/// Page can be featured in site navigation only if it has associated template.
-		/// </remarks>
-		public override bool HideFromSiteNavigation => base.HideFromSiteNavigation || !this.HasTemplate();
-
-		/// <remarks>
-		/// Page can be featured in sitemap only if it has associated template.
-		/// </remarks>
-		public override bool HideFromSitemap => base.HideFromSitemap || !this.HasTemplate();
+        ///<summary>
+        /// Hide from Site Navigation: If selected, node will be hidden from site navigation.
+        ///</summary>
+        [ImplementPropertyType("umbracoNaviHide")]
+        public bool HideFromSiteNavigation => !this.IsVisible() || !this.HasTemplate();
 
 		///<summary>
 		/// Hide from Search Engines: If selected, page will be hidden from search engines (such as Google, Bing, etc.) and consequently from the sitemap used by search engines.
