@@ -2,6 +2,7 @@
 using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Models.DocumentTypes.Compositions;
 using System;
+using System.Collections.Generic;
 
 namespace PravaStranaUlice.Web.Contexts
 {
@@ -23,6 +24,8 @@ namespace PravaStranaUlice.Web.Contexts
 
         public Repository Repository => SiteContext.Repository;
 
-        private ISiteContext SiteContext { get; }
+		public IEnumerable<Website> Languages => SiteContext.Languages;
+
+		private ISiteContext SiteContext { get; }
     }
 }

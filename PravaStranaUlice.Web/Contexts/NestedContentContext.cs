@@ -2,10 +2,11 @@
 using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Models.DocumentTypes.Nodes.Items.NestedContent;
 using System;
+using System.Collections.Generic;
 
 namespace PravaStranaUlice.Web.Contexts
 {
-    public class NestedContentContext<T> : INestedContentContext<T> where T : class, INestedContent
+	public class NestedContentContext<T> : INestedContentContext<T> where T : class, INestedContent
     {
         public NestedContentContext(T nestedContent, ISiteContext siteContext)
         {
@@ -18,7 +19,8 @@ namespace PravaStranaUlice.Web.Contexts
         public Website Home => SiteContext.Home;
         public Settings Settings => SiteContext.Settings;
         public Repository Repository => SiteContext.Repository;
+		public IEnumerable<Website> Languages => SiteContext.Languages;
 
-        private ISiteContext SiteContext { get; }
+		private ISiteContext SiteContext { get; }
     }
 }

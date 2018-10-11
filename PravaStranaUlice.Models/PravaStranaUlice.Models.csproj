@@ -374,9 +374,9 @@
       <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Generated\ModelsBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\ModularContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -400,6 +400,7 @@
     <Compile Include="Generated\Settings.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\SocialLink.cs" />
     <Compile Include="Generated\SocialLink.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

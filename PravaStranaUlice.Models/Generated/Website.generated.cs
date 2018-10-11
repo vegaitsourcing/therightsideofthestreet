@@ -91,30 +91,12 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Logo: Note: Image dimensions should be
-		///</summary>
-		[ImplementPropertyType("logo")]
-		public IPublishedContent Logo
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("logo"); }
-		}
-
-		///<summary>
 		/// Modules
 		///</summary>
 		[ImplementPropertyType("modules")]
 		public IEnumerable<IPublishedContent> Modules
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("modules"); }
-		}
-
-		///<summary>
-		/// Social Links
-		///</summary>
-		[ImplementPropertyType("socialLinks")]
-		public IEnumerable<IPublishedContent> SocialLinks
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("socialLinks"); }
 		}
 
 		///<summary>

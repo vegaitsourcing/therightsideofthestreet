@@ -14,5 +14,11 @@ namespace PravaStranaUlice.Web.Controllers.Surface.Partials
 		{
 			return PartialView(viewModel);
 		}
+
+		[ChildActionOnly]
+		public ActionResult Header(HeaderViewModel viewModel)
+		{
+			return PartialView(viewModel);
+		}
 	}
 }

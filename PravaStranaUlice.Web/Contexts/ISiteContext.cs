@@ -1,5 +1,6 @@
 ﻿using PravaStranaUlice.Models;
 using PravaStranaUlice.Models.DocumentTypes;
+using System.Collections.Generic;
 
 namespace PravaStranaUlice.Web.Contexts
 {
@@ -9,5 +10,6 @@ namespace PravaStranaUlice.Web.Contexts
         Website Home { get; }
         Settings Settings { get; }
         Repository Repository { get; }
+		IEnumerable<Website> Languages { get; }
     }
 }

@@ -2,7 +2,18 @@
 @inherits UmbracoViewPage<MetaTagsViewModel>
 
 <title>@Model.SeoTitle</title>
-<meta name="description" content="">
-
-<meta name="robots" content="noindex,nofollow">
-<meta name="googlebot" content="noindex,nofollow">
+@if (!string.IsNullOrWhiteSpace(Model.SeoDescription))
+{
+	<meta name="description" content="@Model.SeoDescription">
+}
+@if (Model.HideFromSearchEngines)
+{
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+}
+else
+{
+	<meta name="robots" content="index,follow">
+	<meta name="googlebot" content="index,follow">
+}
+<link rel="canonical" href="@Model.CanonicalLink" />

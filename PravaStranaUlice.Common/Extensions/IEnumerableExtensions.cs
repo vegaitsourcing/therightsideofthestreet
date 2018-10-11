@@ -130,5 +130,12 @@ namespace PravaStranaUlice.Common.Extensions
 		/// <returns>Whole <paramref name="source"/> tree hierarchy as linear sequence.</returns>
 		public static IEnumerable<T> Flatten<T>(this IEnumerable<T> source, Func<T, IEnumerable<T>> childSelector)
 			=> source.SelectMany(c => childSelector(c).Flatten(childSelector)).Concat(source);
+
+		public static IList<T> AsList<T>(this IEnumerable<T> source)
+		{
+			if (source == null) return new List<T>();
+
+			return source as List<T> ?? source.ToList();
+		}
 	}
 }

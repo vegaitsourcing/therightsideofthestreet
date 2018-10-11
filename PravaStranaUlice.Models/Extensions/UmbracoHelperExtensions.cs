@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using PravaStranaUlice.Models.DocumentTypes;
+using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Web;
-using PravaStranaUlice.Models.DocumentTypes;
 
 namespace PravaStranaUlice.Models.Extensions
 {
@@ -51,5 +52,8 @@ namespace PravaStranaUlice.Models.Extensions
 		/// <returns>Repository node.</returns>
 		public static Repository GetRepository(this UmbracoHelper helper)
 			=> helper?.TypedContentSingleAtXPath($"//{Models.Repository.ModelTypeAlias}").OfType<Repository>();
+
+		public static IEnumerable<Website> GetLanguages(this UmbracoHelper helper)
+			=> helper?.TypedContentAtRoot().Where(c => c.DocumentTypeAlias == Website.ModelTypeAlias).OfType<Website>() ?? Enumerable.Empty<Website>();
 	}
 }

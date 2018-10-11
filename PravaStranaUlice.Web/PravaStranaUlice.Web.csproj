@@ -401,6 +401,8 @@
     <Content Include="App_Code\RazorHelpers.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Partials\Layout\_MetaTags.cshtml" />
+    <Content Include="PravaStranaUlice.AppSettings.config" />
+    <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -451,9 +453,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
+    <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
     <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>

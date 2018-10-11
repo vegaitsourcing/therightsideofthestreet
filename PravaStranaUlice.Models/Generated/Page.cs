@@ -1,5 +1,8 @@
-﻿using PravaStranaUlice.Models.DocumentTypes;
+﻿using PravaStranaUlice.Common;
+using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Models.Extensions;
+using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.ModelsBuilder;
@@ -16,6 +19,9 @@ namespace PravaStranaUlice.Models
 		public Page(IPublishedContent content) : base(content)
 		{ }
 
+		[ImplementPropertyType("alternatePages")]
+		public IEnumerable<IPage> AlternatePages => this.GetPropertyValue<IEnumerable<IPublishedContent>>().OfType<IPage>();
+
         ///<summary>
         /// Hide from Site Navigation: If selected, node will be hidden from site navigation.
         ///</summary>
@@ -29,7 +35,7 @@ namespace PravaStranaUlice.Models
 		/// Page can be visible to search engines (and featured in sitemap XML) only if it has associated template.
 		/// </remarks>
 		[ImplementPropertyType("hideFromSearchEngines")]
-		public bool HideFromSearchEngines => this.GetPropertyValue<bool>() || !this.HasTemplate();
+		public bool HideFromSearchEngines => this.GetPropertyValue<bool>() || !this.HasTemplate() || AppSettings.HideAllPagesFromSearchEngines;
 
 		///<summary>
 		/// Search Engine Sitemap Change Frequency: The expected change frequency of the page, associated with the sitemap used by search engines.

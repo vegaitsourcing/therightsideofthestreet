@@ -10,13 +10,13 @@ namespace PravaStranaUlice.Web
 			//bundles.UseCdn = true;   //enable CDN support
 
 			// Styles bundle
-			//bundles.Add(new StyleBundle("~/bundles/styles").Include("~/css/dist/style.min.css"));
+			bundles.Add(new StyleBundle("~/bundles/styles").Include("~/css/dist/style.min.css"));
 
 			// Scripts bundle
-			//bundles.Add(new ScriptBundle("~/bundles/scripts").Include("~/js/dist/global.min.js"));
+			bundles.Add(new ScriptBundle("~/bundles/scripts").Include("~/js/dist/global.min.js"));
 
-			//CompilationSection compilationSection = (CompilationSection)System.Configuration.ConfigurationManager.GetSection(@"system.web/compilation");
-			//BundleTable.EnableOptimizations = !compilationSection.Debug;
+			CompilationSection compilationSection = (CompilationSection)System.Configuration.ConfigurationManager.GetSection(@"system.web/compilation");
+			BundleTable.EnableOptimizations = !compilationSection.Debug;
 		}
 	}
 }

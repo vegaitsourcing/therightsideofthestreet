@@ -1,0 +1,75 @@
+﻿@using PravaStranaUlice.Web.ViewModels.Partials.Layout
+@using PravaStranaUlice.Web.ViewModels.Partials.NestedContent
+@inherits UmbracoViewPage<HeaderViewModel>
+
+<header class="header" role="banner">
+	<div class="header-upper">
+		<div class="wrap">
+			@if (Model.Languages != null && Model.Languages.Any())
+			{
+				foreach (LanguageLinkViewModel language in Model.Languages)
+				{
+					@RazorHelpers.RenderLink(language, "header-links language-links")
+				}
+			}
+			@if (Model.TopNavigationLink != null)
+			{
+				<a class="header-links donations-link" href="@Model.TopNavigationLink.Url" target="@Model.TopNavigationLink.Target">@Model.TopNavigationLink.Content<span class="icon font-ico-user"></span></a>
+			}
+		</div>
+	</div>
+	<div class="wrap">
+		@if (Model.Logo != null)
+		{
+			<a class="logo" href="@Model.HomepageUrl">
+				@RazorHelpers.RenderImage(Model.Logo)
+			</a>
+		}
+		<nav class="main-nav" data-menu>
+			@if (Model.NavigationItems != null && Model.NavigationItems.Any())
+			{
+				<ul role="menubar">
+					@RenderNavigation(Model.NavigationItems, true, 3)
+				</ul>
+			}
+			@if (Model.SocialLinks != null && Model.SocialLinks.Any())
+			{
+				<ul class="main-nav-social-links">
+					@foreach (SocialLinkViewModel item in Model.SocialLinks)
+					{
+						<li>
+							<a href="@item.Link">
+								<span class="icon font-ico-@item.Type"></span>
+								<span class="sr-only">@item.Type</span>
+							</a>
+						</li>
+					}
+				</ul>
+			}
+			<button class="main-nav-close" type="button" data-menu-close>
+				<span class="icon font-ico-close"></span>
+				<span class="sr-only">Menu close</span>
+			</button>
+		</nav>
+		<button class="main-nav-toggle" type="button" data-menu-toggle>
+			<span class="icon font-ico-menu-toggle"></span>
+			<span class="sr-only">Menu open</span>
+		</button>
+	</div>
+</header>
+
+@helper RenderNavigation(IEnumerable<PrimaryNavigationItemViewModel> items, bool isFirstLevel, int maxLevel)
+{
+	foreach (PrimaryNavigationItemViewModel item in items)
+	{
+		<li @if (isFirstLevel) { <text> role="menuitem" </text> }>
+			<a class="header-links" href="@item.Url">@item.Title</a>
+			@if (item.Level <= maxLevel && item.Children != null && item.Children.Any())
+			{
+				<ul class="secondary-nav">
+					@RenderNavigation(item.Children, false, maxLevel)
+				</ul>
+			}
+		</li>
+	}
+}
