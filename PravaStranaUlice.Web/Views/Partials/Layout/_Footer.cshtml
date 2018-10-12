@@ -1,94 +1,75 @@
 ﻿@using PravaStranaUlice.Web.ViewModels.Partials.Layout
 @using PravaStranaUlice.Web.ViewModels.Partials.NestedContent
 @using PravaStranaUlice.Web.Extensions
+
 @inherits UmbracoViewPage<FooterViewModel>
 
 <footer class="footer" role="contentinfo">
-	<div class="wrap">
-		<div class="footer-top">
-			<div class="popular-blog">
-				<div class="popular-blog-blog">
-					@if (Model.InfoImage != null)
-					{
-						@RazorHelpers.RenderImage(Model.InfoImage)
-					}
-				</div>
-				<div class="popular-blog-heading">
-					<h4>@Model.InfoTitle</h4>
-					<p>@Model.InfoText</p>
-				</div>
-			</div>
-			<div class="newsletter">
-				<h1 class="h3">Prijavite se na newsletter!</h1>
-				<div class="newsletter-form">
-					<input type="text" name="newsletter">
-					<button class="btn btn-small" type="submit" name="submit" value="Prijavi-se">Prijavi se!</button>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="footer-nav">
-				@if (Model.HygieneLinksGroup != null && Model.HygieneLinksGroup.Any())
-				{
-					int i = 1;
-					foreach (List<PrimaryNavigationItemViewModel> list in ViewModelExtensions.Split(Model.HygieneLinksGroup))
-					{
-						if (i == 1)
-						{
-							<div class="footer-nav-left">
-								<ul>
-									@foreach (PrimaryNavigationItemViewModel item in list)
-									{
-										<li><a href="#">@item</a></li>
-									}
-								</ul>
-							</div>
-							i++;
-						}
-						else
-						{
-							<div class="footer-nav-right">
-								<ul>
-									@foreach (PrimaryNavigationItemViewModel item in list)
-									{
-										<li><a href="#">@item</a></li>
-									}
-								</ul>
-							</div>
-						}
-					}
-				}
-				else
-				{
-					<p>Zasto ovo ne radi?</p>
-				}
-			</div>
-			<div class="footer-info">
-				<div class="footer-info-contact">
-					<h1 class="h3">Kontaktirajte nas!</h1>
-					@EmailTo(Model.ContactEmail)
-				</div>
-				<div class="footer-info-contact-social-icons">
-					@if (Model.SocialLinks != null && Model.SocialLinks.Any())
-					{
-						foreach (SocialLinkViewModel item in Model.SocialLinks)
-						{
-							<a href="@item.Link">
-								<span class="icon font-ico-@item.Type"></span>
-								<span class="sr-only">@item.Type</span>
-							</a>
-						}
-					}
-				</div>
-				<button class="go-to-top" type="button">
-					<span class="icon font-ico-arrow-up"></span>
-				</button>
-			</div>
-		</div>
-	</div>
+    <div class="wrap">
+        <div class="footer-top">
+            <div class="popular-blog">
+                <div class="popular-blog-blog">
+                    @if (Model.InfoImage != null)
+                    {
+                        @RazorHelpers.RenderImage(Model.InfoImage)
+                    }
+                </div>
+                <div class="popular-blog-heading">
+                    <h4>@Model.InfoTitle</h4>
+                    <p>@Model.InfoText</p>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h1 class="h3">Prijavite se na newsletter!</h1>
+                <div class="newsletter-form">
+                    <input type="text" name="newsletter">
+                    <button class="btn btn-small" type="submit" name="submit" value="Prijavi-se">Prijavi se!</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-nav">
+                @if (Model.HygieneLinksGroup != null && Model.HygieneLinksGroup.Any())
+                {
+                    foreach (var group in Model.HygieneLinksGroup)
+                    {
+                        <div class="footer-nav-@(Model.HygieneLinksGroup.IndexOf(group) == 0 ? "left" : "right")">
+                            <ul>
+                                @foreach (var link in group)
+                                {
+                                    <li><a href="@link.Url" target="@link.Target">@link.Content</a></li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="footer-info">
+                <div class="footer-info-contact">
+                    <h1 class="h3">Kontaktirajte nas!</h1>
+                    @EmailTo(Model.ContactEmail)
+                </div>
+                <div class="footer-info-contact-social-icons">
+                    @if (Model.SocialLinks != null && Model.SocialLinks.Any())
+                    {
+                        foreach (SocialLinkViewModel item in Model.SocialLinks)
+                        {
+                            <a href="@item.Link">
+                                <span class="icon font-ico-@item.Type"></span>
+                                <span class="sr-only">@item.Type</span>
+                            </a>
+                        }
+                    }
+                </div>
+                <button class="go-to-top" type="button">
+                    <span class="icon font-ico-arrow-up"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 </footer>
 
 @helper EmailTo(string email)
 {
-	<a href="mailto:@email">@email</a>
+    <a href="mailto:@email">@email</a>
 }
