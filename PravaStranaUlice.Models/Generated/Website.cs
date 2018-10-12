@@ -13,7 +13,10 @@ namespace PravaStranaUlice.Models
 		[ImplementPropertyType("logo")]
 		public Image Logo => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
 
-		[ImplementPropertyType("socialLinks")]
+        [ImplementPropertyType("infoImage")]
+        public Image InfoImage => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
+
+        [ImplementPropertyType("socialLinks")]
 		public IEnumerable<SocialLink> SocialLinks => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<SocialLink>();
     }
 }

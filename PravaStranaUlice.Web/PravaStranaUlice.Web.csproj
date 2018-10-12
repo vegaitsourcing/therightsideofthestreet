@@ -403,6 +403,7 @@
     <Content Include="Views\Partials\Layout\_MetaTags.cshtml" />
     <Content Include="PravaStranaUlice.AppSettings.config" />
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
+    <Content Include="Views\Partials\Layout\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -452,6 +453,7 @@
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
