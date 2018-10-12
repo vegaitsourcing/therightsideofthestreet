@@ -34,6 +34,9 @@ namespace PravaStranaUlice.Web.Extensions
 		public static ImageViewModel AsViewModel(this Image image)
 			=> image != null ? new ImageViewModel(image) : default(ImageViewModel);
 
+		public static TextViewModel AsViewModel(this string text)
+			=> !text.IsNullOrWhiteSpace() ? new TextViewModel(text) : default(TextViewModel); 
+
 		public static TNestedContentViewModel AsViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
 			where TNestedContentViewModel : INestedContentViewModel
 		{
@@ -71,5 +74,15 @@ namespace PravaStranaUlice.Web.Extensions
 
 		//public static XMLSitemapItemViewModel AsXMLSitemapItemViewModel(this IPage page)
 		//	=> page != null ? new XMLSitemapItemViewModel(page) : null;
+
+		public static List<List<T>> Split<T>(this List<T> items, int sliceSize = 4)
+		{
+			List<List<T>> list = new List<List<T>>();
+			for (int i = 0; i < items.Count; i += sliceSize)
+
+				list.Add(items.GetRange(i, Math.Min(sliceSize, items.Count - i)));
+
+			return list;
+		}
 	}
 }

@@ -463,6 +463,7 @@
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
     <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
+    <Compile Include="ViewModels\Shared\TextViewModel.cs" />
     <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>
   <ItemGroup />

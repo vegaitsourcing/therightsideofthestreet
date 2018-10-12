@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PravaStranaUlice.Web.Extensions;
+using PravaStranaUlice.Models.Extensions;
+using PravaStranaUlice.Common.Extensions;
+using PravaStranaUlice.Web.ViewModels.Partials.NestedContent;
 
 namespace PravaStranaUlice.Web.ViewModels.Partials.Layout
 {
@@ -16,17 +19,18 @@ namespace PravaStranaUlice.Web.ViewModels.Partials.Layout
             if (context == null) throw new ArgumentNullException(nameof(context));
             
             InfoImage = context.Home.InfoImage.AsViewModel();
-            TopNavigationLink = context.Home.TopNavigationLink.AsViewModel();
-            NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
-            Languages = GetLanguages(context.Languages, context.Page.AlternatePages).AsList();
+			InfoTitle = context.Home.InfoTitle;
+			InfoText = context.Home.InfoText;
+			HygieneLinksGroup = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().ToList();
+			ContactEmail = context.Home.ContactEmail;
             SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
         }
 
-        public string HomepageUrl { get; }
         public ImageViewModel InfoImage { get; }
-        public LinkViewModel TopNavigationLink { get; }
-        public IList<PrimaryNavigationItemViewModel> NavigationItems { get; }
-        public IList<LanguageLinkViewModel> Languages { get; }
+		public string InfoTitle { get; }
+		public string InfoText { get; }
+		public List<PrimaryNavigationItemViewModel> HygieneLinksGroup { get; } 
+		public string ContactEmail { get; }
         public IList<SocialLinkViewModel> SocialLinks { get; }
-    }
+	}
 }

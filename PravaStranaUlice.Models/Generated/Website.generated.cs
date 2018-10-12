@@ -64,15 +64,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Info Image: Image that goes inside a footer
-		///</summary>
-		[ImplementPropertyType("infoImage")]
-		public IPublishedContent InfoImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("infoImage"); }
-		}
-
-		///<summary>
 		/// Info Text: Text that goes inside a footer
 		///</summary>
 		[ImplementPropertyType("infoText")]
