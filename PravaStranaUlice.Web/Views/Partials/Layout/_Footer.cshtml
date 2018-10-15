@@ -31,11 +31,11 @@
             <div class="footer-nav">
                 @if (Model.HygieneLinksGroup != null && Model.HygieneLinksGroup.Any())
                 {
-                    foreach (var group in Model.HygieneLinksGroup)
+                    foreach (IEnumerable<LinkViewModel> group in Model.HygieneLinksGroup)
                     {
                         <div class="footer-nav-@(Model.HygieneLinksGroup.IndexOf(group) == 0 ? "left" : "right")">
                             <ul>
-                                @foreach (var link in group)
+                                @foreach (LinkViewModel link in group)
                                 {
                                     <li><a href="@link.Url" target="@link.Target">@link.Content</a></li>
                                 }

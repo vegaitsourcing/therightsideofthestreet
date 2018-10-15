@@ -306,6 +306,7 @@
     <Compile Include="Generated\DonationsContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Donators.cs" />
     <Compile Include="Generated\Donators.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

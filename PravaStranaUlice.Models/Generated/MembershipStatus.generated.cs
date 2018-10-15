@@ -84,10 +84,10 @@ namespace PravaStranaUlice.Models
 		///<summary>
 		/// Status
 		///</summary>
-		[ImplementPropertyType("Status")]
+		[ImplementPropertyType("status")]
 		public string Status
 		{
-			get { return this.GetPropertyValue<string>("Status"); }
+			get { return this.GetPropertyValue<string>("status"); }
 		}
 	}
 }

@@ -26,6 +26,7 @@ namespace PravaStranaUlice.Web.Contexts
         public Settings Settings => LazySettings.Value;
         public Repository Repository => LazyRepository.Value;
 		public IEnumerable<Website> Languages => LazyLanguages.Value;
+		private DonationsContent DonationsContent => LazyDonationsContent.Value;
 		
 		protected UmbracoHelper UmbracoHelper { get; }
 
@@ -34,5 +35,6 @@ namespace PravaStranaUlice.Web.Contexts
         private Lazy<Settings> LazySettings { get; }
         private Lazy<Repository> LazyRepository { get; }
 		private Lazy<IEnumerable<Website>> LazyLanguages { get; }
+		private Lazy<DonationsContent> LazyDonationsContent { get; }
     }
 }

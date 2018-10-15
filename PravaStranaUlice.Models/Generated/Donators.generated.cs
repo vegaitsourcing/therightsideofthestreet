@@ -62,14 +62,5 @@ namespace PravaStranaUlice.Models
 		{
 			get { return this.GetPropertyValue<string>("donatorName"); }
 		}
-
-		///<summary>
-		/// Image: Donator profil image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
 	}
 }
