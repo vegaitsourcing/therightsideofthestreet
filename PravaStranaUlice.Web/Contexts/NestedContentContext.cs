@@ -20,7 +20,8 @@ namespace PravaStranaUlice.Web.Contexts
         public Settings Settings => SiteContext.Settings;
         public Repository Repository => SiteContext.Repository;
 		public IEnumerable<Website> Languages => SiteContext.Languages;
+        public BlogDetails BlogDetails => SiteContext.BlogDetails;
 
-		private ISiteContext SiteContext { get; }
+        private ISiteContext SiteContext { get; }
     }
 }

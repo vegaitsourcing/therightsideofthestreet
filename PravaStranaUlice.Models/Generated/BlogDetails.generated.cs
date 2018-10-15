@@ -55,15 +55,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
-
-		///<summary>
 		/// Text
 		///</summary>
 		[ImplementPropertyType("text")]

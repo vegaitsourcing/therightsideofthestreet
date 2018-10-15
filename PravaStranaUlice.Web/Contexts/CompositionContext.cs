@@ -26,6 +26,8 @@ namespace PravaStranaUlice.Web.Contexts
 
 		public IEnumerable<Website> Languages => SiteContext.Languages;
 
-		private ISiteContext SiteContext { get; }
+        public BlogDetails BlogDetails => SiteContext.BlogDetails;
+
+        private ISiteContext SiteContext { get; }
     }
 }

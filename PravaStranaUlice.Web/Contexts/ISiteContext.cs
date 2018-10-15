@@ -11,5 +11,6 @@ namespace PravaStranaUlice.Web.Contexts
         Settings Settings { get; }
         Repository Repository { get; }
 		IEnumerable<Website> Languages { get; }
+        BlogDetails BlogDetails { get; }
     }
 }

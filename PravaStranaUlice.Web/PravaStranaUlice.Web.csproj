@@ -404,6 +404,7 @@
     <Content Include="PravaStranaUlice.AppSettings.config" />
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
+    <Content Include="Views\_BlogDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -458,6 +459,7 @@
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
+    <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />

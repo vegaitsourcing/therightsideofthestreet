@@ -270,6 +270,7 @@
     <Compile Include="Generated\BecomeMember.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\BlogDetails.cs" />
     <Compile Include="Generated\BlogDetails.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

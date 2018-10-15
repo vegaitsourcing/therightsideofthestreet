@@ -18,5 +18,6 @@ namespace PravaStranaUlice.Models
 
         [ImplementPropertyType("socialLinks")]
 		public IEnumerable<SocialLink> SocialLinks => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<SocialLink>();
+
     }
 }

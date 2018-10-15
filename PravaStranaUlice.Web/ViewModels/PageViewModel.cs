@@ -14,6 +14,8 @@ namespace PravaStranaUlice.Web.ViewModels
 			Header = new HeaderViewModel(context);
 			Footer = new FooterViewModel(context);
             GoogleAnalytics = new GoogleAnalyticsViewModel(context);
+            BlogDetails = new BlogDetailsViewModel(context);
+           
         }
 
         public string Language { get; }
@@ -21,5 +23,6 @@ namespace PravaStranaUlice.Web.ViewModels
 		public HeaderViewModel Header { get; }
 		public FooterViewModel Footer { get; }
         public GoogleAnalyticsViewModel GoogleAnalytics { get; }
+        public BlogDetailsViewModel BlogDetails { get; }
     }
 }
