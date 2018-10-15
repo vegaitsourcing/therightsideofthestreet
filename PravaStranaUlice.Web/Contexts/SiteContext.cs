@@ -30,8 +30,9 @@ namespace PravaStranaUlice.Web.Contexts
         public Repository Repository => LazyRepository.Value;
 		public IEnumerable<Website> Languages => LazyLanguages.Value;
 
-        public BlogDetails BlogDetails => LazyBlogDetails.Value;
+<<<<<<< .mine
         public BecomeMember BecomeMember => LazyBecomeMember.Value;
+>>>>>>> .theirs
 		
 		protected UmbracoHelper UmbracoHelper { get; }
 
@@ -41,7 +42,8 @@ namespace PravaStranaUlice.Web.Contexts
         private Lazy<Repository> LazyRepository { get; }
 		private Lazy<IEnumerable<Website>> LazyLanguages { get; }
 
-        private Lazy<BlogDetails> LazyBlogDetails { get; }
+<<<<<<< .mine
         private Lazy<BecomeMember> LazyBecomeMember { get; }
+>>>>>>> .theirs
     }
 }

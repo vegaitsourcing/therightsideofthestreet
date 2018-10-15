@@ -405,8 +405,7 @@
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
 
-    <Content Include="Views\_BlogDetails.cshtml" />
-    <Content Include="Views\BecomeMember.cshtml" />
+<Content Include="Views\DonationsContent.cshtml" />    <Content Include="Views\BecomeMember.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -455,14 +454,22 @@
     <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< .mine
+    <Compile Include="ViewModels\DonationsContentViewModel.cs" />
+=======
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
+>>>>>>> .theirs
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
+<<<<<<< .mine
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
+=======
+    <Compile Include="ViewModels\Partials\NestedContent\DonatorViewModel.cs" />
+>>>>>>> .theirs
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
