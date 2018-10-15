@@ -33,10 +33,7 @@ namespace PravaStranaUlice.Web.Extensions
 
 		public static ImageViewModel AsViewModel(this Image image)
 			=> image != null ? new ImageViewModel(image) : default(ImageViewModel);
-
-		public static TextViewModel AsViewModel(this string text)
-			=> !text.IsNullOrWhiteSpace() ? new TextViewModel(text) : default(TextViewModel); 
-
+        
 		public static TNestedContentViewModel AsViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
 			where TNestedContentViewModel : INestedContentViewModel
 		{
