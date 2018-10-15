@@ -364,6 +364,7 @@
     <Compile Include="Generated\Member.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\MembershipStatus.cs" />
     <Compile Include="Generated\MembershipStatus.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

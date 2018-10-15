@@ -55,24 +55,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Icon: The icon dimensions should be
-		///</summary>
-		[ImplementPropertyType("icon")]
-		public IPublishedContent Icon
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("icon"); }
-		}
-
-		///<summary>
-		/// Image: Payroll image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
-
-		///<summary>
 		/// Link
 		///</summary>
 		[ImplementPropertyType("link")]
