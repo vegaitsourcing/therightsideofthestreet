@@ -404,6 +404,7 @@
     <Content Include="PravaStranaUlice.AppSettings.config" />
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
+    <Content Include="Views\BecomeMember.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -452,6 +453,7 @@
     <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
@@ -459,11 +461,11 @@
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
     <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
-    <Compile Include="ViewModels\Shared\TextViewModel.cs" />
     <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>
   <ItemGroup />

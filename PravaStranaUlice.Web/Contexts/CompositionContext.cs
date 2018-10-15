@@ -26,6 +26,10 @@ namespace PravaStranaUlice.Web.Contexts
 
 		public IEnumerable<Website> Languages => SiteContext.Languages;
 
+        public BecomeMember BecomeMember => SiteContext.BecomeMember;
+
 		private ISiteContext SiteContext { get; }
+
+
     }
 }
