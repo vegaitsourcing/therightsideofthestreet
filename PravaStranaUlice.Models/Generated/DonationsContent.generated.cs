@@ -55,24 +55,6 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
-		/// Donators
-		///</summary>
-		[ImplementPropertyType("donators")]
-		public IEnumerable<IPublishedContent> Donators
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("donators"); }
-		}
-
-		///<summary>
-		/// Donators Items Per Page: Default value is 24
-		///</summary>
-		[ImplementPropertyType("donatorsItemsPerPage")]
-		public int DonatorsItemsPerPage
-		{
-			get { return this.GetPropertyValue<int>("donatorsItemsPerPage"); }
-		}
-
-		///<summary>
 		/// Donators Title
 		///</summary>
 		[ImplementPropertyType("donatorsTitle")]
@@ -88,15 +70,6 @@ namespace PravaStranaUlice.Models
 		public string FundsGoalText
 		{
 			get { return this.GetPropertyValue<string>("fundsGoalText"); }
-		}
-
-		///<summary>
-		/// Image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
 		}
 
 		///<summary>

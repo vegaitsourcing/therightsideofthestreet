@@ -1,77 +1,49 @@
-﻿
-@inherits UmbracoViewPage<PageViewModel>
+﻿@inherits UmbracoViewPage<DonationsContentViewModel>
+@using PravaStranaUlice.Web.ViewModels.Partials.NestedContent
+@using PravaStranaUlice.Web.Controllers.Surface.Partials
 
-	<main class="main">
-		<h1 class="sr-only"></h1>
-		<div class="donation-background cover-bg" style="background-image: url('images/body-brawny-crossfit-931323.png');">
-			<div class="wrap">
-				<div class="donation-heading offline-paying">
-					<h1 class="h2">DONIRAJ</h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>.
-					<h1 class="h3">OFFLINE UPLAĆIVANJE</h1>
-					<img src="images/content/uplatnica.png">
-				</div>
-				<div class="offline-paying">
-					<h2 class="h3">Do sada sakupljeno: 11.240 din</h2>
-					<h3 class="h4">Ciljna suma za izgradnju parkova: 15.000 din</h3>
-				</div>
+<main class="main">
+	<h1 class="sr-only"></h1>
+	<div class="donation-background cover-bg" style="background-image: url('/images/body-brawny-crossfit-931323.png');">
+		<div class="wrap">
+			<div class="donation-heading offline-paying">
+				<h1 class="h2">@Model.Title</h1>
+				<p>@Model.IntroText</p>
+				<h1 class="h3">
+					@Model.InnerTitle
+				</h1>
+				@if (Model.Image != null)
+				{
+					<img src="@Model.Image.Url">
+				}
 			</div>
-			<div class="our-donators">
-				<div class="wrap">
-					<h1 class="h2">NAŠI DONATORI</h1>
-					<div class="donators-content">
-						<div class="donators-name">
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-						</div>
-						<div class="donators-name">
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-						</div>
-						<div class="donators-name">
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-						</div>
-						<div class="donators-name">
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-							<p>Marko Jovanović<br><span>Novi Sad</span></p>
-						</div>
-						<ul class="pagination">
-							<li class="active">
-								<a href="javascript:;">1</a>
-							</li>
-							<li>
-								<a href="javascript:;">2</a>
-							</li>
-							<li>
-								<a href="javascript:;">3</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+			<div class="offline-paying">
+				<h2 class="h3">@Model.CollectedFundsText</h2>
+				<h3 class="h4">@Model.FundsGoalText</h3>
 			</div>
 		</div>
-	</main>
+		<div class="our-donators" data-page-key="@Model.PageKey">
+			<div class="wrap" id="listing">
+				<h1 class="h2">@Model.DonatorsTitle</h1>
+				@{ Html.RenderAction<ListingController>(c => c.Donators(Guid.Empty, 0), Model.PageKey, 1);}
+			</div>
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript">
+    $().ready(function () {
+        $("#listing").live("click", function () {
+
+            var page = @Model.;
+
+            $.ajax({
+                url: '@Url.Action("PersonList")',
+                data: { "page": page },
+                success: function (data) {
+                    $("#person-list").html(data);
+                }
+            });
+        });
+    });
+</script>

@@ -17,7 +17,6 @@ namespace PravaStranaUlice.Web.ViewModels
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            Title = context.Page.Title;
             Image = context.Page.Image.AsViewModel();
             Description = context.Page.Text.ToString();         
             Date = context.Page.Date;

@@ -12,6 +12,7 @@ namespace PravaStranaUlice.Common
 		public static bool DisableHttpCompression => Get<bool>("disableHttpCompression", false);
 		public static string XMLSitemapRouteUrl => Get<string>("xmlSitemapRouteUrl", "xmlsitemap");
 		public static bool HideAllPagesFromSearchEngines => Get<bool>("hideAllPagesFromSearchEngines");
+		public static int DonatorsPerPage => Get("donatorsPerPage", 24);
 
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.

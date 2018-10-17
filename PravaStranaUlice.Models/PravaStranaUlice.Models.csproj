@@ -240,6 +240,7 @@
     <Compile Include="DocumentTypes\IHomePage.cs" />
     <Compile Include="DocumentTypes\IPage.cs" />
     <Compile Include="DocumentTypes\IRootNode.cs" />
+    <Compile Include="DocumentTypes\Nodes\Items\IItemsContent.cs" />
     <Compile Include="DocumentTypes\Nodes\Items\NestedContent\INestedContent.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
@@ -268,6 +269,7 @@
     <Compile Include="Generated\Banner.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\BecomeMember.cs" />
     <Compile Include="Generated\BecomeMember.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -305,6 +307,7 @@
     <Compile Include="Generated\DonationsAndMembership.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DonationsContent.cs" />
     <Compile Include="Generated\DonationsContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -378,9 +381,9 @@
       <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Generated\ModelsBuilder.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\ModularContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

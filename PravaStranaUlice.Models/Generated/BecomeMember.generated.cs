@@ -53,14 +53,5 @@ namespace PravaStranaUlice.Models
 		{
 			get { return this.GetPropertyValue<string>("introText"); }
 		}
-
-		///<summary>
-		/// Membership Levels
-		///</summary>
-		[ImplementPropertyType("membershipLevels")]
-		public IEnumerable<IPublishedContent> MembershipLevels
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("membershipLevels"); }
-		}
 	}
 }

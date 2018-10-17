@@ -22,7 +22,7 @@ namespace PravaStranaUlice.Models
 {
 	/// <summary>Membership Status</summary>
 	[PublishedContentModel("membershipStatus")]
-	public partial class MembershipStatus : PublishedContentModel
+	public partial class MembershipStatus
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "membershipStatus";

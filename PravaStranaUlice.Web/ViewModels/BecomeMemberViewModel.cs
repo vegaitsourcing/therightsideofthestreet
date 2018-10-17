@@ -1,22 +1,23 @@
-﻿using PravaStranaUlice.Models;
+﻿using PravaStranaUlice.Common.Extensions;
+using PravaStranaUlice.Models;
 using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Web.Contexts;
-using System;
+using PravaStranaUlice.Web.Extensions;
+using PravaStranaUlice.Web.ViewModels.Partials;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace PravaStranaUlice.Web.ViewModels
 {
     public class BecomeMemberViewModel : PageViewModel
     {
-        public BecomeMemberViewModel(IPageContext<IPage> context) : base(context)
+        public BecomeMemberViewModel(IPageContext<BecomeMember> context) : base(context)
         {
-            Title = context.CurrentPage.Title;
+            IntroText = context.Page.IntroText;
+            MembershipLevels = context.Page.MembershipLevels.Where(ml => ml.Image != null).AsViewModel<MembershipStatusViewModel>().AsList();
         }
 
-        public string Title { get; }
         public string IntroText { get; }
-        IEnumerable<MembershipStatus> MembershipStatuses { get; }
+        public IList<MembershipStatusViewModel> MembershipLevels { get; }
     }
 }
