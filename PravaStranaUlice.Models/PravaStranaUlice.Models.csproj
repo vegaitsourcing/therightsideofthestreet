@@ -303,6 +303,7 @@
     <Compile Include="Generated\DonationsAndMembership.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DonationsContent.cs" />
     <Compile Include="Generated\DonationsContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

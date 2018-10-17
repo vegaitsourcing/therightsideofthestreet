@@ -357,6 +357,14 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="js\default.js" />
+    <Content Include="js\dist\global.js" />
+    <Content Include="js\dist\global.min.js" />
+    <Content Include="js\functions.js" />
+    <Content Include="js\libs\jquery-3.3.1.min.js" />
+    <Content Include="js\libs\slick.js" />
+    <Content Include="js\listing.js" />
+    <Content Include="js\maps.js" />
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Error404.cshtml" />
@@ -404,7 +412,10 @@
     <Content Include="PravaStranaUlice.AppSettings.config" />
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
-<Content Include="Views\DonationsContent.cshtml" />    <Content Include="Views\BecomeMember.cshtml" />
+    <Content Include="Views\DonationsContent.cshtml" />
+    <Content Include="Views\BecomeMember.cshtml" />
+    <Content Include="Views\Partials\Listing\_Donators.cshtml" />
+    <Content Include="js\dist\global.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -435,10 +446,12 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
+    <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\Partials\ListingController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
@@ -453,27 +466,28 @@
     <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< .mine
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
-=======
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
->>>>>>> .theirs
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
-    <Compile Include="ViewModels\Partials\NestedContent\DonatorViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\DonatorsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
     <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
+    <Compile Include="ViewModels\Shared\ListingViewModel.cs" />
     <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\DonationsContent\" />
+    <Folder Include="Views\Partials\NewFolder1\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PravaStranaUlice.Common\PravaStranaUlice.Common.csproj">
       <Project>{44ea5768-a92d-4380-848e-a4b2c07158d6}</Project>
