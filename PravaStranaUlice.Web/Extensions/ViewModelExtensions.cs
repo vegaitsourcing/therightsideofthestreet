@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Umbraco.Core.Models;
 
 namespace PravaStranaUlice.Web.Extensions
 {
@@ -55,6 +56,14 @@ namespace PravaStranaUlice.Web.Extensions
 
 			return (TNestedContentViewModel)Activator.CreateInstance(Assembly.GetAssembly(baseType).GetType(modelTypeName), nestedContent);
 		}
+
+        public static IEnumerable<T> AsViewModel<T>(this IEnumerable<IPublishedContent> items, string classSuffix = "ViewModel")
+            where T : class
+        {
+            if (items == null) return Enumerable.Empty<T>();
+
+            return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
+        }
 
 		//public static BannerViewModel AsViewModel(this ICompositionContext<IBanner> compositionContext,
 		//    string classSuffix = "ViewModel")

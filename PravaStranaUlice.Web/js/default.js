@@ -1,6 +1,7 @@
 'use strict';
 
 let functions = require('./functions');
+let becomeMemberFunc = require('./becomeMemberFunc');
 //let maps = require('./maps');
 
 let app = {
@@ -13,7 +14,8 @@ let app = {
 		functions.goToTop();
 		functions.athletePopup();
 		functions.crewPopup();
-		functions.menuToggle();
+        functions.menuToggle();
+        becomeMemberFunc.changeImage();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

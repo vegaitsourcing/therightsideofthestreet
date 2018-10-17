@@ -7,19 +7,20 @@ using System.Linq;
 using System.Web;
 using PravaStranaUlice.Common.Extensions;
 using PravaStranaUlice.Web.Extensions;
+using PravaStranaUlice.Models;
 
 namespace PravaStranaUlice.Web.ViewModels
 {
     public class BlogDetailsViewModel 
     {
-        public BlogDetailsViewModel(IPageContext<IPage> context)
+        public BlogDetailsViewModel(IPageContext<BlogDetails> context)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            Image = context.BlogDetails.Image.AsViewModel();
-            BlogTitle = context.BlogDetails.Title;
-            Description = context.BlogDetails.Text.ToString();
-            Date = context.BlogDetails.Date;
+            Image = context.Page.Image.AsViewModel();
+            BlogTitle = context.Page.Title;
+            Description = context.Page.Text.ToString();
+            Date = context.Page.Date;
         }
 
         public ImageViewModel Image { get; }

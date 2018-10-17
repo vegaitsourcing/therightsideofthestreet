@@ -21,7 +21,6 @@ namespace PravaStranaUlice.Web.Contexts
 			LazyLanguages = new Lazy<IEnumerable<Website>>(() => UmbracoHelper.GetLanguages());
 
            
-            LazyBecomeMember = new Lazy<BecomeMember>(() => UmbracoHelper.GetPage<BecomeMember>());
         }
 
         public IPage CurrentPage => LazyCurrentPage.Value;
@@ -29,11 +28,8 @@ namespace PravaStranaUlice.Web.Contexts
         public Settings Settings => LazySettings.Value;
         public Repository Repository => LazyRepository.Value;
 		public IEnumerable<Website> Languages => LazyLanguages.Value;
+        
 
-<<<<<<< .mine
-        public BecomeMember BecomeMember => LazyBecomeMember.Value;
->>>>>>> .theirs
-		
 		protected UmbracoHelper UmbracoHelper { get; }
 
         private Lazy<IPage> LazyCurrentPage { get; }
@@ -41,9 +37,5 @@ namespace PravaStranaUlice.Web.Contexts
         private Lazy<Settings> LazySettings { get; }
         private Lazy<Repository> LazyRepository { get; }
 		private Lazy<IEnumerable<Website>> LazyLanguages { get; }
-
-<<<<<<< .mine
-        private Lazy<BecomeMember> LazyBecomeMember { get; }
->>>>>>> .theirs
     }
 }
