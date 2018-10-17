@@ -1,5 +1,6 @@
 ﻿using PravaStranaUlice.Models.DocumentTypes;
 using PravaStranaUlice.Models.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Models;
@@ -19,5 +20,7 @@ namespace PravaStranaUlice.Models
         [ImplementPropertyType("socialLinks")]
 		public IEnumerable<SocialLink> SocialLinks => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<SocialLink>();
 
+        //[ImplementPropertyType("date")]
+        //public DateTime Date => this.GetPropertyValue<IPublishedContent>()?.OfType<DateTime>();
     }
 }

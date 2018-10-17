@@ -404,8 +404,9 @@
     <Content Include="PravaStranaUlice.AppSettings.config" />
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
-
-<Content Include="Views\DonationsContent.cshtml" />    <Content Include="Views\BecomeMember.cshtml" />
+    <Content Include="Views\DonationsContent.cshtml" />
+    <Content Include="Views\BecomeMember.cshtml" />
+    <Content Include="Views\BlogDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -427,7 +428,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexts\BlogPageContext.cs" />
     <Compile Include="Contexts\CompositionContext.cs" />
+    <Compile Include="Contexts\IBlogPageContext.cs" />
     <Compile Include="Contexts\ICompositionContext.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
     <Compile Include="Contexts\IPageContext.cs" />
@@ -436,6 +439,8 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
+    <Compile Include="Controllers\RenderMvc\BlogDetailsController.cs" />
+    <Compile Include="Controllers\RenderMvc\BlogPageController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
@@ -454,22 +459,16 @@
     <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< .mine
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
-=======
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
->>>>>>> .theirs
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
-<<<<<<< .mine
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
-=======
     <Compile Include="ViewModels\Partials\NestedContent\DonatorViewModel.cs" />
->>>>>>> .theirs
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />

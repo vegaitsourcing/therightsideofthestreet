@@ -235,6 +235,7 @@
     <Compile Include="AdditionalModels\Pagination\ReadOnlyPagedCollection.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DocumentTypes\Compositions\ICompositions.cs" />
+    <Compile Include="DocumentTypes\IBlogPage.cs" />
     <Compile Include="DocumentTypes\IDomainRoot.cs" />
     <Compile Include="DocumentTypes\IHomePage.cs" />
     <Compile Include="DocumentTypes\IPage.cs" />

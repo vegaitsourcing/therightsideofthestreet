@@ -14,5 +14,8 @@ namespace PravaStranaUlice.Web.Extensions
 
         public static IPageContext<T> CreatePageContext<T>(this UmbracoHelper helper, T page) where T : class, IPage
             => new PageContext<T>(page, helper);
+
+        public static IBlogPageContext<T> CreateBlogPageContext<T>(this UmbracoHelper helper, T page) where T : class, IBlogPage
+           => new BlogPageContext<T>(page, helper);
     }
 }

@@ -64,6 +64,15 @@ namespace PravaStranaUlice.Models
 		}
 
 		///<summary>
+		/// Donators Items Per Page: Default value is 24
+		///</summary>
+		[ImplementPropertyType("donatorsItemsPerPage")]
+		public int DonatorsItemsPerPage
+		{
+			get { return this.GetPropertyValue<int>("donatorsItemsPerPage"); }
+		}
+
+		///<summary>
 		/// Donators Title
 		///</summary>
 		[ImplementPropertyType("donatorsTitle")]

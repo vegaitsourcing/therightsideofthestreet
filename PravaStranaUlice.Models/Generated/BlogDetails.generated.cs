@@ -22,7 +22,7 @@ namespace PravaStranaUlice.Models
 {
 	/// <summary>Blog Details</summary>
 	[PublishedContentModel("blogDetails")]
-	public partial class BlogDetails : Page
+	public partial class BlogDetails
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "blogDetails";

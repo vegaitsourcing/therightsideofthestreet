@@ -7,25 +7,32 @@ using System.Linq;
 using System.Web;
 using PravaStranaUlice.Common.Extensions;
 using PravaStranaUlice.Web.Extensions;
+using PravaStranaUlice.Models;
 
 namespace PravaStranaUlice.Web.ViewModels
 {
-    public class BlogDetailsViewModel 
+    public class BlogDetailsViewModel : PageViewModel
     {
-        public BlogDetailsViewModel(IPageContext<IPage> context)
+        public BlogDetailsViewModel(IBlogPageContext<BlogDetails> context) : base(context)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            Image = context.BlogDetails.Image.AsViewModel();
-            BlogTitle = context.BlogDetails.Title;
-            Description = context.BlogDetails.Text.ToString();
-            Date = context.BlogDetails.Date;
-        }
+            Title = context.Page.Title;
+            Image = context.Page.Image.AsViewModel();
+            Description = context.Page.Text.ToString();         
+            Date = context.Page.Date;
+            BlogLanding = context.Landing.Url;
+            Prevoius = context.Previous?.Url;
+            Next = context.Next?.Url;
 
+        }
+        
         public ImageViewModel Image { get; }
-        public string BlogTitle { get; }
         public string Description { get; }
         public DateTime Date { get; }
+        public string BlogLanding { get; }
+        public string Prevoius { get; }
+        public string Next { get; }
 
     }
 }
