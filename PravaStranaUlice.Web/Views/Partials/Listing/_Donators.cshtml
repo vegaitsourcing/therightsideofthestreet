@@ -1,0 +1,29 @@
+﻿@using PravaStranaUlice.Web.ViewModels.Partials.NestedContent
+@inherits UmbracoViewPage<ListingViewModel<DonatorsViewModel>>
+
+@if (Model.Items != null && Model.Items.Any())
+{
+	<div class="donators-content">
+		<div class="donators-name">
+			@foreach (DonatorsViewModel item in Model.Items)
+			{
+				<p>@item.DonatorName<br><span>@item.City</span></p>
+				@*if (item.Image != null)
+					{
+						<img src="@item.Image.Url">
+					}*@
+			}
+		</div>
+		@if (Model.TotalPages > 1)
+		{
+			<ul class="pagination">
+				@for (int page = 1; page <= Model.TotalPages; page++)
+				{
+					<li @if (page == Model.CurrentPage) { <text> class="active" </text> }>
+						<a href="javascript:;" data-page="@page">@page</a>
+					</li>
+				}
+			</ul>
+		}
+	</div>
+}

@@ -9,9 +9,9 @@ using System.Web;
 
 namespace PravaStranaUlice.Web.ViewModels.Partials.NestedContent
 {
-	public class DonatorViewModel
+	public class DonatorsViewModel: INestedContentViewModel
 	{
-		public DonatorViewModel(INestedContentContext<Donators> context)
+		public DonatorsViewModel(INestedContentContext<Donators> context)
 		{
 			DonatorName = context.NestedContent.DonatorName;
 			Image = context.NestedContent.Image.AsViewModel();

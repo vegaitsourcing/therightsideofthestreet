@@ -424,6 +424,7 @@
     <Content Include="js\libs\jquery-3.3.1.min.js" />
     <Content Include="js\libs\slick.js" />
     <Content Include="js\maps.js" />
+    <Content Include="js\listing.js" />
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Error404.cshtml" />
@@ -472,6 +473,7 @@
     <Content Include="Views\Partials\Layout\_Header.cshtml" />
     <Content Include="Views\Partials\Layout\_Footer.cshtml" />
     <Content Include="Views\DonationsContent.cshtml" />
+    <Content Include="Views\Partials\Listing\_Donators.cshtml" />
     <Content Include="Views\BecomeMember.cshtml" />
     <Content Include="css\base\_fonts.scss" />
     <Content Include="css\base\_layout.scss" />
@@ -558,11 +560,13 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
+    <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeMemberController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\Partials\ListingController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
@@ -585,14 +589,15 @@
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\DonatorsViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
-    <Compile Include="ViewModels\Partials\NestedContent\DonatorViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
     <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
+    <Compile Include="ViewModels\Shared\ListingViewModel.cs" />
     <Compile Include="ViewModels\WebsiteViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
