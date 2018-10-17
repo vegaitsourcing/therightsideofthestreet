@@ -475,6 +475,7 @@
     <Compile Include="ViewModels\Partials\Layout\MetaTagsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PrimaryNavigationItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\DonatorsViewModel.cs" />
+    <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MembershipStatusViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\SocialLinkViewModel.cs" />
@@ -486,7 +487,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DonationsContent\" />
-    <Folder Include="Views\Partials\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PravaStranaUlice.Common\PravaStranaUlice.Common.csproj">

@@ -21,6 +21,6 @@ namespace PravaStranaUlice.Web.Contexts
         public Repository Repository => SiteContext.Repository;
 		public IEnumerable<Website> Languages => SiteContext.Languages;
 
-		private ISiteContext SiteContext { get; }
+        private ISiteContext SiteContext { get; }
     }
 }

@@ -58,5 +58,6 @@ namespace PravaStranaUlice.Models.Extensions
 
 		public static IEnumerable<Website> GetLanguages(this UmbracoHelper helper)
 			=> helper?.TypedContentAtRoot().Where(c => c.DocumentTypeAlias == Website.ModelTypeAlias).OfType<Website>() ?? Enumerable.Empty<Website>();
-	}
+
+    }
 }
