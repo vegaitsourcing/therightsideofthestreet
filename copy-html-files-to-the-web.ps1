@@ -1,4 +1,4 @@
-$html = Get-ChildItem -directory 'html'
+$html = Get-ChildItem -path 'html'
 $web = Get-Item -path '*.Web'
 $skip = "_templates", "README.md", "robots.txt", "node_modules"
 
