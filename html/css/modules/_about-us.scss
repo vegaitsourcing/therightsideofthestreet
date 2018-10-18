@@ -1,0 +1,231 @@
+//----------  osnivaci
+//------------------------------------------------------------------------------
+
+.founders {
+	.wrap {
+		position: relative;
+	}
+}
+
+.founders-heading {
+	padding: 50px;
+	background: $red;
+	h1 {
+		margin-top: 15px;
+		color: $white;
+		text-align: center;
+	}
+	@include breakpoint(touch) {
+		padding: 0;
+	}
+}
+
+.founder {
+	width: 100%;
+	background-color: rgba($black, 0.4);
+	margin-bottom: 100px;
+	.founder-img {
+		width: 37.75%;
+		position: absolute;
+		bottom: 0;
+	}
+	.founder-text {
+		width: 60%;
+		h2 {
+			color: $white;
+			text-transform: none;
+			letter-spacing: -1px;
+			margin-bottom: 36px;
+		}
+		p {
+			color: $white;
+		}
+	}
+	@include breakpoint(touch) {
+		margin-bottom: 0;
+		.founder-img {
+			position: relative;
+			width: 100%;
+			img {
+				max-width: 80%;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+		.founder-text {
+			width: 100%;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 60px 0;
+		.founder-img {
+			margin-bottom: 60px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 30px 0;
+		.founder-img {
+			margin-bottom: 30px;
+		}
+		.founder-text {
+			h2 {
+				font-size: 25px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+.founder-left {
+	.founder-img {
+		left: 20px;
+	}
+	.founder-text {
+		padding: 70px 0 72px 28px;
+		float: right;
+	}
+	@include breakpoint(touch) {
+		.founder-img {
+			left: 0;
+		}
+		.founder-text {
+			padding: 0;
+		}
+	}
+}
+
+.founder-right {
+	.founder-img {
+		right: 20px;
+	}
+	.founder-text {
+		padding: 70px 28px 72px 0;
+		float: left;
+	}
+	@include breakpoint(touch) {
+		.founder-img {
+			right: 0;
+		}
+		.founder-text {
+			padding: 0;
+		}
+	}
+}
+
+.our-vision-box {
+	width: 100%;
+	margin: 100px 0;
+	background: $white;
+	.our-vision-heading {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	@include breakpoint(touch) {
+		padding-bottom: 1px;
+	}
+	@include breakpoint(tablet) {
+		.our-vision-heading {
+			max-width: calc(100% - 120px);
+		}
+	}
+	@include breakpoint(phone) {
+		.our-vision-heading {
+			max-width: calc(100% - 60px);
+		}
+	}
+}
+
+.our-vision-heading {
+	max-width: 500px;
+	height: auto;
+	padding: 20px 0;
+	h1 {
+		margin-top: -50px;
+		padding: 20px 50px;
+		background: $red;
+		color: $white;
+		text-align: center;
+	}
+	@include breakpoint(touch) {
+		h1 {
+			padding: 20px;
+			font-size: 30px;
+		}
+	}
+}
+
+.our-vision-list {
+	width: 100%;
+	padding: 20px 100px 60px;
+	li {
+		margin: 40px 0;
+	}
+	@include breakpoint(touch) {
+		li:first-child {
+			margin-top: 0;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 0 60px;
+	}
+	@include breakpoint(phone) {
+		padding: 0 30px;
+	}
+}
+
+.module-about-us {
+	padding: 65px 0;
+	h2 {
+		margin-bottom: 1.6em;
+	}
+	.about-columns {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.about-video {
+		flex: 1 1 50%;
+		padding-right: 20px;
+		iframe {
+			width: 100%;
+		}
+	}
+	.about-description {
+		flex: 1 1 50%;
+		padding-left: 66px;
+		h3 {
+			font-size: 25px;
+			margin-top: -5px;
+			margin-bottom: 1.75em;
+		}
+	}
+	@include breakpoint(touch) {
+		padding-bottom: 0;
+		.about-columns {
+			display: block;
+		}
+		.about-description {
+			padding-left: 0;
+			h3 {
+				text-align: center;
+			}
+		}
+		.about-video {
+			padding-right: 0;
+		}
+	}
+}
+
+.about-video {
+	@include breakpoint(touch) {
+		position: relative;
+		padding-top: 56%;
+		margin-bottom: 30px;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

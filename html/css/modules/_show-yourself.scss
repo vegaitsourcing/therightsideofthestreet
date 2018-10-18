@@ -1,0 +1,161 @@
+.show-yourself-landing {
+	width: 100%;
+	height: auto;
+	padding: 50px 0;
+	background: $red;
+	h2 {
+		margin-top: 10px;
+		text-align: center;
+		color: $white;
+	}
+}
+
+.show-yourself-content-first {
+	width: 100%;
+	height: auto;
+	padding: 100px 0 0 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include breakpoint(touch) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.personal-img {
+	width: auto;
+	height: auto;
+	.icon {
+		font-size: 40px;
+	}
+	label {
+		background-color: $red;
+		color: $white;
+		border: 5px dashed $white;
+		width: 264px;
+		height: 316px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+	}
+	@include breakpoint(touch) {
+		margin: 0 auto 30px;
+	}
+}
+
+.show-yourself-form {
+	width: 65%;
+	height: auto;
+	h1 {
+		color: $white;
+		margin-bottom: 30px;
+		text-transform: none;
+	}
+	input {
+		width: 55%;
+		height: 40px;
+		margin: 10px 0;
+	}
+	textarea {
+		margin: 10px 0;
+	}
+	h2 {
+		margin-top: 60px;
+		margin-bottom: 20px;
+		color: $white;
+		font-weight: 400;
+		text-transform: none;
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+		input {
+			width: 100%;
+		}
+	}
+}
+
+.bottom-form-social {
+	width: 100%;
+	height: auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.important-achievements {
+	width: 50%;
+	height: auto;
+	h1 {
+		color: $white;
+		font-weight: 400;
+		text-transform: none;
+	}
+	button {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	span {
+		padding: 4px 6px;
+		border-radius: 50px;
+		font-size: 10px;
+		background: $red;
+	}
+	p {
+		margin-top: -5px;
+		padding-left: 10px;
+		color: $white;
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+	}
+}
+
+.social-media {
+	width: 50%;
+	height: auto;
+	margin-top: -5px;
+	text-align: right;
+	input {
+		width: 85%;
+	}
+	span {
+		padding-right: 20px;
+		font-size: 22px;
+		color: $white;
+	}
+	@include breakpoint(touch) {
+		width: 100%;
+		text-align: left;
+		.icon {
+			width: 40px;
+		}
+		input {
+			width: calc(100% - 60px);
+		}
+	}
+}
+
+.show-yourself-content-second {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	img {
+		margin-bottom: 20px;
+	}
+}
+
+.s-y-c-s-btn {
+	width: 100%;
+	height: auto;
+	margin: 100px 0;
+	text-align: center;
+}

@@ -1,0 +1,26 @@
+{> "partials/shared/head" /}
+
+<div class="container">
+
+	{> "partials/shared/header" /}
+
+	<main class="main">
+
+		{> "partials/modules/module-newsletter" /}
+
+		<div class="log-in cover-bg" style="background-image: url('images/loginbg.png')">
+			<div class="wrap">
+				<form>
+					<span><input type="email" name="e-mail" placeholder="E-mail" maxlength="24" title="Email adresa"></span>
+					<span><input type="password" name="password" placeholder="Lozinka" maxlength="24" title="Email adresa"></span>
+					<button class="btn btn-small btn-log-in" type="button" name="button" value="Uloguj se">Uloguj se</button>
+					<h2 class="h5">Nemaš nalog?</h2>
+					<button class="btn btn-small btn-reg" type="submit" name="submit" value="Registruj se">Registruj se</button>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	{> "partials/shared/footer" /}
+
+</div>

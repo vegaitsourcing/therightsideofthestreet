@@ -1,0 +1,265 @@
+//----------  footer
+//------------------------------------------------------------------------------
+
+.footer {
+	display: none;
+	padding: 20px;
+	background-color: $black;
+	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+	.newsletter-form {
+		background-color: transparent;
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include breakpoint(phone) {
+		padding: 0;
+		.footer-top {
+			padding: 0;
+			margin: 0;
+			.popular-blog {
+				display: none;
+			}
+			.newsletter {
+				width: 100%;
+				padding-top: 50px;
+				h1 {
+					text-align: center;
+					font-size: 24px;
+				}
+				.newsletter-form {
+					width: 100%;
+					input {
+						width: 90%;
+						margin: 0 auto;
+					}
+					button {
+						margin: 0 auto;
+						margin-top: 30px;
+					}
+				}
+			}
+		}
+		.footer-bottom {
+			padding-top: 40px;
+			display: block;
+			.footer-nav {
+				width: 100%;
+				padding: 0 15px;
+				.footer-nav-left {
+					a {
+						font-size: 14px;
+					}
+				}
+				.footer-nav-right {
+					width: 50%;
+					padding-left: 5%;
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+			.footer-info {
+				width: 100%;
+				text-align: center;
+				padding-top: 50px;
+				.footer-info-contact {
+					width: 100%;
+					h1 {
+						font-size: 24px;
+					}
+					a {
+						font-size: 16px;
+					}
+				}
+				button {
+					margin: 0 auto;
+					margin-top: 40px;
+					float: none;
+				}
+				.footer-info-contact-social-icons {
+					width: 100%;
+					display: block;
+					text-align: center;
+					padding: 0;
+					margin: 0;
+					a {
+						font-size: 25px;
+						padding: 0 15px;
+					}
+				}
+			}
+		}
+	}
+}
+.footer-top {
+	width: 100%;
+	height: auto;
+	padding-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.popular-blog {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.popular-blog-heading {
+	width: 327px;
+	padding-left: 40px;
+	margin-top: -3px;
+	text-align: justify;
+}
+
+.popular-blog-heading  h4 {
+	color: $white;
+	line-height: 1;
+	text-transform: none;
+	margin-bottom: 16px;
+}
+
+.popular-blog-heading p {
+	color: $white;
+	line-height: 1.4;
+}
+
+.newsletter {
+	width: 50%;
+	height: auto;
+	padding: 0 12px;
+	margin-top: -10px;
+}
+
+.newsletter input {
+	width: 435px;
+}
+
+.newsletter .h3 {
+	color: $white;
+	text-transform: none;
+}
+
+.newsletter button {
+	padding: 0 16px;
+}
+
+.newsletter button:hover {
+	color: $red;
+	background: $white;
+}
+
+.footer-bottom {
+	width: 100%;
+	height: auto;
+	padding: 65px 4px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer-nav {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-nav-left {
+	width: 50%;
+}
+
+.footer-nav-left ul li a {
+	color: $white;
+	font-size: 20px;
+	line-height: 36px;
+	transition: 0.3s ease;
+	font-weight: 600;
+	font-family: $font-default;
+	letter-spacing: 0.9px;
+	@include hover {
+		color: $red;
+	}
+}
+
+.footer-nav-right {
+	width: 50%;
+}
+
+.footer-nav-right ul li a {
+	color: $white;
+	font-size: 20px;
+	line-height: 36px;
+	transition: 0.3s ease;
+	font-weight: 600;
+	font-family: $font-default;
+	letter-spacing: 0.9px;
+	@include hover {
+		color: $red;
+	}
+}
+
+.footer-info {
+	width: 50%;
+	height: auto;
+	padding: 0 12px;
+}
+
+.footer-info-contact {
+	margin-bottom: 43px;
+}
+
+.footer-info-contact .h3 {
+	text-transform: none;
+	margin-bottom: 0;
+}
+
+.footer-info .h3 {
+	color: $white;
+}
+
+.footer-info a {
+	color: $white;
+	font-size: 22px;
+	display: inline-block;
+	transition: 0.3s ease;
+	@include hover {
+		color: $red;
+	}
+}
+
+.footer-info-contact-social-icons {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.footer-info-contact-social-icons a {
+	padding-right: 30px;
+	color: $white;
+}
+
+.go-to-top {
+	width: 40px;
+	height: 40px;
+	background: $white;
+	border-radius: 40px;
+	float: right;
+	margin-top: -50px;
+	font-size: 18px;
+	transition: 0.3s ease-out;
+	@include hover {
+		background: $red;
+		color: $white;
+	}
+}
