@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using TheRightSideOfTheStreet.Common.Extensions;
+﻿using System.Linq;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
-using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
@@ -20,7 +16,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			CollectedFundsText = context.Page.CollectedFundsText;
 			FundsGoalText = context.Page.FundsGoalText;
 			DonatorsTitle = context.Page.DonatorsTitle;
-			Donators = context.Page.Donators?.Select(don => context.WithNestedContent(don).AsViewModel<DonatorsViewModel>()).AsList();
+			HasDonators = context.Page.Donators?.Any() ?? false;
 		}
 
 		public string IntroText { get; }
@@ -29,6 +25,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string CollectedFundsText { get; }
 		public string FundsGoalText { get; }
 		public string DonatorsTitle { get; }
-		public IList<DonatorsViewModel> Donators { get; }
+		public bool HasDonators { get; }
 	}
 }
