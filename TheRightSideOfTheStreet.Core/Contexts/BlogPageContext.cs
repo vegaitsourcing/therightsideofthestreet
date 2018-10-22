@@ -20,13 +20,14 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public IBlogPage Previous { get; }
 
 		public IBlogPage Next { get; }
-		
+
+
 		//todo refactor this
 		private IBlogPage GetPrevious()
 		{
 			if (Landing == null) return default(IBlogPage);
 
-			string xpath = $"//{Landing.DocumentTypeAlias} [@isDoc and @id='{Landing.Id}']//{TheRightSideOfTheStreet.Models.BlogDetails.ModelTypeAlias}";
+			string xpath = $"//{Landing.DocumentTypeAlias} [@isDoc and @id='{Landing.Id}']//{BlogDetails.ModelTypeAlias}";
 			var items = UmbracoHelper.TypedContentAtXPath(xpath).OfType<BlogDetails>().OrderBy(bd => bd.Date);
 
 			return items.FirstOrDefault(bd => bd.Date > Page.Date);
@@ -36,10 +37,11 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		{
 			if (Landing == null) return default(IBlogPage);
 
-			string xpath = $"//{Landing.DocumentTypeAlias} [@isDoc and @id='{Landing.Id}']//{TheRightSideOfTheStreet.Models.BlogDetails.ModelTypeAlias}";
+			string xpath = $"//{Landing.DocumentTypeAlias} [@isDoc and @id='{Landing.Id}']//{BlogDetails.ModelTypeAlias}";
 			var items = UmbracoHelper.TypedContentAtXPath(xpath).OfType<BlogDetails>().OrderByDescending(bd => bd.Date);
 
 			return items.FirstOrDefault(bd => bd.Date < Page.Date);
 		}
+
 	}
 }

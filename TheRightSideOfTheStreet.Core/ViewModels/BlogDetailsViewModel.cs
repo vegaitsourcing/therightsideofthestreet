@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
@@ -13,7 +14,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			if (context == null) throw new ArgumentNullException(nameof(context));
 
 			Image = context.Page.Image.AsViewModel();
-			Description = context.Page.Text.ToString();
+			Description = context.Page.Text;
 			Date = context.Page.Date;
 			BlogLanding = context.Landing.Url;
 			Prevoius = context.Previous?.Url;
@@ -22,7 +23,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		}
 
 		public ImageViewModel Image { get; }
-		public string Description { get; }
+		public IHtmlString Description { get; }
 		public DateTime Date { get; }
 		public string BlogLanding { get; }
 		public string Prevoius { get; }
