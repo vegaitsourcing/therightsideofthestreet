@@ -150,6 +150,7 @@
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -275,6 +276,7 @@
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
     <Compile Include="Controllers\Surface\Partials\ListingController.cs" />
@@ -294,6 +296,7 @@
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\BecomeMemberFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
