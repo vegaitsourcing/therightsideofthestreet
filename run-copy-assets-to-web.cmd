@@ -1,0 +1,1 @@
+powershell.exe -File .\copy-assets-to-web.ps1
