@@ -1,0 +1,116 @@
+//----------  street workout ekipe
+//------------------------------------------------------------------------------
+
+.sw-crews {
+	padding: 65px 0;
+	h2 {
+		margin-bottom: 1.35em;
+	}
+}
+
+.sw-crews-intro {
+	p {
+		margin-bottom: 50px;
+		text-align-last: center;
+	}
+}
+
+.sw-crews-form {
+	width: 100%;
+	position: relative;
+	max-width: 480px;
+	margin: 0 auto 62px;
+	padding-right: 68px;
+	input {
+		box-shadow: 0 0 8px rgba(#231f20, 0.2);
+	}
+	.btn-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 45px;
+		height: 45px;
+		font-size: 18px;
+		border-radius: 50%;
+		padding: 0;
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			&::before {
+				display: block;
+			}
+		}
+	}
+}
+
+.sw-crews-list {
+	margin: 0 -10px 15px;
+	.slick-slide {
+		padding: 0 10px;
+	}
+	.slick-arrow {
+		top: 46px;
+		margin-top: 0;
+		color: $nero;
+	}
+	.slick-prev {
+		left: -60px;
+	}
+	.slick-next {
+		right: -60px;
+	}
+}
+
+.sw-crews-city-item {
+	background-color: $red;
+	border-radius: 20px;
+	height: 130px;
+	transition: 0.3s ease-out;
+	@include hover {
+		background-color: $nero;
+	}
+	a {
+		height: 100%;
+		padding: 20px;
+		// sass-lint:disable no-important
+		display: flex !important;
+		// sass-lint:enable no-important
+		align-items: center;
+		justify-content: center;
+	}
+	h4 {
+		text-align: center;
+		text-transform: none;
+		color: $white;
+		margin-bottom: 0;
+	}
+}
+
+.sw-crews-crew-list {
+	.slick-list {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+.sw-crews-crew-item {
+	background-color: $white;
+	border-radius: 20px;
+	text-align: center;
+	padding: 10px;
+	height: 130px;
+	// sass-lint:disable no-important
+	display: flex !important;
+	// sass-lint:enable no-important
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 30px rgba(#231f20, 0.2);
+}
+
+.show-more-wrap {
+	padding-top: 40px;
+	text-align: center;
+	margin-bottom: 60px;
+}
