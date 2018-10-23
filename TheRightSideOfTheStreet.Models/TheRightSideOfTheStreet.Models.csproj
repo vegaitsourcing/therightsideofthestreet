@@ -380,8 +380,8 @@
     </Compile>
     <Compile Include="Generated\ModelsBuilder.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\ModularContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

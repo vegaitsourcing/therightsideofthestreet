@@ -270,6 +270,7 @@
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeMemberController.cs" />
     <Compile Include="Controllers\RenderMvc\BlogDetailsController.cs" />
+    <Compile Include="Controllers\RenderMvc\BlogLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\BlogPageController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
@@ -290,10 +291,13 @@
     <Compile Include="Extensions\UmbracoContextExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
     <Compile Include="Extensions\ViewModelExtensions.cs" />
+    <Compile Include="Helpers\UmbracoDictionaryHelper.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
+    <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
+    <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\BecomeMemberFormViewModel.cs" />

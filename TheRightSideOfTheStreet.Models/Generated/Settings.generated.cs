@@ -46,6 +46,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// AdminEmailAddress: Admin email address for receiving e-mails
+		///</summary>
+		[ImplementPropertyType("adminEmailAddress")]
+		public string AdminEmailAddress
+		{
+			get { return this.GetPropertyValue<string>("adminEmailAddress"); }
+		}
+
+		///<summary>
 		/// Canonical Domain: Domain name without http:// or https://
 		///</summary>
 		[ImplementPropertyType("canonicalDomain")]
