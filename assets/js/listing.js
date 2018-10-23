@@ -2,15 +2,21 @@
 
 module.exports = {
 
-	listing: (function () {
-		//Your Test Data
-		var pageKey = 
-		var page = 
+	donators: function () {
+		const $donatorsWrapper = $('.our-donators .wrap');
+		if (!$donatorsWrapper) return;
 
-		//Perform your Get
-		$.get('@Url.Action("Donators","ListingController")', { pageKey:  , page: }, function (data) {
-			//Populate your "rData" element with the results
-			$("#listing").html(data);
+		const pageKey = $donatorsWrapper.data('page-key');
+		const controllerUrl = $donatorsWrapper.data('controller-url');
+
+		$donatorsWrapper.on('click', '.pagination a', function () {
+			const $this = $(this);
+			const page = $this.data('page');
+			$.get(controllerUrl, { pageKey: pageKey, page: page }, function (response) {
+				$donatorsWrapper.children('.donators-content').remove();
+				$donatorsWrapper.append(response);
+			}, 'html');
+			
 		});
-	})
+	}
 };
