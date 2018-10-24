@@ -13,5 +13,8 @@ namespace TheRightSideOfTheStreet.Models
         [ImplementPropertyType("image")]
         public Image Image => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
 
-    }
+		[ImplementPropertyType("previewImage")]
+		public Image PreviewImage => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
+
+	}
 }

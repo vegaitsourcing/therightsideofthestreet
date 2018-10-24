@@ -2,6 +2,7 @@
 using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
 using TheRightSideOfTheStreet.Core.Contexts;
 using System;
+using TheRightSideOfTheStreet.Models.DocumentTypes;
 
 namespace TheRightSideOfTheStreet.Core.Extensions
 {
@@ -23,6 +24,14 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			if (composition == null) return default(ICompositionContext<T>);
 
 			return (ICompositionContext<T>)Activator.CreateInstance(typeof(CompositionContext<>).MakeGenericType(composition.GetType()), composition, siteContext);
+		}
+
+		public static IBlogPageContext<T> WithBlogPage<T>(this ISiteContext siteContext, T blogPage)
+			where T : class, IBlogPage
+		{
+			if (blogPage == null) return default(IBlogPageContext<T>);
+
+			return (IBlogPageContext<T>)Activator.CreateInstance(typeof(BlogPageContext<>).MakeGenericType(blogPage.GetType()), blogPage, siteContext);
 		}
 	}
 }

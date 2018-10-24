@@ -69,15 +69,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Title: The page title.
-		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
-		{
-			get { return this.GetPropertyValue<string>("title"); }
-		}
-
-		///<summary>
 		/// Umbraco Url Alias
 		///</summary>
 		[ImplementPropertyType("umbracoUrlAlias")]
