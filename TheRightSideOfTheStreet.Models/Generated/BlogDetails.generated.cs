@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Blogs Per Page: Default value is 1
-		///</summary>
-		[ImplementPropertyType("blogsPerPage")]
-		public int BlogsPerPage
-		{
-			get { return this.GetPropertyValue<int>("blogsPerPage"); }
-		}
-
-		///<summary>
 		/// Date
 		///</summary>
 		[ImplementPropertyType("date")]
@@ -64,7 +55,25 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Text
+		/// Preview Image: Note: Image dimensions should be 351x292 px
+		///</summary>
+		[ImplementPropertyType("previewImage")]
+		public IPublishedContent PreviewImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("previewImage"); }
+		}
+
+		///<summary>
+		/// Preview Text
+		///</summary>
+		[ImplementPropertyType("previewText")]
+		public string PreviewText
+		{
+			get { return this.GetPropertyValue<string>("previewText"); }
+		}
+
+		///<summary>
+		/// Text: Blog details
 		///</summary>
 		[ImplementPropertyType("text")]
 		public IHtmlString Text

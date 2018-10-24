@@ -257,6 +257,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Contexts\BlogPageContext.cs" />
     <Compile Include="Contexts\CompositionContext.cs" />
     <Compile Include="Contexts\IBlogPageContext.cs" />
@@ -292,6 +293,11 @@
     <Compile Include="Extensions\ViewModelExtensions.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\UmbracoEmail.cs" />
+    <Compile Include="Validations\UmbracoDisplay.cs" />
+    <Compile Include="Validations\UmbracoRequired.cs" />
+    <Compile Include="Validations\UmbracoValidationHelper.cs" />
+    <Compile Include="Validations\ImageAttributes.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />

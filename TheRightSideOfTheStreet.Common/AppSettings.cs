@@ -13,7 +13,9 @@ namespace TheRightSideOfTheStreet.Common
 		public static string XMLSitemapRouteUrl => Get<string>("xmlSitemapRouteUrl", "xmlsitemap");
 		public static bool HideAllPagesFromSearchEngines => Get<bool>("hideAllPagesFromSearchEngines");
 		public static int DonatorsPerPage => Get("donatorsPerPage", 24);
-
+		public static string AdminEmailAdress => Get<string>("adminEmailAdress");
+		public static string EmailRegex => Get<string>("emailRegex");
+		public static string ImageExtensions => Get<string>("imageExtensions");
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.
 		/// </summary>

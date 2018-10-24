@@ -146,6 +146,7 @@
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.3\lib\net45\System.Data.SqlServerCe.dll</HintPath>
@@ -302,9 +303,6 @@
     <Compile Include="Generated\CrewsModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\DonationsAndMembership.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\DonationsContent.cs" />
     <Compile Include="Generated\DonationsContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -380,8 +378,8 @@
     </Compile>
     <Compile Include="Generated\ModelsBuilder.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\ModularContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
