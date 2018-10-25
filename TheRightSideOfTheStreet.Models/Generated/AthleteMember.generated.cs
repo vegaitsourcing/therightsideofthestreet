@@ -109,7 +109,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Images
+		/// Images: Note : Image dimensions should be 197x130 px
 		///</summary>
 		[ImplementPropertyType("images")]
 		public IEnumerable<IPublishedContent> Images
@@ -127,7 +127,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Profile Image: Note: Image dimensions should be
+		/// Profile Image: Note: Image dimensions should be  265x318 px
 		///</summary>
 		[ImplementPropertyType("profileImage")]
 		public IPublishedContent ProfileImage

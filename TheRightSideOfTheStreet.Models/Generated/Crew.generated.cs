@@ -57,10 +57,10 @@ namespace TheRightSideOfTheStreet.Models
 		///<summary>
 		/// Image: Crew image should be
 		///</summary>
-		[ImplementPropertyType("Image")]
+		[ImplementPropertyType("image")]
 		public IPublishedContent Image
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("Image"); }
+			get { return this.GetPropertyValue<IPublishedContent>("image"); }
 		}
 
 		///<summary>

@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
-
-		///<summary>
 		/// Is Image Left
 		///</summary>
 		[ImplementPropertyType("isImageLeft")]

@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Founders
-		///</summary>
-		[ImplementPropertyType("founders")]
-		public IEnumerable<IPublishedContent> Founders
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("founders"); }
-		}
-
-		///<summary>
 		/// Inner Text
 		///</summary>
 		[ImplementPropertyType("innerText")]

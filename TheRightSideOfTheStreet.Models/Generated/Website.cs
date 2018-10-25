@@ -6,6 +6,7 @@ using System.Linq;
 using Umbraco.Core.Models;
 using Umbraco.ModelsBuilder;
 using Umbraco.Web;
+using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
 
 namespace TheRightSideOfTheStreet.Models
 {
@@ -20,7 +21,10 @@ namespace TheRightSideOfTheStreet.Models
         [ImplementPropertyType("socialLinks")]
 		public IEnumerable<SocialLink> SocialLinks => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<SocialLink>();
 
-        //[ImplementPropertyType("date")]
-        //public DateTime Date => this.GetPropertyValue<IPublishedContent>()?.OfType<DateTime>();
-    }
+		[ImplementPropertyType("modules")]
+		public IEnumerable<IModuleNestedContent> Modules => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<IModuleNestedContent>();
+
+		//[ImplementPropertyType("date")]
+		//public DateTime Date => this.GetPropertyValue<IPublishedContent>()?.OfType<DateTime>();
+	}
 }
