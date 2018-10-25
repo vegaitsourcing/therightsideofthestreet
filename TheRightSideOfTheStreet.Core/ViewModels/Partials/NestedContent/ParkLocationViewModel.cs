@@ -19,7 +19,8 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent
 		}
 
 		public string ParkName { get; }
-		//public  Location { get; }
+		public string Latitude { get; }
+		public string Longitude { get; }
 		public string Link { get; }
 	}
 }
