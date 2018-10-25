@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Umbraco.Core.Models;
+using TheRightSideOfTheStreet.Core.ViewModels;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules;
 using TheRightSideOfTheStreet.Models.DocumentTypes.Compositions;
 
@@ -57,6 +58,13 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			string modelTypeName = $"{baseType.Namespace}.{nestedContent.GetType().Name}{classSuffix}";
 
 			return (TNestedContentViewModel)Activator.CreateInstance(Assembly.GetAssembly(baseType).GetType(modelTypeName), nestedContent);
+		}
+
+		public static BlogDetailsViewModel AsViewModel(this IBlogPageContext<BlogDetails> blogPageContext, string classSuffix = "ViewModel")
+		{
+			if (blogPageContext == null) return default(BlogDetailsViewModel);
+
+			return new BlogDetailsViewModel(blogPageContext);
 		}
 
 		public static IModulesNestedContentViewModel AsViewModel(this INestedContentContext<IModuleNestedContent> nestedContentContext, string classSuffix = "ViewModel")

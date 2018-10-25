@@ -19,6 +19,9 @@ namespace TheRightSideOfTheStreet.Models
 		public Page(IPublishedContent content) : base(content)
 		{ }
 
+		[ImplementPropertyType("title")]
+		public string Title => this.GetPropertyWithDefaultValue(Content.Name);
+
 		[ImplementPropertyType("alternatePages")]
 		public IEnumerable<IPage> AlternatePages => this.GetPropertyValue<IEnumerable<IPublishedContent>>().Where(pc => pc != null).OfType<IPage>();
 

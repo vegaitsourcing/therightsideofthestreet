@@ -1,0 +1,25 @@
+.log-in {
+	.wrap {
+		padding-top: 190px;
+		text-align: center;
+		padding-bottom: 200px;
+		span {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 20px 0;
+			input {
+				width: 550px;
+			}
+		}
+	}
+}
+
+.btn-log-in {
+	margin-top: 20px;
+	margin-bottom: 100px;
+}
+
+.btn-reg {
+	margin-top: 10px;
+}

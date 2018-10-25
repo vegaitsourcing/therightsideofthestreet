@@ -55,15 +55,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Preview Image: Note: Image dimensions should be 351x292 px
-		///</summary>
-		[ImplementPropertyType("previewImage")]
-		public IPublishedContent PreviewImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("previewImage"); }
-		}
-
-		///<summary>
 		/// Preview Text
 		///</summary>
 		[ImplementPropertyType("previewText")]
