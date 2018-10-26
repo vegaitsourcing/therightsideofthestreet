@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheRightSideOfTheStreet.Core.Contexts;
+using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Models;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 {
 	public class BlogsModuleViewModel : IModulesNestedContentViewModel
 	{
-		//public BlogsModuleViewModel(IModulesContext<BlogsModule> context)
-		//{
+		public BlogsModuleViewModel(INestedContentContext<BlogsModule> context)
+		{
+			Title = context.NestedContent.Title;
+			Items = context.NestedContent.Items.AsViewModel<BlogDetailsPreviewViewModel>().ToList();
+		}
 
-		//}
-
-		//public string Title { get; }
-		//public IList<B>
+		public string Title { get; }
+		public IList<BlogDetailsPreviewViewModel> Items { get; }
 	}
 }

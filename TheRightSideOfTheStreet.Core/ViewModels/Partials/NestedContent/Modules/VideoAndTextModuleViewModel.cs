@@ -12,11 +12,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 {
 	public class VideoAndTextModuleViewModel : IModulesNestedContentViewModel
 	{
-		public VideoAndTextModuleViewModel()
-		{
-
-		}
-
 		public VideoAndTextModuleViewModel(INestedContentContext<VideoAndTextModule> context)
 		{
 			Title = context.NestedContent.Title;
