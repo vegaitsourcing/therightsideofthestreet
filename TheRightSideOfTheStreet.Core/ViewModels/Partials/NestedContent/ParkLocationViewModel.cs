@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TheRightSideOfTheStreet.Core.Contexts;
-using TheRightSideOfTheStreet.Core.ViewModels.Shared;
+﻿using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Models;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent
@@ -14,13 +8,14 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent
 		public ParkLocationViewModel(INestedContentContext<ParkLocation> context)
 		{
 			ParkName = context.NestedContent.ParkName;
-			//Location = context.NestedContent.Location;
+			Latitude = context.NestedContent.Location.Position.ToWgs84().Latitude;
+			Longitude = context.NestedContent.Location.Position.ToWgs84().Longitude;
 			Link = context.NestedContent.Link;
 		}
 
 		public string ParkName { get; }
-		public string Latitude { get; }
-		public string Longitude { get; }
+		public double Latitude { get; }
+		public double Longitude { get; }
 		public string Link { get; }
 	}
 }

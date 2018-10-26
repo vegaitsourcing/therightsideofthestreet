@@ -4,7 +4,6 @@ using System.Web;
 using TheRightSideOfTheStreet.Common.Extensions;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
 
