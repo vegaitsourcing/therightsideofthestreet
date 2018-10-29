@@ -22,7 +22,7 @@ namespace TheRightSideOfTheStreet.Models
 {
 	/// <summary>Crews Module</summary>
 	[PublishedContentModel("crewsModule")]
-	public partial class CrewsModule : PublishedContentModel
+	public partial class CrewsModule
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "crewsModule";
@@ -43,6 +43,15 @@ namespace TheRightSideOfTheStreet.Models
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CrewsModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Crews
+		///</summary>
+		[ImplementPropertyType("crews")]
+		public string Crews
+		{
+			get { return this.GetPropertyValue<string>("crews"); }
 		}
 	}
 }

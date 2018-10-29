@@ -136,6 +136,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Preview Full Name
+		///</summary>
+		[ImplementPropertyType("previewFullName")]
+		public string PreviewFullName
+		{
+			get { return this.GetPropertyValue<string>("previewFullName"); }
+		}
+
+		///<summary>
 		/// Preview Image
 		///</summary>
 		[ImplementPropertyType("previewImage")]

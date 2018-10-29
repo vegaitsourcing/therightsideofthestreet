@@ -22,7 +22,7 @@ namespace TheRightSideOfTheStreet.Models
 {
 	/// <summary>Video And Text Module</summary>
 	[PublishedContentModel("videoAndTextModule")]
-	public partial class VideoAndTextModule : PublishedContentModel
+	public partial class VideoAndTextModule
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "videoAndTextModule";

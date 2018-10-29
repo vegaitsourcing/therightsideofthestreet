@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Modules
-		///</summary>
-		[ImplementPropertyType("modules")]
-		public IEnumerable<IPublishedContent> Modules
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("modules"); }
-		}
-
-		///<summary>
 		/// Banner Image: Note: Image dimensions should be
 		///</summary>
 		[ImplementPropertyType("bannerImage")]
