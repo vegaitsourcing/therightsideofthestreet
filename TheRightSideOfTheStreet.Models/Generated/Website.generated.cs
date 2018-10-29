@@ -82,15 +82,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Modules
-		///</summary>
-		[ImplementPropertyType("modules")]
-		public IEnumerable<IPublishedContent> Modules
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("modules"); }
-		}
-
-		///<summary>
 		/// Top Navigation Link
 		///</summary>
 		[ImplementPropertyType("topNavigationLink")]

@@ -6,14 +6,48 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 	{
 		public static class BlogDetails
 		{
-			public static string Previous = UmbracoHelper.GetDictionaryValue("BlogDetails.Previous");
-			public static string Back = UmbracoHelper.GetDictionaryValue("BlogDetails.Back");
-			public static string Comments = UmbracoHelper.GetDictionaryValue("BlogDetails.Comments");
-			public static string PostComment = UmbracoHelper.GetDictionaryValue("BlogDetails.PostComment");
-			public static string Comment = UmbracoHelper.GetDictionaryValue("BlogDetails.Comment");
-			public static string Next = UmbracoHelper.GetDictionaryValue("BlogDetails.Next");
-
+			public static string Previous => UmbracoHelper.GetDictionaryValue("BlogDetails.Previous");
+			public static string Back => UmbracoHelper.GetDictionaryValue("BlogDetails.Back");
+			public static string Comments => UmbracoHelper.GetDictionaryValue("BlogDetails.Comments");
+			public static string PostComment => UmbracoHelper.GetDictionaryValue("BlogDetails.PostComment");
+			public static string Comment => UmbracoHelper.GetDictionaryValue("BlogDetails.Comment");
+			public static string Next => UmbracoHelper.GetDictionaryValue("BlogDetails.Next");
 		}
+
+		public static class BecomeMember
+		{
+			public static string BecomeMemberbutton => UmbracoHelper.GetDictionaryValue("BecomeMember.BecomeMemberButton");
+			public static string Name => UmbracoHelper.GetDictionaryValue("BecomeMember.Name");
+			public static string Surname => UmbracoHelper.GetDictionaryValue("BecomeMember.Surname");
+			public static string Address => UmbracoHelper.GetDictionaryValue("BecomeMember.Address");
+			public static string Email => UmbracoHelper.GetDictionaryValue("BecomeMember.Email");
+			public static string Nationality => UmbracoHelper.GetDictionaryValue("BecomeMember.Nationality");
+			public static string MblNumber => UmbracoHelper.GetDictionaryValue("BecomeMember.MblNumber");
+			public static string UploadPicture => UmbracoHelper.GetDictionaryValue("BecomeMember.UploadPicture");
+			public static string Dob => UmbracoHelper.GetDictionaryValue("BecomeMember.Dob");
+			public static string DobRegex => UmbracoHelper.GetDictionaryValue("BecomeMember.DobRegex");
+			public static string PickButton => UmbracoHelper.GetDictionaryValue("BecomeMember.PickButton");
+			public static string Picture => UmbracoHelper.GetDictionaryValue("BecomeMember.Picture");
+			public static string RequestSuccess => UmbracoHelper.GetDictionaryValue("BecomeMember.RequestSuccess");
+			public static string RequestFailed => UmbracoHelper.GetDictionaryValue("BecomeMember.RequestFailed");
+		}
+
+		public static class NewsletterModule
+		{
+			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
+			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
+		}
+
+
+		public static class UmbracoValidation
+		{
+			public static string Required => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Required");
+			public static string StringLenght => UmbracoHelper.GetDictionaryValue("UmbracoValidation.StringLength");
+			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.EmailAddress");
+			public static string ImageExtension => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageExtension");
+			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
+		}
+
 
 		public static class AthleteMember
 		{

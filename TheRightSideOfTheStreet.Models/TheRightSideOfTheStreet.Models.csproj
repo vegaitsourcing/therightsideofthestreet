@@ -146,6 +146,7 @@
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.3\lib\net45\System.Data.SqlServerCe.dll</HintPath>
@@ -239,7 +240,9 @@
     <Compile Include="DocumentTypes\IHomePage.cs" />
     <Compile Include="DocumentTypes\IPage.cs" />
     <Compile Include="DocumentTypes\IRootNode.cs" />
+    <Compile Include="DocumentTypes\Nodes\Items\NestedContent\IModuleNestedContent.cs" />
     <Compile Include="DocumentTypes\Nodes\Items\NestedContent\INestedContent.cs" />
+    <Compile Include="Extensions\BannerExtensions.cs" />
     <Compile Include="Extensions\AthleteMemberExtensions.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
@@ -264,6 +267,7 @@
     <Compile Include="Generated\AthleteMember.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AthleteModule.cs" />
     <Compile Include="Generated\AthleteModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -284,12 +288,15 @@
     <Compile Include="Generated\BlogsContainer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\BlogsModule.cs" />
     <Compile Include="Generated\BlogsModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\CaseStudiesModule.cs" />
     <Compile Include="Generated\CaseStudiesModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\CaseStudy.cs" />
     <Compile Include="Generated\CaseStudy.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -303,6 +310,7 @@
     <Compile Include="Generated\Crew.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\CrewsModule.cs" />
     <Compile Include="Generated\CrewsModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -346,22 +354,27 @@
     <Compile Include="Generated\Folder.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Founders.cs" />
     <Compile Include="Generated\Founders.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\FoundersModule.cs" />
     <Compile Include="Generated\FoundersModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\IBanner.cs" />
     <Compile Include="Generated\Image.cs" />
     <Compile Include="Generated\Image.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ImageModule.cs" />
     <Compile Include="Generated\ImageModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\LeagueForm.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Location.cs" />
     <Compile Include="Generated\Location.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -384,9 +397,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Generated\ModularContent.cs" />
     <Compile Include="Generated\ModularContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\NewsletterModule.cs" />
     <Compile Include="Generated\NewsletterModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -394,6 +409,7 @@
     <Compile Include="Generated\Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ParkLocation.cs" />
     <Compile Include="Generated\ParkLocation.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -413,12 +429,15 @@
     <Compile Include="Generated\SWleague.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\TextAndImageModule.cs" />
     <Compile Include="Generated\TextAndImageModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\TextModule.cs" />
     <Compile Include="Generated\TextModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\VideoAndTextModule.cs" />
     <Compile Include="Generated\VideoAndTextModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -429,6 +448,7 @@
     <Compile Include="Generated\WorkoutCrewsContainer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\WorkoutParksModule.cs" />
     <Compile Include="Generated\WorkoutParksModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

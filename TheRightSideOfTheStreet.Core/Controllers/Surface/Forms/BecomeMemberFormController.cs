@@ -1,40 +1,43 @@
-﻿using System.Net.Mail;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using TheRightSideOfTheStreet.Core.EmailSender;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
+using TheRightSideOfTheStreet.Models;
+using TheRightSideOfTheStreet.Models.Extensions;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 {
 	public class BecomeMemberFormController : BaseSurfaceController
 	{
 		[ChildActionOnly]
-		public ActionResult BecomeMemberForm(BecomeMemberFormViewModel model)
+		public ActionResult BecomeMemberForm(string status)
 		{
-			return PartialView(model);
+			return PartialView(new BecomeMemberFormViewModel() { Status = status});
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult SubmitForm(BecomeMemberFormViewModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				SendEmail(model);
-				return RedirectToCurrentUmbracoPage();
+				return CurrentUmbracoPage();
 			}
-			return CurrentUmbracoPage();
-		}
 
-		private void SendEmail(BecomeMemberFormViewModel model)
-		{
-			MailMessage message = new MailMessage(model.Email, "admin@admin.com")
-			{
-				Subject = string.Format("Enquiry from {0} {1}", model.Name, model.Surname),
-				Body = string.Format(model.Name + " " + model.Surname + "\n" + model.Dob + "\n" + model.Nationality
-									+ "\n" + model.Adress + "\n" + model.MblNumber + "\n" + model.Email)
-			};
+			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
+			EmailHandler emailSender = new EmailHandler();
 
-			SmtpClient client = new SmtpClient();
-			client.Send(message);
+
+
+			bool sentMail = emailSender.BecomeMemberContactUsRequest(model, settings.AdminEmailAddress);
+
+			if (!sentMail) {
+				TempData[Constants.Constants.TempDataFail] = "fail";
+				return CurrentUmbracoPage();
+			}
+			TempData[Constants.Constants.TempDataSuccess] = "success";
+			return RedirectToCurrentUmbracoPage();
 		}
+		
 	}
 }

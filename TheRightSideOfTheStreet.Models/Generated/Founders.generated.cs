@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Image: Founder profile  image should be
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
-		}
-
-		///<summary>
 		/// IsImageLeft
 		///</summary>
 		[ImplementPropertyType("isImageLeft")]

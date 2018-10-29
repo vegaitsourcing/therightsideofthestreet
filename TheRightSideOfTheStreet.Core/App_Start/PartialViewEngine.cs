@@ -12,7 +12,9 @@ namespace TheRightSideOfTheStreet.Core
 			PartialViewLocationFormats = new[]
 			{
 				"~/Views/Partials/{1}/{0}.cshtml",
-				"~/Views/Partials/{1}/_{0}.cshtml"
+				"~/Views/Partials/{1}/_{0}.cshtml",
+				"~/Views/Partials/{1}/Modules/{0}.cshtml",
+				"~/Views/Partials/{1}/Modules/_{0}.cshtml"
 			};
 		}
 	}

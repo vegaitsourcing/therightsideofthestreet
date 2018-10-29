@@ -14,6 +14,8 @@ using TheRightSideOfTheStreet.Models;
 using TheRightSideOfTheStreet.Models.DocumentTypes;
 using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
 using Umbraco.Core.Models;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules;
+using TheRightSideOfTheStreet.Models.DocumentTypes.Compositions;
 
 namespace TheRightSideOfTheStreet.Core.Extensions
 {
@@ -67,6 +69,16 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			return new BlogDetailsViewModel(blogPageContext);
 		}
 
+		public static IModulesNestedContentViewModel AsViewModel(this INestedContentContext<IModuleNestedContent> nestedContentContext, string classSuffix = "ViewModel")
+		{
+			if (nestedContentContext == null) return default(IModulesNestedContentViewModel);
+
+			Type baseType = typeof(IModulesNestedContentViewModel);
+			string modelTypeName = $"{baseType.Namespace}.{nestedContentContext.NestedContent.GetType().Name}{classSuffix}";
+
+			return (IModulesNestedContentViewModel)Activator.CreateInstance(Assembly.GetAssembly(baseType).GetType(modelTypeName), nestedContentContext);
+		}
+
 		public static IEnumerable<T> AsViewModel<T>(this IEnumerable<IPublishedContent> items, string classSuffix = "ViewModel")
 			where T : class
 		{
@@ -75,6 +87,12 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
 		}
 
+		public static BannerViewModel AsViewModel(this ICompositionContext<Banner> compositionContext, string classSuffix = "ViewModel")
+		{
+		    if (compositionContext == null) return default(BannerViewModel);
+
+			return new BannerViewModel(compositionContext);
+		}
 		public static CrewViewModel AsViewModel(this Crew crew)
 			=> crew != null ? new CrewViewModel(crew) : default(CrewViewModel);
 
@@ -82,13 +100,6 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			=> status != null ? new MembershipStatusViewModel(status) : default(MembershipStatusViewModel);
 
 
-		//public static BannerViewModel AsViewModel(this ICompositionContext<IBanner> compositionContext,
-		//    string classSuffix = "ViewModel")
-		//{
-		//    if (compositionContext == null) return default(BannerViewModel);
-
-		//    return new BannerViewModel(compositionContext);
-		//}
 
 		public static PrimaryNavigationItemViewModel AsNavigationViewModel(this IPage page) => page != null ? new PrimaryNavigationItemViewModel(page) : null;
 

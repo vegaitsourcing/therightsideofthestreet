@@ -8,6 +8,7 @@ using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Core;
 using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
@@ -22,7 +23,10 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 			if (donatorsContent == null) return new EmptyResult();
 
 			IList<Donators> donators = donatorsContent.Donators.AsList();
+
 			if (!donators.Any()) return new EmptyResult();
+
+			int itemsPerGroup = 6;
 
 			int itemsPerPage = donatorsContent.DonatorsItemsPerPage;
 
@@ -31,11 +35,12 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 			ISiteContext siteContext = CreateSiteContext();
 
 			return PartialView(
-				new ListingViewModel<DonatorsViewModel>(
+				new ListingViewModel<IEnumerable<DonatorsViewModel>>(
 					donators.Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
 							.Select(d => siteContext.WithNestedContent(d).AsViewModel<DonatorsViewModel>())
-							.ToList(), 
-					page, 
+							.InGroupsOf(itemsPerGroup)
+							.ToList(),
+					page,
 					totalPages));
 		}
 	}

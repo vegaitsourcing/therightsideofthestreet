@@ -18,6 +18,7 @@ let app = {
         functions.menuToggle();
 		listing.donators();
 		becomeMember.changeImage();
+		becomeMember.validatorSkip();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

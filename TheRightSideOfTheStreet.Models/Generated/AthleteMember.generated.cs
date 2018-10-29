@@ -109,42 +109,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Preview Facebook Profile
-		///</summary>
-		[ImplementPropertyType("previewFacebookProfile")]
-		public string PreviewFacebookProfile
-		{
-			get { return this.GetPropertyValue<string>("previewFacebookProfile"); }
-		}
-
-		///<summary>
-		/// Preview Full Name
-		///</summary>
-		[ImplementPropertyType("previewFullName")]
-		public string PreviewFullName
-		{
-			get { return this.GetPropertyValue<string>("previewFullName"); }
-		}
-
-		///<summary>
-		/// Preview Instagram Profile
-		///</summary>
-		[ImplementPropertyType("previewInstagramProfile")]
-		public string PreviewInstagramProfile
-		{
-			get { return this.GetPropertyValue<string>("previewInstagramProfile"); }
-		}
-
-		///<summary>
-		/// Preview Youtube Profile
-		///</summary>
-		[ImplementPropertyType("previewYoutubeProfile")]
-		public string PreviewYoutubeProfile
-		{
-			get { return this.GetPropertyValue<string>("previewYoutubeProfile"); }
-		}
-
-		///<summary>
 		/// Is Approved
 		///</summary>
 		[ImplementPropertyType("umbracoMemberApproved")]

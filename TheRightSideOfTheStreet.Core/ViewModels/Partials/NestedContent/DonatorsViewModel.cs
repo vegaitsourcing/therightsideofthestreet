@@ -15,7 +15,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent
 		}
 
 		public string DonatorName { get; }
-		public ImageViewModel Image { get; }
+		public ImageViewModel Image { get; } //TODO : implementation after FE corrections
 		public string City { get; }
 	}
 }
