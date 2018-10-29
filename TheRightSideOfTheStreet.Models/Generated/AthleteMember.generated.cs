@@ -82,15 +82,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Crew
-		///</summary>
-		[ImplementPropertyType("crew")]
-		public IEnumerable<IPublishedContent> Crew
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("crew"); }
-		}
-
-		///<summary>
 		/// Facebook Profile
 		///</summary>
 		[ImplementPropertyType("facebookProfile")]
@@ -109,15 +100,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Images
-		///</summary>
-		[ImplementPropertyType("images")]
-		public IEnumerable<IPublishedContent> Images
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("images"); }
-		}
-
-		///<summary>
 		/// Instagram Profile
 		///</summary>
 		[ImplementPropertyType("instagramProfile")]
@@ -127,21 +109,39 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Profile Image: Note: Image dimensions should be
+		/// Preview Facebook Profile
 		///</summary>
-		[ImplementPropertyType("profileImage")]
-		public IPublishedContent ProfileImage
+		[ImplementPropertyType("previewFacebookProfile")]
+		public string PreviewFacebookProfile
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("profileImage"); }
+			get { return this.GetPropertyValue<string>("previewFacebookProfile"); }
 		}
 
 		///<summary>
-		/// Status
+		/// Preview Full Name
 		///</summary>
-		[ImplementPropertyType("status")]
-		public IEnumerable<IPublishedContent> Status
+		[ImplementPropertyType("previewFullName")]
+		public string PreviewFullName
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("status"); }
+			get { return this.GetPropertyValue<string>("previewFullName"); }
+		}
+
+		///<summary>
+		/// Preview Instagram Profile
+		///</summary>
+		[ImplementPropertyType("previewInstagramProfile")]
+		public string PreviewInstagramProfile
+		{
+			get { return this.GetPropertyValue<string>("previewInstagramProfile"); }
+		}
+
+		///<summary>
+		/// Preview Youtube Profile
+		///</summary>
+		[ImplementPropertyType("previewYoutubeProfile")]
+		public string PreviewYoutubeProfile
+		{
+			get { return this.GetPropertyValue<string>("previewYoutubeProfile"); }
 		}
 
 		///<summary>

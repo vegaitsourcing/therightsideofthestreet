@@ -1,18 +1,19 @@
-﻿using TheRightSideOfTheStreet.Common.Extensions;
-using TheRightSideOfTheStreet.Models;
-using TheRightSideOfTheStreet.Models.DocumentTypes;
-using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
-using TheRightSideOfTheStreet.Core.Contexts;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
-using TheRightSideOfTheStreet.Core.ViewModels.Shared;
-using RJP.MultiUrlPicker.Models;
+﻿using RJP.MultiUrlPicker.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Umbraco.Core.Models;
+using TheRightSideOfTheStreet.Common.Extensions;
+using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.ViewModels;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
+using TheRightSideOfTheStreet.Core.ViewModels.Shared;
+using TheRightSideOfTheStreet.Models;
+using TheRightSideOfTheStreet.Models.DocumentTypes;
+using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
+using Umbraco.Core.Models;
 
 namespace TheRightSideOfTheStreet.Core.Extensions
 {
@@ -35,6 +36,7 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 
 		public static ImageViewModel AsViewModel(this Image image)
 			=> image != null ? new ImageViewModel(image) : default(ImageViewModel);
+
 
 		public static TNestedContentViewModel AsViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
 			where TNestedContentViewModel : INestedContentViewModel
@@ -72,6 +74,13 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 
 			return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
 		}
+
+		public static CrewViewModel AsViewModel(this Crew crew)
+			=> crew != null ? new CrewViewModel(crew) : default(CrewViewModel);
+
+		public static MembershipStatusViewModel AsViewModel(this MembershipStatus status)
+			=> status != null ? new MembershipStatusViewModel(status) : default(MembershipStatusViewModel);
+
 
 		//public static BannerViewModel AsViewModel(this ICompositionContext<IBanner> compositionContext,
 		//    string classSuffix = "ViewModel")

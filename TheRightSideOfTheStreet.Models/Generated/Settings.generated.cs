@@ -46,7 +46,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// AdminEmailAddress: Admin email address for receiving e-mails
+		/// Admin Email Address: Admin email address for receiving e-mails
 		///</summary>
 		[ImplementPropertyType("adminEmailAddress")]
 		public string AdminEmailAddress

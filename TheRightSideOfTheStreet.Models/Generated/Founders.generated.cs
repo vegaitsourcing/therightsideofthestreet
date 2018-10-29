@@ -55,6 +55,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// IsImageLeft
+		///</summary>
+		[ImplementPropertyType("isImageLeft")]
+		public bool IsImageLeft
+		{
+			get { return this.GetPropertyValue<bool>("isImageLeft"); }
+		}
+
+		///<summary>
 		/// Text
 		///</summary>
 		[ImplementPropertyType("text")]

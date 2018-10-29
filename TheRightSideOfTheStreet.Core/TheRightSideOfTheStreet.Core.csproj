@@ -251,14 +251,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ApplicationEventsHandler.cs" />
+    <Compile Include="App_Start\AthleteMemberContentFinder.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DomainRootRouteHandler.cs" />
     <Compile Include="App_Start\ExistingLanguagesRouteConstraint.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexts\AthleteMemberContext.cs" />
     <Compile Include="Contexts\BlogPageContext.cs" />
     <Compile Include="Contexts\CompositionContext.cs" />
+    <Compile Include="Contexts\IAthleteMemberContext.cs" />
     <Compile Include="Contexts\IBlogPageContext.cs" />
     <Compile Include="Contexts\ICompositionContext.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
@@ -267,6 +270,7 @@
     <Compile Include="Contexts\NestedContentContext.cs" />
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
+    <Compile Include="Controllers\RenderMvc\AthleteLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeMemberController.cs" />
     <Compile Include="Controllers\RenderMvc\BlogDetailsController.cs" />
@@ -294,12 +298,17 @@
     <Compile Include="Helpers\UmbracoDictionaryHelper.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\AthleteMembersSearch.cs" />
+    <Compile Include="ViewModels\AthleteLandingViewModel.cs" />
+    <Compile Include="ViewModels\AthleteMemberPreviewModel.cs" />
+    <Compile Include="ViewModels\AthleteMemberViewModel.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\CrewViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\BecomeMemberFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\GoogleAnalyticsViewModel.cs" />

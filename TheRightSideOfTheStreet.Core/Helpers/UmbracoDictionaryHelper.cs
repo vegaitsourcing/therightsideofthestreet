@@ -14,6 +14,15 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Next = UmbracoHelper.GetDictionaryValue("BlogDetails.Next");
 
 		}
+
+		public static class AthleteMember
+		{
+			public static string SportVision => UmbracoHelper.GetDictionaryValue("AthleteMember.SportVision");
+			public static string ImportantAchievements => UmbracoHelper.GetDictionaryValue("AthleteMember.ImportantAchievements");
+			public static string Status => UmbracoHelper.GetDictionaryValue("AthleteMember.Status");
+			public static string Crew => UmbracoHelper.GetDictionaryValue("AthleteMember.Crew");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 	}
 }

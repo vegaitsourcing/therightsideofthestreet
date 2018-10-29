@@ -55,24 +55,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Image: Crew image should be
-		///</summary>
-		[ImplementPropertyType("Image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("Image"); }
-		}
-
-		///<summary>
-		/// Logo: Crew logo dimensions should be
-		///</summary>
-		[ImplementPropertyType("logo")]
-		public IPublishedContent Logo
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("logo"); }
-		}
-
-		///<summary>
 		/// Text: The description  about team.
 		///</summary>
 		[ImplementPropertyType("text")]
