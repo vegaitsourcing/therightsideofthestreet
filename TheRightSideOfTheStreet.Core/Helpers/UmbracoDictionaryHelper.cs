@@ -57,6 +57,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Crew => UmbracoHelper.GetDictionaryValue("AthleteMember.Crew");
 		}
 
+		public static class AtheleLanding
+		{
+			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteLanding.IntroduceYourself");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 	}
 }

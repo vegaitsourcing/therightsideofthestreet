@@ -12,7 +12,7 @@ namespace TheRightSideOfTheStreet.Core
 {
 	public class AthleteMemberContentFinder : IContentFinder
 	{
-		//to do srediti ovo u novu klasu 
+		
 		public bool TryFindContent(PublishedContentRequest contentRequest)
 		{
 			UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
