@@ -59,5 +59,10 @@ namespace TheRightSideOfTheStreet.Models.Extensions
 		public static IEnumerable<Website> GetLanguages(this UmbracoHelper helper)
 			=> helper?.TypedContentAtRoot().Where(c => c.DocumentTypeAlias == Website.ModelTypeAlias).OfType<Website>() ?? Enumerable.Empty<Website>();
 
-    }
+		public static IEnumerable<AthleteLanding> GetAthleteLanding(this UmbracoHelper helper)
+			=> helper?.TypedContentAtXPath($"//{AthleteLanding.ModelTypeAlias}").OfType<AthleteLanding>() ?? Enumerable.Empty<AthleteLanding>();
+
+		public static AthleteLanding GetAthleteLanding(this UmbracoHelper helper, int siteId)
+			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias}[@id='{siteId}']//{AthleteLanding.ModelTypeAlias}")?.OfType<AthleteLanding>();
+	}
 }

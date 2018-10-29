@@ -3,6 +3,7 @@ using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
 using TheRightSideOfTheStreet.Core.Contexts;
 using System;
 using TheRightSideOfTheStreet.Models.DocumentTypes;
+using TheRightSideOfTheStreet.Models.MemberTypes;
 
 namespace TheRightSideOfTheStreet.Core.Extensions
 {
@@ -32,6 +33,14 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			if (blogPage == null) return default(IBlogPageContext<T>);
 
 			return (IBlogPageContext<T>)Activator.CreateInstance(typeof(BlogPageContext<>).MakeGenericType(blogPage.GetType()), blogPage, siteContext);
+		}
+
+		public static IAthleteMemberContext<T> WithAthleteMember<T>(this ISiteContext siteContext, T member)
+			where T : class, IAthleteMember
+		{
+			if (member == null) return default(IAthleteMemberContext<T>);
+
+			return (IAthleteMemberContext<T>)Activator.CreateInstance(typeof(AthleteMemberContext<>).MakeGenericType(member.GetType()), member, siteContext);
 		}
 	}
 }

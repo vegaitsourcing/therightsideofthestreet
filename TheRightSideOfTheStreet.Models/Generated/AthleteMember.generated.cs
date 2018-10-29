@@ -82,15 +82,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Crew
-		///</summary>
-		[ImplementPropertyType("crew")]
-		public IEnumerable<IPublishedContent> Crew
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("crew"); }
-		}
-
-		///<summary>
 		/// Facebook Profile
 		///</summary>
 		[ImplementPropertyType("facebookProfile")]
@@ -109,84 +100,12 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Images: Note : Image dimensions should be 197x130 px
-		///</summary>
-		[ImplementPropertyType("images")]
-		public IEnumerable<IPublishedContent> Images
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("images"); }
-		}
-
-		///<summary>
 		/// Instagram Profile
 		///</summary>
 		[ImplementPropertyType("instagramProfile")]
 		public string InstagramProfile
 		{
 			get { return this.GetPropertyValue<string>("instagramProfile"); }
-		}
-
-		///<summary>
-		/// Preview Facebook Profile
-		///</summary>
-		[ImplementPropertyType("previewFacebookProfile")]
-		public string PreviewFacebookProfile
-		{
-			get { return this.GetPropertyValue<string>("previewFacebookProfile"); }
-		}
-
-		///<summary>
-		/// Preview Full Name
-		///</summary>
-		[ImplementPropertyType("previewFullName")]
-		public string PreviewFullName
-		{
-			get { return this.GetPropertyValue<string>("previewFullName"); }
-		}
-
-		///<summary>
-		/// Preview Image
-		///</summary>
-		[ImplementPropertyType("previewImage")]
-		public IPublishedContent PreviewImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("previewImage"); }
-		}
-
-		///<summary>
-		/// Preview Instagram Profile
-		///</summary>
-		[ImplementPropertyType("previewInstagramProfile")]
-		public string PreviewInstagramProfile
-		{
-			get { return this.GetPropertyValue<string>("previewInstagramProfile"); }
-		}
-
-		///<summary>
-		/// Preview Youtube Profile
-		///</summary>
-		[ImplementPropertyType("previewYoutubeProfile")]
-		public string PreviewYoutubeProfile
-		{
-			get { return this.GetPropertyValue<string>("previewYoutubeProfile"); }
-		}
-
-		///<summary>
-		/// Profile Image: Note: Image dimensions should be  265x318 px
-		///</summary>
-		[ImplementPropertyType("profileImage")]
-		public IPublishedContent ProfileImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("profileImage"); }
-		}
-
-		///<summary>
-		/// Status
-		///</summary>
-		[ImplementPropertyType("status")]
-		public IEnumerable<IPublishedContent> Status
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("status"); }
 		}
 
 		///<summary>

@@ -2,6 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using Umbraco.Core;
+using Umbraco.Web.Routing;
 
 namespace TheRightSideOfTheStreet.Core
 {
@@ -12,6 +13,7 @@ namespace TheRightSideOfTheStreet.Core
 			base.ApplicationStarting(umbracoApplication, applicationContext);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			ViewEngines.Engines.Add(new PartialViewEngine());
+			ContentFinderResolver.Current.InsertType<AthleteMemberContentFinder>();
 		}
 
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)

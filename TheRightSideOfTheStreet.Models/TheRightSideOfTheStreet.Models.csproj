@@ -243,6 +243,7 @@
     <Compile Include="DocumentTypes\Nodes\Items\NestedContent\IModuleNestedContent.cs" />
     <Compile Include="DocumentTypes\Nodes\Items\NestedContent\INestedContent.cs" />
     <Compile Include="Extensions\BannerExtensions.cs" />
+    <Compile Include="Extensions\AthleteMemberExtensions.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
     <Compile Include="Extensions\HttpCacheExtensions.cs" />
@@ -258,9 +259,11 @@
     <Compile Include="Generated\AthleteForm.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AthleteLanding.cs" />
     <Compile Include="Generated\AthleteLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AthleteMember.cs" />
     <Compile Include="Generated\AthleteMember.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -303,6 +306,7 @@
     <Compile Include="Generated\CountrySelector.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Crew.cs" />
     <Compile Include="Generated\Crew.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -451,6 +455,7 @@
     <Compile Include="Helpers\MediaHelper.cs" />
     <Compile Include="Helpers\TweetHelper.cs" />
     <Compile Include="MediaTypes\MediaBase.cs" />
+    <Compile Include="MemberTypes\IAthleteMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
