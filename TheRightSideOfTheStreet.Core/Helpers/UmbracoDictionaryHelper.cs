@@ -17,8 +17,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 
 		public static class NewsletterModule
 		{
-			public static string SubscriptionMessage = UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
-			public static string SubscribeButton = UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
+			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
+			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

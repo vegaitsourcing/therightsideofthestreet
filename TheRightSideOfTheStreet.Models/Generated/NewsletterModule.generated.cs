@@ -44,5 +44,14 @@ namespace TheRightSideOfTheStreet.Models
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Newsletter
+		///</summary>
+		[ImplementPropertyType("newsletter")]
+		public string Newsletter
+		{
+			get { return this.GetPropertyValue<string>("newsletter"); }
+		}
 	}
 }
