@@ -282,6 +282,8 @@
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
     <Compile Include="Controllers\Surface\Partials\ListingController.cs" />
+    <Compile Include="EmailSender\EmailSender.cs" />
+    <Compile Include="EmailSender\EmailHandler.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\HtmlHelperFormatExtensions.cs" />
     <Compile Include="Extensions\HttpContextExtensions.cs" />
@@ -298,8 +300,9 @@
     <Compile Include="Validations\UmbracoEmail.cs" />
     <Compile Include="Validations\UmbracoDisplay.cs" />
     <Compile Include="Validations\UmbracoRequired.cs" />
+    <Compile Include="Validations\UmbracoStringLength.cs" />
     <Compile Include="Validations\UmbracoValidationHelper.cs" />
-    <Compile Include="Validations\ImageAttributes.cs" />
+    <Compile Include="Validations\UmbracoImage.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />

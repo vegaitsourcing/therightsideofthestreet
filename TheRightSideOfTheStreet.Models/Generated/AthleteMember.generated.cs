@@ -109,7 +109,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Images
+		/// Images: Note : Image dimensions should be 197x130 px
 		///</summary>
 		[ImplementPropertyType("images")]
 		public IEnumerable<IPublishedContent> Images
@@ -127,7 +127,43 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Profile Image: Note: Image dimensions should be
+		/// Preview Facebook Profile
+		///</summary>
+		[ImplementPropertyType("previewFacebookProfile")]
+		public string PreviewFacebookProfile
+		{
+			get { return this.GetPropertyValue<string>("previewFacebookProfile"); }
+		}
+
+		///<summary>
+		/// Preview Image
+		///</summary>
+		[ImplementPropertyType("previewImage")]
+		public IPublishedContent PreviewImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("previewImage"); }
+		}
+
+		///<summary>
+		/// Preview Instagram Profile
+		///</summary>
+		[ImplementPropertyType("previewInstagramProfile")]
+		public string PreviewInstagramProfile
+		{
+			get { return this.GetPropertyValue<string>("previewInstagramProfile"); }
+		}
+
+		///<summary>
+		/// Preview Youtube Profile
+		///</summary>
+		[ImplementPropertyType("previewYoutubeProfile")]
+		public string PreviewYoutubeProfile
+		{
+			get { return this.GetPropertyValue<string>("previewYoutubeProfile"); }
+		}
+
+		///<summary>
+		/// Profile Image: Note: Image dimensions should be  265x318 px
 		///</summary>
 		[ImplementPropertyType("profileImage")]
 		public IPublishedContent ProfileImage

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using TheRightSideOfTheStreet.Core.Validations;
 
 namespace TheRightSideOfTheStreet.Core.Validations
 {
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
+	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
     public sealed class UmbracoDisplayName : DisplayNameAttribute
     {
         private readonly string _dictionaryKey;
@@ -19,7 +18,7 @@ namespace TheRightSideOfTheStreet.Core.Validations
         {
             get
             {
-                return UmbracoValidationHelper.UmbracoHelper.GetDictionaryValue(_dictionaryKey);
+				return UmbracoValidationHelper.GetDictionaryItem(_dictionaryKey);
             }
         }
     }
