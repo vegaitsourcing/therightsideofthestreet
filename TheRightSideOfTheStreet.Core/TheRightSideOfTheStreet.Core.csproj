@@ -307,10 +307,12 @@
     <Compile Include="Validations\UmbracoStringLength.cs" />
     <Compile Include="Validations\UmbracoValidationHelper.cs" />
     <Compile Include="Validations\UmbracoImage.cs" />
+    <Compile Include="ViewModels\AthleteFormViewModel.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\ModularContentViewModel.cs" />
