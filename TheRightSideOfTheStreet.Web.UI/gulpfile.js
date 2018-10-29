@@ -30,7 +30,7 @@ let gulp             = require('gulp'),
 	pathExists       = require('path-exists'),
 	runSequence      = require('run-sequence'),
 	inputPath        = __dirname,
-	outputPath = "../TheRightSideOfTheStreet.Web/";
+	outputPath = "../TheRightSideOfTheStreet.Web";
 
 //icon fonts
 gulp.task('iconfont', function(){
@@ -40,7 +40,7 @@ gulp.task('iconfont', function(){
 			cssClass: 'font',
 			path: 'conf/icon-font.scss',
 			targetPath: inputPath + '/css/layout/_icon-font.scss',
-			fontPath: outputPath + 'fonts/dist/'
+			fontPath: '../../fonts/dist/'
 		}))
 		.pipe(iconfont({
 			fontName: 'svgicons', // required
@@ -53,7 +53,7 @@ gulp.task('iconfont', function(){
 			// CSS templating, e.g.
 			console.log(glyphs, options);
 		})
-		.pipe(gulp.dest(outputPath + 'fonts/dist/'));
+		.pipe(gulp.dest(outputPath + '/fonts/dist/'));
 });
 
 //error notification settings for plumber
@@ -100,7 +100,7 @@ gulp.task('styles', function() {
 		.pipe(postcss(processors))
 		.pipe(rename('style.min.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(outputPath + 'css/dist'));
+		.pipe(gulp.dest(outputPath + '/css/dist'));
 });
 
 gulp.task('sasslint', function () {
@@ -113,7 +113,7 @@ gulp.task('sasslint', function () {
 });
 
 //js
-let jsDest = outputPath + 'js/dist';
+let jsDest = outputPath + '/js/dist';
 
 gulp.task('js', function() {
 	return browserify('js/default.js').bundle()

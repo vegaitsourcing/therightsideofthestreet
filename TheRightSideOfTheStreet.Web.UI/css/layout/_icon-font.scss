@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'svgicons';
-	src: url('../TheRightSideOfTheStreet.Web/fonts/dist/svgicons.woff2') format('woff2'),
-		url('../TheRightSideOfTheStreet.Web/fonts/dist/svgicons.woff') format('woff'),
-		url('../TheRightSideOfTheStreet.Web/fonts/dist/svgicons.ttf') format('truetype');
+	src: url('../../fonts/dist/svgicons.woff2') format('woff2'),
+		url('../../fonts/dist/svgicons.woff') format('woff'),
+		url('../../fonts/dist/svgicons.ttf') format('truetype');
 }
 
 @mixin font-styles {
