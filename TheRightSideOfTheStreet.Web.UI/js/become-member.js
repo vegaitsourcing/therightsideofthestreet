@@ -23,7 +23,10 @@ module.exports = {
 	},
 
 	validatorSkip: function () {
-		$("#become-member-form").data("validator").settings.ignore = "";
+		const $this = $("#become-member-form").data("validator");
+		if (!$this) return;
+
+		$this.settings.ignore = "";
 	}
 };
 
