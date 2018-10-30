@@ -46,6 +46,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.EmailAddress");
 			public static string ImageExtension => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageExtension");
 			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
+			public static string Password => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Password");
 		}
 
 
