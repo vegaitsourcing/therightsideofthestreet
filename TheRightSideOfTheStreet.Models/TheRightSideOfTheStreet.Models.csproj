@@ -340,9 +340,6 @@
     <Compile Include="Generated\ExerciseLevel.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\ExerciseLevelsContainer.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\ExerciseStep.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -390,6 +387,12 @@
     </Compile>
     <Compile Include="Generated\ModelsBuilder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
+      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
+    </Compile>
+    <Compile Include="Generated\ModelsBuilder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\ModularContent.cs" />
     <Compile Include="Generated\ModularContent.generated.cs">
