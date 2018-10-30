@@ -319,6 +319,7 @@
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\RegistrationFormViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\ModularContentViewModel.cs" />

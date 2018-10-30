@@ -60,6 +60,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		public static class AtheleLanding
 		{
 			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteLanding.IntroduceYourself");
+			public static string Search => UmbracoHelper.GetDictionaryValue("AthleteLanding.Search");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
