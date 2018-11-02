@@ -286,7 +286,7 @@
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
-    <Compile Include="Controllers\Surface\Forms\RegistrationFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\LoginAthleteFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\SharedController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
@@ -322,7 +322,7 @@
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
-    <Compile Include="ViewModels\Partials\Forms\RegistrationFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\ModularContentViewModel.cs" />

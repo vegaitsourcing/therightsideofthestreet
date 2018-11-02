@@ -69,6 +69,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Umbraco Redirect
+		///</summary>
+		[ImplementPropertyType("umbracoRedirect")]
+		public IPublishedContent UmbracoRedirect
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("umbracoRedirect"); }
+		}
+
+		///<summary>
 		/// Umbraco Url Alias
 		///</summary>
 		[ImplementPropertyType("umbracoUrlAlias")]

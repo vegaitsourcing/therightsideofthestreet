@@ -64,6 +64,19 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Search => UmbracoHelper.GetDictionaryValue("AthleteLanding.Search");
 		}
 
+		public static class LoginForm
+		{
+			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("LoginForm.EmailAddress");
+			public static string Password => UmbracoHelper.GetDictionaryValue("LoginForm.Password");
+			public static string LogIn => UmbracoHelper.GetDictionaryValue("LoginForm.LogIn");
+			public static string Register => UmbracoHelper.GetDictionaryValue("LoginForm.Register");
+			public static string WithoutAccount => UmbracoHelper.GetDictionaryValue("LoginForm.WithoutAccount");
+			public static string LoginSuccess => UmbracoHelper.GetDictionaryValue("LoginForm.LoginSuccess");
+			public static string LoginFailed => UmbracoHelper.GetDictionaryValue("LoginForm.LoginFailed");
+
+
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 	}
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Web;
+using System;
+using Umbraco.Core.Models.PublishedContent;
 
 namespace TheRightSideOfTheStreet.Models.Extensions
 {
@@ -37,15 +39,15 @@ namespace TheRightSideOfTheStreet.Models.Extensions
 		public static T GetHome<T>(this UmbracoHelper helper) where T : class, IHomePage
 			=> helper?.UmbracoContext.PublishedContentRequest.PublishedContent.Site().OfType<T>();
 
-        public static T GetPage<T>(this UmbracoHelper helper) where T : class, IPage
-            => helper?.UmbracoContext.PublishedContentRequest.PublishedContent.Site().OfType<T>();
+		public static T GetPage<T>(this UmbracoHelper helper) where T : class, IPage
+			=> helper?.UmbracoContext.PublishedContentRequest.PublishedContent.Site().OfType<T>();
 
-        /// <summary>
-        /// Returns Settings node.
-        /// </summary>
-        /// <param name="helper">Umbraco helper.</param>
-        /// <returns>Settings node.</returns>
-        public static Settings GetSettings(this UmbracoHelper helper, int siteId)
+		/// <summary>
+		/// Returns Settings node.
+		/// </summary>
+		/// <param name="helper">Umbraco helper.</param>
+		/// <returns>Settings node.</returns>
+		public static Settings GetSettings(this UmbracoHelper helper, int siteId)
 			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias} [@id='{siteId}']//{Settings.ModelTypeAlias}").OfType<Settings>();
 
 		/// <summary>
@@ -64,5 +66,14 @@ namespace TheRightSideOfTheStreet.Models.Extensions
 
 		public static AthleteLanding GetAthleteLanding(this UmbracoHelper helper, int siteId)
 			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias}[@id='{siteId}']//{AthleteLanding.ModelTypeAlias}")?.OfType<AthleteLanding>();
+		
+		public static T GetPage<T>(this UmbracoHelper helper, int siteId) where T : PublishedContentModel
+			=> helper?.TypedContentSingleAtXPath(GetXpath(typeof(T),siteId))?.OfType<T>();
+
+		private static string GetXpath(Type t, int siteId)
+		{
+			return $"//{Website.ModelTypeAlias}[@id='{siteId}']//*[@isDoc and translate(name(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '{t.Name.ToLower()}']";
+		}
+
 	}
 }

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Exercise Levels Container</summary>
-	[PublishedContentModel("exerciseLevelsContainer")]
-	public partial class ExerciseLevelsContainer : PublishedContentModel
+	/// <summary>Login Form</summary>
+	[PublishedContentModel("loginForm")]
+	public partial class LoginForm : Page
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "exerciseLevelsContainer";
+		public new const string ModelTypeAlias = "loginForm";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ExerciseLevelsContainer(IPublishedContent content)
+		public LoginForm(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ExerciseLevelsContainer, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
