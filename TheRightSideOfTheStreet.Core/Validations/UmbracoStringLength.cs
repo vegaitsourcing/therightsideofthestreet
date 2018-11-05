@@ -14,8 +14,13 @@ namespace TheRightSideOfTheStreet.Core.Validations
             _errorMessageDictionaryKey = errorMessageDictionaryKey;
         }
 
+		public UmbracoStringLength(string errorMessageDictionaryKey, int maximumLength, int minimumLength) : base(maximumLength)
+		{
+			_errorMessageDictionaryKey = errorMessageDictionaryKey;
+		}
 
-        public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
+
+		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             ErrorMessage = UmbracoValidationHelper.GetDictionaryItem(_errorMessageDictionaryKey);
 
