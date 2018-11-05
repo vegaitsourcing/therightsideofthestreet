@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Exercise Group</summary>
-	[PublishedContentModel("exerciseGroup")]
-	public partial class ExerciseGroup : Page
+	/// <summary>Login Form</summary>
+	[PublishedContentModel("loginForm")]
+	public partial class LoginForm : Page
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "exerciseGroup";
+		public new const string ModelTypeAlias = "loginForm";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ExerciseGroup(IPublishedContent content)
+		public LoginForm(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,9 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ExerciseGroup, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Highlight Title
-		///</summary>
-		[ImplementPropertyType("highlightTitle")]
-		public string HighlightTitle
-		{
-			get { return this.GetPropertyValue<string>("highlightTitle"); }
-		}
-
-		///<summary>
-		/// Highlight Video: ensure the URL contains embed rather watch as the /embed
-		///</summary>
-		[ImplementPropertyType("highlightVideo")]
-		public string HighlightVideo
-		{
-			get { return this.GetPropertyValue<string>("highlightVideo"); }
 		}
 	}
 }

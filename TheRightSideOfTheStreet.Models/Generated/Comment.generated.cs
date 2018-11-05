@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Exercise Group</summary>
-	[PublishedContentModel("exerciseGroup")]
-	public partial class ExerciseGroup : Page
+	/// <summary>Comment</summary>
+	[PublishedContentModel("comment")]
+	public partial class Comment : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "exerciseGroup";
+		public new const string ModelTypeAlias = "comment";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ExerciseGroup(IPublishedContent content)
+		public Comment(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,36 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ExerciseGroup, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Comment, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Highlight Title
+		/// Comments
 		///</summary>
-		[ImplementPropertyType("highlightTitle")]
-		public string HighlightTitle
+		[ImplementPropertyType("comments")]
+		public string Comments
 		{
-			get { return this.GetPropertyValue<string>("highlightTitle"); }
+			get { return this.GetPropertyValue<string>("comments"); }
 		}
 
 		///<summary>
-		/// Highlight Video: ensure the URL contains embed rather watch as the /embed
+		/// Member Image
 		///</summary>
-		[ImplementPropertyType("highlightVideo")]
-		public string HighlightVideo
+		[ImplementPropertyType("memberImage")]
+		public IPublishedContent MemberImage
 		{
-			get { return this.GetPropertyValue<string>("highlightVideo"); }
+			get { return this.GetPropertyValue<IPublishedContent>("memberImage"); }
+		}
+
+		///<summary>
+		/// Member Name
+		///</summary>
+		[ImplementPropertyType("memberName")]
+		public string MemberName
+		{
+			get { return this.GetPropertyValue<string>("memberName"); }
 		}
 	}
 }

@@ -263,9 +263,11 @@
     <Compile Include="Contexts\AthleteMemberContext.cs" />
     <Compile Include="Contexts\BlogPageContext.cs" />
     <Compile Include="Contexts\CompositionContext.cs" />
+    <Compile Include="Contexts\ExerciseLevelContext.cs" />
     <Compile Include="Contexts\IAthleteMemberContext.cs" />
     <Compile Include="Contexts\IBlogPageContext.cs" />
     <Compile Include="Contexts\ICompositionContext.cs" />
+    <Compile Include="Contexts\IExerciseLevelContext.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
     <Compile Include="Contexts\IPageContext.cs" />
     <Compile Include="Contexts\ISiteContext.cs" />
@@ -280,6 +282,9 @@
     <Compile Include="Controllers\RenderMvc\BlogPageController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
+    <Compile Include="Controllers\RenderMvc\ExerciseGroupController.cs" />
+    <Compile Include="Controllers\RenderMvc\ExerciseLandingController.cs" />
+    <Compile Include="Controllers\RenderMvc\ExerciseLevelController.cs" />
     <Compile Include="Controllers\RenderMvc\ModularContentController.cs" />
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
@@ -319,6 +324,15 @@
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseGroupPreviewViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseLevelPreviewViewModel.cs" />
+    <Compile Include="ViewModels\Partials\ExerciseCategoryViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseGroupViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseLandingViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseLevelViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsPreviewViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ExerciseStepViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\ModularContentViewModel.cs" />

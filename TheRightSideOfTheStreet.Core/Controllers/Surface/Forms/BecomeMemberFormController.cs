@@ -35,6 +35,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 				TempData[Constants.Constants.TempDataFail] = "fail";
 				return CurrentUmbracoPage();
 			}
+
 			TempData[Constants.Constants.TempDataSuccess] = "success";
 			return RedirectToCurrentUmbracoPage();
 		}

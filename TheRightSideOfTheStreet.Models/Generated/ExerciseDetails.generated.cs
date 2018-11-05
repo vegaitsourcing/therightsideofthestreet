@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Steps
-		///</summary>
-		[ImplementPropertyType("steps")]
-		public IEnumerable<IPublishedContent> Steps
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("steps"); }
-		}
-
-		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("title")]
