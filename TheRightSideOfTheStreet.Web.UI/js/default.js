@@ -22,6 +22,7 @@ let app = {
 		becomeMember.validatorSkip();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
+		exerciseGroup.sendRequest();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }
