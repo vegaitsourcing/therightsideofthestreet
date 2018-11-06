@@ -35,6 +35,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public IEnumerable<Website> Languages => PageContext.Languages;
 
+		public LoginForm LoginForm => PageContext.LoginForm;
+
 		private IPageContext<ExerciseLevel> PageContext { get; }
 	}
 }

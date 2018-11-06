@@ -291,6 +291,7 @@
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\ExerciseGroupSendRequestController.cs" />
     <Compile Include="Controllers\Surface\Forms\LoginAthleteFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\SharedController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />

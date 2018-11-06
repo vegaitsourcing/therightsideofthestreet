@@ -19,6 +19,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
             LazySettings = new Lazy<Settings>(() => UmbracoHelper.GetSettings(LazyHome.Value.Id));
             LazyRepository = new Lazy<Repository>(() => UmbracoHelper.GetRepository());
 			LazyLanguages = new Lazy<IEnumerable<Website>>(() => UmbracoHelper.GetLanguages());
+			LazyLoginForm = new Lazy<LoginForm>(() => UmbracoHelper.GetPage<LoginForm>(Home.Id));
         }
 
         public IPage CurrentPage => LazyCurrentPage.Value;
@@ -26,6 +27,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         public Settings Settings => LazySettings.Value;
         public Repository Repository => LazyRepository.Value;
         public IEnumerable<Website> Languages => LazyLanguages.Value;
+		public LoginForm LoginForm => LazyLoginForm.Value;
+
 		
 		protected UmbracoHelper UmbracoHelper { get; }
 
@@ -34,5 +37,6 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         private Lazy<Settings> LazySettings { get; }
         private Lazy<Repository> LazyRepository { get; }
 		private Lazy<IEnumerable<Website>> LazyLanguages { get; }
+		private Lazy<LoginForm> LazyLoginForm { get; }
     }
 }

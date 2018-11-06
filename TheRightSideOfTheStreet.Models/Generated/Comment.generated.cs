@@ -46,6 +46,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Comment Approved
+		///</summary>
+		[ImplementPropertyType("commentApproved")]
+		public bool CommentApproved
+		{
+			get { return this.GetPropertyValue<bool>("commentApproved"); }
+		}
+
+		///<summary>
 		/// Comments
 		///</summary>
 		[ImplementPropertyType("comments")]
@@ -55,21 +64,12 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Member Image
+		/// Member
 		///</summary>
-		[ImplementPropertyType("memberImage")]
-		public IPublishedContent MemberImage
+		[ImplementPropertyType("member")]
+		public IEnumerable<IPublishedContent> Member
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("memberImage"); }
-		}
-
-		///<summary>
-		/// Member Name
-		///</summary>
-		[ImplementPropertyType("memberName")]
-		public string MemberName
-		{
-			get { return this.GetPropertyValue<string>("memberName"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("member"); }
 		}
 	}
 }

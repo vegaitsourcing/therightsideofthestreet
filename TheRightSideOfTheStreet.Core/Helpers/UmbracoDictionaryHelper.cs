@@ -61,8 +61,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		public static class ExerciseGroup
 		{
 			public static string Step => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Step");
-			public static string SignUp => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SignUpButton");
+			public static string SendRequest => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SendRequest");
 			public static string LogIn => UmbracoHelper.GetDictionaryValue("ExerciseGroup.LogInButton");
+			public static string SentSuccess => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestSuccess");
+			public static string SentFail => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestFail");
 		}
 
 		public static class AtheleLanding

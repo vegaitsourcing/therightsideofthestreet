@@ -26,9 +26,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
 			EmailHandler emailSender = new EmailHandler();
-
-
-
+			
 			bool sentMail = emailSender.BecomeMemberContactUsRequest(model, settings.AdminEmailAddress);
 
 			if (!sentMail) {
@@ -39,6 +37,5 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			TempData[Constants.Constants.TempDataSuccess] = "success";
 			return RedirectToCurrentUmbracoPage();
 		}
-		
 	}
 }

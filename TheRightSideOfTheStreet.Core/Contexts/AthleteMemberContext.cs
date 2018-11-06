@@ -30,6 +30,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public IEnumerable<Website> Languages => SiteContext.Languages;
 
+		public LoginForm LoginForm => SiteContext.LoginForm;
+
 		private ISiteContext SiteContext { get;  }
 	}
 }

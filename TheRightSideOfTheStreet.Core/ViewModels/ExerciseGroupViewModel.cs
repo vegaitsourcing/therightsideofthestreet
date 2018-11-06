@@ -18,20 +18,22 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			Image = context.Page.Image.AsViewModel();
 			ExerciseCategory = context.Page.ExerciseCategory.AsViewModel();
 			ExerciseDetails = context.Page.ExerciseDetail?.Select(ed => context.WithNestedContent(ed).AsViewModel<ExerciseDetailsViewModel>()).ToList();
-
 			HighlightVideo = context.Page.HighlightVideo;
 			HighlightTitle = context.Page.HighlightTitle;
 			HighlightBackgroundImage = context.Page.HighlightBackgroundImage.AsViewModel();
 			MasterTitle = context.Page.Parent.Parent.Name;
+			SettingsKey = context.Settings.GetKey();
+			LoginUrl = context.LoginForm.Url;
 		}
 
 		public ImageViewModel Image { get; }
 		public ExerciseCategoryViewModel ExerciseCategory { get; }
 		public IList<ExerciseDetailsViewModel> ExerciseDetails { get; }
-		public IList<ExerciseStepViewModel> ExerciseSteps { get; }
 		public string HighlightVideo { get; }
 		public string HighlightTitle { get; }
 		public ImageViewModel HighlightBackgroundImage { get; }
 		public string MasterTitle { get; }
+		public Guid SettingsKey { get; }
+		public string LoginUrl { get; }
 	}
 }
