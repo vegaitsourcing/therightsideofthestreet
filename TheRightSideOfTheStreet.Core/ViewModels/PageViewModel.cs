@@ -17,7 +17,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			Footer = new FooterViewModel(context);
 			GoogleAnalytics = new GoogleAnalyticsViewModel(context);
 			PageKey = context.Page.GetKey();
-
+			Url = context.Page.Url;
 		}
 
 		public string Title { get; }
@@ -27,5 +27,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public FooterViewModel Footer { get; }
 		public GoogleAnalyticsViewModel GoogleAnalytics { get; }
 		public Guid PageKey { get; }
+		public string Url { get; }
 	}
 }

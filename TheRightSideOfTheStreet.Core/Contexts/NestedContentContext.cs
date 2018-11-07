@@ -20,7 +20,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         public Settings Settings => SiteContext.Settings;
         public Repository Repository => SiteContext.Repository;
 		public IEnumerable<Website> Languages => SiteContext.Languages;
+		public LoginForm LoginForm => SiteContext.LoginForm;
 
-        private ISiteContext SiteContext { get; }
+		private ISiteContext SiteContext { get; }
     }
 }

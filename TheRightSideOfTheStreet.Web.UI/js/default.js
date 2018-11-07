@@ -3,6 +3,7 @@
 let functions = require('./functions');
 const listing = require('./listing');
 const becomeMember = require('./become-member');
+const exerciseGroup = require('./exercise-group');
 //let maps = require('./maps');
 
 let app = {
@@ -19,6 +20,9 @@ let app = {
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
+		exerciseGroup.exerciseGroups();
+		exerciseGroup.exerciseDetail();
+		exerciseGroup.sendRequest();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

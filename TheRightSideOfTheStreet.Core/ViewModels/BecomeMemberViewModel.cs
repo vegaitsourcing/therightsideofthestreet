@@ -14,11 +14,9 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		{
 			IntroText = context.Page.IntroText;
 			MembershipLevels = context.Page.MembershipLevels.Where(ml => ml != null && ml.Image != null).AsViewModel<MembershipStatusViewModel>().AsList();
-			AdminEmailAddress = context.Settings.AdminEmailAddress;
 		}
 
 		public string IntroText { get; }
 		public IList<MembershipStatusViewModel> MembershipLevels { get; }
-		public string AdminEmailAddress { get; }
 	}
 }

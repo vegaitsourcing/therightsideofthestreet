@@ -68,7 +68,7 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 
 			return new BlogDetailsViewModel(blogPageContext);
 		}
-
+		
 		public static IModulesNestedContentViewModel AsViewModel(this INestedContentContext<IModuleNestedContent> nestedContentContext, string classSuffix = "ViewModel")
 		{
 			if (nestedContentContext == null) return default(IModulesNestedContentViewModel);
@@ -86,7 +86,7 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 
 			return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
 		}
-
+		
 		public static BannerViewModel AsViewModel(this ICompositionContext<Banner> compositionContext, string classSuffix = "ViewModel")
 		{
 		    if (compositionContext == null) return default(BannerViewModel);
@@ -99,7 +99,12 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 		public static MembershipStatusViewModel AsViewModel(this MembershipStatus status)
 			=> status != null ? new MembershipStatusViewModel(status) : default(MembershipStatusViewModel);
 
+		public static ExerciseCategoryViewModel AsViewModel(this ExerciseCategory context, string classSuffix = "ViewModel")
+		{
+			if (context == null) return default(ExerciseCategoryViewModel);
 
+			return new ExerciseCategoryViewModel(context);
+		}
 
 		public static PrimaryNavigationItemViewModel AsNavigationViewModel(this IPage page) => page != null ? new PrimaryNavigationItemViewModel(page) : null;
 

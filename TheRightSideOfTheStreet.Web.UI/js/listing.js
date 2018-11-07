@@ -16,7 +16,7 @@ module.exports = {
 				$donatorsWrapper.children('.donators-content').remove();
 				$donatorsWrapper.append(response);
 			}, 'html');
-			
+
 		});
 	}
 };

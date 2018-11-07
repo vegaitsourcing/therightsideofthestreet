@@ -11,5 +11,6 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         Settings Settings { get; }
         Repository Repository { get; }
 		IEnumerable<Website> Languages { get; }
+		LoginForm LoginForm { get; }
     }
 }
