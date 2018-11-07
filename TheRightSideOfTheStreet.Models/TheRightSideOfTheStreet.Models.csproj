@@ -303,6 +303,13 @@
     <Compile Include="Generated\City.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Comment.cs" />
+    <Compile Include="Generated\Comment.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Country.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\CountrySelector.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

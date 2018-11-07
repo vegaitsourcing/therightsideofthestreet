@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
-using TheRightSideOfTheStreet.Models.DocumentTypes;
-using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
@@ -22,6 +21,8 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			BlogLanding = context.Landing.Url;
 			Prevoius = context.Previous?.Url;
 			Next = context.Next?.Url;
+			Comment = context.Page.Children.AsViewModel<CommentViewModel>().ToList();
+
 		}
 
 		public ImageViewModel Image { get; }
@@ -30,6 +31,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string BlogLanding { get; }
 		public string Prevoius { get; }
 		public string Next { get; }
+		public IList<CommentViewModel> Comment { get; set; }
 
 	}
 }

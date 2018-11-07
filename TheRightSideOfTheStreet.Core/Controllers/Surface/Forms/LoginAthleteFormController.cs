@@ -1,8 +1,6 @@
 ﻿using System.Web.Mvc;
 using TheRightSideOfTheStreet.Core.Helpers;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
-using TheRightSideOfTheStreet.Models;
-using TheRightSideOfTheStreet.Models.Extensions;
 using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
@@ -36,12 +34,11 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			return CurrentUmbracoPage();
 		}
 
-		[HttpGet]
+		[HttpPost]
 		public ActionResult MemberLogout()
 		{
 			Members.Logout();
-			var loginPage = Umbraco.GetPage<LoginForm>(CurrentPage.Site().Id);
-			return RedirectToUmbracoPage(loginPage);
+			return RedirectToUmbracoPage(CurrentPage.Site());
 		}
 
 	}
