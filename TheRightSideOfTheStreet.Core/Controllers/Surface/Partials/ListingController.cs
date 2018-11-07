@@ -65,7 +65,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 
 			if (page < 1) throw new ArgumentOutOfRangeException(nameof(page));
 
-			int itemsPerPage = 3;
+			int itemsPerPage = 6;
 
 			int totalPages = (int)Math.Ceiling((double)exerciseGroups.Count / itemsPerPage);
 
