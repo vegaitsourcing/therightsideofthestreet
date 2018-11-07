@@ -64,7 +64,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Highlight Background Image
+		/// Highlight Background Image: Image size must be 1216x743
 		///</summary>
 		[ImplementPropertyType("highlightBackgroundImage")]
 		public IPublishedContent HighlightBackgroundImage
@@ -82,7 +82,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Highlight Video
+		/// Highlight Video: ensure the URL contains embed rather watch as the /embed
 		///</summary>
 		[ImplementPropertyType("highlightVideo")]
 		public string HighlightVideo
