@@ -46,6 +46,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.EmailAddress");
 			public static string ImageExtension => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageExtension");
 			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
+			public static string PasswordMatch => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordMatch");
 		}
 
 
@@ -55,6 +56,22 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ImportantAchievements => UmbracoHelper.GetDictionaryValue("AthleteMember.ImportantAchievements");
 			public static string Status => UmbracoHelper.GetDictionaryValue("AthleteMember.Status");
 			public static string Crew => UmbracoHelper.GetDictionaryValue("AthleteMember.Crew");
+		}
+
+		public static class AthleteForm
+		{
+			public static string DescribeYourself => UmbracoHelper.GetDictionaryValue("AthleteForm.DescribeYourself");
+			public static string Image => UmbracoHelper.GetDictionaryValue("AthleteForm.Image");
+			public static string NotableAchievements => UmbracoHelper.GetDictionaryValue("AthleteForm.NotableAchievements");
+			public static string SaveButton => UmbracoHelper.GetDictionaryValue("AthleteForm.SaveButton");
+			public static string AchievementsAdd => UmbracoHelper.GetDictionaryValue("AthleteForm.AchievementsAdd");
+			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteForm.IntroduceYourself");
+			public static string VisionOfSport => UmbracoHelper.GetDictionaryValue("AthleteForm.VisionOfSport");
+			public static string Password => UmbracoHelper.GetDictionaryValue("AthleteForm.Password");
+			public static string ConfirmPassword => UmbracoHelper.GetDictionaryValue("AthleteForm.ConfirmPassword");
+			public static string Crews => UmbracoHelper.GetDictionaryValue("AthleteForm.Crew");
+			public static string Country => UmbracoHelper.GetDictionaryValue("AthleteForm.Country");
+			public static string City => UmbracoHelper.GetDictionaryValue("AthleteForm.City");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

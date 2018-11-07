@@ -7,6 +7,7 @@ using System.Web;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 {
@@ -18,12 +19,13 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 			Logo = content.Logo.AsViewModel();
 			Image = content.Image.AsViewModel();
 			Text = content.Text;
+			Key = content.GetKey();
 		}
 
 		public string CrewName { get; }
 		public ImageViewModel Logo { get; }
 		public ImageViewModel Image { get; }
 		public IHtmlString Text { get; }
-
+		public Guid Key { get; }
 	}
 }

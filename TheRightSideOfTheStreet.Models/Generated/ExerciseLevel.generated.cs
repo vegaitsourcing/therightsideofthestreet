@@ -22,7 +22,7 @@ namespace TheRightSideOfTheStreet.Models
 {
 	/// <summary>Exercise Level</summary>
 	[PublishedContentModel("exerciseLevel")]
-	public partial class ExerciseLevel : PublishedContentModel
+	public partial class ExerciseLevel : Page
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "exerciseLevel";

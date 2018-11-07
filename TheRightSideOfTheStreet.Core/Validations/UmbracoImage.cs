@@ -11,7 +11,7 @@ namespace TheRightSideOfTheStreet.Core.Validations
 	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
 	public class ImageExtensionsAttribute : ValidationAttribute, IClientValidatable
 	{
-		private static string regex = AppSettings.ImageExtensions;
+		private static readonly string regex = AppSettings.ImageExtensions;
 		private static Regex _regex = new Regex(regex, RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture | RegexOptions.Compiled);
 
 		/// <summary>
@@ -94,7 +94,58 @@ namespace TheRightSideOfTheStreet.Core.Validations
 
 		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metaData, ControllerContext context)
 		{
-			var error = UmbracoValidationHelper.FormatErrorMessage((MaxMB/denumerator).ToString(), _errorMessageDictionaryKey);
+			var error = UmbracoValidationHelper.FormatErrorMessage((MaxMB / denumerator).ToString(), _errorMessageDictionaryKey);
+
+			var rule = new ModelClientValidationRule
+			{
+				ValidationType = "filesize",
+				ErrorMessage = error
+			};
+			rule.ValidationParameters["maxsize"] = MaxMB;
+			yield return rule;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+	public class ListFileSizeAttribute : ValidationAttribute, IClientValidatable
+	{
+		private double? MaxMB { get; set; }
+		private const int denumerator = 1048576;
+		public string _errorMessageDictionaryKey { get; set; }
+
+		public ListFileSizeAttribute(double maxMB, string errorMessageDictionaryKey)
+			: base("Please upload a supported file.")
+		{
+			MaxMB = maxMB * denumerator;// convert to Mb
+			_errorMessageDictionaryKey = errorMessageDictionaryKey;
+		}
+
+		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+		{
+			IEnumerable<HttpPostedFileBase> files = value as IEnumerable<HttpPostedFileBase>;
+
+			foreach (HttpPostedFileBase file in files)
+			{
+
+				if (file != null)
+				{
+					if (file.ContentLength > MaxMB.Value)
+					{
+						//Get the error message to return
+						var error = UmbracoValidationHelper.FormatErrorMessage(validationContext.DisplayName, _errorMessageDictionaryKey);
+
+						//Return error
+						return new ValidationResult(error);
+					}
+				}
+			}
+			return ValidationResult.Success;
+
+		}
+
+		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metaData, ControllerContext context)
+		{
+			var error = UmbracoValidationHelper.FormatErrorMessage((MaxMB / denumerator).ToString(), _errorMessageDictionaryKey);
 
 			var rule = new ModelClientValidationRule
 			{

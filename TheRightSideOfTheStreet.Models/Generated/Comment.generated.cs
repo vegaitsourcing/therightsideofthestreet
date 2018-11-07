@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Exercise Levels Container</summary>
-	[PublishedContentModel("exerciseLevelsContainer")]
-	public partial class ExerciseLevelsContainer : PublishedContentModel
+	/// <summary>Comment</summary>
+	[PublishedContentModel("comment")]
+	public partial class Comment : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "exerciseLevelsContainer";
+		public new const string ModelTypeAlias = "comment";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ExerciseLevelsContainer(IPublishedContent content)
+		public Comment(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,45 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ExerciseLevelsContainer, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Comment, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Comment Approved
+		///</summary>
+		[ImplementPropertyType("commentApproved")]
+		public bool CommentApproved
+		{
+			get { return this.GetPropertyValue<bool>("commentApproved"); }
+		}
+
+		///<summary>
+		/// Comments
+		///</summary>
+		[ImplementPropertyType("comments")]
+		public string Comments
+		{
+			get { return this.GetPropertyValue<string>("comments"); }
+		}
+
+		///<summary>
+		/// Member Image
+		///</summary>
+		[ImplementPropertyType("memberImage")]
+		public IPublishedContent MemberImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("memberImage"); }
+		}
+
+		///<summary>
+		/// Member Name
+		///</summary>
+		[ImplementPropertyType("memberName")]
+		public string MemberName
+		{
+			get { return this.GetPropertyValue<string>("memberName"); }
 		}
 	}
 }

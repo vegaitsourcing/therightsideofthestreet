@@ -82,6 +82,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Login Link
+		///</summary>
+		[ImplementPropertyType("loginLink")]
+		public RJP.MultiUrlPicker.Models.Link LoginLink
+		{
+			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("loginLink"); }
+		}
+
+		///<summary>
 		/// Top Navigation Link
 		///</summary>
 		[ImplementPropertyType("topNavigationLink")]

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Athlete Module</summary>
-	[PublishedContentModel("athleteModule")]
-	public partial class AthleteModule
+	/// <summary>Country</summary>
+	[PublishedContentModel("country")]
+	public partial class Country : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "athleteModule";
+		public new const string ModelTypeAlias = "country";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public AthleteModule(IPublishedContent content)
+		public Country(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,18 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AthleteModule, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Country, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Athlete
+		/// CountryName
 		///</summary>
-		[ImplementPropertyType("athlete")]
-		public IEnumerable<IPublishedContent> Athlete
+		[ImplementPropertyType("countryName")]
+		public string CountryName
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("athlete"); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
-		{
-			get { return this.GetPropertyValue<string>("title"); }
+			get { return this.GetPropertyValue<string>("countryName"); }
 		}
 	}
 }

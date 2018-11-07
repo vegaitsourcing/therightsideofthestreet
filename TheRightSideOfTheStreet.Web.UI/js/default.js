@@ -3,6 +3,7 @@
 let functions = require('./functions');
 const listing = require('./listing');
 const becomeMember = require('./become-member');
+const athleteForm = require('./athlete-form');
 //let maps = require('./maps');
 
 let app = {
@@ -19,6 +20,12 @@ let app = {
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
+		athleteForm.showImagePreview();
+		athleteForm.showAchievementsInput();
+		athleteForm.formInit();
+		athleteForm.handleFormSubmit();
+		athleteForm.hideCountryAndCityInput();
+		athleteForm.previewImages();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

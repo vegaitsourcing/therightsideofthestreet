@@ -272,6 +272,7 @@
     <Compile Include="Contexts\NestedContentContext.cs" />
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
+    <Compile Include="Controllers\RenderMvc\AthleteFormController.cs" />
     <Compile Include="Controllers\RenderMvc\AthleteLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\BecomeMemberController.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\ShowYourselfFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\SharedController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
@@ -305,6 +307,7 @@
     <Compile Include="Helpers\UmbracoDictionaryHelper.cs" />
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\UmbracoCompare.cs" />
     <Compile Include="Validations\UmbracoEmail.cs" />
     <Compile Include="Validations\UmbracoDisplay.cs" />
     <Compile Include="Validations\UmbracoRequired.cs" />
@@ -313,13 +316,14 @@
     <Compile Include="Validations\UmbracoImage.cs" />
     <Compile Include="Search\AthleteMembersSearch.cs" />
     <Compile Include="ViewModels\AthleteLandingViewModel.cs" />
-    <Compile Include="ViewModels\AthleteMemberPreviewModel.cs" />
+    <Compile Include="ViewModels\AthleteMemberPreviewViewModel.cs" />
     <Compile Include="ViewModels\AthleteMemberViewModel.cs" />
     <Compile Include="ViewModels\AthleteFormViewModel.cs" />
     <Compile Include="ViewModels\BecomeMemberViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
+    <Compile Include="ViewModels\Partials\CityViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />

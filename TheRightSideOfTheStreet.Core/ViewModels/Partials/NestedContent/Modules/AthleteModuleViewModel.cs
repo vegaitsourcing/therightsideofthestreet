@@ -10,7 +10,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 			Title = context.NestedContent.Title;
 		}
 
-		public string Title { get; }
-		
+		public string Title { get; }		
 	}
 }
