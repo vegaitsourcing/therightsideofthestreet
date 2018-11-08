@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Web.Mvc;
+using TheRightSideOfTheStreet.Common;
+using TheRightSideOfTheStreet.Core.EmailSender;
 using TheRightSideOfTheStreet.Core.Helpers;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
 using TheRightSideOfTheStreet.Models;
+using TheRightSideOfTheStreet.Models.Extensions;
 using Umbraco.Core;
 using Umbraco.Core.Services;
 using Umbraco.Web;
@@ -22,17 +25,29 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		[HttpPost]
 		public ActionResult SubmitForm(CommentFormViewModel model)
 		{
+			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
+
 			if (!ModelState.IsValid) return CurrentUmbracoPage();
 
 			try
 			{
 				int commentId = CreateBlogComment(model);
 
-				//{0}{1}/umbraco/#/content/content/edit/{2}
+				string emailFrom = Members.CurrentUserName;
+				string fullName = Members.GetCurrentMember().Name;
+				string emailTo = settings.AdminEmailAddress;
+
+				string protocol = Request.Url.Scheme;
+				string domain = Request.Url.Host;
+
+				string blogLink = string.Format(AppSettings.BlogUrl, protocol, domain, commentId);
+
+				EmailHandler emailSender = new EmailHandler();
+				emailSender.BlogComment(emailFrom, fullName, emailTo, blogLink);
 
 				return RedirectToCurrentUmbracoPage();
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				Logger.Error(typeof(CommentFormController), "Failed to create blog comment.", ex);
 			}

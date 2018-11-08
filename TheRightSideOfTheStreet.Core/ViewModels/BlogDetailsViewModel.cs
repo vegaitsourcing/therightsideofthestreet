@@ -6,6 +6,7 @@ using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
@@ -22,7 +23,8 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			Prevoius = context.Previous?.Url;
 			Next = context.Next?.Url;
 			Comment = context.Page.Children.AsViewModel<CommentViewModel>().ToList();
-
+			LoginUrl = context.LoginForm.Url;
+			
 		}
 
 		public ImageViewModel Image { get; }
@@ -32,6 +34,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string Prevoius { get; }
 		public string Next { get; }
 		public IList<CommentViewModel> Comment { get; set; }
-
+		public string LoginUrl { get; }
+		
 	}
 }

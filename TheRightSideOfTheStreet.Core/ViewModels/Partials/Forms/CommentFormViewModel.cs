@@ -1,4 +1,5 @@
-﻿using TheRightSideOfTheStreet.Core.Validations;
+﻿using System;
+using TheRightSideOfTheStreet.Core.Validations;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {

@@ -16,6 +16,7 @@ namespace TheRightSideOfTheStreet.Common
 		public static string AdminEmailAdress => Get<string>("adminEmailAdress");
 		public static string EmailRegex => Get<string>("emailRegex");
 		public static string ImageExtensions => Get<string>("imageExtensions");
+		public static string BlogUrl => Get<string>("blogUrl");
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.
 		/// </summary>
