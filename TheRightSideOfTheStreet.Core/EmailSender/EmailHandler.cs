@@ -12,6 +12,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 {
 	public class EmailHandler
 	{
+
 		public bool ExerciseGroupRequest(string emailFrom, string fullName, string adminEmailAddress)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
@@ -28,6 +29,24 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
 		}
+
+		public bool BlogComment(string emailFrom, string fullName, string adminEmailAddress, string blogLink)
+		{
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Komentar za odobrenje poslao: - ");
+			subject.Append(fullName);
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine("Komentar koji ceka odobrenje se nalazi na sledecem linku:");
+			body.AppendLine($"Blog Comment Link: {blogLink}");
+
+			string senderEmial = emailFrom;
+
+			return SendEmail(senderEmial, subject.ToString(), body.ToString(), adminEmailAddress, null);
+
+
+		}
+		
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary
@@ -93,6 +112,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 						LogHelper.Error<EmailHandler>($"Error sending email", ex3);
 						return false;
 					}
+
 				}
 			}
 		}
