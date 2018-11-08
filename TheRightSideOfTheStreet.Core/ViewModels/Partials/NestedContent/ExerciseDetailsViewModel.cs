@@ -14,7 +14,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent
 		public ExerciseDetailsViewModel(INestedContentContext<ExerciseDetails> context)
 		{
 			Title = context.NestedContent.Title;
-			Steps = context.NestedContent.Steps?.Where(s => s != null).Select(st => context.WithNestedContent(st).AsViewModel<ExerciseStepViewModel>()).AsList();
+			Steps = context.NestedContent.Steps?.Select(st => context.WithNestedContent(st).AsViewModel<ExerciseStepViewModel>()).AsList();
 			DetailKey = Guid.NewGuid();
 		}
 

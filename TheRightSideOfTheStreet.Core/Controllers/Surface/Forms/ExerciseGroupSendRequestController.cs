@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using TheRightSideOfTheStreet.Core.EmailSender;
 using TheRightSideOfTheStreet.Core.Helpers;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 {
@@ -11,7 +12,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		[HttpPost]
 		public string SendRequest(Guid settingsKey)
 		{
-			Settings settings = (Settings)Umbraco.TypedContent(settingsKey);
+			Settings settings = Umbraco.TypedContent(settingsKey).OfType<Settings>();
 
 			string emailFrom = Members.CurrentUserName;
 			string fullName = Members.GetCurrentMember().Name;
