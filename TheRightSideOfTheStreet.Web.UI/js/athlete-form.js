@@ -88,8 +88,7 @@ module.exports = {
 			$("#City").val(crew);
 			$("#City").hide();
 
-			if ($("#Crew option:selected").val() === "")
-			{
+			if ($("#Crew option:selected").val() === "") {
 				$("#Country").val('').show();
 
 				$("#City").val('').show();
@@ -98,10 +97,10 @@ module.exports = {
 	},
 
 	previewImages: function () {
-		
-		const originalImgSrc = $('.show-yourself-content-second img:eq(5)').attr('src');
-		const preview = document.querySelector('.show-yourself-content-second');
-		let i = 0;
+
+			const originalImgSrc = $('.show-yourself-content-second img:eq(5)').attr('src');
+			const preview = document.querySelector('.show-yourself-content-second');
+			let i = 0;
 
 
 		if (this.files) {
@@ -121,8 +120,15 @@ module.exports = {
 				reader.readAsDataURL(file);
 
 			});
-		}
+		}	
+	},
 
-		document.querySelector('#file-input').addEventListener("change", this.previewImages, false);
+	athleteRegOnly: function () {
+
+		if ($('body').hasClass('athlete-form-page')) {
+			
+			document.querySelector('#file-input').addEventListener("change", this.previewImages, false);
+		}
 	}
+	
 };

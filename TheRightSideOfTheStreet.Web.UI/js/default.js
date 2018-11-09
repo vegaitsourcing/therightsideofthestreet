@@ -28,10 +28,11 @@ let app = {
 		athleteForm.handleFormSubmit();
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
+		athleteForm.athleteRegOnly();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
-		athleteModule.filterAthletes();
+		athleteModule.filterAthletes();		
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }
