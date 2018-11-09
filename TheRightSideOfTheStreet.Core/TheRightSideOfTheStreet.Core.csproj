@@ -292,6 +292,7 @@
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\CommentFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ShowYourselfFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ExerciseGroupSendRequestController.cs" />
     <Compile Include="Controllers\Surface\Forms\LoginAthleteFormController.cs" />
@@ -331,8 +332,10 @@
     <Compile Include="ViewModels\BlogDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
+    <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\Partials\CityViewModel.cs" />
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\CommentFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\ExerciseGroupPreviewViewModel.cs" />

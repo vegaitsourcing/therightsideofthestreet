@@ -4,6 +4,7 @@ using System.Linq;
 using Umbraco.Web;
 using System;
 using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.Models;
 
 namespace TheRightSideOfTheStreet.Models.Extensions
 {

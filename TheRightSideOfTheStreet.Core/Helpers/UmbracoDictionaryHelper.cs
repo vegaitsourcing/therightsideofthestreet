@@ -12,6 +12,9 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string PostComment => UmbracoHelper.GetDictionaryValue("BlogDetails.PostComment");
 			public static string Comment => UmbracoHelper.GetDictionaryValue("BlogDetails.Comment");
 			public static string Next => UmbracoHelper.GetDictionaryValue("BlogDetails.Next");
+			public static string PostCommentFailed => UmbracoHelper.GetDictionaryValue("BlogDetails.PostCommentFailed");
+			public static string LoginForPostingComment => UmbracoHelper.GetDictionaryValue("BlogDetails.LoginForPostingComment");
+
 		}
 
 		public static class BecomeMember
