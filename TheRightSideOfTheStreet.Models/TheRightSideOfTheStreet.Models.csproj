@@ -334,18 +334,23 @@
     <Compile Include="Generated\ExerciseCategory.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ExerciseDetails.cs" />
     <Compile Include="Generated\ExerciseDetails.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ExerciseGroup.cs" />
     <Compile Include="Generated\ExerciseGroup.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ExerciseLanding.cs" />
     <Compile Include="Generated\ExerciseLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ExerciseLevel.cs" />
     <Compile Include="Generated\ExerciseLevel.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ExerciseStep.cs" />
     <Compile Include="Generated\ExerciseStep.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

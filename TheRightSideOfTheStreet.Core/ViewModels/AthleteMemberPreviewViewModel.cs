@@ -11,7 +11,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 	{
 		public AthleteMemberPreviewViewModel(IAthleteMemberContext<AthleteMember> context)
 		{
-			PreviewImage = context.Member.ProfileImage.AsViewModel();
+			PreviewImage = context.Member.ProfileImage?.AsViewModel();
 			PreviewFullName = context.Member.FullName;
 			PreviewFacebookProfile = context.Member.FacebookProfile;
 			PreviewInstagramProfile = context.Member.InstagramProfile;
@@ -25,6 +25,5 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string PreviewInstagramProfile { get; }
 		public string PreviewYoutubeProfile { get; }
 		public string Url { get; }
-
 	}
 }

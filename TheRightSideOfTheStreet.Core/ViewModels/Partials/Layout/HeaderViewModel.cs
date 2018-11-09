@@ -22,6 +22,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			HomepageUrl = context.Home.Url;
 			Logo = context.Home.Logo.AsViewModel();
 			TopNavigationLink = context.Home.TopNavigationLink.AsViewModel();
+			Login = context.Home.LoginLink.AsViewModel();
 			NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
 			Languages = GetLanguages(context.Languages, context.Page.AlternatePages.ToList()).AsList();
 			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
@@ -30,6 +31,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 		public string HomepageUrl { get; }
 		public ImageViewModel Logo { get; }
 		public LinkViewModel TopNavigationLink { get; }
+		public LinkViewModel Login { get; }
 		public IList<PrimaryNavigationItemViewModel> NavigationItems { get; }
 		public IList<LanguageLinkViewModel> Languages { get; }
 		public IList<SocialLinkViewModel> SocialLinks { get; }

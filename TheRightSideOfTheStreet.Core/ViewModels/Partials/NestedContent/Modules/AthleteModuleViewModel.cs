@@ -1,4 +1,9 @@
-﻿using TheRightSideOfTheStreet.Core.Contexts;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TheRightSideOfTheStreet.Common.Extensions;
+using TheRightSideOfTheStreet.Core.Contexts;
+using TheRightSideOfTheStreet.Core.Extensions;
+using TheRightSideOfTheStreet.Core.Search;
 using TheRightSideOfTheStreet.Models;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
@@ -8,8 +13,11 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		public AthleteModuleViewModel(INestedContentContext<AthleteModule> context)
 		{
 			Title = context.NestedContent.Title;
+			Athletes = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewModel(context.WithAthleteMember(am))).Where( m => m.PreviewImage != null).AsList();
 		}
 
-		public string Title { get; }		
+		public string Title { get; }
+		public IList<AthleteMemberPreviewModel> Athletes { get; }
+		
 	}
 }

@@ -12,6 +12,22 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 {
 	public class EmailHandler
 	{
+		public bool ExerciseGroupRequest(string emailFrom, string fullName, string adminEmailAddress)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za snimanje spota - ");
+			subject.Append(fullName);
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Ime i prezime: {fullName}");
+			body.AppendLine($"E-mail: {emailFrom}");
+
+			string senderEmail = emailFrom;
+
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+		}
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary

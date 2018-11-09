@@ -47,6 +47,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ImageExtension => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageExtension");
 			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
 			public static string PasswordMatch => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordMatch");
+			public static string Password => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Password");
 		}
 
 
@@ -72,6 +73,34 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Crews => UmbracoHelper.GetDictionaryValue("AthleteForm.Crew");
 			public static string Country => UmbracoHelper.GetDictionaryValue("AthleteForm.Country");
 			public static string City => UmbracoHelper.GetDictionaryValue("AthleteForm.City");
+		}
+
+		public static class ExerciseGroup
+		{
+			public static string Step => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Step");
+			public static string SendRequest => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SendRequest");
+			public static string LogIn => UmbracoHelper.GetDictionaryValue("ExerciseGroup.LogInButton");
+			public static string SentSuccess => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestSuccess");
+			public static string SentFail => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestFail");
+		}
+
+		public static class AtheleLanding
+		{
+			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteLanding.IntroduceYourself");
+			public static string Search => UmbracoHelper.GetDictionaryValue("AthleteLanding.Search");
+		}
+
+		public static class LoginForm
+		{
+			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("LoginForm.EmailAddress");
+			public static string Password => UmbracoHelper.GetDictionaryValue("LoginForm.Password");
+			public static string LogIn => UmbracoHelper.GetDictionaryValue("LoginForm.LogIn");
+			public static string Register => UmbracoHelper.GetDictionaryValue("LoginForm.Register");
+			public static string WithoutAccount => UmbracoHelper.GetDictionaryValue("LoginForm.WithoutAccount");
+			public static string LoginSuccess => UmbracoHelper.GetDictionaryValue("LoginForm.LoginSuccess");
+			public static string LoginFailed => UmbracoHelper.GetDictionaryValue("LoginForm.LoginFailed");
+
+
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

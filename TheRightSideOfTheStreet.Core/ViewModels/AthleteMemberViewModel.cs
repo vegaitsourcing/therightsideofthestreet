@@ -41,7 +41,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string Crew { get; }
 		public string Status { get; }
 
-		//public string Url { get; }
-
+	
 	}
 }

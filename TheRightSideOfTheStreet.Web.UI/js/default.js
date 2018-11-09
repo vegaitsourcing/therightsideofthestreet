@@ -4,6 +4,7 @@ let functions = require('./functions');
 const listing = require('./listing');
 const becomeMember = require('./become-member');
 const athleteForm = require('./athlete-form');
+const exerciseGroup = require('./exercise-group');
 //let maps = require('./maps');
 
 let app = {
@@ -26,6 +27,9 @@ let app = {
 		athleteForm.handleFormSubmit();
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
+		exerciseGroup.exerciseGroups();
+		exerciseGroup.exerciseDetail();
+		exerciseGroup.sendRequest();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }
