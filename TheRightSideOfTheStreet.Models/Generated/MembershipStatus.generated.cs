@@ -46,7 +46,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Details
+		/// Details: Don't delete this value
 		///</summary>
 		[ImplementPropertyType("details")]
 		public string Details
@@ -55,12 +55,12 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Link
+		/// Icon: Pick status icon
 		///</summary>
-		[ImplementPropertyType("link")]
-		public string Link
+		[ImplementPropertyType("icon")]
+		public string Icon
 		{
-			get { return this.GetPropertyValue<string>("link"); }
+			get { return this.GetPropertyValue<string>("icon"); }
 		}
 
 		///<summary>

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using TheRightSideOfTheStreet.Core.ViewModels;
 using TheRightSideOfTheStreet.Models;
-using Umbraco.Web;
 using Umbraco.Web.Mvc;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.RenderMvc

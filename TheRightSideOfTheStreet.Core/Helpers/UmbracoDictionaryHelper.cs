@@ -39,6 +39,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		{
 			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
 			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
+			public static string SubscriptionFooterMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.FooterMessage");
 		}
 
 
@@ -85,8 +86,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string WithoutAccount => UmbracoHelper.GetDictionaryValue("LoginForm.WithoutAccount");
 			public static string LoginSuccess => UmbracoHelper.GetDictionaryValue("LoginForm.LoginSuccess");
 			public static string LoginFailed => UmbracoHelper.GetDictionaryValue("LoginForm.LoginFailed");
+		}
 
-
+		public static class Footer
+		{
+			public static string ContactUs => UmbracoHelper.GetDictionaryValue("Footer.ContactUs");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
