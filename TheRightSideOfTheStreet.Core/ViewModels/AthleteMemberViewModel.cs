@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TheRightSideOfTheStreet.Common.Extensions;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
@@ -15,7 +16,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			ProfileImage = content.ProfileImage.AsViewModel();
 			Biography = content.Biography;
 			Vision = content.Vision;
-			Achievements = content.Achievements.AsList();
+			Achievements = content.Achievements.FirstOrDefault().Split('|');
 			Images = content.Images.AsViewModel<ImageViewModel>().AsList();
 			Country = content.Country;
 			Country = content.City;
@@ -31,7 +32,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public ImageViewModel ProfileImage { get; }
 		public string Biography { get; }
 		public string Vision { get; }
-		public IList<string> Achievements { get; }
+		public string[] Achievements { get; }
 		public IList<ImageViewModel> Images { get; }
 		public string Country { get; set; }
 		public string City { get; }
