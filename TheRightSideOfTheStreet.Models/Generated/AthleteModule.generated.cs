@@ -46,6 +46,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Athlete
+		///</summary>
+		[ImplementPropertyType("athlete")]
+		public IEnumerable<IPublishedContent> Athlete
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("athlete"); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("title")]

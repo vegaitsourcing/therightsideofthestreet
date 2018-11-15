@@ -13,10 +13,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 
 		public AthleteLandingViewModel(IPageContext<AthleteLanding> context) : base(context)
 		{
-			AthleteMembers = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewModel(context.WithAthleteMember(am))).AsList();
+			AthleteMembers = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
 		}
 
-		public IList<AthleteMemberPreviewModel> AthleteMembers { get; }
+		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; }
 	}
 }
 

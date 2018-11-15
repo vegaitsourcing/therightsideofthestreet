@@ -78,7 +78,28 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
 		}
-		
+
+		/// <summary>
+		/// Sends Contact Us request.
+		/// </summary
+		public bool AthleteRegistrationRequest(ShowYourselfFormViewModel athlete, string adminEmailAddress, string newAthleteMemberLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za registraciju - ");
+			subject.Append(athlete.Name);
+			subject.Append($" { athlete.Surname}");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{athlete.Name} {athlete.Surname}</a>");
+
+			string senderEmail = athlete.Email;
+
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+		}
+
 		/// <summary>
 		/// Tries to send email three times, third time using the sender email address from Web.Config.
 		/// </summary>

@@ -3,12 +3,13 @@ using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
 using TheRightSideOfTheStreet.Models.Extensions;
+using TheRightSideOfTheStreet.Models.MemberTypes;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
-	public class AthleteMemberPreviewModel
+	public class AthleteMemberPreviewViewModel
 	{
-		public AthleteMemberPreviewModel(IAthleteMemberContext<AthleteMember> context)
+		public AthleteMemberPreviewViewModel(IAthleteMemberContext<AthleteMember> context)
 		{
 			PreviewImage = context.Member.ProfileImage?.AsViewModel();
 			PreviewFullName = context.Member.FullName;
