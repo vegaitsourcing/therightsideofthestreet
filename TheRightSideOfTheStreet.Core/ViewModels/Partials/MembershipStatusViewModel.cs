@@ -13,7 +13,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 			Icon = content.Icon.AsViewModel();
 			Status = content.Status;
 			Details = content.Details.Split('\n');
-			Link = content.Link;
 			Image = content.Image.AsViewModel();
 			Key = content.GetKey();
 		}

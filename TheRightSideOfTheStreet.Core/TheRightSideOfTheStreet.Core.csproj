@@ -317,8 +317,10 @@
     <Compile Include="HttpHandlers\RobotsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\UmbracoCompare.cs" />
+    <Compile Include="Validations\UmbracoDataType.cs" />
     <Compile Include="Validations\UmbracoEmail.cs" />
     <Compile Include="Validations\UmbracoDisplay.cs" />
+    <Compile Include="Validations\UmbracoRegexValidation.cs" />
     <Compile Include="Validations\UmbracoRequired.cs" />
     <Compile Include="Validations\UmbracoStringLength.cs" />
     <Compile Include="Validations\UmbracoValidationHelper.cs" />

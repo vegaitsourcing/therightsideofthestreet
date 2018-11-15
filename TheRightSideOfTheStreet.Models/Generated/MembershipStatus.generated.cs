@@ -46,21 +46,12 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Details
+		/// Details: Don't delete this value
 		///</summary>
 		[ImplementPropertyType("details")]
 		public string Details
 		{
 			get { return this.GetPropertyValue<string>("details"); }
-		}
-
-		///<summary>
-		/// Link
-		///</summary>
-		[ImplementPropertyType("link")]
-		public string Link
-		{
-			get { return this.GetPropertyValue<string>("link"); }
 		}
 
 		///<summary>

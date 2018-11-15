@@ -23,7 +23,7 @@ module.exports = {
 				const $item = $inputs[i];
 				if ($item.value.trim().length === 0) continue;
 				const oldValue = $achievementsHidden.val();
-				$achievementsHidden.val(oldValue + $item.value + '|');
+				$achievementsHidden.val(oldValue + $item.value + ' | ');
 			}
 
 			if (!$form.valid()) return;
@@ -98,20 +98,31 @@ module.exports = {
 
 	previewImages: function () {
 
-			const originalImgSrc = $('.show-yourself-content-second img:eq(5)').attr('src');
-			const preview = document.querySelector('.show-yourself-content-second');
-			let i = 0;
+		const originalImgSrc = $('.show-yourself-content-second img:eq(5)').attr('src');
+		const $preview = $('.show-yourself-content-second')[0];
+		const $imagesInput = $('#file-input')[0];
+		let i = 0;
 
+		if (!$imagesInput) return;
 
-		if (this.files) {
+		if ($imagesInput.files.length > 5) {
+
+			alert('Maximum allowed is 5 images!')
+			$('#file-input').wrap('<form>').closest('form').get(0).reset();
+			$('#file-input').unwrap();
+			$('div.show-yourself-content-second img').attr("src", originalImgSrc);
+			return;
+		}
+
+		if ($imagesInput.files) {
 
 			$('div.show-yourself-content-second img').attr("src", originalImgSrc);
 
-			[].forEach.call(this.files, function (file) {
+			[].forEach.call($imagesInput.files, function (file) {
 
 				var reader = new FileReader();
 				reader.addEventListener("load", function () {
-					const $image = preview.querySelectorAll('img')
+					const $image = $preview.querySelectorAll('img')
 					$image[i].src = this.result;
 					$image[i].width = 197;
 					i++;
@@ -120,15 +131,68 @@ module.exports = {
 				reader.readAsDataURL(file);
 
 			});
-		}	
+		}
+			$('#file-input')[0].addEventListener("change", this.previewImages, false);
 	},
 
-	athleteRegOnly: function () {
-
-		if ($('body').hasClass('athlete-form-page')) {
-			
-			document.querySelector('#file-input').addEventListener("change", this.previewImages, false);
-		}
-	}
-	
 };
+
+//Multiple images validation
+
+jQuery.validator.unobtrusive.adapters.add('multipleimagevalid', ['imageregex'], function (options) {
+	options.rules['multipleimagevalid'] = { imageregex: options.params.imageregex};
+	options.messages['multipleimagevalid'] = options.message;
+});
+
+jQuery.validator.addMethod("multipleimagevalid", function (value, element, param) {
+
+	if (value === "") return true;
+
+	let isValid = true;
+
+	for (var i = 0; i < element.files.length; i++) {
+
+		const file = element.files[i];
+		const regex = new RegExp(param.imageregex);
+
+		isValid = isValid && regex.test(file.name);
+	}
+
+	return isValid;
+});
+
+jQuery.validator.unobtrusive.adapters.add('multiplefilesize', ['maxsize'], function (options) {
+
+	var params = {
+		maxsize: options.params.maxsize
+	};
+
+	// Match parameters to the method to execute
+	options.rules['multiplefilesize'] = params;
+	if (options.message) {
+		// If there is a message, set it for the rule
+		options.messages['multiplefilesize'] = options.message;
+	}
+});
+
+jQuery.validator.addMethod("multiplefilesize", function (value, element, param) {
+
+	if (value === "") return true;
+
+	let isValid = true;
+
+	for (var i = 0; i < element.files.length; i++) {		
+
+		var maxBytes = parseInt(param.maxsize);
+
+		if (element.files !== undefined && element.files[i] !== undefined && element.files[i].size !== undefined) {
+
+			var filesize = parseInt(element.files[i].size);
+
+			isValid = isValid && filesize <= maxBytes;
+		}		
+	}
+
+	return isValid;
+
+});

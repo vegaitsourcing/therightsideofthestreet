@@ -92,8 +92,8 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			subject.Append($" { athlete.Surname}");
 
 			StringBuilder body = new StringBuilder();
-			body.AppendLine($"Poslat je novi zahtev za registraciju");
-			body.Append($"Zahtev mozete odobriti putem ovog linka: {newAthleteMemberLink}");
+			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{athlete.Name} {athlete.Surname}</a>");
 
 			string senderEmail = athlete.Email;
 

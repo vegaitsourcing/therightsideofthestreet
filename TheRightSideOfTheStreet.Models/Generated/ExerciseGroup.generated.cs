@@ -46,33 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Exercise Category
-		///</summary>
-		[ImplementPropertyType("exerciseCategory")]
-		public IEnumerable<IPublishedContent> ExerciseCategory
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("exerciseCategory"); }
-		}
-
-		///<summary>
-		/// Exercise Detail
-		///</summary>
-		[ImplementPropertyType("exerciseDetail")]
-		public IEnumerable<IPublishedContent> ExerciseDetail
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("exerciseDetail"); }
-		}
-
-		///<summary>
-		/// Highlight Background Image: Image size must be 1216x743
-		///</summary>
-		[ImplementPropertyType("highlightBackgroundImage")]
-		public IPublishedContent HighlightBackgroundImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("highlightBackgroundImage"); }
-		}
-
-		///<summary>
 		/// Highlight Title
 		///</summary>
 		[ImplementPropertyType("highlightTitle")]
@@ -88,15 +61,6 @@ namespace TheRightSideOfTheStreet.Models
 		public string HighlightVideo
 		{
 			get { return this.GetPropertyValue<string>("highlightVideo"); }
-		}
-
-		///<summary>
-		/// Image: Showed exercise image on Exersice landing page
-		///</summary>
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("image"); }
 		}
 	}
 }

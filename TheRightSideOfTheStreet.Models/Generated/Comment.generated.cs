@@ -62,23 +62,5 @@ namespace TheRightSideOfTheStreet.Models
 		{
 			get { return this.GetPropertyValue<string>("comments"); }
 		}
-
-		///<summary>
-		/// Member Image
-		///</summary>
-		[ImplementPropertyType("memberImage")]
-		public IPublishedContent MemberImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("memberImage"); }
-		}
-
-		///<summary>
-		/// Member Name
-		///</summary>
-		[ImplementPropertyType("memberName")]
-		public string MemberName
-		{
-			get { return this.GetPropertyValue<string>("memberName"); }
-		}
 	}
 }

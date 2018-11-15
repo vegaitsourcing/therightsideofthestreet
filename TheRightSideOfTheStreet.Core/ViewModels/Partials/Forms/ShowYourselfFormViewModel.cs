@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
@@ -30,13 +29,14 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		public string Email { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
+		[UmbracoRegularExpression("UmbracoValidation.PasswordFormat", Constants.Constants.PaswordRegex)]
 		public string Password { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoCompare("UmbracoValidation.PasswordMatch", "Password")]
 		public string ConfirmPassword { get; set; }
 
-		public Guid Crew { get; set; }
+		public Guid? Crew { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
@@ -47,26 +47,30 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		public string City { get; set; }
 		
 		[UmbracoRequired("UmbracoValidation.Required")]
-		[UmbracoStringLength("UmbracoValidation.StringLength", 100)]
+		[UmbracoStringLength("UmbracoValidation.StringLength", 300)]
 		public string DescribeYourself { get; set; }
 
-		[UmbracoStringLength("UmbracoValidation.StringLength", 100)]
+		[UmbracoStringLength("UmbracoValidation.StringLength", 300)]
 		public string VisionOfSport { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		public string ImportantAchievements { get; set; }
 
-		[UmbracoStringLength("UmbracoValidation.StringLength", 40)]
+		[UmbracoDataType(DataType.Url, "UmbracoValidation.Url")]
+		[UmbracoRegularExpression("UmbracoValidation.FacebookProfile", Constants.Constants.FacebookRegex)]
 		public string FacebookProfile { get; set; }
 
-		[UmbracoStringLength("UmbracoValidation.StringLength", 40)]
+		[UmbracoDataType(DataType.Url, "UmbracoValidation.Url")]
+		[UmbracoRegularExpression("UmbracoValidation.InstagramProfile", Constants.Constants.InstagramRegex)]
 		public string InstagramProfile { get; set; }
 
-		[UmbracoStringLength("UmbracoValidation.StringLength", 40)]
+		[UmbracoDataType(DataType.Url, "UmbracoValidation.Url")]
+		[UmbracoRegularExpression("UmbracoValidation.YoutubeProfile", Constants.Constants.YoutubeRegex)]
 		public string YouTubeChannel { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
-		//[FileSize(2, "UmbracoValidation.ImageSize")]
+		[ListFileSize(2, "UmbracoValidation.MultipleImageMaxSize")]
+		[MultipleImagesExtensions(ErrorMessageDictionaryKey = "UmbracoValidation.ImageExtension")]
 		public IList<HttpPostedFileBase> Images { get; set; }
 
 		public IList<CrewViewModel> Crews { get; set; }

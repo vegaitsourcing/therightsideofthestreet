@@ -19,7 +19,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		[ChildActionOnly]
 		public ActionResult ShowYourselfForm(IList<CrewViewModel> crews)
 		{
-			return PartialView(new ShowYourselfFormViewModel() { Crews = crews});
+			return PartialView(new ShowYourselfFormViewModel() { Crews = crews });
 		}
 
 		[HttpPost]
@@ -66,12 +66,12 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			if (model.Crew != null)
 			{
-				member.SetValue(nameof(AthleteMember.Crew), new GuidUdi("document", model.Crew).ToString());
+				member.SetValue(nameof(AthleteMember.Crew), new GuidUdi("document", (Guid)model.Crew).ToString());
 			}
 
-			member.SetValue(nameof(AthleteMember.Biography), model.DescribeYourself);		
+			member.SetValue(nameof(AthleteMember.Biography), model.DescribeYourself);
 			member.SetValue(nameof(AthleteMember.Achievements), model.ImportantAchievements);
-				
+
 			if (!string.IsNullOrEmpty(model.VisionOfSport))
 			{
 				member.SetValue(nameof(AthleteMember.Vision), model.VisionOfSport);
@@ -118,6 +118,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			TempData[Constants.Constants.TempDataSuccess] = "success";
 
 			return RedirectToCurrentUmbracoPage();
-		}		
+		}
 	}
 }

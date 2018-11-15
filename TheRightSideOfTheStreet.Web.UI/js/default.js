@@ -28,7 +28,6 @@ let app = {
 		athleteForm.handleFormSubmit();
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
-		athleteForm.athleteRegOnly();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();

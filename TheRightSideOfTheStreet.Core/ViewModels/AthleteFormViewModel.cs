@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TheRightSideOfTheStreet.Common.Extensions;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials;
@@ -17,9 +13,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 	{
 		public AthleteFormViewModel(IPageContext<AthleteForm> context) : base(context)
 		{
-			Crews = context.Repository.Descendants<Crew>().AsViewModel<CrewViewModel>().ToList();
+			Crews = umbracoHelper.TypedContentAtRoot().Where(x => x.ContentType.Alias.Equals("workoutCrewsContainer")).FirstOrDefault().Descendants(4).AsViewModel<CrewViewModel>().ToList();
 		}
 
 		public IList<CrewViewModel> Crews { get;}
+		public readonly UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
 	}
 }

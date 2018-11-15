@@ -51,6 +51,14 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
 			public static string PasswordMatch => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordMatch");
 			public static string Password => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Password");
+			public static string MultipleImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.MultipleImageMaxSize");
+			public static string Url => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Url");
+			public static string PasswordFormat => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordFormat");
+			public static string FacebookProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.FacebookProfile");
+			public static string YoutubeProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.YoutubeProfile");
+			public static string InstagramProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.InstagramProfile");
+
+
 		}
 
 
