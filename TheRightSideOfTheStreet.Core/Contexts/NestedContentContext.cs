@@ -21,6 +21,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         public Repository Repository => SiteContext.Repository;
 		public IEnumerable<Website> Languages => SiteContext.Languages;
 		public LoginForm LoginForm => SiteContext.LoginForm;
+		public IEnumerable<Crew> Crews => SiteContext.Crews;
 
 		private ISiteContext SiteContext { get; }
     }

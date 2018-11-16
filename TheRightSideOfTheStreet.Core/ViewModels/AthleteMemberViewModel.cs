@@ -16,7 +16,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			ProfileImage = content.ProfileImage.AsViewModel();
 			Biography = content.Biography;
 			Vision = content.Vision;
-			Achievements = content.Achievements.FirstOrDefault().Split('|');
+			Achievements = content.Achievements.AsList();
 			Images = content.Images.AsViewModel<ImageViewModel>().AsList();
 			Country = content.Country;
 			Country = content.City;
@@ -32,7 +32,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public ImageViewModel ProfileImage { get; }
 		public string Biography { get; }
 		public string Vision { get; }
-		public string[] Achievements { get; }
+		public IList<string> Achievements { get; }
 		public IList<ImageViewModel> Images { get; }
 		public string Country { get; set; }
 		public string City { get; }

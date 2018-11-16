@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using TheRightSideOfTheStreet.Common;
 using TheRightSideOfTheStreet.Core.EmailSender;
+using TheRightSideOfTheStreet.Core.Helpers;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
 using TheRightSideOfTheStreet.Models;
@@ -39,6 +40,15 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 				model.Country = crew.Ancestor<Country>().Name;
 			}
 			string memberName = $"{model.Name} {model.Surname}";
+
+			var memberService = Services.MemberService;
+
+			if (memberService.GetByEmail(model.Email) != null)
+			{
+				ModelState.AddModelError("DuplicateEmail", UmbracoDictionaryHelper.UmbracoValidation.DuplicateEmailAddress);
+				return CurrentUmbracoPage();
+			}
+
 			var member = Services.MemberService.CreateMemberWithIdentity(model.Email, model.Email, memberName, AthleteMember.ModelTypeAlias);
 
 			member.SetValue(nameof(AthleteMember.FullName), memberName);
@@ -70,7 +80,10 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			}
 
 			member.SetValue(nameof(AthleteMember.Biography), model.DescribeYourself);
-			member.SetValue(nameof(AthleteMember.Achievements), model.ImportantAchievements);
+
+			IEnumerable<string> achievements = model.ImportantAchievements.Split('|');			
+
+			member.SetValue(nameof(AthleteMember.Achievements), string.Join(Environment.NewLine, achievements));
 
 			if (!string.IsNullOrEmpty(model.VisionOfSport))
 			{
