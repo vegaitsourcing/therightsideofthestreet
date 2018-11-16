@@ -55,7 +55,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Icon: Pick status icon
+		/// Icon: The icon dimensions should be
 		///</summary>
 		[ImplementPropertyType("icon")]
 		public string Icon

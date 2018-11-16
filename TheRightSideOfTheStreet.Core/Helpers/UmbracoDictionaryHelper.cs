@@ -118,6 +118,14 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ContactUs => UmbracoHelper.GetDictionaryValue("Footer.ContactUs");
 		}
 
+		public static class AthleteModule
+		{
+			public static string Instagram => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowInstagram");
+			public static string Facebook => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowFacebook");
+			public static string Youtube => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowYoutube");
+			public static string Find => UmbracoHelper.GetDictionaryValue("AthleteModule.Find");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 	}
 }

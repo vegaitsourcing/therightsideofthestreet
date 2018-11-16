@@ -46,7 +46,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Banner Image: Note: Image dimensions should be
+		/// Banner Image: Note: Image dimensions should be 1500x745px
 		///</summary>
 		[ImplementPropertyType("bannerImage")]
 		public IPublishedContent BannerImage
