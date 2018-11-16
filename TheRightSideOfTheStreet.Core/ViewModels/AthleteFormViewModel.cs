@@ -13,10 +13,9 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 	{
 		public AthleteFormViewModel(IPageContext<AthleteForm> context) : base(context)
 		{
-			Crews = umbracoHelper.TypedContentAtRoot().Where(x => x.ContentType.Alias.Equals("workoutCrewsContainer")).FirstOrDefault().Descendants(4).AsViewModel<CrewViewModel>().ToList();
+			Crews = context.Crews.AsViewModel<CrewViewModel>().ToList();
 		}
 
 		public IList<CrewViewModel> Crews { get;}
-		public readonly UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
 	}
 }

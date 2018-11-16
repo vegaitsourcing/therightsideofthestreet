@@ -23,7 +23,7 @@ module.exports = {
 				const $item = $inputs[i];
 				if ($item.value.trim().length === 0) continue;
 				const oldValue = $achievementsHidden.val();
-				$achievementsHidden.val(oldValue + $item.value + ' | ');
+				$achievementsHidden.val(oldValue + $item.value + '|');
 			}
 
 			if (!$form.valid()) return;
@@ -107,7 +107,7 @@ module.exports = {
 
 		if ($imagesInput.files.length > 5) {
 
-			alert('Maximum allowed is 5 images!')
+			alert('Maximum allowed is 5 images!');
 			$('#file-input').wrap('<form>').closest('form').get(0).reset();
 			$('#file-input').unwrap();
 			$('div.show-yourself-content-second img').attr("src", originalImgSrc);
@@ -132,7 +132,7 @@ module.exports = {
 
 			});
 		}
-			$('#file-input')[0].addEventListener("change", this.previewImages, false);
+		$('#file-input')[0].addEventListener("change", this.previewImages, false);
 	},
 
 };
@@ -140,7 +140,7 @@ module.exports = {
 //Multiple images validation
 
 jQuery.validator.unobtrusive.adapters.add('multipleimagevalid', ['imageregex'], function (options) {
-	options.rules['multipleimagevalid'] = { imageregex: options.params.imageregex};
+	options.rules['multipleimagevalid'] = { imageregex: options.params.imageregex };
 	options.messages['multipleimagevalid'] = options.message;
 });
 
@@ -181,7 +181,7 @@ jQuery.validator.addMethod("multiplefilesize", function (value, element, param) 
 
 	let isValid = true;
 
-	for (var i = 0; i < element.files.length; i++) {		
+	for (var i = 0; i < element.files.length; i++) {
 
 		var maxBytes = parseInt(param.maxsize);
 
@@ -190,7 +190,7 @@ jQuery.validator.addMethod("multiplefilesize", function (value, element, param) 
 			var filesize = parseInt(element.files[i].size);
 
 			isValid = isValid && filesize <= maxBytes;
-		}		
+		}
 	}
 
 	return isValid;

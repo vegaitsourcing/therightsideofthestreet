@@ -28,6 +28,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public LoginForm LoginForm => SiteContext.LoginForm;
 
+		public IEnumerable<Crew> Crews => SiteContext.Crews;
+
 		private ISiteContext SiteContext { get; }
 	}
 }

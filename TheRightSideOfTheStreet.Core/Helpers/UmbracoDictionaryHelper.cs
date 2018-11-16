@@ -58,8 +58,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string FacebookProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.FacebookProfile");
 			public static string YoutubeProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.YoutubeProfile");
 			public static string InstagramProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.InstagramProfile");
-
-
+			public static string DuplicateEmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.DuplicateEmailAddress");
 		}
 
 

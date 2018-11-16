@@ -37,6 +37,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public LoginForm LoginForm => PageContext.LoginForm;
 
+		public IEnumerable<Crew> Crews => PageContext.Crews;
+
 		private IPageContext<ExerciseLevel> PageContext { get; }
 	}
 }
