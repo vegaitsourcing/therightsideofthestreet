@@ -57,8 +57,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		padding-bottom: 20px;
 		p {
+			flex: 1;
+			padding-bottom: 20px;
 			text-align: center;
 			color: $white;
 			font-weight: 700;
@@ -81,7 +82,13 @@
 	@include breakpoint(touch) {
 		padding-top: 20px;
 		.donators-name {
-			padding-bottom: 0;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	@include breakpoint(phone) {
+		.donators-name {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 }
