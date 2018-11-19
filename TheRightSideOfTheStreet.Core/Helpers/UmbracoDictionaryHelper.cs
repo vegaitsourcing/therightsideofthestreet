@@ -125,6 +125,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Find => UmbracoHelper.GetDictionaryValue("AthleteModule.Find");
 		}
 
+		public static class Banner
+		{
+			public static string FollowUs => UmbracoHelper.GetDictionaryValue("Banner.FollowUs");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 	}
 }
