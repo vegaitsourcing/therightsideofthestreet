@@ -25,7 +25,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			YoutubeProfile = content.YoutubeProfile;
 			Crew = content.Crew?.CrewName;
 			Status = content.Status?.Status;
-
 		}
 
 		public string FullName { get; }
