@@ -38,7 +38,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			StringBuilder body = new StringBuilder();
 			body.AppendLine("Komentar koji ceka odobrenje se nalazi na sledecem linku:");
-			body.AppendLine($"Blog Comment Link: {blogLink}");
+			body.AppendLine($"Blog Comment Link: <a href='{blogLink}'>{fullName}</a>");
 
 			string senderEmial = emailFrom;
 

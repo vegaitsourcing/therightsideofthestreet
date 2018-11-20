@@ -288,6 +288,7 @@
     <Compile Include="Controllers\RenderMvc\ExerciseLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseLevelController.cs" />
     <Compile Include="Controllers\RenderMvc\ModularContentController.cs" />
+    <Compile Include="Controllers\RenderMvc\ResetPasswordFormController.cs" />
     <Compile Include="Controllers\RenderMvc\WebsiteController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
@@ -296,6 +297,8 @@
     <Compile Include="Controllers\Surface\Forms\ShowYourselfFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ExerciseGroupSendRequestController.cs" />
     <Compile Include="Controllers\Surface\Forms\LoginAthleteFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\ResetMemberPasswordFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\SearchAthleteFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\SharedController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />
@@ -346,9 +349,12 @@
     <Compile Include="ViewModels\ExerciseGroupViewModel.cs" />
     <Compile Include="ViewModels\ExerciseLandingViewModel.cs" />
     <Compile Include="ViewModels\ExerciseLevelViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\ResetPasswordFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\SearchAthleteFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseStepViewModel.cs" />
+    <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />
     <Compile Include="ViewModels\ModularContentViewModel.cs" />

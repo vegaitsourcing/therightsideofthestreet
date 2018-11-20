@@ -9,5 +9,9 @@
 		public const string InstagramRegex = @"https?:\/\/(www\.)?instagram\.com\/([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)";
 		public const string YoutubeRegex = @"(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9_\-]{1,})";
 
+		public static class RequestParameters
+		{
+			public const string Query = "q";
+		}
 	}
 }
