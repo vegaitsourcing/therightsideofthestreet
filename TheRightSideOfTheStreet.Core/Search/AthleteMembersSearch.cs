@@ -30,8 +30,7 @@ namespace TheRightSideOfTheStreet.Core.Search
 
 			return members.AsList();
 		}
-			var members = _searchProvider.Search(criteria);
-			var member = members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m=> m != null && m.UmbracoMemberApproved);
+	
 
 		public IEnumerable<AthleteMember> GetAthletes(string query)
 		{
@@ -64,7 +63,7 @@ namespace TheRightSideOfTheStreet.Core.Search
 		private IEnumerable<AthleteMember> GetSearchResults(ISearchCriteria criteria)
 		{
 			var members = _searchProvider.Search(criteria);
-			return members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m => m != null);
+			return members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m => m != null && m.UmbracoMemberApproved);
 		}
 
 		private ISearchCriteria GetSearchCriteria()
