@@ -39,6 +39,10 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public IEnumerable<Crew> Crews => PageContext.Crews;
 
+		public ResetPasswordForm ResetPassword => PageContext.ResetPassword;
+
+		public AthleteForm AthleteForm => PageContext.AthleteForm;
+
 		private IPageContext<ExerciseLevel> PageContext { get; }
 	}
 }

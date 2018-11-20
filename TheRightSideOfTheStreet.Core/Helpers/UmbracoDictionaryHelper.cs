@@ -110,6 +110,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string WithoutAccount => UmbracoHelper.GetDictionaryValue("LoginForm.WithoutAccount");
 			public static string LoginSuccess => UmbracoHelper.GetDictionaryValue("LoginForm.LoginSuccess");
 			public static string LoginFailed => UmbracoHelper.GetDictionaryValue("LoginForm.LoginFailed");
+			public static string Logout => UmbracoHelper.GetDictionaryValue("LoginForm.LogOut");
+			public static string ForgottenPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ForgottenPassword");
+			public static string ResetPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPassword");
+			public static string ResetPasswordFailed => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPasswordFailed");
 		}
 
 		public static class Footer
@@ -131,5 +135,6 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
+
 	}
 }

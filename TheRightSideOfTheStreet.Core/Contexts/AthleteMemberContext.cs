@@ -33,6 +33,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public LoginForm LoginForm => SiteContext.LoginForm;
 
 		public IEnumerable<Crew> Crews => SiteContext.Crews;
+		public ResetPasswordForm ResetPassword => SiteContext.ResetPassword;
+		public AthleteForm AthleteForm => SiteContext.AthleteForm;
 
 		private ISiteContext SiteContext { get;  }
 	}

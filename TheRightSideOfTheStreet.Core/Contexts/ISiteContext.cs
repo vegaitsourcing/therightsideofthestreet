@@ -13,5 +13,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		IEnumerable<Website> Languages { get; }
 		LoginForm LoginForm { get; }
 		IEnumerable<Crew> Crews { get; }
+		ResetPasswordForm ResetPassword { get; }
+		AthleteForm AthleteForm { get; }
     }
 }

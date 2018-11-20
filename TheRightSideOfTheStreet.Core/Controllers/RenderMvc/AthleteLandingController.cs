@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using TheRightSideOfTheStreet.Core.ViewModels;
 using TheRightSideOfTheStreet.Models;
-using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.RenderMvc
 {
@@ -10,11 +9,15 @@ namespace TheRightSideOfTheStreet.Core.Controllers.RenderMvc
 
 		public ActionResult Index(AthleteLanding model)
 		{
-			if(model.AthleteMember != null)
+			if (model.AthleteMember != null)
 			{
 				return View(nameof(AthleteMember), new AthleteMemberViewModel(CreatePageContext(model), model.AthleteMember));
 			}
-			return CurrentTemplate(new AthleteLandingViewModel(CreatePageContext(model)));
+
+			var query = Request[Constants.Constants.RequestParameters.Query];
+			var viewModel = new AthleteLandingViewModel(CreatePageContext(model), query);
+			
+			return CurrentTemplate(viewModel);
 		}
 	}
 }
