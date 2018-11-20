@@ -2,9 +2,8 @@
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
-	public class LoginFormViewModel
+	public class ResetPasswordFormViewModel
 	{
-		
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 40)]
 		[UmbracoEmail(ErrorMessageDictionaryKey = "UmbracoValidation.EmailAddress")]
@@ -13,8 +12,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
-		public string Password { get; set; }
+		public string NewPassword { get; set; }
 
-		public string ResetPasswordUrl { get; set; }
+		[UmbracoRequired("UmbracoValidation.Required")]
+		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		public string ConfirmNewPassword { get; set; }
 	}
 }

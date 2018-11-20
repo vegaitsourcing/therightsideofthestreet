@@ -8,9 +8,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 	public class LoginAthleteFormController : BaseSurfaceController
 	{
 		[ChildActionOnly]
-		public ActionResult LoginAthleteForm()
+		public ActionResult LoginAthleteForm(string resetPasswordUrl)
 		{
-			return PartialView(new LoginFormViewModel());
+			return PartialView(new LoginFormViewModel() { ResetPasswordUrl = resetPasswordUrl});
 		}
 
 

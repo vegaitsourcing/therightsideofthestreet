@@ -6,9 +6,9 @@ using TheRightSideOfTheStreet.Models.Extensions;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
-	public class AthleteMemberPreviewModel
+	public class AthleteMemberPreviewViewModel
 	{
-		public AthleteMemberPreviewModel(IAthleteMemberContext<AthleteMember> context)
+		public AthleteMemberPreviewViewModel(IAthleteMemberContext<AthleteMember> context)
 		{
 			PreviewImage = context.Member.ProfileImage?.AsViewModel();
 			PreviewFullName = context.Member.FullName;

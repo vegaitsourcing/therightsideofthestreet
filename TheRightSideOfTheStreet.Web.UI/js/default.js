@@ -4,6 +4,7 @@ let functions = require('./functions');
 const listing = require('./listing');
 const becomeMember = require('./become-member');
 const exerciseGroup = require('./exercise-group');
+const search = require('./search');
 //let maps = require('./maps');
 
 let app = {
@@ -23,6 +24,7 @@ let app = {
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
+		search.search();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

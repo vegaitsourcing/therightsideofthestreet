@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Modular Content</summary>
-	[PublishedContentModel("modularContent")]
-	public partial class ModularContent : Page, IBanner
+	/// <summary>Reset Password Form</summary>
+	[PublishedContentModel("resetPasswordForm")]
+	public partial class ResetPasswordForm : Page
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "modularContent";
+		public new const string ModelTypeAlias = "resetPasswordForm";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ModularContent(IPublishedContent content)
+		public ResetPasswordForm(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,9 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ModularContent, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ResetPasswordForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Banner Image: Note: Image dimensions should be 1500x745px
-		///</summary>
-		[ImplementPropertyType("bannerImage")]
-		public IPublishedContent BannerImage
-		{
-			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerImage(this); }
-		}
-
-		///<summary>
-		/// Banner Link
-		///</summary>
-		[ImplementPropertyType("bannerLink")]
-		public RJP.MultiUrlPicker.Models.Link BannerLink
-		{
-			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerLink(this); }
-		}
-
-		///<summary>
-		/// Banner Title
-		///</summary>
-		[ImplementPropertyType("bannerTitle")]
-		public string BannerTitle
-		{
-			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerTitle(this); }
 		}
 	}
 }

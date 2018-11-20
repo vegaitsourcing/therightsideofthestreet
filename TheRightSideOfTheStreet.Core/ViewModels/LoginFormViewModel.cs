@@ -7,7 +7,9 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 	{
 		public LoginViewModel(IPageContext<LoginForm> context) : base(context)
 		{
-
+			ResetPassword = context.ResetPassword.Url;
 		}
+
+		public string ResetPassword { get; }
 	}
 }

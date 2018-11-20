@@ -46,7 +46,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Achievements
+		/// Achievements: Required field
 		///</summary>
 		[ImplementPropertyType("achievements")]
 		public IEnumerable<string> Achievements

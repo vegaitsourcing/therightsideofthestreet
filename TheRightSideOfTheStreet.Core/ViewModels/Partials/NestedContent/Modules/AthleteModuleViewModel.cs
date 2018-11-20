@@ -13,11 +13,11 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		public AthleteModuleViewModel(INestedContentContext<AthleteModule> context)
 		{
 			Title = context.NestedContent.Title;
-			Athletes = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewModel(context.WithAthleteMember(am))).Where( m => m.PreviewImage != null).AsList();
+			Athletes = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).Where( m => m.PreviewImage != null).AsList();
 		}
 
 		public string Title { get; }
-		public IList<AthleteMemberPreviewModel> Athletes { get; }
+		public IList<AthleteMemberPreviewViewModel> Athletes { get; }
 		
 	}
 }

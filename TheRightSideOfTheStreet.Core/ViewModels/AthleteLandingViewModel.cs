@@ -5,18 +5,30 @@ using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.Search;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
 	public class AthleteLandingViewModel : PageViewModel
 	{
 
-		public AthleteLandingViewModel(IPageContext<AthleteLanding> context) : base(context)
+		public AthleteLandingViewModel(IPageContext<AthleteLanding> context, string query) : base(context)
 		{
-			AthleteMembers = new AthleteMembersSearch().GetAthletes().Select(am => new AthleteMemberPreviewModel(context.WithAthleteMember(am))).AsList();
+			AthleteMembers = GetAthletes(context, query);
 		}
+		
+		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
 
-		public IList<AthleteMemberPreviewModel> AthleteMembers { get; }
+		private IList<AthleteMemberPreviewViewModel> GetAthletes(IPageContext<AthleteLanding> context, string query)
+		{
+			var searcher = new AthleteMembersSearch();
+			if (string.IsNullOrWhiteSpace(query))
+			{
+				return searcher.GetAthletes().Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
+			}
+
+			return searcher.GetAthletes(query).Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
+		}
 	}
 }
 
