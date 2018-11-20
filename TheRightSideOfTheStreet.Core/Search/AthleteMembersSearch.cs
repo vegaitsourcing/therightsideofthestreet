@@ -26,7 +26,7 @@ namespace TheRightSideOfTheStreet.Core.Search
 			criteria.NodeTypeAlias("athleteMember");
 
 			var members = _searchProvider.Search(criteria);
-			var member = members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m=> m != null);
+			var member = members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m=> m != null && m.UmbracoMemberApproved);
 
 			return member.AsList();
 		}
