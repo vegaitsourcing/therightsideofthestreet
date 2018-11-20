@@ -16,5 +16,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		public string Password { get; set; }
 
 		public string ResetPasswordUrl { get; set; }
+		public string RegisterFormUrl { get; set; }
 	}
 }

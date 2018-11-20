@@ -8,8 +8,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public LoginViewModel(IPageContext<LoginForm> context) : base(context)
 		{
 			ResetPassword = context.ResetPassword.Url;
+			RegisterForm = context.AthleteForm.Url;
 		}
 
 		public string ResetPassword { get; }
+		public string RegisterForm { get; }
 	}
 }

@@ -114,6 +114,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ForgottenPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ForgottenPassword");
 			public static string ResetPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPassword");
 			public static string ResetPasswordFailed => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPasswordFailed");
+		}
 
 		public static class Footer
 		{
@@ -134,5 +135,6 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
+
 	}
 }

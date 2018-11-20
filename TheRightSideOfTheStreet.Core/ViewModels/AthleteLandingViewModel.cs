@@ -15,6 +15,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public AthleteLandingViewModel(IPageContext<AthleteLanding> context, string query) : base(context)
 		{
 			AthleteMembers = GetAthletes(context, query);
+			RegisterForm = context.AthleteForm.Url;
 		}
 		
 		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
@@ -29,6 +30,8 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 
 			return searcher.GetAthletes(query).Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
 		}
+
+		public string RegisterForm { get; set; }
 	}
 }
 

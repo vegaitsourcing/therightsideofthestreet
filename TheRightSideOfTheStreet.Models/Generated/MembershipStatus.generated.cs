@@ -55,6 +55,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Icon: The icon dimensions should be
+		///</summary>
+		[ImplementPropertyType("icon")]
+		public string Icon
+		{
+			get { return this.GetPropertyValue<string>("icon"); }
+		}
+
+		///<summary>
 		/// Status
 		///</summary>
 		[ImplementPropertyType("status")]
