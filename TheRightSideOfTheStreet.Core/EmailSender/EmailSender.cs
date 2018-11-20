@@ -20,7 +20,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			{
 				mail.Subject = subject;
 				mail.Body = body;
-				
+				mail.IsBodyHtml = true;
 
 				if (attachments != null)
 				{

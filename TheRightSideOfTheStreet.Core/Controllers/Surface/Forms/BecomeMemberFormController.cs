@@ -29,7 +29,8 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			
 			bool sentMail = emailSender.BecomeMemberContactUsRequest(model, settings.AdminEmailAddress);
 
-			if (!sentMail) {
+			if (!sentMail)
+			{
 				TempData[Constants.Constants.TempDataFail] = "fail";
 				return CurrentUmbracoPage();
 			}

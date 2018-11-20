@@ -6,12 +6,12 @@
 	height: auto;
 	display: flex;
 	justify-content: center;
-	button {
+	a {
 		margin: 70px 40px 0;
 	}
 	@include breakpoint(phone) {
 		flex-direction: column;
-		button {
+		a {
 			margin: 30px 20px 0;
 		}
 	}

@@ -3,7 +3,9 @@
 let functions = require('./functions');
 const listing = require('./listing');
 const becomeMember = require('./become-member');
+const athleteForm = require('./athlete-form');
 const exerciseGroup = require('./exercise-group');
+const athleteModule = require('./athlete-module');
 const search = require('./search');
 //let maps = require('./maps');
 
@@ -21,9 +23,16 @@ let app = {
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
+		athleteForm.showImagePreview();
+		athleteForm.showAchievementsInput();
+		athleteForm.formInit();
+		athleteForm.handleFormSubmit();
+		athleteForm.hideCountryAndCityInput();
+		athleteForm.previewImages();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
+		athleteModule.filterAthletes();		
 		search.search();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();

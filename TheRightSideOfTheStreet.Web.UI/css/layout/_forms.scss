@@ -1,11 +1,12 @@
 //----------  forms
 //------------------------------------------------------------------------------
 input,
-textarea {
+textarea,
+select {
 	font-family: $font-default;
 	background: $white;
 	box-shadow: none;
-	color: $black;
+	color: #9b9b9b;
 	font-size: 20px;
 	height: 45px;
 	letter-spacing: 0.3px;

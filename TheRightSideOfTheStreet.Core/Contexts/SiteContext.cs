@@ -20,6 +20,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
             LazyRepository = new Lazy<Repository>(() => UmbracoHelper.GetRepository());
 			LazyLanguages = new Lazy<IEnumerable<Website>>(() => UmbracoHelper.GetLanguages());
 			LazyLoginForm = new Lazy<LoginForm>(() => UmbracoHelper.GetPage<LoginForm>(Home.Id));
+			LazyCrews = new Lazy<IEnumerable<Crew>>(() => UmbracoHelper.TypedContentAtXPath($"//{Crew.ModelTypeAlias}")?.OfType<Crew>());
 			LazyResetPasswordForm = new Lazy<ResetPasswordForm>(() => UmbracoHelper.GetPage<ResetPasswordForm>(Home.Id));
         }
 
@@ -29,8 +30,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         public Repository Repository => LazyRepository.Value;
         public IEnumerable<Website> Languages => LazyLanguages.Value;
 		public LoginForm LoginForm => LazyLoginForm.Value;
+		public IEnumerable<Crew> Crews => LazyCrews.Value;
 		public ResetPasswordForm ResetPassword => LazyResetPasswordForm.Value;
-
 
 		protected UmbracoHelper UmbracoHelper { get; }
 
@@ -40,6 +41,9 @@ namespace TheRightSideOfTheStreet.Core.Contexts
         private Lazy<Repository> LazyRepository { get; }
 		private Lazy<IEnumerable<Website>> LazyLanguages { get; }
 		private Lazy<LoginForm> LazyLoginForm { get; }
+		private Lazy<IEnumerable<Crew>> LazyCrews { get; }
+
+	}
 		private Lazy<ResetPasswordForm> LazyResetPasswordForm { get; }
     }
 }

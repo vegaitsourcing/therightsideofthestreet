@@ -38,10 +38,10 @@ module.exports = {
 
 			var categoryKey;
 
-			var $dugme = $("div.workout-selection button.select-btn-active");
-			if (!$dugme) return;
+			var $categoryBtn = $("div.workout-selection button.select-btn-active");
+			if (!$categoryBtn) return;
 
-			categoryKey = $dugme.data('category');
+			categoryKey = $categoryBtn.data('category');
 			
 			if (!categoryKey) categoryKey = null;
 

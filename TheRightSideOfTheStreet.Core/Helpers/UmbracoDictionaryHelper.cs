@@ -39,6 +39,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		{
 			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
 			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
+			public static string SubscriptionFooterMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.FooterMessage");
 		}
 
 
@@ -49,7 +50,15 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string EmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.EmailAddress");
 			public static string ImageExtension => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageExtension");
 			public static string ImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.ImageMaxSize");
+			public static string PasswordMatch => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordMatch");
 			public static string Password => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Password");
+			public static string MultipleImageMaxSize => UmbracoHelper.GetDictionaryValue("UmbracoValidation.MultipleImageMaxSize");
+			public static string Url => UmbracoHelper.GetDictionaryValue("UmbracoValidation.Url");
+			public static string PasswordFormat => UmbracoHelper.GetDictionaryValue("UmbracoValidation.PasswordFormat");
+			public static string FacebookProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.FacebookProfile");
+			public static string YoutubeProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.YoutubeProfile");
+			public static string InstagramProfile => UmbracoHelper.GetDictionaryValue("UmbracoValidation.InstagramProfile");
+			public static string DuplicateEmailAddress => UmbracoHelper.GetDictionaryValue("UmbracoValidation.DuplicateEmailAddress");
 		}
 
 
@@ -59,6 +68,22 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ImportantAchievements => UmbracoHelper.GetDictionaryValue("AthleteMember.ImportantAchievements");
 			public static string Status => UmbracoHelper.GetDictionaryValue("AthleteMember.Status");
 			public static string Crew => UmbracoHelper.GetDictionaryValue("AthleteMember.Crew");
+		}
+
+		public static class AthleteForm
+		{
+			public static string DescribeYourself => UmbracoHelper.GetDictionaryValue("AthleteForm.DescribeYourself");
+			public static string Image => UmbracoHelper.GetDictionaryValue("AthleteForm.Image");
+			public static string NotableAchievements => UmbracoHelper.GetDictionaryValue("AthleteForm.NotableAchievements");
+			public static string SaveButton => UmbracoHelper.GetDictionaryValue("AthleteForm.SaveButton");
+			public static string AchievementsAdd => UmbracoHelper.GetDictionaryValue("AthleteForm.AchievementsAdd");
+			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteForm.IntroduceYourself");
+			public static string VisionOfSport => UmbracoHelper.GetDictionaryValue("AthleteForm.VisionOfSport");
+			public static string Password => UmbracoHelper.GetDictionaryValue("AthleteForm.Password");
+			public static string ConfirmPassword => UmbracoHelper.GetDictionaryValue("AthleteForm.ConfirmPassword");
+			public static string Crews => UmbracoHelper.GetDictionaryValue("AthleteForm.Crew");
+			public static string Country => UmbracoHelper.GetDictionaryValue("AthleteForm.Country");
+			public static string City => UmbracoHelper.GetDictionaryValue("AthleteForm.City");
 		}
 
 		public static class ExerciseGroup
@@ -90,8 +115,22 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ResetPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPassword");
 			public static string ResetPasswordFailed => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPasswordFailed");
 
+		public static class Footer
+		{
+			public static string ContactUs => UmbracoHelper.GetDictionaryValue("Footer.ContactUs");
+		}
 
+		public static class AthleteModule
+		{
+			public static string Instagram => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowInstagram");
+			public static string Facebook => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowFacebook");
+			public static string Youtube => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowYoutube");
+			public static string Find => UmbracoHelper.GetDictionaryValue("AthleteModule.Find");
+		}
 
+		public static class Banner
+		{
+			public static string FollowUs => UmbracoHelper.GetDictionaryValue("Banner.FollowUs");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
