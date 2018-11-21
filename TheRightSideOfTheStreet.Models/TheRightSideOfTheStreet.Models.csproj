@@ -366,6 +366,9 @@
     <Compile Include="Generated\Folder.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ForgottenPassword.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Founders.cs" />
     <Compile Include="Generated\Founders.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
