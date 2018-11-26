@@ -257,6 +257,7 @@
     <Compile Include="App_Start\DomainRootRouteHandler.cs" />
     <Compile Include="App_Start\ExistingLanguagesRouteConstraint.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\My404ContentFinder.cs" />
     <Compile Include="App_Start\PartialViewEngine.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\Constants.cs" />
@@ -338,6 +339,7 @@
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Error404ViewModel.cs" />
     <Compile Include="ViewModels\Partials\CityViewModel.cs" />
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\CommentFormViewModel.cs" />
