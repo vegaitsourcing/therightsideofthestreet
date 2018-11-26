@@ -332,6 +332,9 @@
     <Compile Include="Generated\Donators.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Error404.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\ExerciseCategoriesContainer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TheRightSideOfTheStreet.Core.App_Start;
 using Umbraco.Core;
 using Umbraco.Web.Routing;
 
@@ -13,14 +14,15 @@ namespace TheRightSideOfTheStreet.Core
 			base.ApplicationStarting(umbracoApplication, applicationContext);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			ViewEngines.Engines.Add(new PartialViewEngine());
-			ContentFinderResolver.Current.InsertType<AthleteMemberContentFinder>();
+			ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+			ContentFinderResolver.Current.InsertType<AthleteMemberContentFinder>();			
 		}
 
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
 			base.ApplicationStarted(umbracoApplication, applicationContext);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
-			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);			
 		}
 	}
 }
