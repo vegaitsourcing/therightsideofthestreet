@@ -67,7 +67,10 @@ namespace TheRightSideOfTheStreet.Models.Extensions
 
 		public static AthleteLanding GetAthleteLanding(this UmbracoHelper helper, int siteId)
 			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias}[@id='{siteId}']//{AthleteLanding.ModelTypeAlias}")?.OfType<AthleteLanding>();
-		
+
+		public static LoginForm GetLoginPage(this UmbracoHelper helper, int siteId)
+			=> helper?.TypedContentSingleAtXPath($"//{Website.ModelTypeAlias}[@id='{siteId}']//{LoginForm.ModelTypeAlias}")?.OfType<LoginForm>();
+
 		public static T GetPage<T>(this UmbracoHelper helper, int siteId) where T : PublishedContentModel
 			=> helper?.TypedContentSingleAtXPath(GetXpath(typeof(T),siteId))?.OfType<T>();
 

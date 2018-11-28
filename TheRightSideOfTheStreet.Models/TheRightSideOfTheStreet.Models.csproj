@@ -321,12 +321,18 @@
     <Compile Include="Generated\CrewsModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DonationsAndMembership.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\DonationsContent.cs" />
     <Compile Include="Generated\DonationsContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Donators.cs" />
     <Compile Include="Generated\Donators.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Error404.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\ExerciseCategoriesContainer.generated.cs">
@@ -361,6 +367,9 @@
     </Compile>
     <Compile Include="Generated\Folder.cs" />
     <Compile Include="Generated\Folder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ForgottenPassword.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Founders.cs" />
@@ -429,6 +438,9 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Repository.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ResetPasswordForm.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Settings.generated.cs">

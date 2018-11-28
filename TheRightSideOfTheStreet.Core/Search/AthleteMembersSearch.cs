@@ -1,5 +1,8 @@
 ﻿using Examine;
+using Examine.LuceneEngine.SearchCriteria;
 using Examine.Providers;
+using Examine.SearchCriteria;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TheRightSideOfTheStreet.Common.Extensions;
@@ -22,13 +25,28 @@ namespace TheRightSideOfTheStreet.Core.Search
 
 		public IEnumerable<AthleteMember> GetAthletes()
 		{
-			var criteria = _searchProvider.CreateSearchCriteria(IndexTypes.Member);
-			criteria.NodeTypeAlias("athleteMember");
+			var criteria = GetSearchCriteria();
+			var members = GetSearchResults(criteria);
 
-			var members = _searchProvider.Search(criteria);
-			var member = members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m=> m != null);
+			return members.AsList();
+		}
+	
 
-			return member.AsList();
+		public IEnumerable<AthleteMember> GetAthletes(string query)
+		{
+			if (string.IsNullOrWhiteSpace(query)) return Enumerable.Empty<AthleteMember>();
+
+			var criteria = GetSearchCriteria();
+
+			var words = query.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+			var boostedExamineValue = query.Boost(2);
+			var wordExamineValues = words.Select(w => w.Escape());
+
+			criteria.GroupedOr(new[] { "fullName" }, wordExamineValues.Concat(boostedExamineValue).ToArray());
+
+			var members = GetSearchResults(criteria);
+
+			return members.AsList();
 		}
 
 		public AthleteMember GetAthlete(int athleteId)
@@ -42,5 +60,18 @@ namespace TheRightSideOfTheStreet.Core.Search
 			return member;
 		}
 		
+		private IEnumerable<AthleteMember> GetSearchResults(ISearchCriteria criteria)
+		{
+			var members = _searchProvider.Search(criteria);
+			return members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<AthleteMember>()).Where(m => m != null && m.UmbracoMemberApproved);
+		}
+
+		private ISearchCriteria GetSearchCriteria()
+		{
+			var criteria = _searchProvider.CreateSearchCriteria(IndexTypes.Member);
+			criteria.NodeTypeAlias(AthleteMember.ModelTypeAlias);
+
+			return criteria;
+		}
 	}
 }

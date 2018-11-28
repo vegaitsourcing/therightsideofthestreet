@@ -86,7 +86,8 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 
 			return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
 		}
-		
+
+
 		public static BannerViewModel AsViewModel(this ICompositionContext<Banner> compositionContext, string classSuffix = "ViewModel")
 		{
 		    if (compositionContext == null) return default(BannerViewModel);
@@ -106,6 +107,13 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 			return new ExerciseCategoryViewModel(context);
 		}
 
+		public static AthleteMemberPreviewViewModel AsViewModel(this IAthleteMemberContext<AthleteMember> context, string classSuffix = "ViewModel")
+		{
+			if (context == null) return default(AthleteMemberPreviewViewModel);
+
+			return new AthleteMemberPreviewViewModel(context);
+		}
+
 		public static PrimaryNavigationItemViewModel AsNavigationViewModel(this IPage page) => page != null ? new PrimaryNavigationItemViewModel(page) : null;
 
 		public static IEnumerable<PrimaryNavigationItemViewModel> AsNavigationViewModel(this IEnumerable<IPage> pages)
@@ -114,5 +122,9 @@ namespace TheRightSideOfTheStreet.Core.Extensions
 		//public static XMLSitemapItemViewModel AsXMLSitemapItemViewModel(this IPage page)
 		//	=> page != null ? new XMLSitemapItemViewModel(page) : null;
 
+		public static List<T> GetRandomElements<T>(this IEnumerable<T> list, int elementsCount)
+		{
+			return list.OrderBy(arg => Guid.NewGuid()).Take(elementsCount).ToList();
+		}
 	}
 }
