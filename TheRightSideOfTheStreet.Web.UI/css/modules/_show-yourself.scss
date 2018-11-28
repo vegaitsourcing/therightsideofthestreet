@@ -1,8 +1,3 @@
-.field-validation-error {
-	display: block;
-	color: $red;
-}
-
 .show-yourself-landing {
 	width: 100%;
 	height: auto;
@@ -81,7 +76,7 @@
 	}
 	@include breakpoint(touch) {
 		width: 100%;
-		input {
+		input, select {
 			width: 100%;
 		}
 	}
@@ -94,6 +89,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	@include breakpoint(phone) {
+		flex-direction: column;
+	}
 }
 
 .important-achievements {
@@ -117,13 +115,6 @@
 		border-radius: 50px;
 		font-size: 10px;
 		background: $red;
-		&.field-validation-valid {
-			display: none;
-		}
-		&.field-validation-error {
-			display: inline-block;
-			color: $white;
-		}
 	}
 	p {
 		margin-top: -5px;
@@ -142,20 +133,22 @@
 	text-align: right;
 	.s-m-icon {
 		display: flex;
-		input {
-			flex: 6;
-		}
-		span {
-			flex: 1;
+		flex-direction: column;
+		.s-m-icon-wrap {
 			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-right: 20px;
-			font-size: 22px;
-			color: $white;
-		}
-		.field-validation-valid {
-			display: none;
+			flex-direction: row;
+			input {
+				flex: 6;
+			}
+			span {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 20px;
+				font-size: 22px;
+				color: $white;
+			}
 		}
 	}
 	@include breakpoint(touch) {
@@ -170,14 +163,31 @@
 	}
 }
 
+label {
+	line-height: 45px;
+	padding: 0 20px;
+    display: table;
+}
+
+input[type='file'] {
+    display: none;
+}
+
 .show-yourself-content-second {
 	width: 100%;
 	height: auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	// flex-wrap: wrap;
+	// justify-content: space-between;
 	img {
-		margin: 20px 0;
+		margin: 20px auto;
+	}
+	@include breakpoint(tablet) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include breakpoint(phone) {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
 
