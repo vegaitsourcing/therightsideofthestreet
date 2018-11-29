@@ -19,6 +19,8 @@ namespace TheRightSideOfTheStreet.Common
 		public static int AthleteMembersProfileFolderId => Get<int>("athleteMemberProfilesFolderId");
 		public static string NewAthleteMemberLink => Get<string>("newAthleteMemberLink");
 		public static string BlogUrl => Get<string>("blogUrl");
+		public static string MailchimpKey => Get<string>("mailchimpApiKey");
+		public static string MailchimpListId => Get<string>("mailchimpListId");
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.
 		/// </summary>

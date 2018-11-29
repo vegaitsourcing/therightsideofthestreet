@@ -8,6 +8,8 @@
 		public const string FacebookRegex = @"(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\.-]*)?";
 		public const string InstagramRegex = @"https?:\/\/(www\.)?instagram\.com\/([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)";
 		public const string YoutubeRegex = @"(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9_\-]{1,})";
+		public const string SubmitMessageKey = "Success";
+		public const string SubmitFail = "Fail";
 
 		public static class RequestParameters
 		{
