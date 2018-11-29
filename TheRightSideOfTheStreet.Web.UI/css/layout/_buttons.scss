@@ -95,3 +95,23 @@ input[type='submit'] {
 	background-color: $red;
 	color: $white;
 }
+
+.btn-choose-files {
+	line-height: 45px;
+	display: table;
+	border: 1px solid transparent;
+	background: $white;
+	color: #9b9b9b;
+	font-size: 20px;
+	padding: 0 20px;
+	border-radius: 25px;
+	width: 100%;
+	transition: 0.3s ease-out;
+	input[type='file'] {
+		display: none;
+	}
+	@include hover {
+		color: $red;
+		border-color: $red;
+	}
+}
