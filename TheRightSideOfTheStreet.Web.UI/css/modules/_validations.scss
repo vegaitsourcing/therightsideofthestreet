@@ -1,0 +1,31 @@
+.field-validation-error, .validation-summary-errors {
+	display: block;
+	color: $red;
+}
+
+.important-achievements {
+	span {
+		&.field-validation-valid {
+			display: none;
+		}
+		&.field-validation-error {
+			display: inline-block;
+			color: $white;
+		}
+	}
+}
+
+.social-media {
+	.s-m-icon {
+		.field-validation-valid {
+			display: none;
+		}
+		.field-validation-error {
+			span {
+				clear: both;
+				font-size: 16px;
+				color: $red;
+			}
+		}
+	}
+}
