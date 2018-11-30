@@ -62,6 +62,9 @@
 		background-color: $nero;
 		color: $white;
 	}
+	@include breakpoint(touch) {
+		font-size: 14px;
+	}
 }
 
 .sw-map-container {
