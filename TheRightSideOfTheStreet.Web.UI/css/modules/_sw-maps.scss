@@ -19,6 +19,9 @@
 	.slick-next {
 		right: -45px;
 	}
+	@include breakpoint(phone) {
+		padding: 0;
+	}
 }
 
 .sw-map-cities {
