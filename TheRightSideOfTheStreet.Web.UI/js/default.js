@@ -7,6 +7,7 @@ const athleteForm = require('./athlete-form');
 const exerciseGroup = require('./exercise-group');
 const athleteModule = require('./athlete-module');
 const search = require('./search');
+const newsletter = require('./newsletter');
 //let maps = require('./maps');
 
 let app = {
@@ -34,6 +35,7 @@ let app = {
 		exerciseGroup.sendRequest();
 		athleteModule.filterAthletes();		
 		search.search();
+		newsletter.subscribe();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }
