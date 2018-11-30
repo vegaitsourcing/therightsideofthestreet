@@ -19,23 +19,18 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		}
 
 		[HttpPost]
-		public async Task<ActionResult> SubmitForm(string EmailAddress)
+		public async Task<string> SubmitForm(string emailAddress)
 		{
-			if (!ModelState.IsValid)
-			{
-				return CurrentUmbracoPage();
-			}
-
 			var memeber = new Member
 			{
-				EmailAddress = EmailAddress,
+				EmailAddress = emailAddress,
 				StatusIfNew = Status.Pending,
 				EmailType = "html",
 				IpSignup = Request.UserHostAddress,
 
 				MergeFields = new Dictionary<string, object>
 				{
-					{"EMAILADDRESS", EmailAddress }
+					{"EMAILADDRESS", emailAddress }
 				}
 			};
 
@@ -51,9 +46,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 				Logger.Error(typeof(NewsletterFormController), "Failed to subscribe member.", ex);
 				TempData[Constants.Constants.SubmitFail] = "Fail";
 				ModelState.AddModelError("", UmbracoDictionaryHelper.NewsletterModule.Fail);
-				return CurrentUmbracoPage();
+				return UmbracoDictionaryHelper.NewsletterModule.Fail;
 			}
-			return CurrentUmbracoPage();
+			return UmbracoDictionaryHelper.NewsletterModule.Success;
 
 		}
 	}
