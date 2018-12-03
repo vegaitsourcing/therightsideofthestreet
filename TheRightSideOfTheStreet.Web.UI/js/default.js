@@ -19,6 +19,7 @@ let app = {
 		functions.citiesMapSlider();
 		functions.goToTop();
 		functions.athletePopup();
+		functions.crewItemsPopup();
 		functions.crewPopup();
         functions.menuToggle();
 		listing.donators();

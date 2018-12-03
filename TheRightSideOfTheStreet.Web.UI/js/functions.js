@@ -136,7 +136,22 @@ module.exports = {
 		});
 	},
 
+	crewItemsPopup: function() {
+		$('.sw-crews-city-item').on('click', function(){
+			$(this).closest('.sw-crews-city-list').slideUp(300);
+			$(this).closest('.wrap').find('.sw-crews-crew-list').slideDown(300);
+		});
+		$('.back-to-wrap').on('click', function(){
+			$(this).closest('.sw-crews-crew-list').slideUp(300);
+			$(this).closest('.wrap').find('.sw-crews-city-list').slideDown(300);
+			$(this).closest('.sw-crews').find('.workout-crew-popup').slideUp(300);
+		});
+	},
+
 	crewPopup: function() {
+		$('.sw-crews-crew-item').on('click', function(){
+			$(this).closest('.sw-crews').find('.workout-crew-popup').slideDown(300);
+		});
 		$('.btn-close-crew-popup').on('click', function() {
 			$(this).closest('.workout-crew-popup').slideUp(300);
 		});
