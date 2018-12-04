@@ -10,7 +10,17 @@ module.exports = {
 			const $item = $("div.sw-crews-crew-item[data-city-key=" + itemKey + "]");
 
 			if (!$item) return;
-			$item.siblings("div.sw-crews-crew-item[data-city-key]").attr('style', 'display: none !important');
+			$item.siblings("div.sw-crews-crew-item[data-city-key]").hide();
+			$item.show();
+		});
+
+		$(".sw-crews-crew-item").on("click", function () {
+			const $this = $(this);
+			const itemKey = $this.data("crew-key");
+			const $item = $("div.wrap[data-crew-key=" + itemKey + "]");
+
+			if (!$item) return;
+			$item.siblings("div.wrap[data-crew-key]").hide();
 			$item.show();
 		});
 	}
