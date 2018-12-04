@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Models;
@@ -19,7 +20,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		}
 
 		public string Title { get; }
-		public string Text { get; }
+		public IHtmlString Text { get; }
 		public IList<CityViewModel> Cities { get; }
 		public IList<string> Countries { get; }
 		public IList<CrewViewModel> Crews { get; }

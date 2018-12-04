@@ -58,9 +58,9 @@ namespace TheRightSideOfTheStreet.Models
 		/// Text
 		///</summary>
 		[ImplementPropertyType("text")]
-		public string Text
+		public IHtmlString Text
 		{
-			get { return this.GetPropertyValue<string>("text"); }
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
 		}
 	}
 }

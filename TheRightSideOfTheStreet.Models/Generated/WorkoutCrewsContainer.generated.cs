@@ -44,14 +44,5 @@ namespace TheRightSideOfTheStreet.Models
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Intro Text
-		///</summary>
-		[ImplementPropertyType("introText")]
-		public IHtmlString IntroText
-		{
-			get { return this.GetPropertyValue<IHtmlString>("introText"); }
-		}
 	}
 }
