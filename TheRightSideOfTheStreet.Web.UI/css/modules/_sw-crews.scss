@@ -112,11 +112,7 @@
 	text-align: center;
 	padding: 10px;
 	height: 130px;
-	// sass-lint:disable no-important
-	display: flex !important;
-	// sass-lint:enable no-important
-	align-items: center;
-	justify-content: center;
+	line-height: 110px;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
 }
 
