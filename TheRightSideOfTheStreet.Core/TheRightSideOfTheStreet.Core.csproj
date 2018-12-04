@@ -346,6 +346,7 @@
     <Compile Include="ViewModels\Error404ViewModel.cs" />
     <Compile Include="ViewModels\Partials\CityViewModel.cs" />
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\CountryViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\CommentFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
