@@ -5,6 +5,7 @@ using System.Linq;
 using TheRightSideOfTheStreet.Common.Extensions;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models.DocumentTypes;
@@ -23,6 +24,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			HygieneLinksGroup = GetHygieneLinksGroups(context.Home.HygieneLinks);
 			ContactEmail = context.Home.ContactEmail;
 			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
+			NewsLetter = new NewsletterFormViewModel(); 
 		}
 
 		public ImageViewModel InfoImage { get; }
@@ -31,6 +33,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 		public IList<IEnumerable<LinkViewModel>> HygieneLinksGroup { get; }
 		public string ContactEmail { get; }
 		public IList<SocialLinkViewModel> SocialLinks { get; }
+		public NewsletterFormViewModel NewsLetter { get; }
 
 		private static IList<IEnumerable<LinkViewModel>> GetHygieneLinksGroups(IEnumerable<Link> links)
 		{

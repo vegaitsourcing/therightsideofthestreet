@@ -5,8 +5,15 @@
 		url('../../fonts/dist/svgicons.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'fontawesomeicons';
+	src: url('../../fonts/dist/font-awesome-5-free-solid-900.woff2') format('woff2'),
+		url('../../fonts/dist/font-awesome-5-free-solid-900.woff') format('woff'),
+		url('../../fonts/dist/font-awesome-5-free-solid-900.ttf') format('truetype');
+}
+
 @mixin font-styles {
-	font-family: 'svgicons';
+	font-family: 'svgicons', 'fontawesomeicons';
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
@@ -63,6 +70,15 @@
 	@if $filename == ico-youtube {
 		$char: '\E00D';
 	}
+	@if $filename == ico-user-tie {
+		$char: '\f508';
+	}
+	@if $filename == ico-user-ninja {
+		$char: '\f504';
+	}
+	@if $filename == ico-user-graduate {
+		$char: '\f501';
+	}
 
 	@return $char;
 }
@@ -117,4 +133,12 @@
 .font-ico-youtube {
 	@include font(ico-youtube);
 }
-
+.font-ico-user-tie {
+	@include font(ico-user-tie);
+}
+.font-ico-user-ninja {
+	@include font(ico-user-tie);
+}
+.font-ico-user-graduate {
+	@include font(ico-user-graduate);
+}

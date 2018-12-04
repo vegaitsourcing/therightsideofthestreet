@@ -153,7 +153,7 @@
 	}
 	@include breakpoint(touch) {
 		width: 100%;
-		text-align: left;
+		//text-align: left;
 		.icon {
 			width: 40px;
 		}
@@ -163,15 +163,7 @@
 	}
 }
 
-label {
-	line-height: 45px;
-	padding: 0 20px;
-    display: table;
-}
 
-input[type='file'] {
-    display: none;
-}
 
 .show-yourself-content-second {
 	width: 100%;

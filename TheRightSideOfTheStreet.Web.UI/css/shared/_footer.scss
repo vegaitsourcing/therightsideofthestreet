@@ -2,6 +2,7 @@
 //------------------------------------------------------------------------------
 
 .footer {
+	//display: none;
 	padding: 20px;
 	background-color: $black;
 	background: url('../../images/street-workout-2629179_1920.png') no-repeat;
@@ -15,7 +16,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		input {
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 	}
 	@include breakpoint(phone) {

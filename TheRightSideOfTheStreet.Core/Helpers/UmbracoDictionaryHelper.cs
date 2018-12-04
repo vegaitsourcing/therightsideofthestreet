@@ -40,6 +40,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
 			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
 			public static string SubscriptionFooterMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.FooterMessage");
+			public static string Success => UmbracoHelper.GetDictionaryValue("NewsletterModule.Success");
+			public static string Fail => UmbracoHelper.GetDictionaryValue("NewsletterModule.Fail");
 		}
 
 
