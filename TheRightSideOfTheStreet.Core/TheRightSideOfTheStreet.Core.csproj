@@ -283,6 +283,7 @@
     <Compile Include="Controllers\RenderMvc\BlogPageController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
+    <Compile Include="Controllers\RenderMvc\ForgottenPasswordController.cs" />
     <Compile Include="Controllers\RenderMvc\LoginFormController.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseGroupController.cs" />
     <Compile Include="Controllers\RenderMvc\ExerciseLandingController.cs" />
@@ -294,6 +295,7 @@
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\CommentFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\ForgottenPasswordFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ShowYourselfFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ExerciseGroupSendRequestController.cs" />
     <Compile Include="Controllers\Surface\Forms\LoginAthleteFormController.cs" />
@@ -338,9 +340,11 @@
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\ForgottenPasswordViewModel.cs" />
     <Compile Include="ViewModels\Partials\CityViewModel.cs" />
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\CommentFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\ForgottenPasswordFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\ExerciseGroupPreviewViewModel.cs" />
