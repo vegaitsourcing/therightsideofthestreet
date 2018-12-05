@@ -34,6 +34,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public AthleteForm AthleteForm => SiteContext.AthleteForm;
 
+		public ForgottenPassword ForgottenPassword => SiteContext.ForgottenPassword;
+
 		private ISiteContext SiteContext { get; }
 	}
 }

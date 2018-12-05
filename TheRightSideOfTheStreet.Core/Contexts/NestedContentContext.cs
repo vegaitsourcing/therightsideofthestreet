@@ -24,6 +24,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public IEnumerable<Crew> Crews => SiteContext.Crews;
 		public ResetPasswordForm ResetPassword => SiteContext.ResetPassword;
 		public AthleteForm AthleteForm => SiteContext.AthleteForm;
+		public ForgottenPassword ForgottenPassword => SiteContext.ForgottenPassword;
 
 
 		private ISiteContext SiteContext { get; }

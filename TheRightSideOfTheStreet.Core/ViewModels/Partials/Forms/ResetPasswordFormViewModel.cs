@@ -1,4 +1,5 @@
 ﻿using TheRightSideOfTheStreet.Core.Validations;
+using UmbracoValidationAttributes;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
@@ -10,12 +11,15 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		[UmbracoDisplayName("BecomeMember.Email")]
 		public string Email { get; set; }
 
+
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		[UmbracoRegularExpression("UmbracoValidation.PasswordFormat", Constants.Constants.PaswordRegex)]
 		public string NewPassword { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		[UmbracoCompare("UmbracoValidation.PasswordMatch", "Password")]
 		public string ConfirmNewPassword { get; set; }
 	}
 }
