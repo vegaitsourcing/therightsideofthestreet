@@ -10,6 +10,7 @@ module.exports = {
 			const $item = $("div.sw-crews-crew-item[data-city-key=" + itemKey + "]");
 
 			if (!$item) return;
+
 			$item.siblings("div.sw-crews-crew-item[data-city-key]").hide();
 			$item.show();
 		});
@@ -22,6 +23,10 @@ module.exports = {
 			if (!$item) return;
 			$item.siblings("div.wrap[data-crew-key]").hide();
 			$item.show();
+		});
+
+		$("[back-to-wrap]").on("click", function () {
+			$("div.sw-crews-crew-item[data-city-key]").hide();
 		});
 	}
 };
