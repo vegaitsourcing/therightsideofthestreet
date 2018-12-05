@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Crews Module</summary>
-	[PublishedContentModel("crewsModule")]
-	public partial class CrewsModule
+	/// <summary>Error404</summary>
+	[PublishedContentModel("error404")]
+	public partial class Error404 : Page, IBanner
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "crewsModule";
+		public new const string ModelTypeAlias = "error404";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public CrewsModule(IPublishedContent content)
+		public Error404(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,36 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CrewsModule, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Error404, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Crews
+		/// Banner Image: Note: Image dimensions should be 1500x745px
 		///</summary>
-		[ImplementPropertyType("crews")]
-		public string Crews
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
 		{
-			get { return this.GetPropertyValue<string>("crews"); }
+			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerImage(this); }
 		}
 
 		///<summary>
-		/// Text
+		/// Banner Link
 		///</summary>
-		[ImplementPropertyType("text")]
-		public IHtmlString Text
+		[ImplementPropertyType("bannerLink")]
+		public RJP.MultiUrlPicker.Models.Link BannerLink
 		{
-			get { return this.GetPropertyValue<IHtmlString>("text"); }
+			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerLink(this); }
+		}
+
+		///<summary>
+		/// Banner Title
+		///</summary>
+		[ImplementPropertyType("bannerTitle")]
+		public string BannerTitle
+		{
+			get { return TheRightSideOfTheStreet.Models.Banner.GetBannerTitle(this); }
 		}
 	}
 }

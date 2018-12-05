@@ -40,6 +40,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
 			public static string SubscribeButton => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscribeButton");
 			public static string SubscriptionFooterMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.FooterMessage");
+			public static string Success => UmbracoHelper.GetDictionaryValue("NewsletterModule.Success");
+			public static string Fail => UmbracoHelper.GetDictionaryValue("NewsletterModule.Fail");
 		}
 
 
@@ -132,6 +134,14 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		public static class Banner
 		{
 			public static string FollowUs => UmbracoHelper.GetDictionaryValue("Banner.FollowUs");
+		}
+
+		public static class CrewsModule
+		{
+			public static string Search => UmbracoHelper.GetDictionaryValue("CrewsModule.Search");
+			public static string Find => UmbracoHelper.GetDictionaryValue("CrewsModule.Find");
+			public static string ShowMore => UmbracoHelper.GetDictionaryValue("CrewsModule.ShowMore");
+			public static string BackTo => UmbracoHelper.GetDictionaryValue("CrewsModule.BackTo");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

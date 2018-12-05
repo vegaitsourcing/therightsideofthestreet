@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
@@ -20,6 +16,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 			Image = content.Image.AsViewModel();
 			Text = content.Text;
 			Key = content.GetKey();
+			ParentKey = content.Parent.GetKey();
 		}
 
 		public string CrewName { get; }
@@ -27,5 +24,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 		public ImageViewModel Image { get; }
 		public IHtmlString Text { get; }
 		public Guid Key { get; }
+		public Guid ParentKey { get; }
 	}
 }

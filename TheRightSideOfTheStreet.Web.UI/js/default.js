@@ -7,6 +7,8 @@ const athleteForm = require('./athlete-form');
 const exerciseGroup = require('./exercise-group');
 const athleteModule = require('./athlete-module');
 const search = require('./search');
+const newsletter = require('./newsletter');
+const crewsModule = require('./crews-module');
 //let maps = require('./maps');
 
 let app = {
@@ -18,6 +20,7 @@ let app = {
 		functions.citiesMapSlider();
 		functions.goToTop();
 		functions.athletePopup();
+		functions.crewItemsPopup();
 		functions.crewPopup();
         functions.menuToggle();
 		listing.donators();
@@ -34,6 +37,8 @@ let app = {
 		exerciseGroup.sendRequest();
 		athleteModule.filterAthletes();		
 		search.search();
+		newsletter.subscribe();
+		crewsModule.chooseCrew();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

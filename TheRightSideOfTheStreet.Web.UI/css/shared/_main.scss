@@ -155,7 +155,7 @@
 
 .blog-navigation {
 	@extend %clearfix;
-	margin: -66px 0 55px;
+	margin-bottom: 55px;
 	.btn {
 		font-size: 22px;
 		text-transform: none;
@@ -742,6 +742,7 @@
 }
 
 .workout-crew-popup {
+	display: none;
 	padding: 46px 0 75px;
 	background-color: #f5f5f5;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
@@ -752,7 +753,7 @@
 		box-shadow: none;
 		background: transparent;
 		border-radius: 0;
-		margin-bottom: 48px;
+		margin: 0 auto 48px;
 	}
 	.crew-image {
 		margin-bottom: 67px;
