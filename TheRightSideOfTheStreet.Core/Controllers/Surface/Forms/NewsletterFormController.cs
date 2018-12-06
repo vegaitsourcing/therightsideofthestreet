@@ -26,35 +26,35 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			if (!string.IsNullOrEmpty(emailAddress) && emailRegex.IsMatch(emailAddress))
 			{
-				//validiradi email
-			}
+				var member = new Member
+				{
+					EmailAddress = emailAddress,
+					StatusIfNew = Status.Pending,
+					EmailType = "html",
+					IpSignup = Request.UserHostAddress,
 
-			var member = new Member
-			{
-				EmailAddress = emailAddress,
-				StatusIfNew = Status.Pending,
-				EmailType = "html",
-				IpSignup = Request.UserHostAddress,
-
-				MergeFields = new Dictionary<string, object>
+					MergeFields = new Dictionary<string, object>
 				{
 					{"EMAILADDRESS", emailAddress }
 				}
-			};
+				};
 
-			try
-			{
-				MailChimpManager Manager = new MailChimpManager(AppSettings.MailchimpKey);
-				var result = await Manager.Members.AddOrUpdateAsync(AppSettings.MailchimpListId, member);
+				try
+				{
+					MailChimpManager Manager = new MailChimpManager(AppSettings.MailchimpKey);
+					var result = await Manager.Members.AddOrUpdateAsync(AppSettings.MailchimpListId, member);
 
-				TempData[Constants.Constants.SubmitMessageKey] = "Success";
+					TempData[Constants.Constants.SubmitMessageKey] = "Success";
+				}
+				catch (Exception ex)
+				{
+					Logger.Error(typeof(NewsletterFormController), "Failed to subscribe member.", ex);
+					return UmbracoDictionaryHelper.NewsletterModule.Fail;
+				}
+				return UmbracoDictionaryHelper.NewsletterModule.Success;
 			}
-			catch (Exception ex)
-			{
-				Logger.Error(typeof(NewsletterFormController), "Failed to subscribe member.", ex);
-				return UmbracoDictionaryHelper.NewsletterModule.Fail;
-			}
-			return UmbracoDictionaryHelper.NewsletterModule.Success;
+
+			return UmbracoDictionaryHelper.UmbracoValidation.EmailAddress;
 
 		}
 	}
