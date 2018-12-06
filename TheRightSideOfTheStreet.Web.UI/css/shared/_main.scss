@@ -748,12 +748,13 @@
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
 	.wrap {
 		position: relative;
+		text-align: center;
 	}
 	.sw-crews-crew-item {
 		box-shadow: none;
 		background: transparent;
 		border-radius: 0;
-		margin: 0 auto 48px;
+		margin-bottom: 48px;
 	}
 	.crew-image {
 		margin-bottom: 67px;
