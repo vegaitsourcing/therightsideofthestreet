@@ -34,8 +34,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 					string emailFrom = settings.AdminEmailAddress;
 					string baseUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, string.Empty);
 					string resetLink = baseUrl + UmbracoHelperExtensions.GetPage<ResetPasswordForm>(uh, CurrentPage.Site().Id).Url;
-						/*"/reset-password"*/;
-					//UmbracoHelperExtensions.GetPage<ResetPasswordForm>(uh, CurrentPage.Site().Id).Url
 
 					EmailHandler emailSender = new EmailHandler();
 					emailSender.SendResetPasswordEmail(emailFrom, emailTo, resetLink);
