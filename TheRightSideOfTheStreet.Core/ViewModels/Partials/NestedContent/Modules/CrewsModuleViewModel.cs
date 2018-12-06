@@ -16,7 +16,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 			Crews = context.Crews.AsViewModel<CrewViewModel>().ToList();
 			Cities = helper.TypedContentAtXPath($"//{City.ModelTypeAlias}")?.OfType<City>().AsViewModel<CityViewModel>().Where(m => HasCrew(m.Key)).ToList();
 			Countries = Cities.Select(x => x.Country).Distinct().ToList();
-			Title = context.CurrentPage.Title;
+			Title = context.NestedContent.Title;
 			Text = context.NestedContent.Text;
 		}
 

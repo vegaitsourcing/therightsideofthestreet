@@ -144,6 +144,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string BackTo => UmbracoHelper.GetDictionaryValue("CrewsModule.BackTo");
 		}
 
+		public static class ForgottenPassword
+		{
+			public static string Send => UmbracoHelper.GetDictionaryValue("ForgottenPassword.Send");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 
 	}
