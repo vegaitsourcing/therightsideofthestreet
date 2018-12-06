@@ -16,5 +16,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 		public string CityName { get; set; }
 		public string Country { get; }
 		public Guid Key { get; }
+		public bool HasCrew { get; set; }
 	}
 }

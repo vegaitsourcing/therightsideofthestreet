@@ -2,6 +2,7 @@
 using MailChimp.Net.Models;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using TheRightSideOfTheStreet.Common;
@@ -21,7 +22,14 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		[HttpPost]
 		public async Task<string> SubmitForm(string emailAddress)
 		{
-			var memeber = new Member
+			Regex emailRegex = new Regex(AppSettings.EmailRegex);
+
+			if (!string.IsNullOrEmpty(emailAddress) && emailRegex.IsMatch(emailAddress))
+			{
+				//validiradi email
+			}
+
+			var member = new Member
 			{
 				EmailAddress = emailAddress,
 				StatusIfNew = Status.Pending,
@@ -37,15 +45,13 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			try
 			{
 				MailChimpManager Manager = new MailChimpManager(AppSettings.MailchimpKey);
-				var result = await Manager.Members.AddOrUpdateAsync(AppSettings.MailchimpListId, memeber);
+				var result = await Manager.Members.AddOrUpdateAsync(AppSettings.MailchimpListId, member);
 
 				TempData[Constants.Constants.SubmitMessageKey] = "Success";
 			}
 			catch (Exception ex)
 			{
 				Logger.Error(typeof(NewsletterFormController), "Failed to subscribe member.", ex);
-				TempData[Constants.Constants.SubmitFail] = "Fail";
-				ModelState.AddModelError("", UmbracoDictionaryHelper.NewsletterModule.Fail);
 				return UmbracoDictionaryHelper.NewsletterModule.Fail;
 			}
 			return UmbracoDictionaryHelper.NewsletterModule.Success;
