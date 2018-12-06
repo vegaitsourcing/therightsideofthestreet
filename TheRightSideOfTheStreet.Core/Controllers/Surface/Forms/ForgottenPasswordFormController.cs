@@ -18,7 +18,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 		public ActionResult SendEmail(ForgottenPasswordFormViewModel model)
 		{
-			//UmbracoHelper uh = new UmbracoHelper(UmbracoContext.Current);
+			UmbracoHelper uh = new UmbracoHelper(UmbracoContext.Current);
 			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
 			var service = ApplicationContext.Current.Services.MemberService;
 
@@ -33,11 +33,12 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 					string emailTo = model.Email;
 					string emailFrom = settings.AdminEmailAddress;
 					string baseUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, string.Empty);
-					string resetLink = baseUrl + "/reset-password";
-
+					string resetLink = baseUrl + UmbracoHelperExtensions.GetPage<ResetPasswordForm>(uh, CurrentPage.Site().Id).Url;
+						/*"/reset-password"*/;
+					//UmbracoHelperExtensions.GetPage<ResetPasswordForm>(uh, CurrentPage.Site().Id).Url
 
 					EmailHandler emailSender = new EmailHandler();
-					emailSender.SendResetPasswordEmail(emailFrom,emailTo, resetLink);
+					emailSender.SendResetPasswordEmail(emailFrom, emailTo, resetLink);
 
 					return RedirectToCurrentUmbracoPage();
 				}
