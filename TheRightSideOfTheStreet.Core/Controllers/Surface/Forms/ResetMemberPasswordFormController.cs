@@ -17,6 +17,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult ResetPassword(ResetPasswordFormViewModel model)
 		{
 			UmbracoHelper uh = new UmbracoHelper(UmbracoContext.Current);

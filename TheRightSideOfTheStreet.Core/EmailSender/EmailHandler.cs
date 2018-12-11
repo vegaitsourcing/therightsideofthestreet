@@ -46,7 +46,22 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 
 		}
-		
+
+		public bool SendResetPasswordEmail(string adminEmailAddress, string emailTo, string resetLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Reset your password");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"You have requested to reset your password, please click on the link bellow: <a href='{resetLink}'>Reset Password Link</a>");
+
+
+
+			return SendEmail(adminEmailAddress, subject.ToString(), body.ToString(), emailTo, null);
+		}
+
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary

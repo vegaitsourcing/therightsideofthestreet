@@ -7,10 +7,13 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 	{
 		public LoginViewModel(IPageContext<LoginForm> context) : base(context)
 		{
+			ForgottenPassword = context.ForgottenPassword.Url;
 			ResetPassword = context.ResetPassword.Url;
 			RegisterForm = context.AthleteForm.Url;
+
 		}
 
+		public string ForgottenPassword { get; }
 		public string ResetPassword { get; }
 		public string RegisterForm { get; }
 	}

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheRightSideOfTheStreet.Models;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 {
@@ -11,11 +8,14 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials
 	{
 		public CityViewModel(City content)
 		{
-			CityName = content.CityName;
+			CityName = content.Name;
 			Country = content.Parent.Name;
+			Key = content.GetKey();
 		}
 
 		public string CityName { get; set; }
 		public string Country { get; }
+		public Guid Key { get; }
+		public bool HasCrew { get; set; }
 	}
 }

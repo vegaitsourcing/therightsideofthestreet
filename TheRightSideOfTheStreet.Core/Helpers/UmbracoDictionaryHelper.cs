@@ -136,6 +136,19 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string FollowUs => UmbracoHelper.GetDictionaryValue("Banner.FollowUs");
 		}
 
+		public static class CrewsModule
+		{
+			public static string Search => UmbracoHelper.GetDictionaryValue("CrewsModule.Search");
+			public static string Find => UmbracoHelper.GetDictionaryValue("CrewsModule.Find");
+			public static string ShowMore => UmbracoHelper.GetDictionaryValue("CrewsModule.ShowMore");
+			public static string BackTo => UmbracoHelper.GetDictionaryValue("CrewsModule.BackTo");
+		}
+
+		public static class ForgottenPassword
+		{
+			public static string Send => UmbracoHelper.GetDictionaryValue("ForgottenPassword.Send");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 
 	}

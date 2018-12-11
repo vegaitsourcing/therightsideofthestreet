@@ -23,6 +23,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 			LazyCrews = new Lazy<IEnumerable<Crew>>(() => UmbracoHelper.TypedContentAtXPath($"//{Crew.ModelTypeAlias}")?.OfType<Crew>());
 			LazyResetPasswordForm = new Lazy<ResetPasswordForm>(() => UmbracoHelper.GetPage<ResetPasswordForm>(Home.Id));
 			LazyAthleteForm = new Lazy<AthleteForm>(() => UmbracoHelper.GetPage<AthleteForm>(Home.Id));
+			LazyForgottenPassword = new Lazy<ForgottenPassword>(() => UmbracoHelper.GetPage<ForgottenPassword>(Home.Id));
 
 		}
 
@@ -35,6 +36,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public IEnumerable<Crew> Crews => LazyCrews.Value;
 		public ResetPasswordForm ResetPassword => LazyResetPasswordForm.Value;
 		public AthleteForm AthleteForm => LazyAthleteForm.Value;
+		public ForgottenPassword ForgottenPassword => LazyForgottenPassword.Value;
+
 
 
 		protected UmbracoHelper UmbracoHelper { get; }
@@ -48,5 +51,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		private Lazy<IEnumerable<Crew>> LazyCrews { get; }
 		private Lazy<ResetPasswordForm> LazyResetPasswordForm { get; }
 		private Lazy<AthleteForm> LazyAthleteForm { get; }
-    }
+		private Lazy<ForgottenPassword> LazyForgottenPassword { get; }
+
+	}
 }

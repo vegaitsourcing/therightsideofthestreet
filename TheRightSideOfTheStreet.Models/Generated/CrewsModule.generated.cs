@@ -46,12 +46,21 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Crews
+		/// Text
 		///</summary>
-		[ImplementPropertyType("crews")]
-		public string Crews
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
 		{
-			get { return this.GetPropertyValue<string>("crews"); }
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 }

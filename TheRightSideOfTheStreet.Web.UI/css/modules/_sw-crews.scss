@@ -51,20 +51,6 @@
 	grid-column-gap: 20px;
 	grid-row-gap: 30px;
 	margin: 30px 0;
-	// .slick-slide {
-	// 	padding: 15px 10px;
-	// }
-	// .slick-arrow {
-	// 	top: 46px;
-	// 	margin-top: 0;
-	// 	color: $nero;
-	// }
-	// .slick-prev {
-	// 	left: -60px;
-	// }
-	// .slick-next {
-	// 	right: -60px;
-	// }
 }
 
 .sw-crews-city-item {
@@ -99,11 +85,6 @@
 .sw-crews-crew-list {
 	display: none;
 	overflow: hidden;
-	//margin-bottom: 68px;
-	// .slick-list {
-	// 	padding-top: 15px;
-	// 	padding-bottom: 15px;
-	// }
 }
 
 .sw-crews-crew-item {
@@ -114,6 +95,10 @@
 	height: 130px;
 	line-height: 110px;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
+	position: relative;
+	* {
+		vertical-align: middle;
+	}
 }
 
 .show-more-wrap, .back-to-wrap {

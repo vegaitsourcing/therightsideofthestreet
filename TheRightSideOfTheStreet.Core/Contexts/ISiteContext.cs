@@ -15,5 +15,6 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		IEnumerable<Crew> Crews { get; }
 		ResetPasswordForm ResetPassword { get; }
 		AthleteForm AthleteForm { get; }
+		ForgottenPassword ForgottenPassword { get; }
     }
 }
