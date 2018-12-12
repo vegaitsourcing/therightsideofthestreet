@@ -113,6 +113,13 @@ module.exports = {
 		});
 	},
 
+	fancyBox: function() {
+		$('[data-fancybox="gallery"]').fancybox({
+			// 'width': 600, //or whatever you want
+			// 'height': 300
+		});
+	},
+
 	athletePopup: function() {
 		const swItem = $('.sw-atlete-item');
 		swItem.find('.thumbnail, .sw-atlete-info h4 a').on('click', function() {

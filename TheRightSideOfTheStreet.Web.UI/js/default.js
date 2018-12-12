@@ -19,6 +19,7 @@ let app = {
 		functions.eventsSlider();
 		functions.citiesMapSlider();
 		functions.goToTop();
+		functions.fancyBox();
 		functions.athletePopup();
 		functions.crewItemsPopup();
 		functions.crewPopup();

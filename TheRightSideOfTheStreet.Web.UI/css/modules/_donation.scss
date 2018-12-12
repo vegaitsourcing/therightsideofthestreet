@@ -57,16 +57,26 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		p {
+		margin-bottom: 30px;
+		span {
+			display: block;
 			flex: 1;
-			padding-bottom: 20px;
+			padding-bottom: 10px;
 			text-align: center;
 			color: $white;
 			font-weight: 700;
-			span {
-				font-size: 16px;
-				font-weight: 400;
-			}
+		}
+		.city {
+			font-size: 16px;
+			font-weight: 400;
+		}
+	}
+	.donators-block {
+		width: 15%;
+		text-align: center;
+		img {
+			margin-bottom: 10px;
+			border-radius: 50%;
 		}
 	}
 	ul {
