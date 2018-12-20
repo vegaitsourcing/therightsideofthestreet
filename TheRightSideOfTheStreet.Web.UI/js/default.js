@@ -36,7 +36,8 @@ let app = {
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
-		athleteModule.filterAthletes();		
+		athleteModule.filterAthletes();
+		athleteModule.loadMore();
 		search.search();
 		newsletter.subscribe();
 		crewsModule.chooseCrew();

@@ -101,6 +101,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		{
 			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteLanding.IntroduceYourself");
 			public static string Search => UmbracoHelper.GetDictionaryValue("AthleteLanding.Search");
+			public static string ShowMore => UmbracoHelper.GetDictionaryValue("AthleteLanding.ShowMore");
 		}
 
 		public static class LoginForm

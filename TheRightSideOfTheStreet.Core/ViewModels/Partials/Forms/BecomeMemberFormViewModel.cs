@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Web;
 using TheRightSideOfTheStreet.Core.Validations;
 using TheRightSideOfTheStreet.Models.Extensions;
 
@@ -6,6 +7,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
 	public class BecomeMemberFormViewModel
 	{
+		
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
 		public string Name { get; set; }

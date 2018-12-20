@@ -34,6 +34,35 @@ module.exports = {
 		// 'contains' function is case insensitive now
 		jQuery.expr[':'].contains = function (a, i, m) {
 			return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-		};
+		};	
+	},
+
+	loadMore: function () {
+
+		var numberOfShown = 0;
+		let $loadbutton = $('#loadbutton');
+		let numberOfItems = $loadbutton.data("number");
+		$('.sw-atlete-item[data-item]').hide();
+		showGroups(numberOfShown);
+		hideLoadMoreButton(numberOfItems, numberOfShown);
+
+		$loadbutton.on('click', function () {
+			if (numberOfShown * 6 < numberOfItems) {
+				numberOfShown = numberOfShown + 1;
+				showGroups(numberOfShown);
+				hideLoadMoreButton(numberOfItems, numberOfShown);
+			}
+		});
+
+		function hideLoadMoreButton(numberOfItems, numberOfShown) {
+			if (numberOfItems === undefined || numberOfItems < 6 || (numberOfShown + 1) * 6 >= numberOfItems) {
+				$loadbutton.hide();
+			}
+		}
+		function showGroups(numb) {
+			for (var i = numb * 6; i < numb * 6 + 6; i++) {
+				$('.sw-atlete-item[data-numbr=' + i + ']').show();
+			}
+		}
 	}
 };

@@ -175,9 +175,10 @@ module.exports = {
 			$menu.addClass(openClass);
 		});
 
-		$menuClose.on('click', function() {
+		$menuClose.on('click', function () {
 			$menu.removeClass(openClass);
-		})
+		});
 	}
+
 
 };
