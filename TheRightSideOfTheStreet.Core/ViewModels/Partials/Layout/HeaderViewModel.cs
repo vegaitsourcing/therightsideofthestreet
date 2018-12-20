@@ -1,14 +1,15 @@
-﻿using TheRightSideOfTheStreet.Common.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using TheRightSideOfTheStreet.Common.Extensions;
+using TheRightSideOfTheStreet.Core.Contexts;
+using TheRightSideOfTheStreet.Core.Extensions;
+using TheRightSideOfTheStreet.Core.Search;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
+using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
 using TheRightSideOfTheStreet.Models.DocumentTypes;
 using TheRightSideOfTheStreet.Models.Extensions;
-using TheRightSideOfTheStreet.Core.Contexts;
-using TheRightSideOfTheStreet.Core.Extensions;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
-using TheRightSideOfTheStreet.Core.ViewModels.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
@@ -26,6 +27,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
 			Languages = GetLanguages(context.Languages, context.Page.AlternatePages.ToList()).AsList();
 			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
+			AthleteMembers = GetAthletes(context);
 		}
 
 		public string HomepageUrl { get; }
@@ -44,6 +46,16 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 
 				yield return page.AsViewModel(website.Name) ?? website.AsViewModel(website.Name);
 			}
+		}
+
+		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
+
+		private IList<AthleteMemberPreviewViewModel> GetAthletes(IPageContext<IPage> context)
+		{
+			var searcher = new AthleteMembersSearch();
+
+			return searcher.GetAthletes().Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
+
 		}
 	}
 }

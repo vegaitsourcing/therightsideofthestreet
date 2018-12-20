@@ -29,4 +29,5 @@ module.exports = {
 			$("div.sw-crews-crew-item[data-city-key]").hide();
 		});
 	}
+
 };
