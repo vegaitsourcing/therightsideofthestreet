@@ -44,23 +44,5 @@ namespace TheRightSideOfTheStreet.Models
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Highlight Title
-		///</summary>
-		[ImplementPropertyType("highlightTitle")]
-		public string HighlightTitle
-		{
-			get { return this.GetPropertyValue<string>("highlightTitle"); }
-		}
-
-		///<summary>
-		/// Highlight Video: ensure the URL contains embed rather watch as the /embed
-		///</summary>
-		[ImplementPropertyType("highlightVideo")]
-		public string HighlightVideo
-		{
-			get { return this.GetPropertyValue<string>("highlightVideo"); }
-		}
 	}
 }
