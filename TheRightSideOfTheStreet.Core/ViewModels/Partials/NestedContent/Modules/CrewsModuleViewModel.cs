@@ -18,6 +18,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 			Countries = Cities.Select(x => x.Country).Distinct().ToList();
 			Title = context.NestedContent.Title;
 			Text = context.NestedContent.Text;
+			CityKeys = Crews.Where(m => m.ParentKey != Guid.Empty).Select(m => m.ParentKey).Distinct().ToList();
 		}
 
 		public string Title { get; }
@@ -25,6 +26,12 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		public IList<CityViewModel> Cities { get; }
 		public IList<string> Countries { get; }
 		public IList<CrewViewModel> Crews { get; }
+		public IReadOnlyList<Guid> CityKeys { get; set; }
+
+		public IReadOnlyList<CrewViewModel> GetCrewByParentKey(Guid parentKey)
+		{
+			return Crews.Where(m => m.ParentKey != Guid.Empty && Equals(m.ParentKey, parentKey)).ToList();
+		}
 
 		private bool HasCrew(Guid cityKey)
 		{

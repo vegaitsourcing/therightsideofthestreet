@@ -40,7 +40,7 @@ module.exports = {
 	loadMore: function () {
 
 		var numberOfShown = 0;
-		let $loadbutton = $('#loadbutton');
+		let $loadbutton = $('#loadAthletes');
 		let numberOfItems = $loadbutton.data("number");
 		$('.sw-atlete-item[data-item]').hide();
 		showGroups(numberOfShown);
@@ -56,6 +56,7 @@ module.exports = {
 
 		function hideLoadMoreButton(numberOfItems, numberOfShown) {
 			if (numberOfItems === undefined || numberOfItems < 6 || (numberOfShown + 1) * 6 >= numberOfItems) {
+				
 				$loadbutton.hide();
 			}
 		}

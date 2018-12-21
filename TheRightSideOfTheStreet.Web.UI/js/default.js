@@ -41,6 +41,7 @@ let app = {
 		search.search();
 		newsletter.subscribe();
 		crewsModule.chooseCrew();
+		crewsModule.loadMoreCities();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

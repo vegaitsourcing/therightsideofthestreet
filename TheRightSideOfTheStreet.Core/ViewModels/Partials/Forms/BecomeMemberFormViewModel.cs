@@ -2,6 +2,7 @@
 using System.Web;
 using TheRightSideOfTheStreet.Core.Validations;
 using TheRightSideOfTheStreet.Models.Extensions;
+using UmbracoValidationAttributes;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
@@ -29,7 +30,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		public string Address { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]
-		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		[UmbracoRegularExpression("UmbracoValidation.PhoneNumber", Constants.Constants.PhoneNumber)]
 		public string MblNumber { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]

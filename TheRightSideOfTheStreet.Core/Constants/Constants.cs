@@ -10,6 +10,7 @@
 		public const string YoutubeRegex = @"(?:https|http)\:\/\/(?:[\w]+\.)?youtube\.com\/(?:c\/|channel\/|user\/)?([a-zA-Z0-9_\-]{1,})";
 		public const string SubmitMessageKey = "Success";
 		public const string SubmitFail = "Fail";
+		public const string PhoneNumber = @"^(?=(?:\D*\d){10,15}\D*$)\+?[0-9]{1,3}[\s-]?(?:\(0?[0-9]{1,5}\)|[0-9]{1,5})[-\s]?[0-9][\d\s-]{5,7}\s?(?:x[\d-]{0,4})?$";
 
 		public static class RequestParameters
 		{
