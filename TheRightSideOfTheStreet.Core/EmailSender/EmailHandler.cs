@@ -133,6 +133,30 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
 		}
 
+		public bool CompetitionRequest(LeaguesFormViewModel model, string adminEmailAddress)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za takmicenje ");
+
+			StringBuilder body = new StringBuilder();
+			body.Append($"Ime i prezime: {model.Name}");
+			body.AppendLine($" {model.Surname}");
+			body.AppendLine($"Email: {model.Email}");
+			body.AppendLine($"Ekipa: {model.Crews}");
+			body.AppendLine($"Grad: {model.City}");
+
+
+			IEnumerable<Attachment> attachments = new List<Attachment>()
+			{
+				new Attachment(model.ProfilePicture.InputStream, model.ProfilePicture.FileName, model.ProfilePicture.ContentType)
+			};
+
+			string senderEmail = model.Email;
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
+
+		}
+
 		/// <summary>
 		/// Tries to send email three times, third time using the sender email address from Web.Config.
 		/// </summary>

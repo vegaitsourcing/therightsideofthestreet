@@ -151,6 +151,13 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Send => UmbracoHelper.GetDictionaryValue("ForgottenPassword.Send");
 		}
 
+		public static class LeagueForm
+		{
+			public static string Crews => UmbracoHelper.GetDictionaryValue("LeagueForm.Crews");
+			public static string Participate => UmbracoHelper.GetDictionaryValue("LeagueForm.Participate");
+			public static string SendRequest => UmbracoHelper.GetDictionaryValue("LeagueForm.SendRequest");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 
 	}
