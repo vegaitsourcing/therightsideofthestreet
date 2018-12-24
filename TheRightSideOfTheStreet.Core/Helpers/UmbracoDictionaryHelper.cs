@@ -117,6 +117,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ForgottenPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ForgottenPassword");
 			public static string ResetPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPassword");
 			public static string ResetPasswordFailed => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPasswordFailed");
+			public static string MemberLocked => UmbracoHelper.GetDictionaryValue("LoginForm.MemberLocked");
 		}
 
 		public static class Footer

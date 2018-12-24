@@ -62,6 +62,24 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			return SendEmail(adminEmailAddress, subject.ToString(), body.ToString(), emailTo, null);
 		}
 
+		public bool MemberLockedSendMail(LoginFormViewModel model, string emailFrom, string adminEmailAddress, string fullName, string athleteMemberLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zakljucana lozinka");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Clan cija je lozinka zakljucana:{fullName}");
+			body.AppendLine($" Profil mozete pogledati putem linka - <a href={athleteMemberLink}>{fullName}</a>");
+
+			string senderEmail = emailFrom;
+
+			return SendEmail(emailFrom, subject.ToString(), body.ToString(), adminEmailAddress, null);
+
+		}
+
+
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary
