@@ -49,9 +49,14 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 					string fullName = findMember.Name;
 
 					EmailHandler emailSender = new EmailHandler();
-					emailSender.MemberLockedSendMail(model, emailFrom, emailTo, fullName, AthleteMemberLink);
+					bool sentMail = emailSender.MemberLockedSendMail(model, emailFrom, emailTo, fullName, AthleteMemberLink);
 
-					ModelState.AddModelError("", UmbracoDictionaryHelper.LoginForm.MemberLocked);
+					if (!sentMail)
+					{
+						TempData[Constants.Constants.TempDataFail] = "fail";
+						return CurrentUmbracoPage();
+					}
+					TempData[Constants.Constants.TempDataSuccess] = "success";
 
 				}
 				catch (Exception ex)
