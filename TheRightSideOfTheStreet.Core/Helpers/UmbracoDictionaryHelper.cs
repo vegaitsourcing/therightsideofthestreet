@@ -165,7 +165,9 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string City => UmbracoHelper.GetDictionaryValue("SWLeague.City");
 			public static string FullName => UmbracoHelper.GetDictionaryValue("SWLeague.FullName");
 			public static string Crew => UmbracoHelper.GetDictionaryValue("SWLeague.Crew");
+			public static string NumberOfCompetitions => UmbracoHelper.GetDictionaryValue("SWLeague.NumberOfCompetitions");
 			public static string Points => UmbracoHelper.GetDictionaryValue("SWLeague.Points");
+
 
 		}
 
