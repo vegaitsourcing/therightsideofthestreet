@@ -6,16 +6,17 @@ using TheRightSideOfTheStreet.Models.Extensions;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {
-	public class AthleteMemberPreviewViewModel
+	public class AdminPreviewViewModel
 	{
-		public AthleteMemberPreviewViewModel(IAthleteMemberContext<AthleteMember> context)
+		public AdminPreviewViewModel(IAthleteMemberContext<Admin> context)
 		{
 			PreviewImage = context.Member.ProfileImage?.AsViewModel();
 			PreviewFullName = context.Member.FullName;
 			PreviewFacebookProfile = context.Member.FacebookProfile;
 			PreviewInstagramProfile = context.Member.InstagramProfile;
 			PreviewYoutubeProfile = context.Member.YoutubeProfile;
-			Url = $"{context.Landing.Url}{context.Member.GetScreenName()}";
+			Url = $"{context.Landing.Url}{context.Member.GetScreenNameAdmin()}";
+
 		}
 
 		public ImageViewModel PreviewImage { get; }
@@ -23,6 +24,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string PreviewFacebookProfile { get; }
 		public string PreviewInstagramProfile { get; }
 		public string PreviewYoutubeProfile { get; }
-		public string Url { get; }
+		public string Url { get;}
+		
 	}
 }

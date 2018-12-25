@@ -256,6 +256,10 @@
     <Compile Include="Extensions\IRootNodeExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperDomainExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
+    <Compile Include="Generated\Admin.cs" />
+    <Compile Include="Generated\Admin.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\AthleteForm.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

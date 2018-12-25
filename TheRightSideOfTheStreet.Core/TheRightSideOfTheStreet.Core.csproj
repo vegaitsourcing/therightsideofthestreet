@@ -256,6 +256,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AdminContentFinder.cs" />
     <Compile Include="App_Start\ApplicationEventsHandler.cs" />
     <Compile Include="App_Start\AthleteMemberContentFinder.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -341,6 +342,8 @@
     <Compile Include="Validations\UmbracoValidationHelper.cs" />
     <Compile Include="Validations\UmbracoImage.cs" />
     <Compile Include="Search\AthleteMembersSearch.cs" />
+    <Compile Include="ViewModels\AdminPreviewViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\AthleteLandingViewModel.cs" />
     <Compile Include="ViewModels\AthleteMemberPreviewViewModel.cs" />
     <Compile Include="ViewModels\AthleteMemberViewModel.cs" />
