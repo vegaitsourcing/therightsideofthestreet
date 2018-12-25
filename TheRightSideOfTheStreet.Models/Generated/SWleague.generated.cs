@@ -46,15 +46,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Country Selector
-		///</summary>
-		[ImplementPropertyType("countrySelector")]
-		public IEnumerable<IPublishedContent> CountrySelector
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("countrySelector"); }
-		}
-
-		///<summary>
 		/// Intro Text
 		///</summary>
 		[ImplementPropertyType("introText")]
@@ -70,6 +61,24 @@ namespace TheRightSideOfTheStreet.Models
 		public RJP.MultiUrlPicker.Models.Link Link
 		{
 			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("link"); }
+		}
+
+		///<summary>
+		/// Scoring Left
+		///</summary>
+		[ImplementPropertyType("scoringLeft")]
+		public IHtmlString ScoringLeft
+		{
+			get { return this.GetPropertyValue<IHtmlString>("scoringLeft"); }
+		}
+
+		///<summary>
+		/// Scoring Right
+		///</summary>
+		[ImplementPropertyType("scoringRight")]
+		public IHtmlString ScoringRight
+		{
+			get { return this.GetPropertyValue<IHtmlString>("scoringRight"); }
 		}
 	}
 }

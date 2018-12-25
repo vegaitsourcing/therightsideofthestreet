@@ -373,6 +373,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseStepViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\RankingTableViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Shared\BannerViewModel.cs" />
     <Compile Include="ViewModels\DonationsContentViewModel.cs" />

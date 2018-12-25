@@ -434,6 +434,7 @@
     <Compile Include="Generated\ParkLocation.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\RankingTable.cs" />
     <Compile Include="Generated\RankingTable.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -450,6 +451,7 @@
     <Compile Include="Generated\SocialLink.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\SWleague.cs" />
     <Compile Include="Generated\SWleague.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
