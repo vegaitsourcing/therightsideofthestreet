@@ -57,7 +57,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		margin-bottom: 30px;
 		span {
 			display: block;
 			flex: 1;
@@ -74,6 +73,7 @@
 	.donators-block {
 		width: 15%;
 		text-align: center;
+		margin-bottom: 30px;
 		img {
 			margin-bottom: 10px;
 			border-radius: 50%;
@@ -91,14 +91,13 @@
 	}
 	@include breakpoint(touch) {
 		padding-top: 20px;
-		.donators-name {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+		.donators-block {
+			width: 33%;
 		}
 	}
 	@include breakpoint(phone) {
-		.donators-name {
-			grid-template-columns: repeat(2, 1fr);
+		.donators-block {
+			width: 50%;
 		}
 	}
 }
