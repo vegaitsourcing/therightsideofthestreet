@@ -120,8 +120,10 @@
 .league-table {
 	padding: 83px 0;
 	background-size: cover;
+	overflow-x: auto;
 	.wrap {
 		overflow: hidden;
+		width: 1320px;
 	}
 }
 
@@ -136,12 +138,12 @@
 		width: 33.6%;
 		.text {
 			float: right;
-			width: 62%;
+			width: 410px; //62%
 			padding-right: 15px;
 		}
 	}
 	&.column-2 {
-		width: 19%;
+		width: 240px;
 		.images-block-content {
 			padding-top: 44px;
 		}
@@ -154,7 +156,7 @@
 	&.column-3,
 	&.column-4,
 	&.column-5 {
-		width: 16.8%;
+		width: 210px; //16.8%
 		.images-block-content {
 			padding-top: 62px;
 		}
@@ -170,10 +172,10 @@
 		}
 	}
 	&.column-4 {
-		width: 18%;
+		width: 235px; //18%
 	}
 	&.column-5 {
-		width: 12.5%;
+		width: 145px; //12.5%
 	}
 	&::after {
 		content: '';

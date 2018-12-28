@@ -45,14 +45,6 @@
 	}
 }
 
-.sw-crews-list-wrap {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-column-gap: 20px;
-	grid-row-gap: 30px;
-	margin: 30px 0;
-}
-
 .sw-crews-city-item {
 	background-color: $red;
 	border-radius: 20px;
@@ -80,11 +72,25 @@
 
 .sw-crews-city-list {
 	overflow: hidden;
+	.sw-crews-list-wrap {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 30px;
+		margin: 30px 0;
+	}
 }
 
 .sw-crews-crew-list {
 	display: none;
 	overflow: hidden;
+	.sw-crews-list-by-city {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 30px;
+		margin: 30px 0;
+	}
 }
 
 .sw-crews-crew-item {
