@@ -69,7 +69,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			if (Members.Login(model.Email, model.Password))
 			{
-				return RedirectToUmbracoPage(CurrentPage.Site());
+				return Redirect(Request.RawUrl);
 			}
 
 			TempData[Constants.Constants.TempDataFail] = "fail";
