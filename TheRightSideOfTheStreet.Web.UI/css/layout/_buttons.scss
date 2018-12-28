@@ -115,3 +115,11 @@ input[type='submit'] {
 		border-color: $red;
 	}
 }
+
+.btn.protected {
+	background-color: rgba($grey, .15);
+	@include hover {
+		background-color: rgba($grey, .15);
+		color: $black;
+	}
+}
