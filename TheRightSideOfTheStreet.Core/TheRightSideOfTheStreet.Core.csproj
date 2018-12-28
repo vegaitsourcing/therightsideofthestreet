@@ -373,6 +373,8 @@
     <Compile Include="ViewModels\ExerciseLevelViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ResetPasswordFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\SearchAthleteFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\PartnersSectionViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\PartnersViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsPreviewViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseStepViewModel.cs" />

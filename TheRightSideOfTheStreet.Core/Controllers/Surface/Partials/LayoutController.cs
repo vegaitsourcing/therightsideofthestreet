@@ -22,5 +22,10 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 		{
 			return PartialView(viewModel);
 		}
+		[ChildActionOnly]
+		public ActionResult Partners(PartnersSectionViewModel viewModel)
+		{
+			return PartialView(viewModel);
+		}
 	}
 }

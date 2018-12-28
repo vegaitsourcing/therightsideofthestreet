@@ -91,6 +91,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
+		}
+
+		///<summary>
 		/// Top Navigation Link
 		///</summary>
 		[ImplementPropertyType("topNavigationLink")]

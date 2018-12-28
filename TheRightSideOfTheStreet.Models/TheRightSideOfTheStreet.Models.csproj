@@ -438,6 +438,10 @@
     <Compile Include="Generated\ParkLocation.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Partners.cs" />
+    <Compile Include="Generated\Partners.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\RankingTable.cs" />
     <Compile Include="Generated\RankingTable.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
