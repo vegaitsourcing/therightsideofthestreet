@@ -35,3 +35,11 @@
 		color: $white;
 	}
 }
+
+.failed-request {
+	color: $red;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+}
