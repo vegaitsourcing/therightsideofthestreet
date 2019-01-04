@@ -69,7 +69,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			if (Members.Login(model.Email, model.Password))
 			{
-				return Redirect(Request.RawUrl);
+				return Redirect(IsLoginUrl(Request.RawUrl) ? CurrentPage.Site().Url : Request.RawUrl);
 			}
 
 			TempData[Constants.Constants.TempDataFail] = "fail";
@@ -85,5 +85,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			return RedirectToUmbracoPage(CurrentPage.Site());
 		}
 
+		private bool IsLoginUrl(string url)
+		{
+			return CurrentPage.DocumentTypeAlias.Equals(LoginForm.ModelTypeAlias) && url.Equals(CurrentPage.Url);
+		}
 	}
 }

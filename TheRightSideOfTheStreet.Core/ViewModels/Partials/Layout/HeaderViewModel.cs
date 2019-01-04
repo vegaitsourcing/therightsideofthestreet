@@ -26,8 +26,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			Login = context.Home.LoginLink.AsViewModel();
 			NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
 			Languages = GetLanguages(context.Languages, context.Page.AlternatePages.ToList()).AsList();
-			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
-			AthleteMembers = GetAthletes(context);
+			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();			
 		}
 
 		public string HomepageUrl { get; }
@@ -46,16 +45,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 
 				yield return page.AsViewModel(website.Name) ?? website.AsViewModel(website.Name);
 			}
-		}
-
-		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
-
-		private IList<AthleteMemberPreviewViewModel> GetAthletes(IPageContext<IPage> context)
-		{
-			var searcher = new AthleteMembersSearch();
-
-			return searcher.GetAthletes().Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
-
 		}
 	}
 }
