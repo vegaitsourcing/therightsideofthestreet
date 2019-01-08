@@ -41,6 +41,7 @@ input[type='submit'] {
 		color: $red;
 	}
 	@include breakpoint(phone) {
+		padding: 0 20px;
 		height: auto;
 		font-size: 16px;
 		line-height: 2;

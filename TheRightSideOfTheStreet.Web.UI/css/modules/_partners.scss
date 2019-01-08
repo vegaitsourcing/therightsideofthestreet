@@ -1,4 +1,4 @@
-//----------  street workout ekipe
+//----------  partners
 //------------------------------------------------------------------------------
 
 .partners {
@@ -13,8 +13,18 @@
 }
 .partners-block {
     flex-basis: 16.6667%;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@include breakpoint(touch) {
+    .partners-block {
+        flex-basis: 25%;
+    }
+}
+@include breakpoint(phone) {
+    .partners-block {
+        flex-basis: 50%;
+    }
 }

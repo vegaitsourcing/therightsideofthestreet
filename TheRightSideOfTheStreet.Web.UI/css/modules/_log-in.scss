@@ -14,7 +14,14 @@
 			color: $red;
 			margin: 5px 0;
 			input {
-				width: 550px;
+				max-width: 550px;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		.wrap {
+			.btn {
+				font-size: 16px;
 			}
 		}
 	}
@@ -23,6 +30,9 @@
 .btn-log-in {
 	margin-top: 20px;
 	margin-bottom: 100px;
+	@include breakpoint(phone) {
+		padding: 0 10px;
+	}
 }
 
 .btn-reg {

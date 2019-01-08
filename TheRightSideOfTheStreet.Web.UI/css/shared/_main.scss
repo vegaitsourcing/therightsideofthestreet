@@ -108,7 +108,7 @@
 			font-size: 15px;
 		}
 	}
-	@include breakpoint(touch) {
+	@include breakpoint(phone) {
 		flex-direction: column;
 		margin-bottom: 20px;
 		.btn-previous {
@@ -151,6 +151,11 @@
 		float: right;
 		padding: 0 15px;
 	}
+	@include breakpoint(phone) {
+		.btn {
+			font-size: 14px;
+		}
+	}
 }
 
 .blog-navigation {
@@ -179,9 +184,6 @@
 			right: 15px;
 			transform: rotate(180deg);
 		}
-	}
-	@include breakpoint(touch) {
-		margin: 0;
 	}
 	@include breakpoint(phone) {
 		.btn {
@@ -278,7 +280,11 @@
 			}
 		}
 	}
-
+	@include breakpoint(phone) {
+		.search-form {
+			float: none;
+		}
+	}
 }
 
 .btn-introduction {
@@ -317,6 +323,10 @@
 		left: 24px;
 		width: 3px;
 	}
+	@include breakpoint(phone) {
+		float: none;
+		display: inline-block;
+	}
 }
 
 .athlete-banner {
@@ -330,6 +340,11 @@
 	@include breakpoint(touch) {
 		h2 {
 			margin-bottom: 30px;
+		}
+	}
+	@include breakpoint(phone) {
+		.wrap {
+			text-align: center;
 		}
 	}
 }
