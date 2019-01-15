@@ -9,6 +9,13 @@ module.exports = {
 		$form.data('validator').settings.ignore = "";
 	},
 
+	formChecked: function() {
+		$("input[name='action']:radio").change(function() {
+			$("#show-yourself-form-fan").toggle($(this).val() == "fan");
+			$("#show-yourself-form-athlete").toggle($(this).val() == "athlete");
+		});
+	},
+
 	handleFormSubmit: function () {
 		$('#showYourselfFormButton').on('click', function (e) {
 			e.preventDefault();

@@ -762,6 +762,7 @@
 	padding: 46px 0 75px;
 	background-color: #f5f5f5;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
+	margin: 0 -25%;
 	.wrap {
 		position: relative;
 		text-align: center;
@@ -780,9 +781,35 @@
 	}
 	.btn-close-crew-popup {
 		position: absolute;
-		top: 10px;
-		right: 20px;
+		top: -25px;
+		right: 50px;
 		font-size: 18px;
 		color: $nero;
+	}
+	.crew-popup-slider {
+		width: 95%;
+		margin: 0 auto;
+		.icon {
+			color: $black;
+		}
+	}
+	@include breakpoint(1300px) {
+		margin: 0 -2%;
+	}
+	@include breakpoint(touch) {
+		.btn-close-crew-popup {
+			right: 40px;
+		}
+		.slick-next {
+			right: -30px;
+		}
+		.slick-prev {
+			left: -30px;
+		}
+	}
+	@include breakpoint(phone) {
+		.btn-close-crew-popup {
+			right: 30px;
+		}
 	}
 }

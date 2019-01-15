@@ -21,6 +21,7 @@ let app = {
 		functions.goToTop();
 		functions.fancyBox();
 		functions.athletePopup();
+		functions.selectCountry();
 		functions.crewItemsPopup();
 		functions.crewPopup();
         functions.menuToggle();
@@ -33,6 +34,7 @@ let app = {
 		athleteForm.handleFormSubmit();
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
+		athleteForm.formChecked();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
