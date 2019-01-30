@@ -74,6 +74,42 @@ module.exports = {
 		}
 	},
 
+	showFanImagePreview: function () {
+
+		$("#addImageFan").change(function () {
+
+			const File = this.files;
+
+			if (File && File[0]) {
+				readImage(File[0]);
+			}
+
+		})
+
+		const readImage = function (file) {
+
+			const reader = new FileReader;
+			const image = new Image;
+
+			if (file) {
+				reader.readAsDataURL(file);
+			}
+			reader.onload = function (_file) {
+
+				image.src = _file.target.result;
+				image.onload = function () {
+
+					$("#targetImgFan").attr('src', _file.target.result);
+					$('#iconFan').hide();
+					$('#textFan').hide();
+
+				}
+
+			}
+
+		}
+	},
+
 	showAchievementsInput: function () {
 
 		$("[add-achievement-btn]").on('click', function () {

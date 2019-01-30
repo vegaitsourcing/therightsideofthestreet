@@ -29,6 +29,7 @@ let app = {
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
 		athleteForm.showImagePreview();
+		athleteForm.showFanImagePreview();
 		athleteForm.showAchievementsInput();
 		athleteForm.formInit();
 		athleteForm.handleFormSubmit();

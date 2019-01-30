@@ -47,6 +47,21 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 		}
 
+		public bool WorkoutParksRequest(WorkoutParksFormViewModel model, string adminEmailAddress, string Url)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za registrovanje parka ");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Na sledecem linku mozete pogledati lokaciju parka - <a href={Url}>Park</a>");
+
+
+			return SendEmail(adminEmailAddress, subject.ToString(), body.ToString(), adminEmailAddress, null);
+
+		}
+
 		public bool SendResetPasswordEmail(string adminEmailAddress, string emailTo, string resetLink)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
@@ -112,6 +127,8 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
 		}
 
+	
+
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary
@@ -129,6 +146,24 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{athlete.Name} {athlete.Surname}</a>");
 
 			string senderEmail = athlete.Email;
+
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+		}
+
+		public bool FanRegistrationRequest(ShowYourselfFormFanViewModel fan, string adminEmailAddress, string newAthleteMemberLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za registraciju - ");
+			subject.Append(fan.Name);
+			subject.Append($" { fan.Surname}");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{fan.Name} {fan.Surname}</a>");
+
+			string senderEmail = fan.Email;
 
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
 		}
