@@ -69,7 +69,11 @@
 	}
 }
 
-.sw-map-container {
-	font-size: 0;
-	margin: 0 -60px;
+.sw-maps-heading {
+	form {
+		p {
+			color: $red;
+			text-align: center;
+		}
+	}
 }
