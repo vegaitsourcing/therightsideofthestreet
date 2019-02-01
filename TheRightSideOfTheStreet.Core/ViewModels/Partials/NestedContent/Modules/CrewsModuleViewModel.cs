@@ -15,18 +15,22 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		{
 			Crews = context.Crews.AsViewModel<CrewViewModel>().ToList();
 			Cities = helper.TypedContentAtXPath($"//{City.ModelTypeAlias}")?.OfType<City>().AsViewModel<CityViewModel>().Where(m => HasCrew(m.Key)).ToList();
-			Countries = Cities.Select(x => x.Country).Distinct().ToList();
+			Countries = helper.TypedContentAtXPath($"//{Country.ModelTypeAlias}")?.OfType<Country>().AsViewModel<CountryViewModel>().ToList();
+			//Countries = Cities.Select(x => x.Country).Distinct().ToList();
 			Title = context.NestedContent.Title;
 			Text = context.NestedContent.Text;
 			CityKeys = Crews.Where(m => m.ParentKey != Guid.Empty).Select(m => m.ParentKey).Distinct().ToList();
+			CountryKey = Countries.Where(m => m.Key != Guid.Empty).Select(m => m.Key).Distinct().ToList();
 		}
 
 		public string Title { get; }
 		public IHtmlString Text { get; }
 		public IList<CityViewModel> Cities { get; }
-		public IList<string> Countries { get; }
+		//public IList<string> Countries { get; }
+		public IList<CountryViewModel> Countries { get; }
 		public IList<CrewViewModel> Crews { get; }
 		public IReadOnlyList<Guid> CityKeys { get; set; }
+		public IReadOnlyList<Guid> CountryKey { get; }
 
 		public IReadOnlyList<CrewViewModel> GetCrewByParentKey(Guid parentKey)
 		{

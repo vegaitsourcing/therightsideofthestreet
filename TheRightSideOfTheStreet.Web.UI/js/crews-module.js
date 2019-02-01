@@ -103,26 +103,27 @@ module.exports = {
 	},
 
 	loadMoreCities: function () {
-
-		var numberOfShown = 0;
-		let $loadbutton = $('#loadbutton');
-		let numberOfItems = $loadbutton.data("number");
+		let $loadbutton = $('.loadbutton');
 		$('.sw-crews-city-item[data-item]').hide();
 
-		showGroups(numberOfShown);
-		hideLoadMoreButton(numberOfItems, numberOfShown);
-
 		$loadbutton.on('click', function () {
+			let $clickedButton = $(this);
+
+			let numberOfItems = $clickedButton.data('number');
+			let numberOfShown = $clickedButton.data('shown');
+
 			if (numberOfShown * 12 < numberOfItems) {
-				numberOfShown = numberOfShown + 1;
 				showGroups(numberOfShown);
-				hideLoadMoreButton(numberOfItems, numberOfShown);
+				hideLoadMoreButton(numberOfItems, numberOfShown, $clickedButton);
+				numberOfShown = numberOfShown + 1;
 			}
+
+			$clickedButton.data('shown', numberOfShown);
 		});
 
-		function hideLoadMoreButton(numberOfItems, numberOfShown) {
+		function hideLoadMoreButton(numberOfItems, numberOfShown, button) {
 			if (numberOfItems === undefined || numberOfItems < 12 || (numberOfShown + 1) * 12 >= numberOfItems) {
-				$loadbutton.hide();
+				button.hide();
 			}
 		}
 		function showGroups(numb) {

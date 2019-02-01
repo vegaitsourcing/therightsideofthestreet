@@ -145,12 +145,20 @@ module.exports = {
 
 	selectCountry: function() {
 		$(function() {
-			$('#country').change(function(){
-			  $('.sw-crews-country').hide();
-			  $('#' + $(this).val()).find('.sw-crews-crew-list').hide();
-			  $('#' + $(this).val()).find('.workout-crew-popup').hide();
-			  $('#' + $(this).val()).show();
-			  $('#' + $(this).val()).find('.sw-crews-city-list').show();
+			$('#country').change(function () {
+				let countryKey = $('option:selected').data('key');
+				$('.sw-crews-country').hide();
+
+				let $countryLoadButtton = $('#load-' + countryKey);
+
+				if ($countryLoadButtton.data('shown') === 0) {
+					$('#load-' + countryKey).click();
+				}
+
+				$('#' + $(this).val()).find('.sw-crews-crew-list').hide();
+				$('#' + $(this).val()).find('.workout-crew-popup').hide();
+				$('#' + $(this).val()).show();
+				$('#' + $(this).val()).find('.sw-crews-city-list').show();
 			});
 		});
 	},
