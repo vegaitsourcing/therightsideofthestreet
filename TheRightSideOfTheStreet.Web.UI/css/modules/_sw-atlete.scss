@@ -29,10 +29,12 @@
 	@include breakpoint(tablet) {
 		padding: 0 48px;
 		width: 50%;
+		margin-bottom: 30px;
 	}
 	@include breakpoint(phone) {
 		width: 100%;
 		padding: 0;
+		margin-bottom: 30px;
 	}
 }
 

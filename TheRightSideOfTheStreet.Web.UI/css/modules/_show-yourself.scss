@@ -10,10 +10,39 @@
 	}
 }
 
+.show-yourself-info {
+	margin-bottom: 50px;
+	text-align: center;
+	color: $white;
+	font-weight: 700;
+	font-size: 22px;
+	h1 {
+		font-size: 30px;
+		margin-top: 50px;
+		color: $white;
+		text-transform: none;
+	}
+	input[type='radio'] {
+		width: 30px;
+		display: inline-block;
+		vertical-align: middle;
+		&:nth-child(3) {
+			margin-left: 50px;
+		}
+	}
+}
+
+#show-yourself-form-athlete {
+	display: none;
+}
+#show-yourself-form-fan {
+	display: none;
+}
+
 .show-yourself-content-first {
 	width: 100%;
 	height: auto;
-	padding: 100px 0 0 100px;
+	padding-bottom: 100px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -53,7 +82,6 @@
 	height: auto;
 	h1 {
 		color: $white;
-		margin-bottom: 30px;
 		text-transform: none;
 	}
 	input, select {
@@ -74,10 +102,20 @@
 		font-weight: 400;
 		text-transform: none;
 	}
+	&-fan {
+		.show-yourself-form {
+			margin-left: 35%;
+		}
+	}
 	@include breakpoint(touch) {
 		width: 100%;
 		input, select {
 			width: 100%;
+		}
+		&-fan {
+			.show-yourself-form {
+				margin-left: 0;
+			}
 		}
 	}
 }
@@ -153,7 +191,6 @@
 	}
 	@include breakpoint(touch) {
 		width: 100%;
-		//text-align: left;
 		.icon {
 			width: 40px;
 		}

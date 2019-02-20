@@ -16,6 +16,8 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		{
 			AthleteMembers = GetAthletes(context, query);
 			RegisterForm = context.AthleteForm.Url;
+			Admin = GetAdmin(context);
+			
 		}
 		
 		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
@@ -31,6 +33,15 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			return searcher.GetAthletes(query).Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
 		}
 
+		//Admin
+		public IEnumerable<AdminPreviewViewModel> Admin { get; set; }
+		
+		private IEnumerable<AdminPreviewViewModel> GetAdmin(IPageContext<AthleteLanding> context)
+		{
+			var searcher = new AthleteMembersSearch();
+			return searcher.GetAdmin().Select(a => new AdminPreviewViewModel(context.WithAthleteMember(a))).AsList();
+		}
+		
 		public string RegisterForm { get; set; }
 	}
 }

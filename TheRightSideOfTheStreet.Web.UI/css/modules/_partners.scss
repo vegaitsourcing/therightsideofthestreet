@@ -1,0 +1,30 @@
+//----------  partners
+//------------------------------------------------------------------------------
+
+.partners {
+    padding: 65px 0;
+    h2 {
+        margin-bottom: 1.35em;
+    }
+}
+.partners-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.partners-block {
+    flex-basis: 16.6667%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@include breakpoint(touch) {
+    .partners-block {
+        flex-basis: 25%;
+    }
+}
+@include breakpoint(phone) {
+    .partners-block {
+        flex-basis: 50%;
+    }
+}

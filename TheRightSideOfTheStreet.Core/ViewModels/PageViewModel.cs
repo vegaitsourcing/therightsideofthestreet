@@ -15,6 +15,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			MetaTags = new MetaTagsViewModel(context);
 			Header = new HeaderViewModel(context);
 			Footer = new FooterViewModel(context);
+			Partners = new PartnersSectionViewModel(context);
 			GoogleAnalytics = new GoogleAnalyticsViewModel(context);
 			PageKey = context.Page.GetKey();
 			Url = context.Page.Url;
@@ -25,6 +26,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public MetaTagsViewModel MetaTags { get; }
 		public HeaderViewModel Header { get; }
 		public FooterViewModel Footer { get; }
+		public PartnersSectionViewModel Partners { get; }
 		public GoogleAnalyticsViewModel GoogleAnalytics { get; }
 		public Guid PageKey { get; }
 		public string Url { get; }

@@ -21,7 +21,8 @@
 	max-width: 480px;
 	margin: 0 auto 62px;
 	padding-right: 68px;
-	input {
+	input, select {
+		margin-bottom: 50px;
 		box-shadow: 0 0 8px rgba(#231f20, 0.2);
 	}
 	.btn-submit {
@@ -45,12 +46,8 @@
 	}
 }
 
-.sw-crews-list-wrap {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-column-gap: 20px;
-	grid-row-gap: 30px;
-	margin: 30px 0;
+.sw-crews-country {
+	display: none;
 }
 
 .sw-crews-city-item {
@@ -80,11 +77,43 @@
 
 .sw-crews-city-list {
 	overflow: hidden;
+	.sw-crews-list-wrap {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 30px;
+		margin: 30px 0;
+		@include breakpoint(touch) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+		@include breakpoint(phone) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include breakpoint(530px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
 }
 
 .sw-crews-crew-list {
 	display: none;
 	overflow: hidden;
+	.sw-crews-list-by-city {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 30px;
+		margin: 30px 0;
+		@include breakpoint(touch) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+		@include breakpoint(phone) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include breakpoint(530px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
 }
 
 .sw-crews-crew-item {
@@ -98,6 +127,11 @@
 	position: relative;
 	* {
 		vertical-align: middle;
+	}
+	@include breakpoint(530px) {
+		img {
+			max-height: 80%;
+		}
 	}
 }
 

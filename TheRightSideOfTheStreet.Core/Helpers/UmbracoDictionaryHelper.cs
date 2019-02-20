@@ -101,6 +101,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		{
 			public static string IntroduceYourself => UmbracoHelper.GetDictionaryValue("AthleteLanding.IntroduceYourself");
 			public static string Search => UmbracoHelper.GetDictionaryValue("AthleteLanding.Search");
+			public static string ShowMore => UmbracoHelper.GetDictionaryValue("AthleteLanding.ShowMore");
 		}
 
 		public static class LoginForm
@@ -116,6 +117,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ForgottenPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ForgottenPassword");
 			public static string ResetPassword => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPassword");
 			public static string ResetPasswordFailed => UmbracoHelper.GetDictionaryValue("LoginForm.ResetPasswordFailed");
+			public static string MemberLocked => UmbracoHelper.GetDictionaryValue("LoginForm.MemberLocked");
 		}
 
 		public static class Footer
@@ -147,6 +149,26 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		public static class ForgottenPassword
 		{
 			public static string Send => UmbracoHelper.GetDictionaryValue("ForgottenPassword.Send");
+		}
+
+		public static class LeagueForm
+		{
+			public static string Crews => UmbracoHelper.GetDictionaryValue("LeagueForm.Crews");
+			public static string Participate => UmbracoHelper.GetDictionaryValue("LeagueForm.Participate");
+			public static string SendRequest => UmbracoHelper.GetDictionaryValue("LeagueForm.SendRequest");
+		}
+
+		public static class SWLeague
+		{
+			public static string Link => UmbracoHelper.GetDictionaryValue("SWLeague.Competition");
+			public static string ScoringSystem => UmbracoHelper.GetDictionaryValue("SWLeague.ScoringSystem");
+			public static string City => UmbracoHelper.GetDictionaryValue("SWLeague.City");
+			public static string FullName => UmbracoHelper.GetDictionaryValue("SWLeague.FullName");
+			public static string Crew => UmbracoHelper.GetDictionaryValue("SWLeague.Crew");
+			public static string NumberOfCompetitions => UmbracoHelper.GetDictionaryValue("SWLeague.NumberOfCompetitions");
+			public static string Points => UmbracoHelper.GetDictionaryValue("SWLeague.Points");
+
+
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

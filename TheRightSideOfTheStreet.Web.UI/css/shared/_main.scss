@@ -108,7 +108,7 @@
 			font-size: 15px;
 		}
 	}
-	@include breakpoint(touch) {
+	@include breakpoint(phone) {
 		flex-direction: column;
 		margin-bottom: 20px;
 		.btn-previous {
@@ -151,6 +151,11 @@
 		float: right;
 		padding: 0 15px;
 	}
+	@include breakpoint(phone) {
+		.btn {
+			font-size: 14px;
+		}
+	}
 }
 
 .blog-navigation {
@@ -179,9 +184,6 @@
 			right: 15px;
 			transform: rotate(180deg);
 		}
-	}
-	@include breakpoint(touch) {
-		margin: 0;
 	}
 	@include breakpoint(phone) {
 		.btn {
@@ -244,6 +246,7 @@
 	.sw-atlete-list {
 		padding: 78px 0;
 		margin-bottom: 0;
+		text-align: center;
 	}
 	.sw-atlete-item {
 		margin-bottom: 77px;
@@ -277,7 +280,11 @@
 			}
 		}
 	}
-
+	@include breakpoint(phone) {
+		.search-form {
+			float: none;
+		}
+	}
 }
 
 .btn-introduction {
@@ -316,6 +323,10 @@
 		left: 24px;
 		width: 3px;
 	}
+	@include breakpoint(phone) {
+		float: none;
+		display: inline-block;
+	}
 }
 
 .athlete-banner {
@@ -329,6 +340,11 @@
 	@include breakpoint(touch) {
 		h2 {
 			margin-bottom: 30px;
+		}
+	}
+	@include breakpoint(phone) {
+		.wrap {
+			text-align: center;
 		}
 	}
 }
@@ -746,6 +762,7 @@
 	padding: 46px 0 75px;
 	background-color: #f5f5f5;
 	box-shadow: 0 0 30px rgba(#231f20, 0.2);
+	margin: 0 -25%;
 	.wrap {
 		position: relative;
 		text-align: center;
@@ -764,9 +781,35 @@
 	}
 	.btn-close-crew-popup {
 		position: absolute;
-		top: 10px;
-		right: 20px;
+		top: -25px;
+		right: 50px;
 		font-size: 18px;
 		color: $nero;
+	}
+	.crew-popup-slider {
+		width: 95%;
+		margin: 0 auto;
+		.icon {
+			color: $black;
+		}
+	}
+	@include breakpoint(1300px) {
+		margin: 0 -2%;
+	}
+	@include breakpoint(touch) {
+		.btn-close-crew-popup {
+			right: 40px;
+		}
+		.slick-next {
+			right: -30px;
+		}
+		.slick-prev {
+			left: -30px;
+		}
+	}
+	@include breakpoint(phone) {
+		.btn-close-crew-popup {
+			right: 30px;
+		}
 	}
 }

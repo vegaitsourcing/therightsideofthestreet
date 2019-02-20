@@ -1,14 +1,15 @@
-﻿using TheRightSideOfTheStreet.Common.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using TheRightSideOfTheStreet.Common.Extensions;
+using TheRightSideOfTheStreet.Core.Contexts;
+using TheRightSideOfTheStreet.Core.Extensions;
+using TheRightSideOfTheStreet.Core.Search;
+using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
+using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;
 using TheRightSideOfTheStreet.Models.DocumentTypes;
 using TheRightSideOfTheStreet.Models.Extensions;
-using TheRightSideOfTheStreet.Core.Contexts;
-using TheRightSideOfTheStreet.Core.Extensions;
-using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
-using TheRightSideOfTheStreet.Core.ViewModels.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
@@ -25,7 +26,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			Login = context.Home.LoginLink.AsViewModel();
 			NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
 			Languages = GetLanguages(context.Languages, context.Page.AlternatePages.ToList()).AsList();
-			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
+			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();			
 		}
 
 		public string HomepageUrl { get; }

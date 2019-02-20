@@ -9,9 +9,11 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			Id = level.Id;
 			Title = level.Title;
 			Url = level.Url;
+			Path = level.Path;
 		}
 		public int Id { get;  }
 		public string Title { get; }
 		public string Url { get; }
+		public string Path { get; }
 	}
 }

@@ -15,5 +15,17 @@ namespace TheRightSideOfTheStreet.Models.Extensions
 
 			return Regex.Replace(name, "[^a-zA-Z0-9]", "").ToLower();
 		}
+
+		public static string GetScreenNameAdmin(this Admin admin)
+		{
+			if (admin == null)
+			{
+				return string.Empty;
+			}
+
+			string name = admin.Name;
+
+			return Regex.Replace(name, "[^a-zA-Z0-9]", "").ToLower();
+		}
 	}
 }

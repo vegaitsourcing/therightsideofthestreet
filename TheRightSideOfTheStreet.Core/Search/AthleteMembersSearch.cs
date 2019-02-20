@@ -73,5 +73,30 @@ namespace TheRightSideOfTheStreet.Core.Search
 
 			return criteria;
 		}
+
+		//ADMIN
+		private ISearchCriteria GetSearchCriteriaAdmin()
+		{
+			var criteria = _searchProvider.CreateSearchCriteria(IndexTypes.Member);
+			criteria.NodeTypeAlias(Admin.ModelTypeAlias);
+
+			return criteria;
+		}
+
+		private IEnumerable<Admin> GetSearchResultsAdmin(ISearchCriteria criteria)
+		{
+			var members = _searchProvider.Search(criteria);
+			return members.Select(m => _umbracoHelper.TypedMember(m.Id)?.OfType<Admin>()).Where(m => m != null && m.UmbracoMemberApproved);
+		}
+
+		public IEnumerable<Admin> GetAdmin()
+		{
+			var criteria = GetSearchCriteriaAdmin();
+			var admin = GetSearchResultsAdmin(criteria);
+
+			return admin;
+		}
+
+
 	}
 }

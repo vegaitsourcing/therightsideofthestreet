@@ -1,6 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
+using TheRightSideOfTheStreet.Common;
+using TheRightSideOfTheStreet.Core.EmailSender;
 using TheRightSideOfTheStreet.Core.Helpers;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
+using TheRightSideOfTheStreet.Models;
+using TheRightSideOfTheStreet.Models.Extensions;
+using Umbraco.Core;
 using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
@@ -8,9 +14,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 	public class LoginAthleteFormController : BaseSurfaceController
 	{
 		[ChildActionOnly]
-		public ActionResult LoginAthleteForm( string registerForm, string forgottenPassword)
+		public ActionResult LoginAthleteForm(string registerForm, string forgottenPassword)
 		{
-			return PartialView(new LoginFormViewModel() { RegisterFormUrl = registerForm, ForgottenPasswordUrl = forgottenPassword});
+			return PartialView(new LoginFormViewModel() { RegisterFormUrl = registerForm, ForgottenPasswordUrl = forgottenPassword });
 		}
 
 
@@ -18,14 +24,52 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		[ValidateAntiForgeryToken]
 		public ActionResult MemberLogin(LoginFormViewModel model)
 		{
+			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
+			var service = ApplicationContext.Current.Services.MemberService;
+
 			if (!ModelState.IsValid)
 			{
+
 				return CurrentUmbracoPage();
+			}
+
+			var findMember = service.GetByEmail(model.Email);
+			if (findMember.IsLockedOut)
+			{
+				try
+				{
+					string protocol = Request.Url.Scheme;
+					string domain = Request.Url.Host;
+
+					string memberGuid = findMember.Key.ToString();
+					string AthleteMemberLink = string.Format(AppSettings.AthleteMemberLink, protocol, domain, memberGuid);
+
+					string emailFrom = model.Email;
+					string emailTo = settings.AdminEmailAddress;
+					string fullName = findMember.Name;
+
+					EmailHandler emailSender = new EmailHandler();
+					bool sentMail = emailSender.MemberLockedSendMail(model, emailFrom, emailTo, fullName, AthleteMemberLink);
+
+					if (!sentMail)
+					{
+						TempData[Constants.Constants.TempDataFail] = "fail";
+						return CurrentUmbracoPage();
+					}
+					TempData[Constants.Constants.TempDataSuccess] = "success";
+
+				}
+				catch (Exception ex)
+				{
+
+					Logger.Error(typeof(LoginFormViewModel), "Failed to send mail", ex);
+				}
+
 			}
 
 			if (Members.Login(model.Email, model.Password))
 			{
-				return RedirectToUmbracoPage(CurrentPage.Site());
+				return Redirect(IsLoginUrl(Request.RawUrl) ? CurrentPage.Site().Url : Request.RawUrl);
 			}
 
 			TempData[Constants.Constants.TempDataFail] = "fail";
@@ -41,5 +85,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			return RedirectToUmbracoPage(CurrentPage.Site());
 		}
 
+		private bool IsLoginUrl(string url)
+		{
+			return CurrentPage.DocumentTypeAlias.Equals(LoginForm.ModelTypeAlias) && url.Equals(CurrentPage.Url);
+		}
 	}
 }

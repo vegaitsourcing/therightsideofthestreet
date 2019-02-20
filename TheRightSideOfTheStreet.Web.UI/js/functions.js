@@ -113,6 +113,13 @@ module.exports = {
 		});
 	},
 
+	fancyBox: function() {
+		$('[data-fancybox="gallery"]').fancybox({
+			// 'width': 600, //or whatever you want
+			// 'height': 300
+		});
+	},
+
 	athletePopup: function() {
 		const swItem = $('.sw-atlete-item');
 		swItem.find('.thumbnail, .sw-atlete-info h4 a').on('click', function() {
@@ -136,6 +143,26 @@ module.exports = {
 		});
 	},
 
+	selectCountry: function() {
+		$(function() {
+			$('#country').change(function () {
+				let countryKey = $('option:selected').data('key');
+				$('.sw-crews-country').hide();
+
+				let $countryLoadButtton = $('#load-' + countryKey);
+
+				if ($countryLoadButtton.data('shown') === 0) {
+					$('#load-' + countryKey).click();
+				}
+
+				$('#' + $(this).val()).find('.sw-crews-crew-list').hide();
+				$('#' + $(this).val()).find('.workout-crew-popup').hide();
+				$('#' + $(this).val()).show();
+				$('#' + $(this).val()).find('.sw-crews-city-list').show();
+			});
+		});
+	},
+
 	crewItemsPopup: function() {
 		$('.sw-crews-city-item').on('click', function(){
 			$(this).closest('.sw-crews-city-list').slideUp(300);
@@ -151,6 +178,33 @@ module.exports = {
 	crewPopup: function() {
 		$('.sw-crews-crew-item').on('click', function(){
 			$(this).closest('.sw-crews').find('.workout-crew-popup').slideDown(300);
+			
+			let $slider = $('.crew-popup-slider');
+			if ($slider !== undefined && $slider.length) {
+				$slider.slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows: true,
+					dots: false,
+					prevArrow: '<button class="slick-prev" type="button"><span class="icon font-ico-chevron-left"></span></button>',
+					nextArrow: '<button class="slick-next" type="button"><span class="icon font-ico-chevron-right"></span></button>',
+					responsive: [
+						{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 1
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1
+							}
+						}
+					]
+				});
+			}
 		});
 		$('.btn-close-crew-popup').on('click', function() {
 			$(this).closest('.workout-crew-popup').slideUp(300);
@@ -168,9 +222,10 @@ module.exports = {
 			$menu.addClass(openClass);
 		});
 
-		$menuClose.on('click', function() {
+		$menuClose.on('click', function () {
 			$menu.removeClass(openClass);
-		})
+		});
 	}
+
 
 };

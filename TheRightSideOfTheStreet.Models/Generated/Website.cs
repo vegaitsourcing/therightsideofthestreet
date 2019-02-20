@@ -21,10 +21,11 @@ namespace TheRightSideOfTheStreet.Models
         [ImplementPropertyType("socialLinks")]
 		public IEnumerable<SocialLink> SocialLinks => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<SocialLink>();
 
+		[ImplementPropertyType("partnerItems")]
+		public IEnumerable<Partners> PartnerItems => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<Partners>();
+
 		[ImplementPropertyType("modules")]
 		public IEnumerable<IModuleNestedContent> Modules => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<IModuleNestedContent>();
 
-		//[ImplementPropertyType("date")]
-		//public DateTime Date => this.GetPropertyValue<IPublishedContent>()?.OfType<DateTime>();
 	}
 }

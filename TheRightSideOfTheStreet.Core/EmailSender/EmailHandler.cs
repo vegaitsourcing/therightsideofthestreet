@@ -47,6 +47,21 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 		}
 
+		public bool WorkoutParksRequest(WorkoutParksFormViewModel model, string adminEmailAddress, string Url)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za registrovanje parka ");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Na sledecem linku mozete pogledati lokaciju parka - <a href={Url}>Park</a>");
+
+
+			return SendEmail(adminEmailAddress, subject.ToString(), body.ToString(), adminEmailAddress, null);
+
+		}
+
 		public bool SendResetPasswordEmail(string adminEmailAddress, string emailTo, string resetLink)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
@@ -61,6 +76,24 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			return SendEmail(adminEmailAddress, subject.ToString(), body.ToString(), emailTo, null);
 		}
+
+		public bool MemberLockedSendMail(LoginFormViewModel model, string emailFrom, string adminEmailAddress, string fullName, string athleteMemberLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zakljucana lozinka");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Clan cija je lozinka zakljucana:{fullName}");
+			body.AppendLine($" Profil mozete pogledati putem linka - <a href={athleteMemberLink}>{fullName}</a>");
+
+			string senderEmail = emailFrom;
+
+			return SendEmail(emailFrom, subject.ToString(), body.ToString(), adminEmailAddress, null);
+
+		}
+
 
 		/// <summary>
 		/// Sends Contact Us request.
@@ -94,6 +127,8 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
 		}
 
+	
+
 		/// <summary>
 		/// Sends Contact Us request.
 		/// </summary
@@ -113,6 +148,48 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			string senderEmail = athlete.Email;
 
 			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+		}
+
+		public bool FanRegistrationRequest(ShowYourselfFormFanViewModel fan, string adminEmailAddress, string newAthleteMemberLink)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za registraciju - ");
+			subject.Append(fan.Name);
+			subject.Append($" { fan.Surname}");
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{fan.Name} {fan.Surname}</a>");
+
+			string senderEmail = fan.Email;
+
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+		}
+
+		public bool CompetitionRequest(LeaguesFormViewModel model, string adminEmailAddress)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Zahtev za takmicenje ");
+
+			StringBuilder body = new StringBuilder();
+			body.Append($"Ime i prezime: {model.Name}");
+			body.AppendLine($" {model.Surname}");
+			body.AppendLine($"Email: {model.Email}");
+			body.AppendLine($"Ekipa: {model.Crews}");
+			body.AppendLine($"Grad: {model.City}");
+
+
+			IEnumerable<Attachment> attachments = new List<Attachment>()
+			{
+				new Attachment(model.ProfilePicture.InputStream, model.ProfilePicture.FileName, model.ProfilePicture.ContentType)
+			};
+
+			string senderEmail = model.Email;
+			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
+
 		}
 
 		/// <summary>

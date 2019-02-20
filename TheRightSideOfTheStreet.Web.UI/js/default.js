@@ -19,7 +19,9 @@ let app = {
 		functions.eventsSlider();
 		functions.citiesMapSlider();
 		functions.goToTop();
+		functions.fancyBox();
 		functions.athletePopup();
+		functions.selectCountry();
 		functions.crewItemsPopup();
 		functions.crewPopup();
         functions.menuToggle();
@@ -27,18 +29,22 @@ let app = {
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
 		athleteForm.showImagePreview();
+		athleteForm.showFanImagePreview();
 		athleteForm.showAchievementsInput();
 		athleteForm.formInit();
 		athleteForm.handleFormSubmit();
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
+		athleteForm.formChecked();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();
-		athleteModule.filterAthletes();		
+		athleteModule.filterAthletes();
+		athleteModule.loadMore();
 		search.search();
 		newsletter.subscribe();
 		crewsModule.chooseCrew();
+		crewsModule.loadMoreCities();
 		// if($('.sw-map-container').length) {
 		// 	maps.initMap();
 		// }

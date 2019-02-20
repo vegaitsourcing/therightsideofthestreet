@@ -15,7 +15,8 @@ namespace TheRightSideOfTheStreet.Core
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			ViewEngines.Engines.Add(new PartialViewEngine());
 			ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
-			ContentFinderResolver.Current.InsertType<AthleteMemberContentFinder>();			
+			ContentFinderResolver.Current.InsertType<AthleteMemberContentFinder>();
+			ContentFinderResolver.Current.InsertType<AdminContentFinder>();
 		}
 
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)

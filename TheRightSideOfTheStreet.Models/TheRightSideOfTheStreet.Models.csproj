@@ -256,6 +256,10 @@
     <Compile Include="Extensions\IRootNodeExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperDomainExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
+    <Compile Include="Generated\Admin.cs" />
+    <Compile Include="Generated\Admin.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\AthleteForm.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -361,6 +365,9 @@
     <Compile Include="Generated\ExerciseStep.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Fan.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\File.cs" />
     <Compile Include="Generated\File.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -434,6 +441,11 @@
     <Compile Include="Generated\ParkLocation.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Partners.cs" />
+    <Compile Include="Generated\Partners.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\RankingTable.cs" />
     <Compile Include="Generated\RankingTable.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -450,6 +462,7 @@
     <Compile Include="Generated\SocialLink.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\SWleague.cs" />
     <Compile Include="Generated\SWleague.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

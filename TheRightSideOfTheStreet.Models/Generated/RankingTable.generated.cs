@@ -55,39 +55,12 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Athlete Image: Athlete profil image
-		///</summary>
-		[ImplementPropertyType("athleteImage")]
-		public IPublishedContent AthleteImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("athleteImage"); }
-		}
-
-		///<summary>
-		/// Athlete Status
-		///</summary>
-		[ImplementPropertyType("athleteStatus")]
-		public string AthleteStatus
-		{
-			get { return this.GetPropertyValue<string>("athleteStatus"); }
-		}
-
-		///<summary>
 		/// City
 		///</summary>
 		[ImplementPropertyType("city")]
 		public string City
 		{
 			get { return this.GetPropertyValue<string>("city"); }
-		}
-
-		///<summary>
-		/// Crew Logo: Logo dimensions should be
-		///</summary>
-		[ImplementPropertyType("crewLogo")]
-		public IPublishedContent CrewLogo
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("crewLogo"); }
 		}
 
 		///<summary>

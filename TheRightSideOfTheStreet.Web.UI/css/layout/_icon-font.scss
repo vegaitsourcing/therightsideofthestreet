@@ -57,11 +57,20 @@
 	@if $filename == ico-upload {
 		$char: '\E00B';
 	}
-	@if $filename == ico-user {
+	@if $filename == ico-user-graduate {
 		$char: '\E00C';
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-user-ninja {
 		$char: '\E00D';
+	}
+	@if $filename == ico-user-tie {
+		$char: '\E00E';
+	}
+	@if $filename == ico-user {
+		$char: '\E00F';
+	}
+	@if $filename == ico-youtube {
+		$char: '\E010';
 	}
 
 	@return $char;
@@ -110,6 +119,15 @@
 }
 .font-ico-upload {
 	@include font(ico-upload);
+}
+.font-ico-user-graduate {
+	@include font(ico-user-graduate);
+}
+.font-ico-user-ninja {
+	@include font(ico-user-ninja);
+}
+.font-ico-user-tie {
+	@include font(ico-user-tie);
 }
 .font-ico-user {
 	@include font(ico-user);

@@ -57,16 +57,26 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		p {
+		span {
+			display: block;
 			flex: 1;
-			padding-bottom: 20px;
+			padding-bottom: 10px;
 			text-align: center;
 			color: $white;
 			font-weight: 700;
-			span {
-				font-size: 16px;
-				font-weight: 400;
-			}
+		}
+		.city {
+			font-size: 16px;
+			font-weight: 400;
+		}
+	}
+	.donators-block {
+		width: 15%;
+		text-align: center;
+		margin-bottom: 30px;
+		img {
+			margin-bottom: 10px;
+			border-radius: 50%;
 		}
 	}
 	ul {
@@ -81,14 +91,13 @@
 	}
 	@include breakpoint(touch) {
 		padding-top: 20px;
-		.donators-name {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+		.donators-block {
+			width: 33%;
 		}
 	}
 	@include breakpoint(phone) {
-		.donators-name {
-			grid-template-columns: repeat(2, 1fr);
+		.donators-block {
+			width: 50%;
 		}
 	}
 }

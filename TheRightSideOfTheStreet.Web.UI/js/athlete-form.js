@@ -9,6 +9,13 @@ module.exports = {
 		$form.data('validator').settings.ignore = "";
 	},
 
+	formChecked: function() {
+		$("input[name='action']:radio").change(function() {
+			$("#show-yourself-form-fan").toggle($(this).val() == "fan");
+			$("#show-yourself-form-athlete").toggle($(this).val() == "athlete");
+		});
+	},
+
 	handleFormSubmit: function () {
 		$('#showYourselfFormButton').on('click', function (e) {
 			e.preventDefault();
@@ -59,6 +66,42 @@ module.exports = {
 					$("#targetImg").attr('src', _file.target.result);
 					$('#icon').hide();
 					$('#text').hide();
+
+				}
+
+			}
+
+		}
+	},
+
+	showFanImagePreview: function () {
+
+		$("#addImageFan").change(function () {
+
+			const File = this.files;
+
+			if (File && File[0]) {
+				readImage(File[0]);
+			}
+
+		})
+
+		const readImage = function (file) {
+
+			const reader = new FileReader;
+			const image = new Image;
+
+			if (file) {
+				reader.readAsDataURL(file);
+			}
+			reader.onload = function (_file) {
+
+				image.src = _file.target.result;
+				image.onload = function () {
+
+					$("#targetImgFan").attr('src', _file.target.result);
+					$('#iconFan').hide();
+					$('#textFan').hide();
 
 				}
 

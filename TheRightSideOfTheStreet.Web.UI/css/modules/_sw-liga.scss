@@ -64,3 +64,334 @@
 		}
 	}
 }
+
+.league-heading {
+	padding: 50px;
+	background: $red;
+	h1 {
+		margin-top: 15px;
+		color: $white;
+		text-align: center;
+	}
+}
+
+.league-content {
+	text-align: center;
+	padding: 67px 0;
+	.h3 {
+		margin-bottom: 56px;
+	}
+
+	.btn {
+		margin: 0 auto 31px;
+		text-transform: initial;
+		padding: 0 20px;
+	}
+}
+
+.league-intro-text {
+	margin-bottom: 60px;
+}
+
+.league-block {
+	max-width: 700px;
+	margin: 0 auto 71px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.league-block-column {
+	width: 43%;
+	h4 {
+		font-size: 28px;
+		text-transform: initial;
+		margin-bottom: 23px;
+	}
+
+	p {
+		font-size: 22px;
+		text-align: center;
+		margin-bottom: 0;
+		line-height: 1.3;
+	}
+}
+
+.league-table {
+	padding: 83px 0;
+	background-size: cover;
+	.wrap {
+		overflow: hidden;
+	}
+	@include breakpoint(phone) {
+		.wrap {
+			padding: 0 5px;
+		}
+	}
+}
+
+.league-table-column {
+	float: left;
+	font-family: $font-headings;
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	position: relative;
+	&.column-1 {
+		width: 33%;
+		.text {
+			float: right;
+			width: 62%;
+			padding-right: 15px;
+		}
+	}
+	&.column-2 {
+		width: 15%;
+		.images-block-content {
+			padding-top: 40px;
+		}
+		.text {
+			font-size: 18px;
+			padding: 0 10px;
+			letter-spacing: 0.012em;
+			display: block;
+			margin: 10px 0 17px;
+		}
+	}
+	&.column-3,
+	&.column-4,
+	&.column-5 {
+		width: 14.8%;
+		.images-block-content {
+			padding-top: 62px;
+		}
+
+		.text-block-content {
+			margin-bottom: 65px;
+		}
+
+		.text {
+			width: 100%;
+		}
+	}
+	&.column-4 {
+		width: 22.6%;
+	}
+	&.column-5 {
+		width: 10%;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 2px;
+		height: 690px;
+		background-color: $white;
+	}
+	&:last-child {
+		&::after {
+			display: none;
+		}
+	}
+	.images-block-content {
+		padding-top: 52px;
+	}
+	.images-block {
+		display: flex;
+		align-items: center;
+		padding: 0 0 41px 20px;
+		text-align: left;
+		img {
+			border-radius: 50%;
+			margin-right: 20px;
+			max-width: 67px;
+			width: 100%;
+		}
+
+		&:last-child {
+			padding: 0 0 0 20px;
+		}
+	}
+	.name,
+	.position {
+		font-size: 30px;
+		font-weight: 700;
+		color: $white;
+	}
+
+	.name {
+		min-height: 71px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 5px;
+			width: 100%;
+			background-color: $white;
+		}
+	}
+
+	.position {
+		margin-right: 25px;
+	}
+
+	.text {
+		font-size: 28px;
+		color: $white;
+		letter-spacing: -0.005em;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	.img-holder {
+		max-width: 120px;
+		margin: 0 auto 8px;
+		display: block;
+		img {
+			width: 100%;
+		}
+	}
+	@include breakpoint(touch) {
+		&.column-2 {
+			width: 20%;
+			.images-block-content {
+				padding-top: 50px;
+			}
+			.text {
+				font-size: 12px;
+				margin-bottom: 30px;
+			}
+		}
+		&.column-3,
+		&.column-4,
+		&.column-5 {
+			width: 12.8%;
+			.images-block-content {
+				padding-top: 60px;
+			}
+			.text-block-content {
+				margin-bottom: 58px;
+			}
+		}
+		&.column-4 {
+			width: 20.6%;
+		}
+		.images-block {
+			img {
+				margin-right: 10px;
+			}
+		}
+		.name,
+		.position {
+			font-size: 20px;
+		}
+
+		.position {
+			margin-right: 10px;
+		}
+
+		.text {
+			font-size: 18px;
+		}
+
+		.img-holder {
+			max-width: 80px;
+		}
+		&::after {
+			height: 640px;
+		}
+	}
+	@include breakpoint(phone) {
+		.text, .name, .position {
+			font-size: 12px;
+		}
+		.position {
+			margin: 0;
+		}
+		&.column-1 {
+			width: 23.8%;
+			.images-block {
+				height: 105px;
+				display: block;
+				padding-left: 0;
+				text-align: center;
+				img {
+					max-width: 40px;
+					margin: 0;
+				}
+			}
+			.text {
+				display: block;
+				width: 100%;
+				float: none;
+			}
+		}
+		&.column-2 {
+			width: 24%;
+			.images-block-content {
+				padding-top: 45px;
+			}
+			.img-holder {
+				max-width: 70px;
+			}
+			.text {
+				padding: 0;
+				font-size: 10px;
+				display: block;
+				margin-bottom: 33px;
+			}
+		}
+		&.column-3,
+		&.column-4,
+		&.column-5 {
+			width: 20%;
+			.images-block-content {
+				padding-top: 50px;
+			}
+		}
+		&.column-4 {
+			width: 18%;
+		}
+		&.column-5 {
+			width: 13.6%;
+		}
+	}
+	@include breakpoint(500px) {
+		&.column-2 {
+			.text {
+				height: 50px;
+				margin-bottom: 0;
+			}
+		}
+		&.column-3,
+		&.column-4,
+		&.column-5 {
+			.text-block-content {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
