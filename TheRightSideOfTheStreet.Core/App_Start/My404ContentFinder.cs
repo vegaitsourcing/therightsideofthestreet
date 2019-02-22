@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TheRightSideOfTheStreet.Models;
-using Umbraco.Core;
+﻿using TheRightSideOfTheStreet.Models;
 using Umbraco.Core.Models;
-using Umbraco.Core.Services;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
 
@@ -17,13 +10,10 @@ namespace TheRightSideOfTheStreet.Core.App_Start
 	{
 		public bool TryFindContent(PublishedContentRequest contentRequest)
 		{
-			string requestUrl = contentRequest.DomainUri.Host;
-
-			var services = ApplicationContext.Current.Services;
-			var domainService = services.DomainService;
-			var site = domainService.GetByName(requestUrl);
+			int? rootNodeId = contentRequest.UmbracoDomain.RootContentId;
+		
 			var helper = new UmbracoHelper(UmbracoContext.Current);
-			IPublishedContent siteRoot = helper.TypedContent(site.RootContentId);
+			IPublishedContent siteRoot = helper.TypedContent(rootNodeId);
 
 			var error404 = siteRoot.DescendantOrSelf<Error404>();
 

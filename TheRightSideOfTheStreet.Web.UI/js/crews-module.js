@@ -20,15 +20,16 @@ module.exports = {
 
 		});
 
-		$(".sw-crews-crew-item").on("click", function () {
-			const $this = $(this);
-			const itemKey = $this.data("crew-key");
-			const $item = $("div.wrap[data-crew-key=" + itemKey + "]");
+		//$(document).on("click", ".sw-crews-crew-item", function () {
+		//	const $this = $(this);
+		//	const itemKey = $this.data("crew-key");
+		//	const $item = $("div.wrap[data-crew-key=" + itemKey + "]");
 
-			if (!$item) return;
-			$item.siblings("div.wrap[data-crew-key]").hide();
-			$item.show();
-		});
+		//	if (!$item) return;
+		//	$item.siblings("div.wrap[data-crew-key]").hide();
+		//	$item.show();
+
+		//});
 
 		$("[back-to-cities]").on("click", function () {
 			$("div[data-city-key]").hide();

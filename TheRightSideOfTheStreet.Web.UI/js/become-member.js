@@ -8,6 +8,7 @@ module.exports = {
 			const $this = $(this);
 			const itemKey = $this.data("item");
 			const $item = $("[data-item=" + itemKey + "]");
+			let headerHeight = $('.header').height();
 
 			if (!$item) return;
 			$item.siblings("[data-item]").hide();
@@ -19,6 +20,12 @@ module.exports = {
 
 			if (!status) return;
 			$("#Status").val(status);
+
+			if ($(window).width() < 1025) {
+				$('html, body').animate({
+					scrollTop: $(".payment-img:visible").offset().top - headerHeight
+				}, 500);
+			}
 		});
 	},
 

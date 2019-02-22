@@ -64,6 +64,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Status
+		///</summary>
+		[ImplementPropertyType("status")]
+		public IEnumerable<IPublishedContent> Status
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("status"); }
+		}
+
+		///<summary>
 		/// Is Approved
 		///</summary>
 		[ImplementPropertyType("umbracoMemberApproved")]

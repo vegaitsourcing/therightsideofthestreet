@@ -24,6 +24,7 @@ let app = {
 		functions.selectCountry();
 		functions.crewItemsPopup();
 		functions.crewPopup();
+		functions.parksScroll();
         functions.menuToggle();
 		listing.donators();
 		becomeMember.changeImage();

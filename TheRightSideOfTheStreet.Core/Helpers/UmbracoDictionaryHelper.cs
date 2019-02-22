@@ -44,6 +44,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Fail => UmbracoHelper.GetDictionaryValue("NewsletterModule.Fail");
 		}
 
+		public static class WorkoutParks
+		{
+			public static string Coordinates => UmbracoHelper.GetDictionaryValue("WorkoutParks.Coordinates");
+		}
 
 		public static class UmbracoValidation
 		{
@@ -86,6 +90,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Crews => UmbracoHelper.GetDictionaryValue("AthleteForm.Crew");
 			public static string Country => UmbracoHelper.GetDictionaryValue("AthleteForm.Country");
 			public static string City => UmbracoHelper.GetDictionaryValue("AthleteForm.City");
+			public static string Facebook => UmbracoHelper.GetDictionaryValue("AthleteForm.Facebook");
+			public static string Instagram => UmbracoHelper.GetDictionaryValue("AthleteForm.Instagram");
+			public static string Youtube => UmbracoHelper.GetDictionaryValue("AthleteForm.Youtube");
+			public static string SportVision => UmbracoHelper.GetDictionaryValue("AthleteForm.SportVision");
 		}
 
 		public static class ExerciseGroup
@@ -131,6 +139,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Facebook => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowFacebook");
 			public static string Youtube => UmbracoHelper.GetDictionaryValue("AthleteModule.FollowYoutube");
 			public static string Find => UmbracoHelper.GetDictionaryValue("AthleteModule.Find");
+			public static string SearchAthlete => UmbracoHelper.GetDictionaryValue("AthleteModule.SearchAthlete");
 		}
 
 		public static class Banner
@@ -144,6 +153,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Find => UmbracoHelper.GetDictionaryValue("CrewsModule.Find");
 			public static string ShowMore => UmbracoHelper.GetDictionaryValue("CrewsModule.ShowMore");
 			public static string BackTo => UmbracoHelper.GetDictionaryValue("CrewsModule.BackTo");
+			public static string SelectCountry => UmbracoHelper.GetDictionaryValue("CrewsModule.SelectCountry");
 		}
 
 		public static class ForgottenPassword

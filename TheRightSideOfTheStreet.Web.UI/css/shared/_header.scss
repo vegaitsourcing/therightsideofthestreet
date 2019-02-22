@@ -69,14 +69,17 @@
 
 .main-nav {
 	float: right;
+
 	ul {
 		margin: 0 -33px;
 	}
+
 	li {
 		float: left;
-		margin: 0 33px;
+		margin: 0 20px;
 		position: relative;
 		padding: 36px 0 42px;
+
 		&:hover {
 			.secondary-nav {
 				opacity: 1;
@@ -84,9 +87,11 @@
 			}
 		}
 	}
+
 	.secondary-nav {
 		margin: 0;
 	}
+
 	.main-nav-close {
 		width: 30px;
 		height: 30px;
@@ -96,25 +101,37 @@
 		color: $white;
 		display: none;
 	}
+
 	&.main-nav-open {
 		transform: translate(0, 0);
 	}
+
 	@include breakpoint(1260px) {
 		ul {
 			margin: 0 -20px;
 		}
+
 		li {
 			margin: 0 20px;
 		}
 	}
-	@include breakpoint(1150px) {
+
+	@include breakpoint(1230px) {
 		ul {
 			margin: 0 -10px;
 		}
+
+		li {
+			margin: 0 15px;
+		}
+	}
+
+	@include breakpoint(1170px) {
 		li {
 			margin: 0 10px;
 		}
 	}
+
 	@include breakpoint(touch) {
 		display: block;
 		position: fixed;
@@ -129,27 +146,33 @@
 		padding-left: 62px;
 		margin-top: 56px;
 		overflow: auto;
+
 		.main-nav-close {
 			display: block;
 		}
+
 		ul {
 			text-align: right;
 			margin: 0 0 25px;
 		}
+
 		li {
 			display: block;
 			float: none;
 			padding: 13px 0 7px;
 			margin: 0;
 		}
+
 		a {
 			font-size: 16px;
 			letter-spacing: 0.5px;
 		}
+
 		.secondary-nav {
 			display: none;
 		}
 	}
+
 	@include breakpoint(phone) {
 		padding: 0 20px;
 	}
@@ -166,7 +189,7 @@
 	width: 100%;
 	li {
 		border-bottom: 1px solid $grey;
-		background-color: rgba(#1f1f1f, 0.9);
+		background-color: rgba(#1f1f1f, 1);
 		width: 100%;
 		padding: 0;
 		margin: 0;
@@ -176,7 +199,7 @@
 			border-bottom: 0;
 		}
 		&:hover {
-			background-color: rgba(#1f1f1f, 0.2);
+			background-color: rgba(#1f1f1f, 0.9);
 			.header-links {
 				color: $white;
 			}

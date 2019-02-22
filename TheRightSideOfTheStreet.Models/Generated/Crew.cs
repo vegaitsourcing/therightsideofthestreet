@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TheRightSideOfTheStreet.Models.Extensions;
 using Umbraco.Core.Models;
 using Umbraco.ModelsBuilder;
@@ -11,7 +12,7 @@ namespace TheRightSideOfTheStreet.Models
 		[ImplementPropertyType("logo")]
 		public Image Logo => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
 
-		[ImplementPropertyType("image")]
-		public Image Image => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
+		[ImplementPropertyType("images")]
+		public IEnumerable<Image> Images => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<Image>();
 	}
 }

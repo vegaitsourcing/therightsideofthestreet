@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheRightSideOfTheStreet.Models.Extensions;
 using Umbraco.Core.Models;
 using Umbraco.ModelsBuilder;
+using Umbraco.Web;
 
 namespace TheRightSideOfTheStreet.Models
 {
@@ -13,5 +11,8 @@ namespace TheRightSideOfTheStreet.Models
 	{
 		[ImplementPropertyType("competitors")]
 		public IEnumerable<RankingTable> Competitors => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.OfType<RankingTable>();
+
+		[ImplementPropertyType("tableBackgroundImage")]
+		public Image TableBackgroundImage => this.GetPropertyValue<IPublishedContent>()?.OfType<Image>();
 	}
 }

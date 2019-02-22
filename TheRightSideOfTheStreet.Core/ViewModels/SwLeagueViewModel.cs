@@ -1,5 +1,4 @@
-﻿using MailChimp.Net.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TheRightSideOfTheStreet.Core.Contexts;
@@ -16,6 +15,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		{
 			IntroText = context.Page.IntroText;
 			Link = context.Page.Link.AsViewModel();
+			TableBackgroundImage = context.Page.TableBackgroundImage.AsViewModel();
 			Competitors = context.Page.Competitors?.Select(ed => context.WithNestedContent(ed).AsViewModel<RankingTableViewModel>()).ToList();
 			ScoringLeft = context.Page.ScoringLeft;
 			ScoringRight = context.Page.ScoringRight;
@@ -23,6 +23,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		}
 		public string IntroText { get; }
 		public LinkViewModel Link { get; }
+		public ImageViewModel TableBackgroundImage { get; }
 		public IHtmlString ScoringLeft { get; }
 		public IHtmlString ScoringRight { get; }
 		public IList<RankingTableViewModel> Competitors { get; }
