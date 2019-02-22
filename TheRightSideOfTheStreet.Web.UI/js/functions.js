@@ -177,6 +177,16 @@ module.exports = {
 
 	crewPopup: function () {
 		$('.sw-crews-crew-item').on('click', function () {
+
+			const $this = $(this);
+			const itemKey = $this.data("crew-key");
+			const $item = $("div.wrap[data-crew-key=" + itemKey + "]");
+
+			if (!$item) return;
+			$item.siblings("div.wrap[data-crew-key]").hide();
+			$item.show();
+			$('.slick-slider').slick('refresh');
+
 			$(this).closest('.sw-crews').find('.workout-crew-popup').slideDown(600);
 			let headerHeight = $('.header').height();
 			let $slider = $('.crew-popup-slider');
