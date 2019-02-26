@@ -40,15 +40,8 @@ module.exports = {
 		const $btn = $('.box-bottom-btn .btn');
 
 		$btn.on('click', function() {
-			$(this).css({
-				'background-color': '#fff',
-				'color': '#e51018',
-				'border-color': '#e51018'
-			});
-			$(this).closest('.sw-mem-lvl-box').siblings().find('.btn').css({
-				'background-color': '#e51018',
-				'color': '#fff'
-			});
+			$(this).addClass('btn-active');
+			$(this).closest('.sw-mem-lvl-box').siblings().find('.btn').removeClass('btn-active');
 		});
 	}
 };
