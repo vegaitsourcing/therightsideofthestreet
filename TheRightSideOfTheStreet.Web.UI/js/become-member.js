@@ -38,15 +38,14 @@ module.exports = {
 
 	changeBtn: function() {
 		const $btn = $('.box-bottom-btn .btn');
-		const $thisBtn = $(this);
 
-		$btn.on('click', function () {
-			$thisBtn.css({
+		$btn.on('click', function() {
+			$(this).css({
 				'background-color': '#fff',
 				'color': '#e51018',
 				'border-color': '#e51018'
 			});
-			$thisBtn.closest('.sw-mem-lvl-box').siblings().find('.btn').css({
+			$(this).closest('.sw-mem-lvl-box').siblings().find('.btn').css({
 				'background-color': '#e51018',
 				'color': '#fff'
 			});
