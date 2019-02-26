@@ -35,6 +35,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string RequestFailed => UmbracoHelper.GetDictionaryValue("BecomeMember.RequestFailed");
 		}
 
+		public static class Header
+		{
+			public static string WorkoutParks => UmbracoHelper.GetDictionaryValue("Header.WorkoutParks");
+		}
+
 		public static class NewsletterModule
 		{
 			public static string SubscriptionMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.SubscriptionMessage");
