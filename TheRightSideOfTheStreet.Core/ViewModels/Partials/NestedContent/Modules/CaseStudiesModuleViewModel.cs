@@ -11,10 +11,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent.Modules
 		public CaseStudiesModuleViewModel(INestedContentContext<CaseStudiesModule> context)
 		{
 			Title = context.NestedContent.Title;
-			Boxes = context.NestedContent.Boxes?.Select(fo => context.WithNestedContent(fo).AsViewModel<CaseStudyViewModel>()).ToList();
+			Boxes = context.NestedContent.Boxes.AsViewModel<BlogDetailsPreviewViewModel>().ToList();
 		}
 
 		public string Title { get; }
-		public IList<CaseStudyViewModel> Boxes { get; }
+		public IList<BlogDetailsPreviewViewModel> Boxes { get; }
 	}
 }

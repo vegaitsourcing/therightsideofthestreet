@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Blogs Module</summary>
+	/// <summary>Events Module</summary>
 	[PublishedContentModel("blogsModule")]
 	public partial class BlogsModule
 	{

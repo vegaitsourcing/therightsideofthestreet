@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Case Studies Module</summary>
+	/// <summary>Events Module v2</summary>
 	[PublishedContentModel("caseStudiesModule")]
 	public partial class CaseStudiesModule
 	{
@@ -43,6 +43,15 @@ namespace TheRightSideOfTheStreet.Models
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CaseStudiesModule, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Boxes
+		///</summary>
+		[ImplementPropertyType("boxes")]
+		public IEnumerable<IPublishedContent> Boxes
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("boxes"); }
 		}
 
 		///<summary>
