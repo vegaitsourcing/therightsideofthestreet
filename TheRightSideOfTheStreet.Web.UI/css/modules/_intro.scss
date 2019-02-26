@@ -31,6 +31,10 @@
 			text-align-last: left;
 		}
 	}
+	.btn {
+		font-size: 20px;
+		padding: 0 20px;
+	}
 	@include breakpoint(touch) {
 		img {
 			margin-bottom: 30px;
@@ -38,10 +42,10 @@
 		}
 	}
 	@include breakpoint(phone) {
+		text-align: center;
 		.btn {
-			width: 100%;
-			text-align: center;
 			font-size: 14px;
+			padding: 0 15px;
 		}
 	}
 }

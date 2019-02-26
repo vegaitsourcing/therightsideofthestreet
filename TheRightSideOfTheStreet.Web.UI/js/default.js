@@ -29,6 +29,7 @@ let app = {
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
+		becomeMember.changeBtn();
 		athleteForm.showImagePreview();
 		athleteForm.showFanImagePreview();
 		athleteForm.showAchievementsInput();

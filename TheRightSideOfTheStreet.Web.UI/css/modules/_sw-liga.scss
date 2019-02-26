@@ -87,6 +87,11 @@
 		text-transform: initial;
 		padding: 0 20px;
 	}
+	@include breakpoint(phone) {
+		.btn {
+			padding: 0 15px;
+		}
+	}
 }
 
 .league-intro-text {

@@ -195,6 +195,9 @@
 	@include hover {
 		color: $red;
 	}
+	&:active {
+		color: $red;
+	}
 }
 
 .footer-nav-right {
@@ -210,6 +213,9 @@
 	font-family: $font-default;
 	letter-spacing: 0.9px;
 	@include hover {
+		color: $red;
+	}
+	&:active {
 		color: $red;
 	}
 }

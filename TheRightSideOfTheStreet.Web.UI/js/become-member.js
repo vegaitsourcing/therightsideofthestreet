@@ -34,6 +34,23 @@ module.exports = {
 		if (!$this) return;
 
 		$this.settings.ignore = "";
+	},
+
+	changeBtn: function() {
+		const $btn = $('.box-bottom-btn .btn');
+		const $thisBtn = $(this);
+
+		$btn.on('click', function () {
+			$thisBtn.css({
+				'background-color': '#fff',
+				'color': '#e51018',
+				'border-color': '#e51018'
+			});
+			$thisBtn.closest('.sw-mem-lvl-box').siblings().find('.btn').css({
+				'background-color': '#e51018',
+				'color': '#fff'
+			});
+		});
 	}
 };
 
