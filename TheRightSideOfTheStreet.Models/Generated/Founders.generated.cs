@@ -46,7 +46,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// IsImageLeft
+		/// Is Image Left: Control image position
 		///</summary>
 		[ImplementPropertyType("isImageLeft")]
 		public bool IsImageLeft

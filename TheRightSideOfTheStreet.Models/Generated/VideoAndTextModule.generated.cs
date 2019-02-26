@@ -55,7 +55,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Is Video Right
+		/// Is Video Right: Control the position of video frame
 		///</summary>
 		[ImplementPropertyType("isVideoRight")]
 		public bool IsVideoRight
