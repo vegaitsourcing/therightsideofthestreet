@@ -73,7 +73,7 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Participants Number
+		/// Number of competitions
 		///</summary>
 		[ImplementPropertyType("participantsNumber")]
 		public int ParticipantsNumber
