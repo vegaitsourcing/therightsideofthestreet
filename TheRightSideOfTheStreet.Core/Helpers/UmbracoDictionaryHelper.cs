@@ -109,6 +109,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string LogIn => UmbracoHelper.GetDictionaryValue("ExerciseGroup.LogInButton");
 			public static string SentSuccess => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestSuccess");
 			public static string SentFail => UmbracoHelper.GetDictionaryValue("ExerciseGroup.SentRequestFail");
+			public static string Warning => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Warning");
+			public static string Participate => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Participate");
+			public static string Text => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Text");
+			public static string Location => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Location");
 		}
 
 		public static class AtheleLanding
