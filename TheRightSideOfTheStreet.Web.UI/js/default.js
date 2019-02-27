@@ -25,7 +25,7 @@ let app = {
 		functions.crewItemsPopup();
 		functions.crewPopup();
 		functions.parksScroll();
-        functions.menuToggle();
+		functions.menuToggle();
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();

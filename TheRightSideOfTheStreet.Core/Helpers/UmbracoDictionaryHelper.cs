@@ -52,6 +52,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 		public static class WorkoutParks
 		{
 			public static string Coordinates => UmbracoHelper.GetDictionaryValue("WorkoutParks.Coordinates");
+			public static string Submit => UmbracoHelper.GetDictionaryValue("WorkoutParks.Submit");
 		}
 
 		public static class UmbracoValidation
@@ -182,6 +183,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Crew => UmbracoHelper.GetDictionaryValue("SWLeague.Crew");
 			public static string NumberOfCompetitions => UmbracoHelper.GetDictionaryValue("SWLeague.NumberOfCompetitions");
 			public static string Points => UmbracoHelper.GetDictionaryValue("SWLeague.Points");
+			public static string NoCrew => UmbracoHelper.GetDictionaryValue("SWLeague.NoCrew");
 
 
 		}

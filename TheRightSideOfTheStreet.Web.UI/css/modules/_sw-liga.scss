@@ -156,7 +156,7 @@
 			padding-top: 40px;
 		}
 		.text {
-			font-size: 18px;
+			font-size: 16px;
 			padding: 0 10px;
 			letter-spacing: 0.012em;
 			display: block;
@@ -220,7 +220,7 @@
 	}
 	.name,
 	.position {
-		font-size: 30px;
+		font-size: 24px;
 		font-weight: 700;
 		color: $white;
 	}
@@ -248,7 +248,7 @@
 	}
 
 	.text {
-		font-size: 28px;
+		font-size: 26px;
 		color: $white;
 		letter-spacing: -0.005em;
 		font-weight: 600;
@@ -315,7 +315,7 @@
 	}
 	@include breakpoint(phone) {
 		.text, .name, .position {
-			font-size: 12px;
+			font-size: 10px;
 		}
 		.position {
 			margin: 0;
