@@ -219,15 +219,15 @@ module.exports = {
 				setTimeout(function () {
 					$('html, body').animate({
 						scrollTop: $(".workout-crew-popup").offset().top - headerHeight
-					}, 500);
-				}, 500);
+					}, 300);
+				}, 100);
 			}
 			else {
 				setTimeout(function () {
 					$('html, body').animate({
 						scrollTop: $(".workout-crew-popup:visible").offset().top
 					}, 500);
-				}, 500);
+				}, 100);
 			}
 		});
 

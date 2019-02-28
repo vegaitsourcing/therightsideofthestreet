@@ -22,26 +22,30 @@ namespace TheRightSideOfTheStreet.Core.Validations
 		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
 		{
 			IEnumerable<HttpPostedFileBase> files = value as IEnumerable<HttpPostedFileBase>;
-
-			foreach (HttpPostedFileBase file in files)
-			{
-				var imageName = file.FileName;
-				if (!string.IsNullOrEmpty(imageName))
+			
+				foreach (HttpPostedFileBase file in files)
 				{
-					//Test the regex
-					var result = _regex.Match(imageName).Length > 0;
+				if (file != null)
+				{
+					var imageName = file.FileName;
 
-					//If no matches then email NOT valid
-					if (!result)
+					if (!string.IsNullOrEmpty(imageName))
 					{
-						//Get the error message to return
-						var error = UmbracoValidationHelper.FormatErrorMessage(validationContext.DisplayName, ErrorMessageDictionaryKey);
+						//Test the regex
+						var result = _regex.Match(imageName).Length > 0;
 
-						//Return error
-						return new ValidationResult(error);
+						//If no matches then email NOT valid
+						if (!result)
+						{
+							//Get the error message to return
+							var error = UmbracoValidationHelper.FormatErrorMessage(validationContext.DisplayName, ErrorMessageDictionaryKey);
+
+							//Return error
+							return new ValidationResult(error);
+						}
 					}
 				}
-			}
+				}		
 			//All good :)
 			return ValidationResult.Success;
 		}
@@ -178,24 +182,24 @@ namespace TheRightSideOfTheStreet.Core.Validations
 		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
 		{
 			IEnumerable<HttpPostedFileBase> files = value as IEnumerable<HttpPostedFileBase>;
-
-			foreach (HttpPostedFileBase file in files)
-			{
-
-				if (file != null)
+		
+				foreach (HttpPostedFileBase file in files)
 				{
-					if (file.ContentLength > MaxMB.Value)
-					{
-						//Get the error message to return
-						var error = UmbracoValidationHelper.FormatErrorMessage((MaxMB / denumerator).ToString(), _errorMessageDictionaryKey);
 
-						//Return error
-						return new ValidationResult(error);
+					if (file != null)
+					{
+						if (file.ContentLength > MaxMB.Value)
+						{
+							//Get the error message to return
+							var error = UmbracoValidationHelper.FormatErrorMessage((MaxMB / denumerator).ToString(), _errorMessageDictionaryKey);
+
+							//Return error
+							return new ValidationResult(error);
+						}
 					}
 				}
-			}
+			
 			return ValidationResult.Success;
-
 		}
 
 		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)

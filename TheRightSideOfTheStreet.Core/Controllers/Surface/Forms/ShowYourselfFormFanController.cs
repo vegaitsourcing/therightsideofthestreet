@@ -67,10 +67,10 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			if (!sentMail)
 			{
 				memberService.Delete(member);
-				TempData[Constants.Constants.TempDataFail] = "fail";
+				TempData[Constants.Constants.TempDataFailFan] = "failFan";
 				return CurrentUmbracoPage();
 			}
-			TempData[Constants.Constants.TempDataSuccess] = "success";
+			TempData[Constants.Constants.TempDataSuccessFan] = "successFan";
 
 			return RedirectToCurrentUmbracoPage();
 		}

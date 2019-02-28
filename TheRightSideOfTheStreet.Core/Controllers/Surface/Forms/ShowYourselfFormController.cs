@@ -63,13 +63,16 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			foreach (var image in model.Images)
 			{
-				var media = Services.MediaService.CreateMediaWithIdentity(image.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
-				media.SetValue("umbracoFile", image.FileName, image.InputStream);
-				Services.MediaService.Save(media);
+				if (image != null)
+				{
+					var media = Services.MediaService.CreateMediaWithIdentity(image.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
+					media.SetValue("umbracoFile", image.FileName, image.InputStream);
+					Services.MediaService.Save(media);
 
-				GuidUdi mediaUdi = media.GetUdi();
-				string mediaUdiAsString = mediaUdi.ToString();
-				udiList.Add(mediaUdiAsString);
+					GuidUdi mediaUdi = media.GetUdi();
+					string mediaUdiAsString = mediaUdi.ToString();
+					udiList.Add(mediaUdiAsString);
+				}
 			}
 
 			member.SetValue(nameof(AthleteMember.Images), string.Join(",", udiList));
@@ -81,7 +84,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			member.SetValue(nameof(AthleteMember.Biography), model.DescribeYourself);
 
-			IEnumerable<string> achievements = model.ImportantAchievements.Split('|');			
+			IEnumerable<string> achievements = model.ImportantAchievements.Split('|');
 
 			member.SetValue(nameof(AthleteMember.Achievements), string.Join(Environment.NewLine, achievements));
 

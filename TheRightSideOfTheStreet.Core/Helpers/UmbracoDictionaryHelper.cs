@@ -100,6 +100,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Instagram => UmbracoHelper.GetDictionaryValue("AthleteForm.Instagram");
 			public static string Youtube => UmbracoHelper.GetDictionaryValue("AthleteForm.Youtube");
 			public static string SportVision => UmbracoHelper.GetDictionaryValue("AthleteForm.SportVision");
+			public static string Type => UmbracoHelper.GetDictionaryValue("AthleteForm.Type");
+			public static string ChooseImages => UmbracoHelper.GetDictionaryValue("AthleteForm.ChooseImages");
 		}
 
 		public static class ExerciseGroup
