@@ -222,13 +222,6 @@ module.exports = {
 					}, 300);
 				}, 100);
 			}
-			else {
-				setTimeout(function () {
-					$('html, body').animate({
-						scrollTop: $(".workout-crew-popup:visible").offset().top
-					}, 500);
-				}, 100);
-			}
 		});
 
 		$('.btn-close-crew-popup').on('click', function () {
