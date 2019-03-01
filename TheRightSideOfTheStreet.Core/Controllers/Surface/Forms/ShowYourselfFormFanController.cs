@@ -40,6 +40,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			var member = Services.MemberService.CreateMemberWithIdentity(model.Email, model.Email, memberName, Fan.ModelTypeAlias);
 			Services.MemberService.AssignRole(member.Id, "Fan Group");
+			Services.MemberService.SavePassword(member, model.Password);
 			member.SetValue(nameof(Fan.FullName), memberName);
 
 			var profileImage = Services.MediaService.CreateMediaWithIdentity(model.ProfilePicture.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);

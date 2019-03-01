@@ -8,7 +8,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.RenderMvc
 	{
 		public ActionResult LoginForm(LoginForm model)
 		{
-			Members.Logout();
 			return CurrentTemplate(new LoginViewModel(CreatePageContext(model)));
 		}
 	}
