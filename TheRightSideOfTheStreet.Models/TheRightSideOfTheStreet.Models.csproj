@@ -365,6 +365,7 @@
     <Compile Include="Generated\ExerciseStep.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Fan.cs" />
     <Compile Include="Generated\Fan.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

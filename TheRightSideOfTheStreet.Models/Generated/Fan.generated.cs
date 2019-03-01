@@ -55,15 +55,6 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
-		/// Profile Image
-		///</summary>
-		[ImplementPropertyType("profileImage")]
-		public IPublishedContent ProfileImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("profileImage"); }
-		}
-
-		///<summary>
 		/// Status
 		///</summary>
 		[ImplementPropertyType("status")]
