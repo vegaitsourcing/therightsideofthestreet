@@ -4,7 +4,6 @@ using System.Linq;
 using TheRightSideOfTheStreet.Common.Extensions;
 using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
-using TheRightSideOfTheStreet.Core.Search;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
 using TheRightSideOfTheStreet.Core.ViewModels.Shared;
 using TheRightSideOfTheStreet.Models;

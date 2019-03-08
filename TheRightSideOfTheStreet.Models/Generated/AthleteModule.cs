@@ -11,7 +11,5 @@ namespace TheRightSideOfTheStreet.Models
 {
 	public partial class AthleteModule : PublishedContentModel, IModuleNestedContent
 	{
-		//[ImplementPropertyType("athlete")]
-		//public IEnumerable<AthleteMember> Athlete => this.GetPropertyValue<IEnumerable<IPublishedContent>>()?.Where(am => am != null).OfType<AthleteMember>().Where(am => am.UmbracoMemberApproved);
 	}
 }

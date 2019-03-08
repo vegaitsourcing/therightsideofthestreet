@@ -1,12 +1,11 @@
-﻿using TheRightSideOfTheStreet.Models.DocumentTypes;
-using TheRightSideOfTheStreet.Models.Extensions;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using TheRightSideOfTheStreet.Models.DocumentTypes;
+using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
+using TheRightSideOfTheStreet.Models.Extensions;
 using Umbraco.Core.Models;
 using Umbraco.ModelsBuilder;
 using Umbraco.Web;
-using TheRightSideOfTheStreet.Models.DocumentTypes.Nodes.Items.NestedContent;
 
 namespace TheRightSideOfTheStreet.Models
 {
