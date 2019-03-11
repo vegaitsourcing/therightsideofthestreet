@@ -674,10 +674,8 @@
 
 .level-picker {
 	display: flex;
-	background: $white;
 	margin: 0 35px 60px;
 	width: calc(100% - 70px);
-	box-shadow: 0 0 8px rgba(#231f20, 0.25);
 	border-radius: 30px;
 	padding: 0;
 	@include breakpoint(touch) {
@@ -692,14 +690,21 @@
 .level-item {
 	flex: 1 1 33.333%;
 	width: 33.333%;
+	box-shadow: 0 0 8px rgba(35,31,32,0.25);
+	border-radius: 30px;
+	margin: 0 5px;
+
 	.select-btn {
 		text-align: center;
 		width: 100%;
 		box-shadow: none;
 	}
+
 	@include breakpoint(touch) {
 		flex-basis: 100%;
 		width: 100%;
+		overflow: hidden;
+
 		.select-btn {
 			border-radius: 0;
 			height: auto;
