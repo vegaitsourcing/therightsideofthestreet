@@ -36,6 +36,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public ResetPasswordForm ResetPassword => SiteContext.ResetPassword;
 		public AthleteForm AthleteForm => SiteContext.AthleteForm;
 		public ForgottenPassword ForgottenPassword => SiteContext.ForgottenPassword;
+		public SWleague League => SiteContext.League;
 
 		private ISiteContext SiteContext { get;  }
 	}

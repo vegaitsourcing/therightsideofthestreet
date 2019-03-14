@@ -4,7 +4,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
 	public class NewsletterFormViewModel
 	{
-		[UmbracoRequired("UmbracoValidation.Required")]
+		[UmbracoRequired("NewsletterModule.ValidEmail")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 50)]
 		[UmbracoEmail(ErrorMessageDictionaryKey = "UmbracoValidation.EmailAddress")]
 		[UmbracoDisplayName("BecomeMember.Email")]

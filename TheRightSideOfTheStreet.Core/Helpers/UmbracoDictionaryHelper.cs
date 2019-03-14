@@ -47,12 +47,15 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string SubscriptionFooterMessage => UmbracoHelper.GetDictionaryValue("NewsletterModule.FooterMessage");
 			public static string Success => UmbracoHelper.GetDictionaryValue("NewsletterModule.Success");
 			public static string Fail => UmbracoHelper.GetDictionaryValue("NewsletterModule.Fail");
+			public static string ValidEmail => UmbracoHelper.GetDictionaryValue("NewsletterModule.ValidEmail");
 		}
 
 		public static class WorkoutParks
 		{
 			public static string Coordinates => UmbracoHelper.GetDictionaryValue("WorkoutParks.Coordinates");
 			public static string Submit => UmbracoHelper.GetDictionaryValue("WorkoutParks.Submit");
+			public static string ThankYouMessage => UmbracoHelper.GetDictionaryValue("WorkoutParks.ThankYouMessage");
+			public static string ErrorMessage => UmbracoHelper.GetDictionaryValue("WorkoutParks.ErrorMessage");
 		}
 
 		public static class UmbracoValidation
@@ -102,6 +105,10 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string SportVision => UmbracoHelper.GetDictionaryValue("AthleteForm.SportVision");
 			public static string Type => UmbracoHelper.GetDictionaryValue("AthleteForm.Type");
 			public static string ChooseImages => UmbracoHelper.GetDictionaryValue("AthleteForm.ChooseImages");
+			public static string ImageInfo => UmbracoHelper.GetDictionaryValue("AthleteForm.ImageInfo");
+			public static string MultipleImageInfo => UmbracoHelper.GetDictionaryValue("AthleteForm.MultipleImageInfo");
+			public static string Success => UmbracoHelper.GetDictionaryValue("AthleteForm.Success");
+			public static string Fail => UmbracoHelper.GetDictionaryValue("AthleteForm.Fail");
 		}
 
 		public static class ExerciseGroup
@@ -116,6 +123,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Text => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Text");
 			public static string Location => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Location");
 			public static string Disallowed => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Disallowed");
+			public static string ReadyOrNot => UmbracoHelper.GetDictionaryValue("ExerciseGroup.ReadyOrNot");
 		}
 
 		public static class AtheleLanding
@@ -191,8 +199,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string NumberOfCompetitions => UmbracoHelper.GetDictionaryValue("SWLeague.NumberOfCompetitions");
 			public static string Points => UmbracoHelper.GetDictionaryValue("SWLeague.Points");
 			public static string NoCrew => UmbracoHelper.GetDictionaryValue("SWLeague.NoCrew");
-
-
+			public static string TryYourself => UmbracoHelper.GetDictionaryValue("SWLeague.TryYourself");
 		}
 
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);

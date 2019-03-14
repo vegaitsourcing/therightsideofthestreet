@@ -366,7 +366,6 @@
     <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ForgottenPasswordFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormFanViewModel.cs" />
-    <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormsViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ShowYourselfFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\ExerciseGroupPreviewViewModel.cs" />

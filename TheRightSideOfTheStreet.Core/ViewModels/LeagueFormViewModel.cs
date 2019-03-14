@@ -4,7 +4,6 @@ using TheRightSideOfTheStreet.Core.Contexts;
 using TheRightSideOfTheStreet.Core.Extensions;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials;
 using TheRightSideOfTheStreet.Models;
-using TheRightSideOfTheStreet.Models.DocumentTypes;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels
 {

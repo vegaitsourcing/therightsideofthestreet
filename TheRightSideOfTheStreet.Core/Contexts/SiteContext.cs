@@ -24,6 +24,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 			LazyResetPasswordForm = new Lazy<ResetPasswordForm>(() => UmbracoHelper.GetPage<ResetPasswordForm>(Home.Id));
 			LazyAthleteForm = new Lazy<AthleteForm>(() => UmbracoHelper.GetPage<AthleteForm>(Home.Id));
 			LazyForgottenPassword = new Lazy<ForgottenPassword>(() => UmbracoHelper.GetPage<ForgottenPassword>(Home.Id));
+			LazyLeague = new Lazy<SWleague>(() => UmbracoHelper.GetPage<SWleague>(Home.Id));
 
 		}
 
@@ -37,6 +38,8 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		public ResetPasswordForm ResetPassword => LazyResetPasswordForm.Value;
 		public AthleteForm AthleteForm => LazyAthleteForm.Value;
 		public ForgottenPassword ForgottenPassword => LazyForgottenPassword.Value;
+		public SWleague League => LazyLeague.Value;
+
 
 
 
@@ -52,6 +55,7 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 		private Lazy<ResetPasswordForm> LazyResetPasswordForm { get; }
 		private Lazy<AthleteForm> LazyAthleteForm { get; }
 		private Lazy<ForgottenPassword> LazyForgottenPassword { get; }
+		private Lazy<SWleague> LazyLeague { get; }
 
 	}
 }

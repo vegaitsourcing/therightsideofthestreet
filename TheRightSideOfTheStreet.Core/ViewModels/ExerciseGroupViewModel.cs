@@ -21,6 +21,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			MasterTitle = context.Page.Parent.Parent.Name;
 			SettingsKey = context.Settings.GetKey();
 			LoginUrl = context.LoginForm.Url;
+			LeagueUrl = context.League.Url;
 		}
 
 		public ImageViewModel Image { get; }
@@ -29,5 +30,6 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public string MasterTitle { get; }
 		public Guid SettingsKey { get; }
 		public string LoginUrl { get; }
+		public string LeagueUrl { get; }
 	}
 }

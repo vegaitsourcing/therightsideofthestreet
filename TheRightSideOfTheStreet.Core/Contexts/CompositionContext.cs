@@ -36,6 +36,9 @@ namespace TheRightSideOfTheStreet.Core.Contexts
 
 		public ForgottenPassword ForgottenPassword => SiteContext.ForgottenPassword;
 
+		public SWleague League => SiteContext.League;
+
+
 		private ISiteContext SiteContext { get; }
 	}
 }
