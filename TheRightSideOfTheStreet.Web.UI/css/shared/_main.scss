@@ -552,6 +552,24 @@
 	h2 {
 		margin-bottom: 57px;
 	}
+
+	.iframe-holder {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		padding-bottom: 56.6%;
+		margin: 0 15px 40px;
+		iframe {
+			width: 100%;
+			position: absolute;
+			height: 100%;
+			right: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
 }
 
 .workout-picker {
@@ -713,7 +731,7 @@
 .level-item {
 	flex: 1 1 33.333%;
 	width: 33.333%;
-	box-shadow: 0 0 8px rgba(35,31,32,0.25);
+	box-shadow: 0 0 8px rgba(35, 31 , 32, .25);
 	border-radius: 30px;
 	margin: 0 5px;
 

@@ -275,3 +275,17 @@
 		color: $white;
 	}
 }
+
+.footer-links {
+	padding: 10px 0;
+	a {
+		color: $white;
+		font-size: 16px;
+		display: inline-block;
+		transition: 0.3s ease;
+		margin-right: 30px;
+		@include hover {
+			color: $red;
+		}
+	}
+}

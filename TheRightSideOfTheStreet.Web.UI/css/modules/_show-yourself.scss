@@ -26,6 +26,7 @@
 		width: 30px;
 		display: inline-block;
 		vertical-align: middle;
+		background-color: transparent;
 		&:nth-child(3) {
 			margin-left: 50px;
 		}
@@ -140,6 +141,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
+		align-items: flex-start;
 		.icon {
 			color: $white;
 		}
@@ -161,7 +163,7 @@
 }
 
 .info-message {
-	color: white;
+	color: #fff;
 }
 
 .social-media {
@@ -228,6 +230,6 @@
 }
 
 .success-message {
-	text-align:center;
+	text-align: center;
 	color: $white;
 }
