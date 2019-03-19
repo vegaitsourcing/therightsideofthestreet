@@ -22,6 +22,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			InfoTitle = context.Home.InfoTitle;
 			InfoText = context.Home.InfoText;
 			HygieneLinksGroup = GetHygieneLinksGroups(context.Home.HygieneLinks);
+			PrivacyLinks = context.Home.PrivacyLinks?.Select(pl => pl.AsViewModel()).ToList();
 			ContactEmail = context.Home.ContactEmail;
 			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
 			NewsLetter = new NewsletterFormViewModel(); 
@@ -34,6 +35,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 		public string ContactEmail { get; }
 		public IList<SocialLinkViewModel> SocialLinks { get; }
 		public NewsletterFormViewModel NewsLetter { get; }
+		public IList<LinkViewModel> PrivacyLinks { get; }
 
 		private static IList<IEnumerable<LinkViewModel>> GetHygieneLinksGroups(IEnumerable<Link> links)
 		{

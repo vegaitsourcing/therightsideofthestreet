@@ -91,6 +91,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Privacy links
+		///</summary>
+		[ImplementPropertyType("privacyLinks")]
+		public IEnumerable<RJP.MultiUrlPicker.Models.Link> PrivacyLinks
+		{
+			get { return this.GetPropertyValue<IEnumerable<RJP.MultiUrlPicker.Models.Link>>("privacyLinks"); }
+		}
+
+		///<summary>
 		/// Section Title
 		///</summary>
 		[ImplementPropertyType("sectionTitle")]

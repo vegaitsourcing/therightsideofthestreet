@@ -25,7 +25,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout
 			Login = context.Home.LoginLink.AsViewModel();
 			NavigationItems = context.Home.GetNavigationItems<IPage>().AsNavigationViewModel().AsList();
 			Languages = GetLanguages(context.Languages, context.Page.AlternatePages.ToList()).AsList();
-			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();			
+			SocialLinks = context.Home.SocialLinks?.Select(sl => context.WithNestedContent(sl).AsViewModel<SocialLinkViewModel>()).AsList();
 		}
 
 		public string HomepageUrl { get; }
