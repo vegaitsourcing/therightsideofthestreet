@@ -11,18 +11,21 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 {
 	public class AthleteLandingViewModel : PageViewModel
 	{
-
 		public AthleteLandingViewModel(IPageContext<AthleteLanding> context, string query) : base(context)
 		{
 			AthleteMembers = GetAthletes(context, query);
 			RegisterForm = context.AthleteForm.Url;
-			Admin = GetAdmin(context);
-			
+			Admin = GetAdmin(context, query);
+			Query = query;
 		}
 		
 		public IList<AthleteMemberPreviewViewModel> AthleteMembers { get; set; }
+		public IList<AdminPreviewViewModel> Admin { get; set; }
 
-		private IList<AthleteMemberPreviewViewModel> GetAthletes(IPageContext<AthleteLanding> context, string query)
+		public string RegisterForm { get; set; }
+		public string Query { get; }
+
+		private static IList<AthleteMemberPreviewViewModel> GetAthletes(IPageContext<AthleteLanding> context, string query)
 		{
 			var searcher = new AthleteMembersSearch();
 			if (string.IsNullOrWhiteSpace(query))
@@ -33,16 +36,17 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			return searcher.GetAthletes(query).Select(am => new AthleteMemberPreviewViewModel(context.WithAthleteMember(am))).AsList();
 		}
 
-		//Admin
-		public IEnumerable<AdminPreviewViewModel> Admin { get; set; }
-		
-		private IEnumerable<AdminPreviewViewModel> GetAdmin(IPageContext<AthleteLanding> context)
+		private static IList<AdminPreviewViewModel> GetAdmin(IPageContext<AthleteLanding> context, string query)
 		{
 			var searcher = new AthleteMembersSearch();
-			return searcher.GetAdmin().Select(a => new AdminPreviewViewModel(context.WithAthleteMember(a))).AsList();
+
+			if (string.IsNullOrWhiteSpace(query))
+			{
+				return searcher.GetAdmin().Select(a => new AdminPreviewViewModel(context.WithAthleteMember(a))).AsList();
+			}
+
+			return searcher.GetAdmins(query).Select(a => new AdminPreviewViewModel(context.WithAthleteMember(a))).AsList();
 		}
-		
-		public string RegisterForm { get; set; }
 	}
 }
 

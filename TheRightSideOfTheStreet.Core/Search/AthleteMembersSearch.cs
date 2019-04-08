@@ -97,6 +97,21 @@ namespace TheRightSideOfTheStreet.Core.Search
 			return admin;
 		}
 
+		public IEnumerable<Admin> GetAdmins(string query)
+		{
+			if (string.IsNullOrWhiteSpace(query)) return Enumerable.Empty<Admin>();
 
+			var criteria = GetSearchCriteriaAdmin();
+
+			var words = query.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+			var boostedExamineValue = query.Boost(2);
+			var wordExamineValues = words.Select(w => w.Escape());
+
+			criteria.GroupedOr(new[] { "fullName" }, wordExamineValues.Concat(boostedExamineValue).ToArray());
+
+			var members = GetSearchResultsAdmin(criteria);
+
+			return members.AsList();
+		}
 	}
 }
