@@ -250,6 +250,10 @@
 		.wrap {
 			display: flex;
 			flex-wrap: wrap;
+			> p {
+				color: $red;
+				margin: 0 auto;
+			}
 		}
 	}
 	.sw-atlete-item {
