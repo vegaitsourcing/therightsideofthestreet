@@ -247,6 +247,10 @@
 		padding: 78px 0;
 		margin-bottom: 0;
 		text-align: center;
+		.wrap {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 	.sw-atlete-item {
 		margin-bottom: 77px;
