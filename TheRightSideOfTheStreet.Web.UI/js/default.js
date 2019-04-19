@@ -9,7 +9,7 @@ const athleteModule = require('./athlete-module');
 const search = require('./search');
 const newsletter = require('./newsletter');
 const crewsModule = require('./crews-module');
-//let maps = require('./maps');
+const maps = require('./maps');
 
 let app = {
 	init: function () {
@@ -47,10 +47,7 @@ let app = {
 		newsletter.subscribe();
 		crewsModule.chooseCrew();
 		crewsModule.loadMoreCities();
-		// if($('.sw-map-container').length) {
-		// 	maps.initMap();
-		// }
-
+		
 		// checking for touch devices, to prevent double tap and hover issues
 		if(('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
 			$('html').addClass('touch');
@@ -65,6 +62,13 @@ let app = {
 	winResize: function () {
 		// call functions that are needed on window resize
 		console.log('window resized');
+	}
+};
+
+window.initMap = function () {
+	window.initMap = null;
+	if ($('.sw-map-container').length) {
+		maps.initMap();
 	}
 };
 
