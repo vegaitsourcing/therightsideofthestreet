@@ -46,6 +46,15 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Intro text
+		///</summary>
+		[ImplementPropertyType("introText")]
+		public string IntroText
+		{
+			get { return this.GetPropertyValue<string>("introText"); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("title")]
