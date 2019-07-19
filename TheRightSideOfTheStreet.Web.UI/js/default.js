@@ -56,12 +56,10 @@ let app = {
 		}
 	},
 	winLoad: function () {
-		// call functions that are needed for window load
-		console.log('window loaded');
+		
 	},
 	winResize: function () {
-		// call functions that are needed on window resize
-		console.log('window resized');
+		
 	}
 };
 
