@@ -1,8 +1,14 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TheRightSideOfTheStreet.Common;
 using TheRightSideOfTheStreet.Core.App_Start;
+using TheRightSideOfTheStreet.Core.EmailSender;
 using Umbraco.Core;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+using Umbraco.Web;
 using Umbraco.Web.Routing;
 
 namespace TheRightSideOfTheStreet.Core
@@ -23,7 +29,35 @@ namespace TheRightSideOfTheStreet.Core
 		{
 			base.ApplicationStarted(umbracoApplication, applicationContext);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
-			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);			
+			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			MemberService.Saving += this.MemberServiceSaving;
+		}
+
+		// Before a member is saved
+		private void MemberServiceSaving(IMemberService sender, SaveEventArgs<IMember> e)
+		{
+			foreach (IMember member in e.SavedEntities)
+			{
+				//Member is not approved, dont send an email at all
+				if (!member.IsApproved)
+					continue;
+
+				var currentMemberValues = ApplicationContext.Current.Services.MemberService.GetById(member.Id);
+
+				if (currentMemberValues == null)
+					continue;
+
+				//Pull the old approval state from the member service, this is the value before the save.
+				bool oldValue = currentMemberValues.IsApproved;
+
+				//Member wasn't approved before save but is now
+				if (oldValue != member.IsApproved)
+				{
+					EmailHandler emailSender = new EmailHandler();
+
+					emailSender.AthleteRegistrationApproved(member, AppSettings.AdminEmailAdress);
+				}
+			}
 		}
 	}
 }

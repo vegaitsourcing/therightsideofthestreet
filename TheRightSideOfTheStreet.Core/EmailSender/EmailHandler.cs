@@ -4,9 +4,11 @@ using System.Configuration;
 using System.Net.Configuration;
 using System.Net.Mail;
 using System.Text;
+using System.Web.Mvc;
 using TheRightSideOfTheStreet.Common;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms;
 using Umbraco.Core.Logging;
+using Umbraco.Core.Models;
 
 namespace TheRightSideOfTheStreet.Core.EmailSender
 {
@@ -27,7 +29,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			string senderEmail = emailFrom;
 
-			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
 		}
 
 		public bool BlogComment(string emailFrom, string fullName, string adminEmailAddress, string blogLink)
@@ -42,9 +44,26 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			string senderEmial = emailFrom;
 
-			return SendEmail(senderEmial, subject.ToString(), body.ToString(), adminEmailAddress, null);
+			return SendEmail(senderEmial, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
 
 
+		}
+
+		public bool AthleteRegistrationApproved(IMember athlete, string adminEmailAddress)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append($"Registracija odobrena {athlete.Name}");
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Vasa registracija je odobrena. Mozete se ulogovati sa vasim novim nalogom.");
+			body.Append(Environment.NewLine);
+			body.AppendLine($"Pozdrav,");
+			body.Append(Environment.NewLine);
+			body.AppendLine($"Prava Strana Ulice admin tim.");
+			string recieverEmail = athlete.Email;
+
+			return SendEmail(adminEmailAddress, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), recieverEmail, null);
 		}
 
 		public bool WorkoutParksRequest(WorkoutParksFormViewModel model, string adminEmailAddress, string Url)
@@ -124,7 +143,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			string senderEmail = member.Email;
 
-			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, attachments);
 		}
 
 	
@@ -142,12 +161,12 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			subject.Append($" { athlete.Surname}");
 
 			StringBuilder body = new StringBuilder();
-			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($"Poslat je novi zahtev za registraciju atlete.");
 			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{athlete.Name} {athlete.Surname}</a>");
 
 			string senderEmail = athlete.Email;
 
-			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
 		}
 
 		public bool FanRegistrationRequest(ShowYourselfFormFanViewModel fan, string adminEmailAddress, string newAthleteMemberLink)
@@ -160,19 +179,19 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			subject.Append($" { fan.Surname}");
 
 			StringBuilder body = new StringBuilder();
-			body.AppendLine($"Poslat je novi zahtev za registraciju.");
+			body.AppendLine($"Poslat je novi zahtev za registraciju fana.");
 			body.AppendLine($" Zahtev možete pogledati i odobriti putem linka - <a href={newAthleteMemberLink}>{fan.Name} {fan.Surname}</a>");
 
 			string senderEmail = fan.Email;
 
-			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, null);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
 		}
 
 		public bool CompetitionRequest(LeaguesFormViewModel model, string adminEmailAddress)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
 			StringBuilder subject = new StringBuilder();
-			subject.Append("Zahtev za takmicenje ");
+			subject.Append("Zahtev za takmicenje u ligi ");
 
 			StringBuilder body = new StringBuilder();
 			body.Append($"Ime i prezime: {model.Name}");
@@ -188,7 +207,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			};
 
 			string senderEmail = model.Email;
-			return SendEmail(senderEmail, subject.ToString(), body.ToString(), adminEmailAddress, attachments);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, attachments);
 
 		}
 
