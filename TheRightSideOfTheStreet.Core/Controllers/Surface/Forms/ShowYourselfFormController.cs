@@ -39,7 +39,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 				model.City = crew.Ancestor<City>().Name;
 				model.Country = crew.Ancestor<Country>().Name;
 			}
-			string memberName = $"{model.Name} {model.Surname}";
 
 			var memberService = Services.MemberService;
 
@@ -48,35 +47,44 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 				ModelState.AddModelError("DuplicateEmail", UmbracoDictionaryHelper.UmbracoValidation.DuplicateEmailAddress);
 				return CurrentUmbracoPage();
 			}
+			string memberName = $"{model.Name} {model.Surname}";
+			IMember member = Services.MemberService.CreateMemberWithIdentity(model.Email, model.Email, memberName, AthleteMember.ModelTypeAlias);
 
-			var member = Services.MemberService.CreateMemberWithIdentity(model.Email, model.Email, memberName, AthleteMember.ModelTypeAlias);
+			SetMemberFields(model, member, memberName);
+
+			string protocol = Request.Url.Scheme;
+			string domain = Request.Url.Host;
+			string memberGuid = member.Key.ToString();
+			string newAthleteMemberLink = string.Format(AppSettings.NewAthleteMemberLink, protocol, domain, memberGuid);
+
+			member.IsApproved = false;
+
+			TrySaveMember(member);
+
+			if (TrySaveMember(member))
+			{
+				HandleMailSend(member, model, newAthleteMemberLink);
+			}
+
+			return RedirectToCurrentUmbracoPage();
+		}
+
+		private void SetMemberFields(ShowYourselfFormViewModel model, IMember member, string memberName)
+		{
 			Services.MemberService.AssignRole(member.Id, "Athletes Group");
 			Services.MemberService.SavePassword(member, model.Password);
+
 			member.SetValue(nameof(AthleteMember.FullName), memberName);
 
 			var profileImage = Services.MediaService.CreateMediaWithIdentity(model.ProfilePicture.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
+
 			profileImage.SetValue("umbracoFile", model.ProfilePicture.FileName, model.ProfilePicture.InputStream);
+
 			Services.MediaService.Save(profileImage);
 
 			member.SetValue(nameof(AthleteMember.ProfileImage), new GuidUdi("media", profileImage.Key).ToString());
 
-			List<string> udiList = new List<string>();
-
-			foreach (var image in model.Images)
-			{
-				if (image != null)
-				{
-					var media = Services.MediaService.CreateMediaWithIdentity(image.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
-					media.SetValue("umbracoFile", image.FileName, image.InputStream);
-					Services.MediaService.Save(media);
-
-					GuidUdi mediaUdi = media.GetUdi();
-					string mediaUdiAsString = mediaUdi.ToString();
-					udiList.Add(mediaUdiAsString);
-				}
-			}
-
-			member.SetValue(nameof(AthleteMember.Images), string.Join(",", udiList));
+			member.SetValue(nameof(AthleteMember.Images), string.Join(",", CreateListOfImagesUdi(model)));
 
 			if (model.Crew != null)
 			{
@@ -110,34 +118,59 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			{
 				member.SetValue(nameof(AthleteMember.YoutubeProfile), model.YouTubeChannel);
 			}
+		}
 
-			string protocol = Request.Url.Scheme;
-			string domain = Request.Url.Host;
+		private List<string> CreateListOfImagesUdi(ShowYourselfFormViewModel model)
+		{
+			List<string> udiList = new List<string>();
 
-			string memberGuid = member.Key.ToString();
+			foreach (var image in model.Images)
+			{
+				if (image != null)
+				{
+					var media = Services.MediaService.CreateMediaWithIdentity(image.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
+					media.SetValue("umbracoFile", image.FileName, image.InputStream);
+					Services.MediaService.Save(media);
 
-			string newAthleteMemberLink = string.Format(AppSettings.NewAthleteMemberLink, protocol, domain, memberGuid);
+					GuidUdi mediaUdi = media.GetUdi();
+					string mediaUdiAsString = mediaUdi.ToString();
+					udiList.Add(mediaUdiAsString);
+				}
+			}
 
-			member.IsApproved = false;
+			return udiList;
+		}
 
-			Services.MemberService.Save(member);
-
+		private void HandleMailSend(IMember member, ShowYourselfFormViewModel model, string memberLink)
+		{
 			Settings settings = Umbraco.GetSettings(CurrentPage.Site().Id);
 			EmailHandler emailSender = new EmailHandler();
 
-			bool sentMail = emailSender.AthleteRegistrationRequest(model, settings.AdminEmailAddress, newAthleteMemberLink);
+			bool sentMail = emailSender.AthleteRegistrationRequest(model, settings.AdminEmailAddress, memberLink);
 
 			if (!sentMail)
 			{
-				memberService.Delete(member);
+				Services.MemberService.Delete(member);
 				TempData[Constants.Constants.TempDataFail] = "fail";
-				return CurrentUmbracoPage();
 			}
-			TempData[Constants.Constants.TempDataSuccess] = "success";
-
-			return RedirectToCurrentUmbracoPage();
+			else
+			{
+				TempData[Constants.Constants.TempDataSuccess] = "success";
+			}
 		}
 
-
+		private bool TrySaveMember(IMember member)
+		{
+			try
+			{
+				Services.MemberService.Save(member);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Logger.Warn(typeof(ShowYourselfFormController), $"Something went wrong on member save: {ex}");
+				return false;
+			}
+		}
 	}
 }
