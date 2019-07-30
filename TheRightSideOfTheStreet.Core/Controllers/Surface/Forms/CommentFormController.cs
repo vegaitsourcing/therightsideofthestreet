@@ -60,7 +60,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 		private int CreateBlogComment(CommentFormViewModel model)
 		{
 			IContentService contentService = Services.ContentService;
-			var pageName = CurrentPage.Name;
 			var parentId = CurrentPage.Id;
 			var member = Members.GetCurrentMember();
 

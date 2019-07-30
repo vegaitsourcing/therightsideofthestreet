@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using TheRightSideOfTheStreet.Core.Extensions;
+using TheRightSideOfTheStreet.Core.ViewModels;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.NestedContent;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
@@ -11,6 +12,11 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 			string partialView = nestedContentViewModel.GetType().Name.RemoveViewModelSuffix();
 
 			return PartialView(partialView, nestedContentViewModel);
+		}
+
+		public ActionResult BlogEntry(BlogDetailsViewModel blogEntry)
+		{
+			return PartialView(blogEntry);
 		}
 	}
 }

@@ -49,7 +49,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 		}
 
-		public bool AthleteRegistrationApproved(IMember athlete, string adminEmailAddress)
+		public bool TrySendRegistrationMail(IMember athlete, string adminEmailAddress)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
 

@@ -314,6 +314,7 @@
     <Compile Include="Controllers\Surface\Forms\SearchAthleteFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ShowYourselfFormFanController.cs" />
     <Compile Include="Controllers\Surface\Forms\WorkoutParksFormController.cs" />
+    <Compile Include="Controllers\Surface\Partials\PartialViewsController.cs" />
     <Compile Include="Controllers\Surface\Partials\SharedController.cs" />
     <Compile Include="Controllers\Surface\Partials\BasePartialController.cs" />
     <Compile Include="Controllers\Surface\Partials\LayoutController.cs" />

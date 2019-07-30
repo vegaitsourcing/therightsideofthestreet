@@ -52,18 +52,14 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			SetMemberFields(model, member, memberName);
 
-			string protocol = Request.Url.Scheme;
-			string domain = Request.Url.Host;
-			string memberGuid = member.Key.ToString();
-			string newAthleteMemberLink = string.Format(AppSettings.NewAthleteMemberLink, protocol, domain, memberGuid);
-
 			member.IsApproved = false;
-
-			TrySaveMember(member);
 
 			if (TrySaveMember(member))
 			{
-				HandleMailSend(member, model, newAthleteMemberLink);
+				HandleMailSend(member, model, string.Format(AppSettings.NewAthleteMemberLink, 
+					Request.Url.Scheme, 
+					Request.Url.Host, 
+					member.Key.ToString()));
 			}
 
 			return RedirectToCurrentUmbracoPage();
@@ -76,7 +72,9 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			member.SetValue(nameof(AthleteMember.FullName), memberName);
 
-			var profileImage = Services.MediaService.CreateMediaWithIdentity(model.ProfilePicture.FileName, AppSettings.AthleteMembersProfileFolderId, Image.ModelTypeAlias);
+			var profileImage = Services.MediaService.CreateMediaWithIdentity(model.ProfilePicture.FileName, 
+				AppSettings.AthleteMembersProfileFolderId, 
+				Image.ModelTypeAlias);
 
 			profileImage.SetValue("umbracoFile", model.ProfilePicture.FileName, model.ProfilePicture.InputStream);
 
@@ -84,7 +82,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 
 			member.SetValue(nameof(AthleteMember.ProfileImage), new GuidUdi("media", profileImage.Key).ToString());
 
-			member.SetValue(nameof(AthleteMember.Images), string.Join(",", CreateListOfImagesUdi(model)));
+			member.SetValue(nameof(AthleteMember.Images), string.Join(",", CreateListOfImagesId(model)));
 
 			if (model.Crew != null)
 			{
@@ -120,7 +118,7 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			}
 		}
 
-		private List<string> CreateListOfImagesUdi(ShowYourselfFormViewModel model)
+		private List<string> CreateListOfImagesId(ShowYourselfFormViewModel model)
 		{
 			List<string> udiList = new List<string>();
 
@@ -132,13 +130,25 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 					media.SetValue("umbracoFile", image.FileName, image.InputStream);
 					Services.MediaService.Save(media);
 
-					GuidUdi mediaUdi = media.GetUdi();
-					string mediaUdiAsString = mediaUdi.ToString();
-					udiList.Add(mediaUdiAsString);
+					udiList.Add(media.GetUdi().ToString());
 				}
 			}
 
 			return udiList;
+		}		
+
+		private bool TrySaveMember(IMember member)
+		{
+			try
+			{
+				Services.MemberService.Save(member);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Logger.Warn(typeof(ShowYourselfFormController), $"Something went wrong on member save: {ex}");
+				return false;
+			}
 		}
 
 		private void HandleMailSend(IMember member, ShowYourselfFormViewModel model, string memberLink)
@@ -156,20 +166,6 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Forms
 			else
 			{
 				TempData[Constants.Constants.TempDataSuccess] = "success";
-			}
-		}
-
-		private bool TrySaveMember(IMember member)
-		{
-			try
-			{
-				Services.MemberService.Save(member);
-				return true;
-			}
-			catch (Exception ex)
-			{
-				Logger.Warn(typeof(ShowYourselfFormController), $"Something went wrong on member save: {ex}");
-				return false;
 			}
 		}
 	}
