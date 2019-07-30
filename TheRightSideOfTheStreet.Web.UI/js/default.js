@@ -38,6 +38,7 @@ let app = {
 		athleteForm.hideCountryAndCityInput();
 		athleteForm.previewImages();
 		athleteForm.formChecked();
+		athleteForm.fromAthletePage();
 		exerciseGroup.exerciseGroups();
 		exerciseGroup.exerciseDetail();
 		exerciseGroup.sendRequest();

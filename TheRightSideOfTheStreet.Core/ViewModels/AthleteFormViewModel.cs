@@ -17,5 +17,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		}
 
 		public IList<CrewViewModel> Crews { get;}
+
+		public bool FromAthletePage { get; set; }
 	}
 }

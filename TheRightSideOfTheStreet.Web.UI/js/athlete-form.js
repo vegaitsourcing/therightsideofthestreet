@@ -9,10 +9,16 @@ module.exports = {
 		$form.data('validator').settings.ignore = "";
 	},
 
-	formChecked: function() {
-		$("input[name='action']:radio").change(function() {
-			$("#show-yourself-form-fan").toggle($(this).val() == "fan");
-			$("#show-yourself-form-athlete").toggle($(this).val() == "athlete");
+	fromAthletePage: function () {
+		if ($(".show-yourself-bg.cover-bg").data("from-athlete-page") === "True") {
+			$("#show-yourself-form-athlete")[0].style.display = "block";
+		}
+	},
+
+	formChecked: function () {
+		$("input[name='action']:radio").change(function () {
+			$("#show-yourself-form-fan").toggle($(this).val() === "fan");
+			$("#show-yourself-form-athlete").toggle($(this).val() === "athlete");
 		});
 	},
 
