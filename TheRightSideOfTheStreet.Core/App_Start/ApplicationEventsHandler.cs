@@ -8,7 +8,6 @@ using Umbraco.Core;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
-using Umbraco.Web;
 using Umbraco.Web.Routing;
 
 namespace TheRightSideOfTheStreet.Core
@@ -30,7 +29,7 @@ namespace TheRightSideOfTheStreet.Core
 			base.ApplicationStarted(umbracoApplication, applicationContext);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			MemberService.Saving += this.MemberServiceSaving;
+			MemberService.Saving += MemberServiceSaving;
 		}
 
 		// Before a member is saved
@@ -47,15 +46,13 @@ namespace TheRightSideOfTheStreet.Core
 				if (currentMemberValues == null)
 					continue;
 
-				//Pull the old approval state from the member service, this is the value before the save.
-				bool oldValue = currentMemberValues.IsApproved;
-
-				//Member wasn't approved before save but is now
-				if (oldValue != member.IsApproved)
+				//Pull the old approval state from the member service, this is the value before the save has updated the cache.				
+				if (currentMemberValues.IsApproved != member.IsApproved)
 				{
+					//Member wasn't approved before save but is now
 					EmailHandler emailSender = new EmailHandler();
 
-					emailSender.AthleteRegistrationApproved(member, AppSettings.AdminEmailAdress);
+					emailSender.TrySendRegistrationMail(member, AppSettings.AdminEmailAdress);
 				}
 			}
 		}
