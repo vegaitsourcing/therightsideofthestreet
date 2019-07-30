@@ -27,6 +27,13 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 
 		[UmbracoRequired("UmbracoValidation.Required")]
 		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		public string City { get; set; }
+
+		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
+		public string CrewName { get; set; }
+
+		[UmbracoRequired("UmbracoValidation.Required")]
+		[UmbracoStringLength("UmbracoValidation.StringLength", 24)]
 		public string Address { get; set; }
 
 		[UmbracoRequired("UmbracoValidation.Required")]

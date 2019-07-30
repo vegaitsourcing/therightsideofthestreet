@@ -25,6 +25,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Address => UmbracoHelper.GetDictionaryValue("BecomeMember.Address");
 			public static string Email => UmbracoHelper.GetDictionaryValue("BecomeMember.Email");
 			public static string Nationality => UmbracoHelper.GetDictionaryValue("BecomeMember.Nationality");
+			public static string City => UmbracoHelper.GetDictionaryValue("BecomeMember.City");
+			public static string Crew => UmbracoHelper.GetDictionaryValue("BecomeMember.Crew");
 			public static string MblNumber => UmbracoHelper.GetDictionaryValue("BecomeMember.MblNumber");
 			public static string UploadPicture => UmbracoHelper.GetDictionaryValue("BecomeMember.UploadPicture");
 			public static string Dob => UmbracoHelper.GetDictionaryValue("BecomeMember.Dob");

@@ -132,6 +132,8 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			body.AppendLine($"Datum rodjenja: {member.Dob}");
 			body.AppendLine($"Status: {member.Status}");
 			body.AppendLine($"Državljanstvo: {member.Nationality}");
+			body.AppendLine($"Grad: {member.City}");
+			body.AppendLine($"Ekipa: {member.CrewName}");
 			body.AppendLine($"Adresa: {member.Address}");
 			body.AppendLine($"Telefon: {member.MblNumber}");
 			body.AppendLine($"E-mail: {member.Email}");
