@@ -51,6 +51,24 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// OG Description: short text used when sharing a page  The description should be at least 100 characters long in order to be displayed on LinkedIn.
+		///</summary>
+		[ImplementPropertyType("oGDescription")]
+		public string OGdescription
+		{
+			get { return this.GetPropertyValue<string>("oGDescription"); }
+		}
+
+		///<summary>
+		/// OG Title: title used when sharing a page
+		///</summary>
+		[ImplementPropertyType("oGTitle")]
+		public string OGtitle
+		{
+			get { return this.GetPropertyValue<string>("oGTitle"); }
+		}
+
+		///<summary>
 		/// Seo Description: The page SEO description.
 		///</summary>
 		[ImplementPropertyType("seoDescription")]

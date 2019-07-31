@@ -321,6 +321,9 @@
     <Compile Include="Generated\Crew.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\CrewForm.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\CrewsModule.cs" />
     <Compile Include="Generated\CrewsModule.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

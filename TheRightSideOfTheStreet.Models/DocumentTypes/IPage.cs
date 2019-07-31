@@ -14,6 +14,9 @@ namespace TheRightSideOfTheStreet.Models.DocumentTypes
 		string SeoDescription { get; }
 		Link CanonicalLink { get; }
 		IEnumerable<IPage> AlternatePages { get; }
+		string OGtitle { get; }
+		string OGdescription { get; }
+		Image OGimage { get; }
         
         bool HideFromSiteNavigation { get; }
         bool HideFromSearchEngines { get; }

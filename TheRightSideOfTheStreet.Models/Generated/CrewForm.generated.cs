@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace TheRightSideOfTheStreet.Models
 {
-	/// <summary>Crews Module</summary>
-	[PublishedContentModel("crewsModule")]
-	public partial class CrewsModule
+	/// <summary>Crew Form</summary>
+	[PublishedContentModel("crewForm")]
+	public partial class CrewForm : Page
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "crewsModule";
+		public new const string ModelTypeAlias = "crewForm";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public CrewsModule(IPublishedContent content)
+		public CrewForm(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,9 @@ namespace TheRightSideOfTheStreet.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CrewsModule, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CrewForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Link
-		///</summary>
-		[ImplementPropertyType("link")]
-		public RJP.MultiUrlPicker.Models.Link Link
-		{
-			get { return this.GetPropertyValue<RJP.MultiUrlPicker.Models.Link>("link"); }
-		}
-
-		///<summary>
-		/// Text
-		///</summary>
-		[ImplementPropertyType("text")]
-		public IHtmlString Text
-		{
-			get { return this.GetPropertyValue<IHtmlString>("text"); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
-		{
-			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 }

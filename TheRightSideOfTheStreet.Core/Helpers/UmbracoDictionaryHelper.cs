@@ -178,6 +178,8 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string ShowMore => UmbracoHelper.GetDictionaryValue("CrewsModule.ShowMore");
 			public static string BackTo => UmbracoHelper.GetDictionaryValue("CrewsModule.BackTo");
 			public static string SelectCountry => UmbracoHelper.GetDictionaryValue("CrewsModule.SelectCountry");
+			public static string CrewStory => UmbracoHelper.GetDictionaryValue("CrewsForm.Story");
+			public static string Success => UmbracoHelper.GetDictionaryValue("CrewsForm.Success");
 		}
 
 		public static class ForgottenPassword

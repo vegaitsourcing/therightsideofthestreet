@@ -22,6 +22,9 @@ namespace TheRightSideOfTheStreet.Models
 		[ImplementPropertyType("title")]
 		public string Title => this.GetPropertyWithDefaultValue(Content.Name);
 
+		[ImplementPropertyType("oGImage")]
+		public Image OGimage => this.GetPropertyValue<IPublishedContent>().OfType<Image>();
+
 		[ImplementPropertyType("alternatePages")]
 		public IEnumerable<IPage> AlternatePages => this.GetPropertyValue<IEnumerable<IPublishedContent>>().Where(pc => pc != null).OfType<IPage>();
 

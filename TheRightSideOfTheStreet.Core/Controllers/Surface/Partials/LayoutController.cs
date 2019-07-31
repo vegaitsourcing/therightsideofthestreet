@@ -12,6 +12,12 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 		}
 
 		[ChildActionOnly]
+		public ActionResult OpenGraph(OpenGraphViewModel viewModel)
+		{
+			return PartialView(viewModel);
+		}
+
+		[ChildActionOnly]
 		public ActionResult Header(HeaderViewModel viewModel)
 		{
 			return PartialView(viewModel);

@@ -288,6 +288,7 @@
     <Compile Include="Controllers\RenderMvc\BlogDetailsController.cs" />
     <Compile Include="Controllers\RenderMvc\BlogLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\BlogPageController.cs" />
+    <Compile Include="Controllers\RenderMvc\CrewFormController.cs" />
     <Compile Include="Controllers\RenderMvc\DonationsContentController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\ForgottenPasswordController.cs" />
@@ -304,6 +305,7 @@
     <Compile Include="Controllers\Surface\BaseSurfaceController.cs" />
     <Compile Include="Controllers\Surface\Forms\BecomeMemberFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\CommentFormController.cs" />
+    <Compile Include="Controllers\Surface\Forms\IntroduceCrewFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\LeaguesFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\NewsletterFormController.cs" />
     <Compile Include="Controllers\Surface\Forms\ForgottenPasswordFormController.cs" />
@@ -356,6 +358,7 @@
     <Compile Include="ViewModels\BlogDetailsViewModel.cs" />
     <Compile Include="ViewModels\BlogLandingViewModel.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\CrewFormViewModel.cs" />
     <Compile Include="ViewModels\Error404ViewModel.cs" />
     <Compile Include="ViewModels\ForgottenPasswordViewModel.cs" />
     <Compile Include="ViewModels\LeagueFormViewModel.cs" />
@@ -363,6 +366,7 @@
     <Compile Include="ViewModels\LoginFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\CountryViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\CommentFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\IntroduceCrewFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\LeaguesFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ForgottenPasswordFormViewModel.cs" />
@@ -378,6 +382,7 @@
     <Compile Include="ViewModels\Partials\Forms\ResetPasswordFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\SearchAthleteFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\WorkoutParksFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\OpenGraphViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PartnersSectionViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\PartnersViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ExerciseDetailsPreviewViewModel.cs" />

@@ -171,6 +171,27 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
 		}
 
+		public bool CrewIntroduceRequest(IntroduceCrewFormViewModel crew, string adminEmailAddress)
+		{
+			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
+
+			StringBuilder subject = new StringBuilder();
+			subject.Append("Predstavljanje ekipe - ");
+			subject.Append(crew.CrewName);
+
+			StringBuilder body = new StringBuilder();
+			body.AppendLine($"Poslati su podaci o ekipi:");
+			body.AppendLine($"Ime ekipe: {crew.CrewName}");
+			body.AppendLine($"Mesto: {crew.CrewCity}");
+			body.AppendLine($"Priča: {crew.CrewStory}");
+			body.AppendLine($"Dostignuća: {crew.CrewAchievements}");
+			body.AppendLine($"E-mail ekipe: {crew.CrewEmail}");
+
+			string senderEmail = crew.CrewEmail;
+
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
+		}
+
 		public bool FanRegistrationRequest(ShowYourselfFormFanViewModel fan, string adminEmailAddress, string newAthleteMemberLink)
 		{
 			if (string.IsNullOrEmpty(adminEmailAddress)) adminEmailAddress = AppSettings.AdminEmailAdress;
