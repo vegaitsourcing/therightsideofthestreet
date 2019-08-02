@@ -6,6 +6,12 @@
 		h3 {
 			color: $red;
 		}
+
+		h4 {
+			color: $white;
+			padding-bottom: 90px;
+		}
+
 		span {
 			display: flex;
 			flex-wrap: wrap;
@@ -13,11 +19,13 @@
 			align-items: center;
 			color: $red;
 			margin: 5px 0;
+
 			input {
 				max-width: 550px;
 			}
 		}
 	}
+
 	@include breakpoint(phone) {
 		.wrap {
 			.btn {

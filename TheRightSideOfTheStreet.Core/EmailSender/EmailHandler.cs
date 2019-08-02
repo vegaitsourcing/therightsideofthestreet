@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Net.Configuration;
 using System.Net.Mail;
 using System.Text;
@@ -187,9 +188,20 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 			body.AppendLine($"Dostignuća: {crew.CrewAchievements}");
 			body.AppendLine($"E-mail ekipe: {crew.CrewEmail}");
 
+			List<Attachment> attachments = new List<Attachment>();
+
+			if (crew.Images != null && crew.Images.Any())
+			{				
+				foreach (var image in crew.Images)
+				{
+					var attachment = new Attachment(image.InputStream, image.FileName, image.ContentType);
+					attachments.Add(attachment);
+				}
+			}
+
 			string senderEmail = crew.CrewEmail;
 
-			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, null);
+			return SendEmail(senderEmail, subject.ToString(), MvcHtmlString.Create(body.ToString().Replace("\n", "<br/>")).ToString(), adminEmailAddress, attachments);
 		}
 
 		public bool FanRegistrationRequest(ShowYourselfFormFanViewModel fan, string adminEmailAddress, string newAthleteMemberLink)

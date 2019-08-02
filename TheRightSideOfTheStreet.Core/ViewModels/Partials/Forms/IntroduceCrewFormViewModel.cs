@@ -1,4 +1,6 @@
-﻿using TheRightSideOfTheStreet.Core.Validations;
+﻿using System.Collections.Generic;
+using System.Web;
+using TheRightSideOfTheStreet.Core.Validations;
 
 namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 {
@@ -22,5 +24,10 @@ namespace TheRightSideOfTheStreet.Core.ViewModels.Partials.Forms
 		[UmbracoEmail(ErrorMessageDictionaryKey = "UmbracoValidation.EmailAddress")]
 		[UmbracoDisplayName("BecomeMember.Email")]
 		public string CrewEmail { get; set; }
+
+		[UmbracoRequired("UmbracoValidation.Required")]
+		[ListFileSize(2, "UmbracoValidation.MultipleImageMaxSize")]
+		[MultipleImagesExtensions(ErrorMessageDictionaryKey = "UmbracoValidation.ImageExtension")]
+		public IList<HttpPostedFileBase> Images { get; set; }
 	}
 }

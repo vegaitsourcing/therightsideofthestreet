@@ -126,6 +126,7 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string Location => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Location");
 			public static string Disallowed => UmbracoHelper.GetDictionaryValue("ExerciseGroup.Disallowed");
 			public static string ReadyOrNot => UmbracoHelper.GetDictionaryValue("ExerciseGroup.ReadyOrNot");
+			public static string RestrictedArea => UmbracoHelper.GetDictionaryValue("ExerciseGroup.RestrictedArea");
 		}
 
 		public static class AtheleLanding
