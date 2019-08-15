@@ -9,9 +9,14 @@
 }
 
 .sw-crews-intro {
+	text-align: center;
 	p {
 		margin-bottom: 50px;
 		text-align-last: center;
+	}
+	.btn-introduction {
+		float: none;
+		margin-bottom: 50px;
 	}
 }
 
@@ -20,7 +25,6 @@
 	position: relative;
 	max-width: 480px;
 	margin: 0 auto 62px;
-	padding-right: 68px;
 	input, select {
 		margin-bottom: 50px;
 		box-shadow: 0 0 8px rgba(#231f20, 0.2);

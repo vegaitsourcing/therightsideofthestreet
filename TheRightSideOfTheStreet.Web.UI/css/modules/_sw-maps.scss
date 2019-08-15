@@ -30,10 +30,10 @@
 	height: 54px;
 	@include breakpoint(phone) {
 		.slick-track {
-			width: 100% !important;
+			width: 100% !important; // sass-lint:disable-line no-important
 		}
 		.slick-slide {
-			width: auto !important;
+			width: auto !important; // sass-lint:disable-line no-important
 		}
 	}
 }
