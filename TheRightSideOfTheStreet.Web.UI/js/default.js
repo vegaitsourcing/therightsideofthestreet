@@ -26,6 +26,7 @@ let app = {
 		functions.crewPopup();
 		functions.parksScroll();
 		functions.menuToggle();
+		functions.showCookie();
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();
@@ -48,7 +49,7 @@ let app = {
 		newsletter.subscribe();
 		crewsModule.chooseCrew();
 		crewsModule.loadMoreCities();
-		
+
 		// checking for touch devices, to prevent double tap and hover issues
 		if(('ontouchstart' in window || navigator.msMaxTouchPoints > 0) && window.matchMedia('screen and (max-width: 1024px)').matches) {
 			$('html').addClass('touch');
@@ -57,10 +58,10 @@ let app = {
 		}
 	},
 	winLoad: function () {
-		
+
 	},
 	winResize: function () {
-		
+
 	}
 };
 

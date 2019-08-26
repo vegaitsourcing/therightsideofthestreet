@@ -226,7 +226,7 @@ module.exports = {
 
 		$('.btn-close-crew-popup').on('click', function () {
 			$(this).closest('.workout-crew-popup').slideUp(300);
-		});			
+		});
 	},
 
 	parksScroll: function () {
@@ -265,6 +265,13 @@ module.exports = {
 
 		$menuClose.on('click', function () {
 			$menu.removeClass(openClass);
+		});
+	},
+	showCookie: function(){
+		$(document).ready(function(){
+			setTimeout(() => {
+				$('.cookie').addClass('visible');
+			}, 2000);
 		});
 	}
 };
