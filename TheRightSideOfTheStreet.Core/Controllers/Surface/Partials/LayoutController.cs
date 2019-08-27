@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web;
+using System.Web.Mvc;
+using TheRightSideOfTheStreet.Common;
 using TheRightSideOfTheStreet.Core.ViewModels.Partials.Layout;
 
 namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
@@ -32,6 +35,14 @@ namespace TheRightSideOfTheStreet.Core.Controllers.Surface.Partials
 		public ActionResult Partners(PartnersSectionViewModel viewModel)
 		{
 			return PartialView(viewModel);
+		}
+
+		[ChildActionOnly]
+		public ActionResult Cookies(CookiesViewModel model)
+		{
+			if (Request.Cookies[AppSettings.CookieName] != null) return new EmptyResult();
+
+			return PartialView(model);
 		}
 	}
 }

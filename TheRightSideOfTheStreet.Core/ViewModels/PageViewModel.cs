@@ -20,6 +20,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 			Partners = new PartnersSectionViewModel(context);
 			GoogleAnalytics = new GoogleAnalyticsViewModel(context);
 			OpenGraph = new OpenGraphViewModel(context);
+			Cookies = new CookiesViewModel(context);
 			PageKey = context.Page.GetKey();
 			Url = context.Page.Url;		
 		}
@@ -32,6 +33,7 @@ namespace TheRightSideOfTheStreet.Core.ViewModels
 		public FooterViewModel Footer { get; }
 		public PartnersSectionViewModel Partners { get; }
 		public GoogleAnalyticsViewModel GoogleAnalytics { get; }
+		public CookiesViewModel Cookies { get; }
 		public Guid PageKey { get; }
 		public string Url { get; }		
 	}

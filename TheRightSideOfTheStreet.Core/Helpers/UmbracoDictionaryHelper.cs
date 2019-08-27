@@ -208,6 +208,11 @@ namespace TheRightSideOfTheStreet.Core.Helpers
 			public static string TryYourself => UmbracoHelper.GetDictionaryValue("SWLeague.TryYourself");
 		}
 
+		public static class Cookies
+		{
+			public static string AcceptCookie => UmbracoHelper.GetDictionaryValue("Cookies.AcceptCookie");
+		}
+
 		private static UmbracoHelper UmbracoHelper => new UmbracoHelper(UmbracoContext.Current);
 
 	}

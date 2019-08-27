@@ -23,7 +23,8 @@ namespace TheRightSideOfTheStreet.Common
 		public static string MailchimpKey => Get<string>("mailchimpApiKey");
 		public static string MailchimpListId => Get<string>("mailchimpListId");
 		public static string GoogleMapsApiKey => Get<string>("googleMapsApiKey");
-
+		public static string CookieName => Get<string>("cookieName");
+		public static int CookieExpirationTimeInDays => Get<int>("cookieExpirationTimeInDays");
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.
 		/// </summary>

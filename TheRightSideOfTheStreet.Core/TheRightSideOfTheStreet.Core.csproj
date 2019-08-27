@@ -382,6 +382,7 @@
     <Compile Include="ViewModels\Partials\Forms\ResetPasswordFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\SearchAthleteFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\WorkoutParksFormViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\CookiesViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\OpenGraphViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\PartnersSectionViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\PartnersViewModel.cs" />

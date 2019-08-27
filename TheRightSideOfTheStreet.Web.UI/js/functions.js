@@ -1,5 +1,7 @@
 'use strict';
 
+const Cookies = require('js-cookie');
+
 module.exports = {
 
 	initSlider: function () {
@@ -273,5 +275,13 @@ module.exports = {
 				$('.cookie').addClass('visible');
 			}, 2000);
 		});
+	},
+	hideCookie: function ()
+	{
+		$('.js-accept-cookies').on('click', function() {
+			const { cookieName, cookieExpiration } = $(this).data();
+			Cookies.set(cookieName, 'yes', { expires: cookieExpiration });
+			$('.cookie').removeClass('visible');
+		})
 	}
 };

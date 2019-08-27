@@ -27,6 +27,7 @@ let app = {
 		functions.parksScroll();
 		functions.menuToggle();
 		functions.showCookie();
+		functions.hideCookie();
 		listing.donators();
 		becomeMember.changeImage();
 		becomeMember.validatorSkip();

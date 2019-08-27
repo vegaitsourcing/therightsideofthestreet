@@ -64,6 +64,24 @@ namespace TheRightSideOfTheStreet.Models
 		}
 
 		///<summary>
+		/// Cookies Text
+		///</summary>
+		[ImplementPropertyType("cookiesText")]
+		public string CookiesText
+		{
+			get { return this.GetPropertyValue<string>("cookiesText"); }
+		}
+
+		///<summary>
+		/// Cookies Title
+		///</summary>
+		[ImplementPropertyType("cookiesTitle")]
+		public string CookiesTitle
+		{
+			get { return this.GetPropertyValue<string>("cookiesTitle"); }
+		}
+
+		///<summary>
 		/// Google Analytics
 		///</summary>
 		[ImplementPropertyType("googleAnalytics")]
