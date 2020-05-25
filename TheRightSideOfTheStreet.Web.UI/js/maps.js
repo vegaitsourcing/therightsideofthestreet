@@ -24,8 +24,8 @@ module.exports = {
 		$('[data-park-name]').each(function() {
 			const $this = $(this);
 			parks.push({
-				lat: $this.data('lat'),
-				lng: $this.data('lng'),
+				lat: parseFloat($this.data('lat')),
+				lng: parseFloat($this.data('lng')),
 				link: $this.data('link'),
 				name: $this.data('park-name'),
 				city: $this.data('city')
