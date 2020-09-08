@@ -190,7 +190,7 @@ namespace TheRightSideOfTheStreet.Core.EmailSender
 
 			List<Attachment> attachments = new List<Attachment>();
 
-			if (crew.Images != null && crew.Images.Any())
+			if (crew.Images != null && crew.Images.Any() && crew.Images[0] != null)
 			{				
 				foreach (var image in crew.Images)
 				{
